@@ -1,5 +1,5 @@
 This repository hosts the .tex file that will be used to produce our annual report.
-I use the same templates as our proposal and we will update them as needed.
+I use the same LaTeX templates as our proposal. We will update them as we progress.
 
 I reused the cover we did not use and will add the new team members.
 
