@@ -1,0 +1,128 @@
+%\subsection{Systematics Testing and Mitigation}
+
+%{\it Rewriting this entirely differently from before according to DW's suggestions: mostly observational systematics, do not currently touch theoretical systematics }
+
+The galaxy clustering measurements are susceptible to observational and astrophysical systematic effects. 
+We discussed the astrophysical systematic effects and their mitigation in \S\ref{sec:cmethods}.
+We now focus on the observational systematic effects.
+
+As we discussed in the \S\ref{sec:cmethods}, we will take full light cone ELG catalogs,
+create pixel-level simulations that span the entire HLS area, and produce the
+observed galaxy and corresponding random catalogs.  We envision that multiple
+LSS catalogs will be produced by extracting the galaxies (and their
+corresponding randoms) according to their specific continuum levels
+and/or line-fluxes (or other selection criteria). For each of these catalogs, we will
+test for systematics such as effects of stellar density, dependencies on line
+luminosity, continuum luminosity and varying exposure number. Co-I Ho led
+investigations in effects of observational  systematics on galaxy over-density in
+BOSS \cite{Ho2012}; we will apply the same techniques in detecting galaxy
+over-density variations due to the various potential systematic sources.  
+Co-I Ho will lead our work to design and perform internal empirical tests that involve dividing the
+galaxies (and corresponding randoms) into subsets of different continuum
+luminosity, line luminosity, galaxy environment, exposure number and other
+relevant parameters. We will pay particular attention to potential systematic
+effects caused by the complex  structure of the completeness function, as a
+function of redshift. This is particularly important as the number of exposures
+can vary significantly, from 0 to 10 with a median of 7 in the SDT15
+observing strategy.
+
+Team Co-Is have experience in using template projection method
+and cross-correlation method in photometric clustering to mitigate observational
+systematics such as stellar density, PSF variations, magnitude error
+fluctuations \cite{Pullen2013,Agarwal2014}.  We will
+adapt these methodologies to remove systematics in 3D clustering. We will 
+test our 3D systematics detection and mitigation methodology on our
+simulated catalogs and check whether we achieve unbiased results
+in BAO distances and the growth rate of large scale
+structure.  These potential systematics will also affect the photometric
+clustering and the full shape of the galaxy power spectrum,
+which can be powerful in constraining
+the sum of neutrino masses. 
+
+%{\it BAO systematics}: 
+%The robustness and accuracy of the BAO method derive from the 
+%simplicity of the early Universe and the precision with which we know the speed and 
+%time of propagation of sound waves in the primordial plasma. The evolution of density fluctuations in the Universe
+%is very well described by linear perturbation theory  and is now exquisitely tested 
+%by the recent measurements of temperature fluctuations in the Cosmic Microwave
+%Background radiation by the {\it Planck} satellite. The current CMB measurements
+%constrain the size of the BAO standard ruler to much better than $0.5\%$. Furthermore, 
+%any mis-calibrations in the acoustic scale would affect principally the determination 
+%of the Hubble constant, not the dark energy constraints \citep{2004PhRvD..70j3523E}.
+%
+%The sound waves travel a comoving distance of 150 Mpc, setting the BAO scale to be much
+%larger than the scale of gravitational collapse even 
+%in the present Universe (about 10 Mpc).
+%Analytical calculations, verified by direct numerical simulations, have found the nonlinear evolution of the
+%density field alters the BAO scale by less than $0.5\%$ at the present epoch (REF by Nikhil, Martin) , and
+%even less at the higher redshifts probed by WFIRST. 
+%Galaxy formation may also result in an additional shift in the BAO scale 
+%due to mismatched weighting of high and low density regions. 
+%Initial perturbative
+%and numerical work also find these shifts to be small, with the
+%most extreme shifts less than $0.5\%$ (Eisenstein 08, Tojeiro 14, Ross 15). 
+%
+%{\bf SH: NEAR TERM plan needed  }
+%
+%Modeling based just on current theory and simulations could in principle reduce them below 0.1\%. 
+%Furthermore, as we
+%discuss below, (partial) reconstruction of the initial density field may
+%reduce these effects below the 0.1\% level without the need for further
+%modeling (Eisenstein, Seo, Spergel, Sirko 08, Padmanabhan et al. 12, Vargas-Magana, Ho 14) . In addition, the WFIRST target samples are designed to overlap in multiple redshift
+%ranges, allowing empirical tests of the robustness of the BAO measurements to
+%different tracer populations.
+%All of the above strongly argue that the theoretical systematic effects associated 
+%with the BAO measurements are either intrinsically or correctable to below the $0.1\%$ level. 
+%
+%As an example, BOSS has found all of the theoretical systematics in BAO to be each at $\approx 0.1\%$ or less (Vargas-Magana, Ho et al. 2014), while the observational systematics are kept at below $\approx 0.5\%$ with corrections using weights for each of the galaxies (Ross, Ho et al. 2012, Ross et al. 2014). 
+%
+%{\it RSD systematics}: 
+%Galaxies are expected to follow the same gravitational
+%potential as the dark matter and hence have the same velocities. 
+%The effects from the gravitational potential is detectable in redshift surveys, because the redshift of the galaxy provides information not only on the radial distance, but also on the radial velocity through the Doppler shift.
+%This induces anisotropies in the clustering, which are generically called redshift space distortions (RSD). 
+%They provide an opportunity to extract information on the dark matter clustering directly.
+%On large scales clustering of galaxies along the line of sight is enhanced
+%relative to the transverse direction due to peculiar motions and this allows
+%one to determine the ratio of logarithmic rate of growth $f$ to bias $b$.  Combining
+%the statistics from different lines of sight
+%one can eliminate the unknown bias and measure
+%directly the logarithmic rate of growth times the amplitude.
+%
+%The main theoretical systematic uncertainty in RSD is that nonlinear velocity effects extend to rather large scales and
+%give rise to a scale-dependent and angle-dependent clustering signal. It is easy to see these effects in any
+%real redshift survey: one sees elongated features along the line of sight,
+%called the fingers-of-god (FoG) effect,
+%which are caused by random velocities inside virialized objects such as
+%clusters, which scatter galaxies
+%along the radial direction in redshiftsift space, even if they have a localized
+%spatial position in real space.
+%This is just an extreme example and other related effects, such as nonlinear infall streaming
+%motions, also cause nonlinear corrections. In addition, RSD measure velocities as sampled at the 
+%galaxy positions. One is thus probing not the velocity field, but rather the momentum density field. 
+%Galaxies are a biased tracer of the dark matter and this introduces scale dependent effects into 
+%RSD statistics even if galaxies are simply a linear tracer of the dark matter. 
+%Nonlinearities in the density and velocity fields, as well as galaxy biasing, can induce 10\% effects on RSD at $k \sim 0.1$~$h$/Mpc.  Current models of RSD are able to reproduce these nonlinear effects at the percent level for $k<$~0.05--0.1~$h$/Mpc.  Extending this to smaller scales would increase the power of the RSD component of WFIRST. This will require us to improve our bias models and the realism of our simulations.
+%
+%{\bf SH NEAR TERM task needed} 
+%Most of the observational systematics examined in detail in the SDSS-III BOSS 
+%\cite[see][]{Ross12} primarily affect clustering on the largest scales;
+%currently these are of little concern for RSD measurements, for which the signal
+%comes primarily from the smallest scales included in the measurements.  
+%Multiple teams within BOSS has checked the influence of observational systematics on RSD and found it to be at the level of $0.5\sigma$ (Samushia et al. 2014, Alam, Ho et al. 2015).
+%One of the most
+%important systematic effects is the estimate of a survey's radial selection
+%function \cite{SamPerRac11,Ross, Ho et al.  12}.  Since the redshift distribution of targets
+%cannot be predicted precisely a priori, it must be measured directly from the
+%observed galaxies' redshift distribution.  Doing so removes some cosmological
+%radial modes from the observed galaxy over density field, resulting in a bias in
+%the monopole-quadrupole amplitudes at the $<0.2 \sigma$ level.  The ratio of
+%systematic to statistical uncertainty should remain relatively constant with
+%survey area for a given redshift distribution, since the statistical errors on
+%the correlation function and $n(z)$ shrink at the same rate.
+%
+%
+
+
+%{\it Photometric Clustering Systematics} 
+%

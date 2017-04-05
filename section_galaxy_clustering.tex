@@ -1,0 +1,263 @@
+ %1-2 paragraph overview of science goals.  BAO, RSD, other applications.
+ %SDT2015 as starting point.
+
+As discussed extensively in \S 2.2.4 of SDT15 (written by
+members of our team), the defining goal of HLS spectroscopy is to derive
+constraints on dark energy from a slitless spectroscopic (grism)
+redshift survey of approximately 20 million emission line galaxies (ELG) in the redshift range $z=1-3$.
+The galaxy redshift survey will enable high-precision measurements of the cosmic expansion history via BAO and structure growth via RSD.  
+Acoustic oscillations in the pre-recombination universe imprint a characteristic scale on matter clustering, which
+can be measured in the transverse and line-of-sight directions to
+determine the angular-diameter distance $D_A(z)$ and Hubble parameter $H(z)$, respectively \cite{Blake03,Seo03,CW12}.  Anisotropy of clustering
+caused by galaxy peculiar velocities constrains (in linear perturbation
+theory) the combination $\sigma_m(z) f_g(z)$, where $\sigma_m$ describes
+the rms amplitude of matter fluctuations and $f_g(z) \equiv d\ln\sigma_m(z)/d\ln a$ is the fluctuation growth rate.
+Thus the GRS on its own can address the key questions identified by
+NWNH: whether cosmic acceleration is caused by modified gravity
+or by dark energy, and whether (in the latter case) the dark energy
+density evolves in time \cite{Guzzo08,Wang08}.  These tests become more powerful in
+combination with weak lensing and cluster measurements from HLS Imaging
+and high-precision relative distance measurements from the Supernova
+Survey \cite{dePutter:2013xda,dePutter:2013nha}. The broadband shape of the galaxy power spectrum and higher order
+measures of galaxy clustering provide additional diagnostics of
+dark energy, neutrino masses, and inflation, and insights on the physics of galaxy formation.  
+%There are two largely distinct sources of systematics in the galaxy clustering program, associated with
+%the uniformity of the GRS and with astrophysical modeling uncertainties.
+%We discuss these in \S\ref{sec:grs_requirements} and~\S\ref{sec:grs_forecasting}, respectively, and we briefly
+%discuss mitigation strategies in \S\ref{sec:grs_mitigation}.
+While all aspects of our GRS investigation are interconnected, we
+organize it in a structure similar to that of \S
+\ref{sec:wl_gal-clusters} for clarity: requirements, simulations, and prototype pipelines in \S \ref{sec:grs_requirements},
+cosmological forecasting, modeling, and cosmological simulations in \S
+\ref{sec:cmethods}, and systematics testing and mitigation in \S \ref{sec:gal_syst}.
+
+\input{subsection_galaxy_clustering_requirement_simulation.tex}
+
+\subsection{Cosmological Forecasting, Modeling, and Simulations (D2, D8, D9)}
+\label{sec:cmethods}
+%================================================
+%\Auth{Yun, Katrin, Nikhil, Rachel B, Alina, Shirley, Olivier}
+
+\subs{Forecasting.} Our initial forecasts for the cosmological constraints from 
+the WFIRST GRS will adopt the model-independent approach (incorporating
+both BAO and RSD) that Co-I Wang has developed \cite{Wang2013} and
+used for the WFIRST SDT reports and similar forecasts for Euclid \cite{WangEuclid2010}.
+This approach offers a fast way to forecast how uncertainties in
+$H(z)$, $D_A(z)$, growth rates, and other cosmological parameters
+change in response to changes of the survey strategy, instrument
+performance, or astrophysical inputs such as the H$\alpha$ luminosity
+function.  Early in this investigation, we will incorporate a full description
+of redshift-space galaxy clustering into \CoLi, using a halo
+occupation density (HOD) framework similar to that already implemented for 
+angular galaxy clustering \cite{Krause2013}.  In the medium term, we will also
+incorporate effects of clustering measurement and theoretical
+modeling systematics via nuisance parameters, analogous to our
+existing treatments of observational and theoretical systematics
+in weak lensing analysis.  The expected level of these systematics
+will be informed by the studies described in \S\ref{sec:grs_requirements}
+and below.  As with the imaging survey, this comprehensive forecasting
+framework will enable us to connect low-level technical requirements
+to our top-level science goals.
+
+\subs{GRS modeling.} The development of the methodology for the
+interpretation of GRS data is centered on the mitigation of the
+astrophysical systematic effects  for galaxy clustering measurements:
+nonlinear effects, RSD (growth rate signal on large scales and
+contamination on small and intermediate scales),  and galaxy bias (the
+difference between galaxy and matter distributions). 
+Co-I Padmanabhan is a leading expert in BAO/RSD data analysis \cite{Padmanabhan2007,Padmanabhan2008,Padmanabhan2009,Padmanabhan2012,Xu2012}; he will lead our
+work in GRS modeling/interpretation methods, with participation from the PI and Co-Is
+Bean, Ho, Samushia, Spergel, Wang, and Weinberg \cite{CW12,Ho2012,Anderson2014,Wang2014,Osumi2015,Alam2015a,Alam2015b,Cuesta2015}.
+
+BAO measurement is now a mature field, but WFIRST probes new regimes
+of precision and redshift using different instrumental choices
+and different classes of galaxy tracers from previous surveys.
+Effects of non-linear clustering and galaxy bias are expected to
+influence BAO measurements at the $\sim 0.5\%$ level \cite{Padmanabhan2009}, which is
+significant compared to WFIRST statistical errors.
+Reconstruction methods \cite{Eisenstein2007,Padmanabhan2012,Vargas2015}, 
+which attempt to reverse the
+nonlinear evolution of the BAO feature, appear to remove
+most of this effect while simultaneously improving the precision
+of BAO measurements.  Current observational studies use very simple
+reconstruction algorithms.  We will explore more sophisticated
+reconstruction methods, building on low redshift work \cite{Carrick15}, and test their performance on simulations
+of WFIRST galaxy redshift catalogs, including realistic treatments of
+survey geometry, redshift evolution, source space density, and
+variable completeness.  Building on current work by Co-Is
+\cite{Padmanabhan2012,Vargas2015,Osumi2015,Zhu2015}, 
+we will also investigate improved clustering estimators that can sharpen the precision and improve the robustness
+of BAO measurements.
+
+In sharp contrast to BAO measurements, cosmological inference from 
+RSD measurements is already limited mainly by uncertainties in 
+theoretical modeling, with application of different models to the
+same underlying data yielding differences at the $\sim 10\%$ level.
+%{\bf SH: Not sure it is 5\% level, I think BOSS results differ by 
+%nearly 10\% level with the mock challenge} .
+Furthermore, the statistical signal-to-noise ratio of RSD measurements
+increases rapidly with decreasing scale, so there are potentially
+large gains from modeling that extends into the fully non-linear regime.
+We will pursue a variety of approaches to improving and testing
+RSD models, including the 
+%{\bf not calling this brute force ? } ``brute force'' 
+efficient method of computing predictions
+numerically by populating the halos of N-body simulations with galaxies. 
+Co-I Spergel has expertise in combining imaging and spectroscopic 
+data to predict the relationship between galaxies and halos \cite{Hikage2012}.
+One can think of this method as producing ``emulators'' \cite{Heitmann2014}
+that predict galaxy clustering statistics as a function 
+of cosmological parameters and parameters that describe the relation
+between galaxies and dark matter halos.
+The approach shows promise (e.g., \cite{Reid2014}),
+but it relies on parameterized models for populating halos,
+and the accuracy of these needs to be tested against galaxy catalogs
+constructed in ways that do not share the same assumptions
+(e.g., by semi-analytic models or abundance-age matching).
+We will use similar techniques to investigate the impact of
+non-linear evolution and bias on the broadband galaxy power
+spectrum, and thus improve our ability to extract cosmological
+information from this measurement.
+
+Galaxy bias is likely scale-dependent; its testing will require realistic ELG mocks, and its mitigation will require 
+the successful measurement of the higher-order statistics of galaxy clustering, which in turn requires a 
+sufficiently high galaxy number density for the GRS. 
+An essential difference between the WFIRST and Euclid spectroscopic
+surveys is that due to the much smaller pixel scale (0.11$^{\prime\prime}$ for WFIRST
+versus 0.3$^{\prime\prime}$ for Euclid) and larger telescope aperture, WFIRST 
+is capable of carrying out a significantly deeper GRS, which can result in
+%, at least as currently planned, is the 
+a much higher space density of the WFIRST sample over most
+of its redshift range.
+This high sampling density represents a significant science opportunity
+for WFIRST; 
+in particular it will boost the significance of higher-order correlations. 
+Building on previous work by members of our team \cite{Takada08,Schaan14,Dore14,Chen15},
+%(Takada et al. 2008; Schaan, Takada \& Spergel 2014; Chen, Ho et al. 2015), 
+we will investigate techniques that use the galaxy
+bispectrum and other higher-order statistics to sharpen cosmological
+constraints, by directly probing the matter density and velocity fields
+and by improving knowledge of ``nuisance parameters'' that describe
+galaxy bias.  We will examine ways that RSD measurement precision
+can be improved by cross-correlating multiple tracer populations
+with different clustering bias to suppress cosmic 
+variance \cite{mcDonald2009,Bernstein2011,dePutter:2014lna}, weighting galaxies by mass
+to suppress shot noise \cite{Seljak2009}, and building group catalogs
+to collapse fingers-of-God \cite{Reid2010}.
+We will investigate potential gains from cross-correlating the
+WFIRST galaxy redshift catalogs with H$\,${\sc i} 21 cm ``intensity mapping''
+measurements, or with CMB measurements, or (at $z>2$) the Ly$\alpha$ forest.
+In all of these studies, we will pay particular attention to 
+the influence of the sampling density, as this directly informs
+the trade between depth and area in the GRS (see \S\ref{sec:sur_opt}).
+
+\subs{Cosmological simulations.} The cosmological simulations described in \S\ref{sec:wl_methodology} 
+will also be useful for the methodology development outlined above.
+However, the optimal simulations for BAO and RSD studies will typically
+be larger volume and lower resolution than those for weak lensing:
+large volumes are needed for good statistics and to eliminate finite
+box effects, but we do not need to model the small scale matter 
+distribution or baryonic effects (which are encoded in the 
+models used to populate halos with galaxies).  Furthermore, 
+simulations tuned to the WFIRST GRS need only be evolved to $z=1$.
+Co-I Ho will lead our cosmological simulations for the GRS, with participation from
+team members Benson, Heitmann, Kiessling, Wang, and postdocs.
+
+We will leverage the participation of several of our team members in 
+Euclid and DESI to produce large simulated ELG catalogs,
+building on work we have already begun for these projects.
+To model emission-line selection, we will use both semi-analytic galaxy
+formation models (SAM) and HOD models that are tuned to produce
+observed number densities and clustering.
+%The current Euclid ELG mocks are made using SAM, but are limited in emission line modeling 
+%and simulation volume. 
+We expect to be able to provide ELG mocks for WFIRST similar to those used 
+by Euclid on a short time scale.
+We will incorporate these into the early pixel-level 
+simulations described in \S\ref{sec:grs_requirements},
+which will in turn be used to assess impacts of incompleteness,
+contamination, and redshift errors on the galaxy distribution.
+
+We will base our first cosmological volume ELG catalogs on two very large simulations
+that are already available to us through collaborator Heitmann: 
+the Outer Rim simulation, covering
+a volume of $4.225\,{\rm Gpc}^3$ with a particle mass of
+$\sim 2\times 10^9 M_\odot$,
+and the Q Continuum simulation, covering a volume of $1.3\,{\rm Gpc}^3$
+with particle mass of $\sim 10^8 M_\odot$.
+The Outer Rim simulation was used to create the simulated ELG
+catalog for DESI.
+We will combine the halo populations from these simulations with the
+Galacticus SAM code \cite{Benson2010} to create clustered ELG catalogs,
+some in fixed-redshift cubes for methodology tests and some in light cones
+with realistic survey geometry and redshift evolution.
+Our most ambitious simulation efforts, later in the investigation
+period, will take full light-cone ELG catalogs, create pixel-level
+simulations that span the entire HLS area, and analyze these simulations
+with the proto-type pipeline to produce ``observed'' galaxy catalogs.
+We can then apply the full clustering measurement machinery 
+(including corrections for varying completeness) to these catalogs
+and apply our cosmological inference tools 
+to understand the impact of observational systematics on
+cosmology from the WFIRST GRS.
+As with the weak lensing investigation, we will investigate computational
+requirements beyond FY20 and techniques to reduce them. We will also make our
+simulations publicly available so that others can develop and
+test their own methods, with some of them released in the form of blind
+data challenges.
+
+\subsection{Systematics Testing and Mitigation (D8)}
+%================================================
+%\Auth{Shirley, Olivier}
+\label{sec:gal_syst}
+\input{subsection_clustering_sys}
+
+%\bi
+%\item Describe BOSS current techniques
+%\ei
+%Similarly to weak lensing, the galaxy clustering measurements are susceptible to
+%observational and theoretical systematic effects. SIT will ensure that these    
+%systematics in the key clustering measurements,such as the BAO and RSD in the   
+%two-point correlation function, are are sub-dominant and don't bias the         
+%recovered DE constraints. Below we briefly discuss the major systematic effects 
+%anticipated for the BAO and RSD and possible mitigating techniques and          
+%robustness tests.                                                               
+%                                                                                
+%{\it BAO systematics}: BAO measurements are expected to be relatively           
+%systematics free. Analytical calculations, verified by direct numerical         
+%simulations, have found the nonlinear evolution of the density field alters the 
+%BAO scale by less than $0.5\%$ at the present epoch (REF by Nikhil, Martin) ,   
+%and even less at the higher redshifts probed by WFIRST. A mis-calibrations in   
+%the acoustic scale would affect principally the determination  of the Hubble    
+%constant, not the dark energy constraints \citep{2004PhRvD..70j3523E}. Galaxy   
+%formation may also result in an additional shift in the BAO scale due to        
+%mismatched weighting of high and low density regions. Initial perturbative and  
+%numerical work also find these shifts to be small, with the most extreme shifts 
+%less than $0.5\%$ (Eisenstein 08, Tojeiro 14, Ross 15). The ``reconstruction''  
+%of the density field my reduce these effects below 0.1\% (Eisenstein, Seo,      
+%Spergel, Sirko 08, Padmanabhan et al. 12, Vargas-Magana, Ho 14). We will use    
+%mock catalogues with known input to check that this is indeed the case for      
+%WFIRST samples. We will propagate the BAO measurements all the way through the   
+%science analysis pipeline and verify that the resulting DE constraints are      
+%unbiased. WFIRST will have multiple galaxy types in the overlapping volume will 
+%give us an additional handle on testing the robustness of measurements, since   
+%the BAO signature is expected to be the same for all samples.                   
+%                                                                                
+%{\it RSD systematics}: The major systematic effect for the RSD measurements is  
+%the theoretical modeling of various nonlinear effects (nonlinearities in real  
+%to redshift space mapping, in growth of structure, and in galaxy biasing). It's 
+%also possible that the velocity bias will be significant for WFIRST samples.    
+%These effects cumulatively were found to be at $0.5\sigma$ (Samushia et al.     
+%2014, Alam, Ho et al. 2015) in BOSS data. Possible observational systematics    
+%include the effect of uncertainty in the determination of radial selection      
+%function $n(z)$ which will result in apparent reduction of the signal.  Loss of 
+%galaxies due to slitless-spectroscopy is also an anisotropic effect and may     
+%affect the RSD significantly. SIT will study this issues using high-fidelity    
+%simulations with known cosmology. Many of the systematics will be less severe   
+%for WFIRST compared to current surveys. For example, the non-linear effects in  
+%growth will be small due to high redshift of the sample. The $n(z)$ will        
+%similarly be much better determined due to high volume and number density.    
+%
+%
+
+

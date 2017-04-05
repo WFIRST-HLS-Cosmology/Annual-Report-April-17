@@ -1,0 +1,346 @@
+
+\subsection{Requirements}
+\label{sec:grs_requirements}
+\Auth{Yun, Lado}
+
+The most important task of the SIT in guiding
+development of the WFIRST HLS spectroscopy is to set and validate the
+requirements of the instrument, the data reduction software, and the survey.
+The GRS Lead Co-I Wang will work closely with PI Dor\'e and Co-Is
+Hirata and Teplitz on setting requirements for the GRS. To make fully
+informed decisions, the team requires high fidelity simulations of
+both
+instrument performance and the observable sky that the instrument will
+measure.  The team must also ensure that the analysis of these data by
+the reduction pipeline will be of sufficient quality to enable
+measurement with the high precision needed for cosmology.
+These simulation and pipeline activities will require the team to
+coordinate with the WSC.  Several members of our team (Wang, Teplitz,
+Capak, Helou) are located at the Infrared Processing and Analysis
+Center (IPAC), and work closely with the WSC.
+%\Oli{Mention George too if he stays in}%The WSC task plans are still under discussion, but will
+%most likely include development of a pixel-level simulator for imaging
+%and spectroscopy.  They will (certainly) include the construction of a
+%production-quality analysis pipeline to remove detector effects and
+%(probably) extract and measure emission-line spectra.
+To the extent practical, we will draw on tools created by the WSC and
+design our own software and simulations to be useful to them.
+We note that our work primarily demands the ability to quickly and flexibly
+simulate different configurations and analyze the results with different
+algorithms, while the WSC has the task of developing tools for the
+community and production
+ready pipelines that integrate with the full WFIRST data system.
+
+\subs{Deriving requirements.} As with WL (\S\ref{sec:wl_requirements}), we will focus first on GRS
+requirements that may drive hardware choices, i.e., those that may be
+demanding in terms of grism design, detector properties, stability and repeatability of pointing, or dedicated calibration hardware.
+We will include a prioritized list of effects to
+incorporate in grism simulations.  Over time, we will use our
+increasingly realistic network of simulations to evaluate the impact
+of requirements and possible trades from the pixel level through
+to cosmological inferences. The starting points for this
+process are the WFIRST ETC and survey planning software
+and the \CoLi\ forecasting tool.
+
+The maximum achievable statistical power of the GRS is determined
+mainly by the telescope aperture, throughput, detector area and pixel
+size, and allotted observing time.  However, the statistical power and
+uniformity of the GRS are further affected by numerous aspects of
+instrument performance and survey design, e.g., spectral resolution,
+detector read noise and persistence, dither and roll angle pattern,
+image quality, complexity of non-1$^{\rm st}$ order features,
+spatially varying thermal background due to the warm telescope,
+scattered light from bright stars, repeatability of the grism
+positioning, and accuracy of calibration of the wavelength-dependent
+PSF and distortion map.
+
+Non-uniformity of the survey, which is inevitable to some degree, can
+be corrected in clustering measurements by weighting galaxies to
+account for incompleteness.  However, large corrections typically come
+at a cost in statistical power, and imperfect knowledge of the
+non-uniformity leads to systematic errors in the inferred clustering.
+The other important source of observational systematics is
+contamination of the redshift catalog by artifacts or objects with
+incorrectly determined redshifts, and loss of objects from the catalog
+because of catastrophic redshift errors or uncertainties in the flux
+calibration.  We will define requirements such that (a) the
+statistical power of the GRS is close to the maximum allowed by the
+telescope aperture and detector area and (b) the impact of uncorrected
+observational systematics is small compared to the statistical
+errors. The expected precision of the galaxy power spectrum provides a
+useful guide to the statistical power of the GRS, but the full
+question of cosmological constraining power depends on the
+astrophysical modeling techniques used to interpret the measured
+clustering, as discussed in \S\ref{sec:cmethods} below.  By the end of our
+investigation we will have a complete set of tools to evaluate the
+impact of hardware or strategy trades, changes in requirements, or
+changes in astrophysical inputs on the expected cosmological return
+from the GRS.
+
+\subs{Simulations.} Our development of requirements and a prototype spectroscopic
+pipeline will rely critically on realistic simulations of the
+pixel-level grism images.  We will work closely with the WSC on
+developing these simulations for a variety of cases, ranging from
+simple widely separated sources to realistically clustered galaxy
+populations drawn from the cosmological simulations described in
+\S\ref{sec:cmethods}.  Our team has extensive experience in producing
+such simulations for the Hubble Space Telescope (HST) and Euclid.  Co-I Tepliz is one of the leaders
+of the HST Wide-Field Camera 3 (WFC3) IR Spectroscopic Parallel survey (WISPs), for which
+pixel simulations are vital in assessing completeness and other
+parameters \cite{Colbert13}; Co-I Wang (with Teplitz and Capak) is
+developing simulation techniques for the Euclid grism survey.
+Co-I Teplitz will lead our grism simulations for WFIRST.
+A critical astrophysical input for these simulations is the
+redshift-dependent luminosity function of H$\alpha$ and [OIII]
+emitters, which is currently uncertain at levels that have an
+important impact on WFIRST strategy and performance forecasts.  Co-Is
+Teplitz and Wang are part of an HST archival study to reprocess
+existing data from multiple HST projects to mitigate systematic
+uncertainties of the H$\alpha$ luminosity function (LF) measurement.  Through WISPs, Teplitz
+is also working to obtain significantly more HST data to improve the
+H$\alpha$ LF measurement.  In addition, realistic galaxy templates are
+vital to the forecasting of grism measurements, and we are working to
+improve both line diagnostics and prediction of line vs. continuum
+properties.
+
+\subs{Prototype pipeline.} We will build a prototype spectroscopic pipeline for the analysis of
+slitless spectroscopic data to produce a redshift catalog.  This is a
+complex, multi-step process.  Co-I Teplitz has extensive experience
+with HST slitless spectroscopy using the WFC3, HST Near Infrared Camera and
+Multi-Object Spectrometer (NICMOS), and HST Space Telescope Imaging
+Spectrograph (STIS) instruments \cite{Atek10,Shim09,Teplitz03}; he
+will lead our work on prototype pipelines for the GRS. We will take the basic steps
+implemented for WFC3 processing as the starting point for a prototype
+WFIRST pipeline. This pipeline must clean the grism images of contamination
+from detector artifacts and cosmic rays, register and combine images
+from separate dithers and roll angles, match objects in the dispersed
+and direct imaging exposures, extract wavelength- and flux-calibrated
+2D spectra, infer redshifts based on detected emission lines, and
+measure emission-line fluxes and other spectroscopic characteristics.
+The resulting catalogs are the input for the clustering analyses
+discussed further in \S\ref{sec:cmethods}.
+
+\subs{Analysis challenges.} Slitless spectroscopic analysis presents several important challenges.
+First, the pipeline must mitigate the confusion caused by overlapping
+spectra.  The standard solution (used by the HST data pipeline) is to
+subtract a model of neighboring objects from each source as it is
+extracted.  We will investigate the use of HST-like algorithms for
+WFIRST, as well as more sophisticated solutions that could produce
+better results, such as fitting the full pixel set for regions of the
+frame.  Model dependent solutions, with iterative fitting, are
+potentially promising, but biases would have to be carefully
+understood.  While the HLS obtains exposures at multiple roll angles,
+these may be greatly separated in time.  This could introduce new
+problems for variable sources, or in fields with foreground moving
+objects.  We will also develop methods to automate quality assessment
+and flagging of extracted spectra, as the sheer volume of WFIRST GRS
+will make human review of spectra (standard practice in current grism
+surveys) impossible.
+
+A second major challenge is the need to mitigate catastrophic redshift
+errors.  Such failures arise from the misidentification of redshifts
+(e.g., confusing [OIII] for H$\alpha$\ in low signal to noise (S/N) spectra) or
+false-positive line detections caused by noise peaks or unflagged
+cosmic rays.  Redshift fidelity can be greatly improved by using the
+photometric redshift estimates derived from the multi-band photometry as a prior
+in the redshift determination.  Co-I Capak is spearheading
+multidimensional analysis of galaxy color information for WFIRST
+photometric redshifts, and that work will be folded into the
+spectroscopic pipeline.
+% (\Oli{PETER SHOULD DOUBLE CHECK THE WORDING HERE}).
+
+\subs{Completeness maps.} Nearly as important as the redshift catalogs themselves is the production of
+completeness maps that characterize the spatially varying depth of the survey,
+the level of contamination, and regions that should be masked because the
+catalog is unreliable.  These completeness maps are used to weight galaxies in
+clustering analysis and/or to create random catalogs such that the local number
+density of points is proportional to the likelihood of successfully measuring a
+redshift of a galaxy if it were at that point.  Co-I Samushia is
+leading a similar effort in DESI and has previously worked on quantifying and removing
+systematic effects associated with inaccuracies in random catalogues
+\cite{Samushia2012}.
+Co-I Ho has also led the effort in creating the SDSS-BOSS LSS catalog and randoms \cite{Reid2015} and led the effort in removing observational effects in BOSS LSS catalog \cite{Ross2011}.
+Co-I Samushia will lead our work to develop tools for creating these completeness maps
+by a full forward-modeling method, where artificial sources are assigned random
+angular positions and redshifts, added to grism images, and pushed through the
+data pipeline.  Compared to existing large redshift surveys (from ground-based
+fiber spectroscopy), the WFIRST completeness map will have much more complex
+small scale structure because of the varying numbers of exposures at individual
+points on the sky and sensitivity variations across the focal plane.  Because of
+source confusion and sky background effects, the completeness and contamination
+will be a function of the local galaxy surface density.  We will develop
+strategies and tools for recording these large and complex completeness maps in
+formats that can be efficiently used to create random catalogs and weight
+galaxies for clustering analyses.  By the end of the investigation period, we
+will be able to create full pixel-level simulations from an input cosmological
+simulation (see \S\ref{sec:cmethods}), run them through our proto-type pipeline to create a
+redshift catalog and completeness map, and analyze the resulting artificial data
+set with our clustering analysis tools to compare to the idealized case that has
+the complete galaxy catalog of the cosmological simulation.
+
+\subs{Calibration strategies.}
+We will define the absolute and relative calibration requirements for the GRS, such as the angular scale and temporal stability.
+We will develop methods for calibrating the relative and absolute flux measurements along with wavelength calibration and redshift accuracy and completeness.
+For flux and wavelength calibration we will set requirements on the ground testing, in flight calibration sources, and calibration observations based on experience
+with other missions including Spitzer, HST, and Euclid.  Furthermore, we will investigate self calibration strategies based on optimizing dither patterns and exposure
+times for the science observations and the use of touch-stone fields that both calibrate and provide long-term trending of the data.  Both the primary and
+self calibration procedures will be tested with simulations specified by this SIT and conducted by the WSC.  Finally, we will use the large spectroscopic surveys
+necessary for the weak lensing photo-$z$ calibration to verify the calibration by directly testing the redshift accuracy and completeness estimates from the simulations.
+Co-Is Capak and
+Padmanabhan, both with extensive experience from similar work for
+Euclid and BOSS, will lead our calibration work.
+
+\subsection{Simulations}
+\label{sec:grs_simulations}
+\Auth{Shirley, Elena, Andrew, Alina, Alex, Yun}
+
+
+%===
+% \subsection{Requirements, Simulations, and Proto-type Pipelines}
+
+
+% The most important task of the SIT in guiding
+% development of the WFIRST HLS spectroscopy is to set and validate the
+% requirements of the instrument, the data reduction software, and the survey. To make fully informed
+% decisions, the team requires high fidelity simulations of both
+% instrument performance and the observable sky that the instrument will
+% measure.  The team must also assure that the analysis of these data by
+% the reduction pipeline will be of sufficient quality to enable
+% measurement with the high precision needed for cosmology.
+% These simulation and pipeline activities will require the team to work
+% closely with the WFIRST Science Centers (WSC).  Several members of our team
+% (Wang, Teplitz, Capak) are located at IPAC, and they work closely with
+% the WSC. %The WSC task plans are still under discussion, but will
+% %most likely include developmet of a pixel-level simulator for imaging
+% %and spectroscopy.  They will (certainly) include the construction of a
+% %production-quality analysis pipeline to remove detector effects and
+% %(probably) extract and measure emission-line spectra.
+% To the extent practical, we will draw on tools created by the WSC and
+% design our own software and simulations to be useful to the WSC.
+% We note that our work primarily demands the ability to quickly and flexibly
+% simulate different configurations and analyze the results with different
+% algorithms, while the WSC has the task of developing production
+% ready pipelines that integrate with the full WFIRST data system.
+
+% As with WL (\S\ref{sec:wl_requirements}), we will focus first on GRS requirements that may drive hardware choices, i.e., those that may
+% be demanding in terms of grism design, detector properties, stability
+% and repeatability of pointing, or dedicated calibration hardware.
+% Our initial assay will include a prioritized list of effects to incorporate in grism simulations.  Over time, we will use our
+% increasingly realistic network of simulations to evaluate the
+% impact of all requirements and possible trades from the pixel level through to cosmological inferences.  The starting points for this
+% investigation are the WFIRST ETC and survey planning software (both written by Co-I Hirata) and the CosmoLike forecasting tool
+% described in \S\ref{sec:wl_requirements}.
+
+% The maximum achievable statistical power of the GRS is determined
+% mainly by the telescope aperture, throughput, detector area and pixel size,
+% and allotted observing time.  However, the statistical power and uniformity of the GRS
+% are further affected by numerous aspects of instrument performance and survey design:
+% spectral resolution, detector read noise and persistence, dither and roll angle pattern,
+% blurring due to diffraction by the glass elements of the grism, spatially varying thermal
+% background due to the warm telescope, scattering due to bright
+% stars, repeatability of the grism positioning, and accuracy of
+% calibration of the wavelength-dependent PSF and distortion map.
+
+% Non-uniformity of the survey, which is inevitable to some degree,
+% can be corrected in clustering measurements by weighting galaxies
+% to account for incompleteness.  However, large corrections typically come
+% at a cost in statistical power, and imperfect knowledge of the
+% non-uniformity leads to systematic errors in the inferred clustering.
+% The other important source of observational systematics is
+% contamination of the redshift catalog by artifacts or objects with incorrectly
+% determined redshifts, and loss of objects from the catalog
+% because of catastrophic redshift errors.
+% We will define requirements such that (a) the statistical power of
+% the GRS is close to the maximum allowed by the telescope aperture
+% and detector area and (b) the impact of uncorrected observational
+% systematics is small compared to the statistical errors. The expected precision of
+% the galaxy power spectrum provides a useful guide to the statistical power of the GRS, but the full
+% question of cosmological constraining power depends on the
+% astrophysical modeling techniques used to interpret the measured
+% clustering, as discussed in \S 5.2 below.
+% By the end of our investigation we will have a complete set of
+% tools to evaluate the impact of hardware or strategy trades,
+% changes in requirements, or changes in astrophysical inputs
+% on the expected cosmological return from the GRS.
+
+% Our development of requirements and a proto-type spectroscopic pipeline
+% will rely critically on realistic simulations of the pixel-level
+% grism images.  We will work closely with the WSC on developing
+% these simulations for a variety of cases, ranging from simple
+% widely separated sources to realistically clustered galaxy populations
+% drawn from the cosmological simulations described in \S 5.2.
+% {\bf Can we say more here?  Do we have any experience producing
+% grism simulations for HST analysis?}
+% A critical astrophysical input for these simulations
+% is the redshift-dependent luminosity function of H$\alpha$ and [OIII]
+% emitters, which is currently uncertain at levels that have
+% an important impact on WFIRST strategy and performance forecasts.
+% Co-I's Teplitz and Wang are part of an HST archival study to reprocess existing
+% data from multiple HST projects to mitigate systematics uncertainties of the
+% H$\alpha$ LF measurement.  Teplitz is also a key member of the WISP team,
+% which aims to obtain significantly more HST data to improve the H$\alpha$ LF measurement.
+
+% We will build a prototype spectroscopic pipeline for the
+% analysis of slitless spectroscopic data to produce a redshift catalog.
+% This is a complex, multi-step process.
+% Co-I Teplitz has extensive experience with the HST grism data
+% pipeline (e.g., \cite{REFS}), and we will take the algorithms
+% implemented in this pipeline as the starting point for a
+% proto-type WFIRST pipeline. This pipeline must clean the grism images for contamination from
+% detector artifacts and cosmic rays, register and combine images from
+% separate dithers and roll angles, extract wavelength- and flux-calibrated
+% 2D spectra, match these spectra
+% to individual objects from the photometric imaging data,
+% infer redshifts based on detected emission lines, and measure
+% emission-line fluxes and other spectroscopic characteristics.
+% The resulting catalogs are the input for the clustering analyses
+% discussed further in \S 5.2.
+
+% The biggest challenge for slitless spectroscopic analysis is
+% eliminating confusion from overlapping spectra.
+% The standard solution (used by the HST data pipeline) is to subtract a
+% model of neighboring objects from each source as it is extracted.
+% We will investigate the use of HST-like algorithms for WFIRST,
+% as well as more sophisticated solutions that could produce better results,
+% such as fitting the full pixel set for regions of the frame.
+% Model dependent solutions, with iterative fitting, are potentially
+% promising, but biases would have to be carefully understood.
+% While the HLS obtains exposures at multiple roll angles, these may
+% be greatly separated in time.  This could introduce new problems for variable sources, or in fields with foreground moving objects.
+% We will also develop methods to automate quality assessment
+% and flagging of extracted spectra, as the sheer volume of WFIRST GRS will make human review of spectra
+% (standard practice in current grism surveys) impossible.
+
+% Another challenge is the misidentification of noise peaks as emission lines, which leads to
+% catastrophic redshift errors. This can be mitigated by using the photometric redshift derived from
+% the multi-band photometry as a prior in the redshift determination.
+
+% Nearly as important as the redshift catalogs themselves is the
+% production of completeness maps that characterize the spatially
+% varying depth of the survey, the level of contamination, and
+% regions that should be masked because the catalog is unreliable.
+% These completeness maps are used to weight galaxies in clustering
+% analysis and/or to create random catalogs such that the local number
+% density of points is proportional to the likelihood of successfully measuring a redshift of a galaxy if it were at
+% that point.  We will develop tools for creating these completeness
+% maps by a full forward-modeling method, where artificial sources
+% are assigned random angular positions and redshifts, added to
+% grism images, and pushed through the data pipeline.
+% Compared to existing large redshift surveys (from ground-based
+% fiber spectroscopy), the WFIRST completeness map will have much
+% more complex small scale structure because of the varying numbers
+% of exposures at individual points on the sky and sensitivity
+% variations across the focal plane.
+% Because of source confusion and sky background effects,
+% the completeness and contamination will be a function of
+% the local galaxy surface density.
+% We will develop strategies and tools for recording these large and
+% complex completeness maps in formats that can be efficiently
+% used to create random catalogs and weight galaxies for clustering
+% analyses.  By the end of the investigation period, we will be able
+% to create full pixel-level simulations from an input cosmological
+% simulation (see \S 5.2), run them through
+% our proto-type pipeline to create a redshift catalog and completeness
+% map, and analyze the resulting artificial data set with our
+% clustering analysis tools to compare to the idealized case
+% that has the complete galaxy catalog of the cosmological simulation.

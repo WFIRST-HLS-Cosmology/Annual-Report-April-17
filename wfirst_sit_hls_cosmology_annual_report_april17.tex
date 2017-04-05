@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+%% Font size is adjusted after \begin{document} below
+\usepackage[]{epsfig,graphics,amssymb}
+\usepackage{wrapfig,color}
+\usepackage{boxedminipage}
+\usepackage{fix-cm}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt
+%minus 2pt}
+%=== Fix space before subsection
+%=== DO NOT TOUCH
+%\titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+%\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+%%
+\usepackage[pdftex,
+        colorlinks=true,
+        urlcolor=blue,       % \href{...}{...} external (URL)
+        filecolor=blue,     % \href{...} local file
+%        linkcolor=red,       % \ref{...} and \pageref{...}
+        linkcolor=blue,       % \ref{...} and \pageref{...}
+        citecolor=blue,
+       pdftitle={Papers by AUTHOR},
+        pdfauthor={Your Name},
+        pdfsubject={Just a test},
+        pdfkeywords={test testing testable},
+        pagebackref,
+        pdfpagemode=None,
+         bookmarksopen=true]{hyperref}
+%%
+%% === Do not touch this
+%% === Fine tuned to be compliant with the 1-inch on each side NASA
+%% === prop. reqt
+\hoffset = 0. in%-0.35in
+\voffset = 0. in%-0.55in
+\textwidth = 6.5 in%7.3 in
+\textheight = 9. in%9.0 in
+\marginparsep = 0.0 in
+\marginparwidth = 0.0 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = -0.7 in
+\headheight = 0.3 in%0.0 in
+\headsep = 0.4 in
+\parskip = 0.2in
+\parindent = 0.2in
+\footskip = 0.6in
+% ===
+% ===
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{longtable}
+%
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Annual Report April 2017}
+\fancyhead[R]{Cosmology with the WFIRST High Latitude Survey}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\footrulewidth}{0.1pt}
+%
+%ROSES 2010	<PROGRAM NAME>%
+%NRA NNH10ZDA001N	<YOUR PROPOSAL NAME>
+\newcommand  \beq    {\begin{equation}}
+\newcommand  \cm     {{\rm \,cm}}
+\newcommand  \eeq    {\end{equation}}
+\newcommand  \gtsim  {\lower.5ex\hbox{$\; \buildrel > \over \sim \;$}}
+\newcommand  \ltsim  {\lower.5ex\hbox{$\; \buildrel < \over \sim \;$}}
+\newcommand{\lap}{$\stackrel{<}{_\sim}$}
+\newcommand{\gap}{$\stackrel{>}{_\sim}$}
+
+% Comment
+\newcommand{\comment}[1]{}
+
+\newcommand{\fnl}{$f_{{\rm NL}}^{} $ }
+\newcommand{\gnl}{$g_{{\rm NL}}^{} $ }
+\newcommand{\taunl}{$\tau_{{\rm NL}}^{} $ }
+\newcommand{\lya}{Ly$\alpha$ }
+\newcommand{\etal}{\emph{et al.}}
+\def\ds{\displaystyle}
+\def\Sun{\odot}
+\def\sun{\hbox{$\odot$}}
+\def\hmsun{{\it h}$^{-1}$\,{\rm M$_\Sun$} }
+\def\hmpcinv{{\it h}\,{\rm Mpc}$^{-1}$ }
+\def\mhmpcinv{\,h\,{\rm Mpc}^{-1}}
+\def\hmpc{{\it h}$^{-1}$\,{\rm Mpc} }
+\def\mhmpc{\,h^{-1}\,{\rm Mpc}}
+\def\eg{{\it e.g.~}}
+\def\etal{{\it et al.~}}
+\def\ie{{\it i.e.~}}
+\def\ben{\begin{enumerate}}
+\def\een{\end{enumerate}}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\vecx{{\bf x}}
+\def\veck{{\bf k}}
+\def\photoz{photo-$z$}
+\def\deg{\,{\rm deg}}
+\def\erg{\,{\rm erg}}
+\def\cm{\,{\rm cm}}
+\def\sec{\,{\rm s}}
+\def\CoLi{\texttt{CosmoLike}}
+
+\newcommand{\Oli}[1]{\textcolor{red}{[{\bf Oli}: #1]}}
+\newcommand{\subs}[1]{\textbf{\textit{#1}}} %subsection start
+\newcommand{\ue}[1]{\underline{\emph{#1}}}
+\newcommand{\Auth}[1]{\textcolor{red}{[{\bf Authors}: #1]}}
+
+%\newfont{\swell}{cmbx12 scaled 1000}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%% ====
+%% ===Adjust fontsize here
+\fontsize{11.}{12.85}\selectfont
+%% ====
+%% ====
+
+\includepdf{Plots/WFIRSTProposalCover.jpg}
+\cleardoublepage
+
+\pagenumbering{roman}
+\input{bib_macros}
+
+\makeatletter
+\def\tableofcontents{%
+\newpage
+\centerline{\large\scshape Table of Contents}
+\vspace*{0.2in}
+\@mkboth{CONTENTS}{CONTENTS}
+\setlength{\parskip}{1pt}
+\@starttoc{toc}
+}
+\makeatother
+
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+
+\setlength{\parskip}{1pt}
+\thispagestyle{empty}
+
+%\vspace*{-1.75cm}
+\centerline{\Large \emph{Cosmology with the WFIRST High Latitude Survey}}
+\vspace*{1.cm}
+
+%=======================================
+%\section{Scientific/Technical/Management Section}
+%=======================================
+\pagenumbering{arabic}
+
+%========================================================
+\section{Executive Summary \Oli{Olivier, 2 pages}}
+%========================================================
+\label{sec:executive_summary}
+\input{section_executive-summary.tex}
+
+%\vspace{-0.3cm}
+
+%\vspace{-0.15in}
+%===============
+\section{Proposed Deliverables \Oli{Olivier, 4 pages}}
+%===============
+\label{sec:deliverables}
+\input{section_deliverables.tex}
+
+%\vspace{-0.15in}
+%%================================================
+%\section{Requirement Philosophy (D1)}
+%================================================
+%\label{sec:reqt_philosophy}
+%\input{section_rqt_philosophy.tex}
+
+%\vspace{-0.15in}
+%================================================
+\section{Weak Lensing and Cluster Growth Investigation \Oli{Chris,
+    Rachel M, Mike, David W., 15 pages}}
+%================================================
+\label{sec:wl_gal-clusters}
+\input{section_wl_gal-clusters.tex}
+
+%\vspace{-0.15in}
+%================================================
+\section{Galaxy Redshift Survey Investigation \Oli{Yun, Lado, Shirley et al., 15 pages}}
+%================================================
+\label{sec:gc}
+\input{section_galaxy_clustering.tex}
+
+%================================================
+\section{Cosmological Forecasts \Oli{Tim, Elisabeth, Olivier, 10 pages}}
+%================================================
+\label{sec:forecast}
+\input{section_forecast.tex}
+
+%\vspace{-0.15in}
+%================================================
+\section{Operations Model for the HLS and Evaluation of Trades \Oli{Chris, 5 pages}}
+%================================================
+\label{sec:operation}
+\input{section_operations_model.tex}
+
+%\vspace{-0.15in}
+%======================================================
+\section{Community Engagement and External Data-sets (D11, D12) \Oli{Olivier, 5 pages}}
+%======================================================
+\label{sec:engagement}
+\input{section_community_engagement.tex}
+
+%\vspace{-0.15in}
+%======================================================
+\section{Future Workplan \Oli{Olivier, all, 5 pages}}
+%======================================================
+\label{sec:workplan}
+\input{section_workplan.tex}
+
+
+\clearpage
+\newpage
+
+%===============
+%\section{References}
+%===============
+
+%===============
+\section{List of Acronyms and Abbreviations and References}
+%===============
+%\addcontentsline{toc}{section}{References and List of Acronyms and Abbreviations}
+\label{sec:acronyms}
+\input{acronyms.tex}
+
+\clearpage
+\newpage
+
+%\addcontentsline{toc}{section}{References}
+
+We highlighted in bold the team members in the following bibliography.
+
+\bibliographystyle{abbrv}
+\bibliography{refs}
+
+\clearpage
+\newpage
+
+\end{document}
