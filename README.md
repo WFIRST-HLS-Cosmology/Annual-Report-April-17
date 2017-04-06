@@ -1,7 +1,7 @@
 This repository hosts the .tex file that will be used to produce our annual report.
 I use the same LaTeX templates as our proposal. We will update them as we progress.
 
-The report will be published on the project website, our our website and we will submit it to the arXiv.
+The report will be published on the project website, on our website and posted on the arXiv.
 
 I reused the cover we did not use for the proposal and we will update it wuth the new team members.
 
