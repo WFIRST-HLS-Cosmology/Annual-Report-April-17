@@ -170,6 +170,62 @@ requirements are captured in the flow-down.
 %with Project so that proto-types we develop can be ingested and that
 %we take advantage of work being done by the project.
 
+\textbf{Below is some new text from Rachel M.  It needs to be put in the right place.  If more
+information or detail is needed, please let me know.}
+
+\subsubsection{Polarization effects}
+During early 2017, work was carried out to assess the approximate level of an effect that could
+cause weak lensing systematics, but that had never been previously considered by the weak lensing
+community.  This effect is polarization-dependent quantum efficiency (due to e.g.\ different
+reflectivity of various coatings for different polarizations of light).  Since the light from
+edge-on disk galaxies typically has some low level polarization perpendicular to the disk, any
+polarization-dependence of the QE could result in a preferential selection of such galaxies based on
+their orientation in the focal plane.  This would violate the baseline assumption in a weak lensing
+analysis, which is that all coherent galaxy alignments are due to gravitational lensing.
+
+A student at CMU, Brent Tan, worked with Rachel Mandelbaum and Chris Hirata on a simple toy model
+for this effect.  The toy model had two parameters: the fraction of the disk galaxy light that is
+polarized, and the relative attenuation of that perpendicular polarization component (both numbers
+in the range $[0,1]$).  For each point in that parameter space, the coherent shear due to selection
+bias was calculated; see results in Figure~\ref{fig:polarization}.  Finally, the results were
+modified to account for the fact that not all disk galaxies are viewed edge-on and that not all
+galaxies are disks, giving a net coherent shear due to this selection bias of $\sim 3\times
+10^{-4}$.  The results are still quite uncertain because our fiducial values for the disk
+polarization fraction were based on observations of nearby galaxies, not $z\sim 1$ disks.  However,
+this is large enough to be relevant for WFIRST, so this systematic needs to be evaluated more
+carefully and requirements placed in future.  A publication on this topic will be prepared during
+summer 2017.
+\begin{figure}
+\begin{center}
+\includegraphics[width=5in]{Plots/polarization-selection.pdf}
+\end{center}
+\caption{\label{fig:polarization}
+The average shear due to weak lensing selection biases due to polarization-dependent quantum
+efficiency, as a function of the fraction of polarized light from edge-on disks (horizontal axis)
+and the fractional attenuation of the perpendicular polarization (vertical axis).  The dot at
+$(0.05,0.9)$ is our fiducial point in parameter space, and has $\langle e\rangle \approx 0.001$.
+}
+\end{figure}
+
+Another possible polarization-related systematic is a polarization-dependent PSF.  That will be the
+subject of future work.
+
+\subsubsection{Interpixel capacitance requirements}
+
+The WFIRST detectors will suffer from electrical crosstalk between the pixels, unlike the optical
+ detectors that are based on CCDs. This effect, known as the \emph{interpixel capacitance} (IPC),
+ appears as a systematic effect in the weak lensing shear measurements and causes a 
+ bias in the measurements if not properly taken into account. The effect of IPC on the point-spread
+ function (PSF) was already studied by members of our SIT in \cite{Kannawadi2016}, and requirements were placed
+ on the level of uncertainty in the IPC based on how that uncertainty affects the PSF. 
+
+More recently, in late 2016, members of our SIT (Mandelbaum and student Kannawadi) carried out and
+analyzed simulations to determine whether additional requirements on IPC are needed to ensure that
+weak lensing shear estimation is not biased beyond our tolerances.  To calibrate the shear
+multiplicative bias to an accuracy of $2\times 10^{-3}$, we find that the requirements on the IPC
+placed by the PSF requirements are sufficient, so no new requirement is needed.  A paper on this
+result is in preparation.
+
 
 \subsection{Photometric Calibration}
 \label{sec:wl_calibration}
