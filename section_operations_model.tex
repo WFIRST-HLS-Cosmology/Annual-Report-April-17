@@ -1,3 +1,78 @@
+
+% C.H. Re-write of this section!
+
+Co-I Hirata is leading the development of the HLS observing plan, extending his previous tools used for the SDT. These tools incorporate observing constraints in the chosen orbit, an exposure-by-exposure observing sequence optimized with detailed model of overheads, and tiling/coverage maps including field distortions and curved sky effects. These tools treat both imaging and spectroscopy with unified functions and scripts, and are well suited to joint survey optimization when both hardware parameters (e.g., reaction wheel orientations) and the observing program (e.g., depth vs.\ area) are considered. This effort is coordinated with the scheduling and Design Reference Mission Working Groups. We are both providing an example detailed plan for the HLS to the DRM working group, and cross-checking the Project's spreadsheet-level survey calculators against our simulations. The HLS observing plan is also being transferred to the Calibration Working Group, since the HLS observing strategy feeds directly into the issue of self-calibration.
+
+\subsection{Snapshot of the HLS observing plan}
+\label{ss:snapshot}
+
+Our team provided a ``snapshot'' of the HLS observing sequence to the full FSWG on April 19, 2017. This is by no means a final or even optimized version of the HLS, but is a work in progress as a result of trades in Phase A, as well as the recent decision to reduce the primary mission to 5 years.
+
+Major updates relative to the SDT plan have included:
+\begin{list}{$\bullet$}{}
+\item A Lissajous orbit around L2. This is presently a place-holder, as the exact orbit has not yet been selected (and would depend on the launch date), but it gives a possible sampling of Sun, Earth, and Moon constraints.
+\item A rotated WFI (by 90$^\circ$ relative to the Cycle 6 design).
+\item Recommended slew and settle times provided by the Project.
+\item Faster detector readout (200 kHz instead of 100 kHz).
+\item Changes to the exposure time and dithering strategy to accommodate a 5-year baseline mission (as is to be presented to the WIETR). Specifically, we reduced exposure time to 140.2 s (imaging) and 297.0 s (spectroscopy); and changed the dither pattern in J band. (We are working on checking this strategy with image simulations, if it causes a problem we may have to revert.)
+\item Implemented bright star avoidance (observations are skipped if there is an $H_{\rm AB}\le 3$ star within 6 arcmin of any SCA).
+\end{list}
+Known current issues with the snapshot plan include:
+\begin{list}{$\bullet$}{}
+\item
+The SN and coronagraph programs in the code haven't been updated since the SDT (except to cut the mission time by a factor of 5/6), even though they will likely change significantly. As in the SDT report, the coronagraph has blocks of time reserved. This will evolve in order to align the HLS plan with the other groups, as well as any changes to the scheduling architecture that we are directed to implement (e.g.\ block scheduling).
+\item
+We have begun putting the deep fields into this document, but right now they are (i) not fully specified, (ii) the tiling is not optimized, and (iii) some roll angles don't align with WFIRST constraints (hence didn't schedule). These issues will be solved in the next snapshot.
+\end{list}
+{\bfseries No policy decisions should be inferred from this sequence}, as these will come from a higher level.
+
+The survey bounding box is 2097 deg$^2$. The area covered with $\ge 3$ exposures in every filter and the grism, including edge effects and holes around the bright stars, is 1947 deg$^2$. The time required for this version of the HLS is 394 days (imaging) + 215 days (spectroscopy).
+
+The scheduling tools output a set of charts, included in this package:
+\begin{list}{$\bullet$}{}
+\item
+Fig.~\ref{fig:observing_chart}: Graphical display of the 5-year observing sequence.
+\item
+Fig.~\ref{fig:hls_depth}: HLS distribution of number of exposures in each filter.
+\item
+Fig.~\ref{fig:hls_dust}: HLS distribution of dust column [$E(B-V)$ in magnitudes]. Cosmological forecasts are based on a dust column of $E(B-V)=0.035$ mag.
+\item
+Fig.~\ref{fig:hls_bright}: HLS distribution of zodiacal light (normalized to 1 at the ecliptic poles averaged over the year). Cosmological forecasts are based on a zodiacal brightness of 1.60 (except for 1.75 in the F184 filter, which is the least sensitive to zodiacal light and therefore was scheduled at inferior times of year).
+\item
+Fig.~\ref{fig:footprint}: The footprint of the HLS on the sky. This is an area of ongoing optimization, as we consider the needs of the deep fields, overlap with LSST, and the fraction of the survey footprint accessible from Northern observatories such as Subaru.
+\end{list}
+
+\begin{figure}
+\includegraphics[height=8in]{Plots/observing_chart.pdf}
+\caption{\label{fig:observing_chart}Observing timeline. Each row represents 7 days of observations, and is color-coded according to the observing program. Note the microlensing seasons (magenta), supernova survey (blue: $\sim$5-day cadence), and HLS (red+yellow). Blank areas are not allocated. Labels on the left-hand side are shown every 16 weeks.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=5in]{Plots/hlsdepth.pdf}
+\caption{\label{fig:hls_depth}The cumulative distribution of HLS exposure depths above a certain area. The pile-up with many exposures at small area is the result of the deep fields.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=5in]{Plots/hlsdust.pdf}
+\caption{\label{fig:hls_dust}The cumulative distribution of Galactic dust in the HLS.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=5in]{Plots/hlsbright.pdf}
+\caption{\label{fig:hls_bright}The cumulative distribution of zodiacal light in the HLS.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=6in]{Plots/sky-equ.pdf}
+\includegraphics[width=6in]{Plots/sky-gal.pdf}
+\caption{\label{fig:footprint}The footprint of the HLS (red) in Equatorial (top) and Galactic (bottom) coordinates.}
+\end{figure}
+
+\subsection{Further optimizations}
+
+Our team plans to study further optimizations to the HLS -- including more drastic changes such as multi-tiered surveys, or a significant re-balancing of area vs.\ depth -- in Phase B. However, in preparation for SRR/MDR, our main focus has been on demonstrating at least one survey configuration that meets requirements, and the construction of tools that link the observing strategy to calibration studies (\S\ref{sec:wl_calibration}) and image simulations (\S\ref{?}).
+
+\comment{
 %
 % ** SECTION 7 **
 % 
@@ -242,3 +317,5 @@ empirical data on the galaxy population, progress in modeling techniques,
 the expected contributions of other projects like DESI, LSST, and Euclid,
 and changes in the experimental dark energy landscape that highlight
 the importance of particular classes of measurements.
+
+}
