@@ -246,7 +246,34 @@ Here ``$f_{\rm corr}$'' denotes the factor by which we plan to correct biases in
 
 \subsubsection{Calibration plan}
 
-\textcolor{red}{Write this part.}
+Our SIT has contributed extensively to the WFIRST WFI Calibration Plan. This includes extensive quantitative analysis of proposed calibration techniques, as detailed in the appendix to the plan. Some highlights follow.
+
+The requirement on knowledge of the dark current and the calibration approaches are fully defined, based on analysis done during the dark filter trade (October 2016 -- February 2017).
+
+Weak lensing was found to place demanding requirements on measurement of the count rate-dependent non-linearity (CRNL). The weak lensing program is sensitive to CRNL because it enhances the bright center of a PSF star relative to its wings, thereby making the star appear slightly smaller, but does not have a similar effect on the faint galaxies used for shape measurement. The PSF second moment is biased by a factor of $1-\alpha$ (where $\alpha$ is the CRNL exponent), and has a top-line systematic error budget of $7.2\times 10^{-4}$. This means that if $\alpha$ is measured to $\pm 3\times 10^{-4}$ (the requirement from the supernova SITs), then CRNL consumes 17\%\ of the PSF size error budget, in an RSS sense. Given that CRNL is a pernicious bias for two of the dark energy probes, we recommended a multi-faceted approach to CRNL calibration, including a lamp-on/lamp-off capability for WFIRST (this was not available on WFC3-IR).
+
+Our team has revisited the wavefront stability requirements for weak lensing, using a set of codes and scripts on the team's GitHub site. This begins with a Fisher matrix analysis of the uncertainties in the shear power spectrum, and our top-line requirement that the systematic errors be equivalent to the statistical errors even if the survey is extended to 10,000 deg$^2$ (i.e.\ in an RSS sense, the systematic errors should be 20\%\ of the statistical errors in the nominal 2,000 deg$^2$ survey). Requirements are assessed using the significance, defined by
+\begin{equation}
+Z = \sqrt{\Delta{\bf C}\cdot{\bf\Sigma}^{-1}\Delta{\bf C}},
+\label{eq:alpha}
+\end{equation}
+which is the number of sigmas at which one could distinguish the correct power spectrum from the power spectrum containing a systematic error. We built sub-allocations for multiplicative (shear calibration) errors, and for additive (spurious shear) errors in each angular bin. An early discovery was that this process depends on the redshift dependence of the shear error: some redshift dependences are ``worse'' than others by the $Z$-metric. The worst possibility is {\em not} for the error to be redshift-independent, but rather for it to change sign, as this can mimic a change in redshift evolution of the growth of structure.
+
+In our current formalism, for each angular template, we introduce a limiting amplitude $A_0^{\rm flat}(\alpha)$, defined to be the RMS spurious shear per component $A_0$ at which we would saturate the requirement on $Z(\alpha)$ for angular bin $\alpha$ in the case of a redshift-independent systematic $w_i=1\,\forall i$ (here $\alpha$ denotes an angular bin and $i$ a redshift bin). That is, if the additive systematics did not depend on redshift, we could tolerate a total additive systematic shear of $A_0^{\rm flat}$ (RMS per component) in band $\alpha$. We also introduce a scaling factor $S[{\bf w},\alpha]$ for a systematic error
+\begin{equation}
+S[{\bf w},\alpha] = \frac{Z(\alpha) \,{\rm for\,this\,}w_i}{Z(\alpha)\,{\rm for\,all\,}w_i=1}
+\end{equation}
+that depends on the redshift dependence $w_i$. An additive systematic error that is independent of redshift will have $S=1$. A systematic that is ``made worse'' by its redshift dependence will have $S>1$, and a systematic that is ``made less serious'' by its redshift dependence will have $S<1$. The requirement that the (linear) sum of $Z$s not exceed $Z(\alpha)$ thus translates into
+\begin{equation}
+\sum_{\rm systematics} [A(\alpha)]^2\times S[{\bf w},\alpha] \le [A_0^{\rm flat}(\alpha)]^2,
+\label{eq:A-S-sum}
+\end{equation}
+where $A(\alpha)$ is the RMS additive shear per component due to that systematic. We take the ``reference'' additive shear to be the additive shear in the most contaminated redshift slice; in this case, $w_i=1$ for that slice, and $|w_i|\le 1$ for the others. Under such
+circumstances, we can determine a {\em worst-case scaling factor} $S_{\rm max,\pm}(\alpha)$, which is the largest value of $S[{\bf
+w},\alpha]$ for any weights satisfying the above inequality. We may also determine a worst-case scaling factor $S_{\rm max,+}(\alpha)$
+conditioned on $0\le w_i\le 1$, i.e.\ for sources of additive shear that have the same sign in all redshift bins. In most cases, however, something is known about the redshift dependence of the systematic error (e.g.\ for PSF errors the error scales with the size of the galaxy, and hence has a redshift dependence tied to the measured redshift evolution of galaxy sizes). In these cases, we use the correct redshift weighting factor $S$. This approach has been critical in order to set stability requirements that are consistent with the Project's integrated modeling results.
+
+\textcolor{red}{Finish this part.}
 
 \subsubsection{Detector characterization}
 
