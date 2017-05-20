@@ -340,7 +340,16 @@ Despite the intrinsic stability assumed, in which each SCA can have its response
 
 \subsubsection{Detector characterization}
 
-\textcolor{red}{Write this part.}
+The WFIRST dark energy analyses will place enormous demands on our understanding of the detectors. Some aspects of this problem can be anticipated in advance -- for example, we know that effects such as inter-pixel capacitance, count-rate-dependent non-linearity, etc.\ will need to be carefully characterized, and we are working as part of the Calibration Working Group to build these measurements into the mission. However, with systematic error budgets at the level of a few$\times 10^{-4}$, it is likely that WFIRST analyses will turn up new effects that were not apparent in past missions. Therefore a key task for our SIT is to analyze the data from development detectors and identify these new effects early enough to inform the calibration plan.
+
+In ground-based weak lensing projects using thick CCDs (e.g.\ DES), one of the key detector issues has been the {\em brighter-fatter effect} (BFE). This is an electrostatic effect in which as a pixel fills up with collected charge, it changes the electric field geometry and new charges generated are more likely to be deflected into neighboring pixels. This has the effect of making bright stars appear larger than faint stars, as the repulsion effect is non-linear and increases with signal level. The field geometry is very different in a NIR detector, but a brighter-fatter effect is still possible.
+
+We have searched for the brighter-fatter effect in the H4RG detector arrays using the flat fields for two devices H4RG-17940 and H4RG-18237, provided to us by the DCL. The BFE imprints a signature in the auto-correlation function of a flat field; using the correlations in multiple non-destructive reads in a flat field, one can separate linear IPC from the BFE. Preliminary brighter-fatter effect results for H4RG-17940 are shown in Figure~\ref{fig:kernel}. The BFE coefficients are $a'_{\Delta i,\Delta j}$, which is the fractional change in effective area of pixel $(i,j)$ when an electron is placed in pixel $(i+\Delta i, j+\Delta j)$; they have units of parts per million per electron (ppm/e). The flat auto-correlations are sensitive to both the brighter-fatter effect and non-linear inter-pixel capacitance (NL-IPC); we are currently working on distinguishing the two effects.
+
+\begin{figure}
+\includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
+\caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta i,\Delta j}$ (left panel) and IPC-corrected coefficients $a'_{\Delta i,\Delta j}$ (right panel), for H4RG-17940. Note that the IPC-corrected coefficents assume that the IPC is linear, i.e.\ the non-overlapping correlations are ascribable entirely to the BFE and not NL-IPC. The $1\sigma$ uncertainty in each pixel is 0.07 ppm/e.}
+\end{figure}
 
 \comment{
 Achieving a uniform photometric calibration of the survey is an essential requirement
