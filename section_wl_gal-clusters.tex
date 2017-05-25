@@ -170,12 +170,188 @@ requirements are captured in the flow-down.
 %with Project so that proto-types we develop can be ingested and that
 %we take advantage of work being done by the project.
 
+\textbf{Below is some new text from Rachel M.  It needs to be put in the right place.  If more
+information or detail is needed, please let me know.}
+
+\subsubsection{Polarization effects}
+During early 2017, work was carried out to assess the approximate level of an effect that could
+cause weak lensing systematics, but that had never been previously considered by the weak lensing
+community.  This effect is polarization-dependent quantum efficiency (due to e.g.\ different
+reflectivity of various coatings for different polarizations of light).  Since the light from
+edge-on disk galaxies typically has some low level polarization perpendicular to the disk, any
+polarization-dependence of the QE could result in a preferential selection of such galaxies based on
+their orientation in the focal plane.  This would violate the baseline assumption in a weak lensing
+analysis, which is that all coherent galaxy alignments are due to gravitational lensing.
+
+A student at CMU, Brent Tan, worked with Rachel Mandelbaum and Chris Hirata on a simple toy model
+for this effect.  The toy model had two parameters: the fraction of the disk galaxy light that is
+polarized, and the relative attenuation of that perpendicular polarization component (both numbers
+in the range $[0,1]$).  For each point in that parameter space, the coherent shear due to selection
+bias was calculated; see results in Figure~\ref{fig:polarization}.  Finally, the results were
+modified to account for the fact that not all disk galaxies are viewed edge-on and that not all
+galaxies are disks, giving a net coherent shear due to this selection bias of $\sim 3\times
+10^{-4}$.  The results are still quite uncertain because our fiducial values for the disk
+polarization fraction were based on observations of nearby galaxies, not $z\sim 1$ disks.  However,
+this is large enough to be relevant for WFIRST, so this systematic needs to be evaluated more
+carefully and requirements placed in future.  A publication on this topic will be prepared during
+summer 2017.
+\begin{figure}
+\begin{center}
+\includegraphics[width=5in]{Plots/polarization-selection.pdf}
+\end{center}
+\caption{\label{fig:polarization}
+The average shear due to weak lensing selection biases due to polarization-dependent quantum
+efficiency, as a function of the fraction of polarized light from edge-on disks (horizontal axis)
+and the fractional attenuation of the perpendicular polarization (vertical axis).  The dot at
+$(0.05,0.9)$ is our fiducial point in parameter space, and has $\langle e\rangle \approx 0.001$.
+}
+\end{figure}
+
+Another possible polarization-related systematic is a polarization-dependent PSF.  That will be the
+subject of future work.
+
+\subsubsection{Interpixel capacitance requirements}
+
+The WFIRST detectors will suffer from electrical crosstalk between the pixels, unlike the optical
+ detectors that are based on CCDs. This effect, known as the \emph{interpixel capacitance} (IPC),
+ appears as a systematic effect in the weak lensing shear measurements and causes a 
+ bias in the measurements if not properly taken into account. The effect of IPC on the point-spread
+ function (PSF) was already studied by members of our SIT in \cite{Kannawadi2016}, and requirements were placed
+ on the level of uncertainty in the IPC based on how that uncertainty affects the PSF. 
+
+More recently, in late 2016, members of our SIT (Mandelbaum and student Kannawadi) carried out and
+analyzed simulations to determine whether additional requirements on IPC are needed to ensure that
+weak lensing shear estimation is not biased beyond our tolerances.  To calibrate the shear
+multiplicative bias to an accuracy of $2\times 10^{-3}$, we find that the requirements on the IPC
+placed by the PSF requirements are sufficient, so no new requirement is needed.  A paper on this
+result is in preparation.
+
 
 \subsection{Photometric Calibration}
 \label{sec:wl_calibration}
 %================================================
 \Auth{Nikhil, Chris}
 
+Our SIT has been instrumental in the Calibration Working Group, since precision cosmology measurements depend sensitively on calibration; subtle effects that might not be noticeable in other areas of astrophysics can become important when trying to measure galaxy shapes to $<0.1$\%. Activities over the past year have included:
+\begin{list}{$\bullet$}{}
+\item
+{\em Dark filter:} Co-I's Wang, Capak, and Hirata participated extensively in the analyses and discussions that led the FSWG to recommend a dark position in the element wheel on WFIRST.
+\item
+{\em Calibration plan}: Our SIT has contributed extensively to the WFIRST WFI Calibration Plan, including detailed quantitative assessments of calibration approaches and their ability to meet requirements. In some areas, such as dark current and the point spread function, our contributions to the calibration plan are now traceable all the way from science measurements (WL shear) down to the specific calibration approaches and the hardware stability requirements needed for them to work. A major area of work leading up to SRR/MDR is to complete this flow-down for the other areas of calibration.
+\item
+{\em Detector characterization}: We have made use of the H4RG data provided by the Detector Characterization Laboratory to measure some of the non-linear effects relevant to weak lensing in real H4RG detectors. This is an important practice step toward building calibration pipelines that will support WL science.
+\end{list}
+In what follows, we provide some highlights from our calibration activities. The list is not exhaustive.
+
+\subsubsection{Dark filter}
+
+In the summer and fall of 2016, the FSWG was tasked with determining whether a dark filter was needed for WFIRST calibration. This required the FSWG to enumerate the list of calibration tests that might use the dark filter, and establish whether alternative options were possible. We led the effort to assemble this list of tests based on input from the SITs (both ours and others), the SOC, and  Project personnel. The list\footnote{\tt DarkAlternativesMatrix\_161030.docx} included 14 items: (i) the dark current (including internal instrument backgrounds); (ii) unstable pixels; (iii) post-reset transients; (iv) read noise correlations; (v) inter-pixel capacitance; (vi) gain measurement; (vii) the high spatial frequency flat; (viii) the low spatial frequency flat; (ix) persistence from previous observations; (x) persistence from slews; (xi) classical linearity; (xii) count rate dependent non-linearity; (xiii) the brighter-fatter effect; and (xiv) persistence re-activation.
+
+The problem of persistence from slews (i.e.\ streaks across the detector following a slew from one observation to another) is of particular importance to weak lensing, because it leads to a coherent, highly directional pattern on the detector that has the correct symmetry to induce a coherent systematic error in the galaxy ellipticities. This is a concern without a dark capability, or even with a dark capability if it is not (or cannot be) used during every slew. Our group identified two budgets in WL that flow down into slew persistence requirements. First is the total systematic shear error budget of $2.7\times 10^{-4}$. Second is the masked pixel budget.
+
+The details of the slew persistence study are provided in the Calibration Plan. It consisted of several stages: first, assessing the magnitude distribution of the stars that would be encountered in the High Latitude Survey; then assessing the probability of stimulus levels in a slew, given the distribution of slews from our operations model (\S\ref{sec:operation}); and then folding this through a persistence model (based on DCL data for the development H4RG detectors) to predict the probability distribution of persistent pixels in the HLS imaging survey. The stimulus distribution ($x$ in e: the well depth to which a pixel is filled during a slew) from the Calibration Plan is shown in Figure~\ref{fig:slewcompare}, and the persistence signal distribution ($y$ in e: the persistence signal in a pixel over the course of an exposure) is shown in Figure~\ref{fig:sp_cdf}.
+
+\begin{figure}
+\includegraphics[width=5in]{Plots/slew_compare.pdf}
+\caption{\label{fig:slewcompare}Comparison of stimulus levels predicted
+under different assumptions and approximations. The vertical axis
+shows the log probability to exceed a given stimulus level during a
+slew of 0.4 degrees (a step along the short axis of the field,
+executed frequently during the HLS). The thick red line indicates
+reference assumptions. The solid blue line treats the slews as being
+at constant $\dot\theta$. The dashed blue line approximates the PSF as
+1 column wide (all the flux from the star is concentrated in the
+central column). The orange lines show what happens if bright ($H_{\rm
+AB}<3$) or faint ($H_{\rm AB}>10$) stars are excluded from the model.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=5in]{Plots/sp_cdf.pdf}
+\caption{\label{fig:sp_cdf}The cumulative distribution function of slew-induced persistence in the HLS imaging survey, $P(>y)$.
+The persistence signal $y$ is estimated in electrons per pixel; the decaying persistence curve is integrated over a 160 s. Several persistence models are shown, including the ``lo'' case (typical of the development detectors), and a ``lo+step'' case (including an order of magnitude step at saturation, as seen in portions of some detectors). This figure has not been updated yet to go from the 6-year to the 5-year observing plan, although we expect only minor differences.}
+\end{figure}
+
+After negotiating with the Project, we settled on a mitigation strategy for slew persistence that involved saving the spacecraft orientation information from the Attitude Control System (ACS), using this to predict the locations of persistence from bright star streaks, and masking $\pm2\sigma$ on either side of these streaks. Unmasked streaks are simply accepted as part of the systematic error budget. Their impact on shape measurement is based on an analytic result derived by our SIT and tested against Monte Carlo simulations:
+\begin{equation}
+\Delta \gamma_1 + i\Delta \gamma_2 = \frac{M\Omega_{\rm
+max}\sigma_{\rm n}^2 R^4}{2F^2N_{\rm ind}\,{\rm Res}} f_{\rm scale}
+f_{\rm aniso},
+\label{eq:dg}
+\end{equation}
+where $\Delta\gamma_{1,2}$ are the two components of spurious shear; $M$ is a margin factor; $\Omega_{\rm max} = 421.3$; $\sigma_{\rm n}^2$ is the variance of the persistence image; $R$ is the radius of the galaxy in pixels; $F$ is the signal from the galaxy in electrons per exposure; $N_{\rm ind}$ is the number of {\em independent} exposures of the galaxy\footnote{This may be less than the total number of exposures of the galaxy, since slew persistence from successive exposures will be correlated.}; Res is the galaxy resolution factor \cite{Bernstein2002}; $f_{\rm scale}$ and $f_{\rm aniso}$ are factors $\le 1$ describing the scale dependence and anisotropy of the persistence power spectrum (defined to be 1 in the worst case).
+
+The results of this study -- shown in Figure~\ref{fig:slew_results_oct16} -- are promising, given the top-level systematic shear budget of $2.7\times 10^{-4}$ and that the modern detectors typically show ``lo'' or (in some regions) ``lo+step''-like behavior, rather than the much larger persistence characteristic of the WFC3-IR model (third column). The masking algorithm will continue to be revisited as part of the mission optimization. However, the small number of masked pixels led the FSWG to conclude that a dark shutter that operated during every slew was not required for the WFIRST HLS.
+
+\begin{figure}
+\includegraphics[width=5in]{Plots/slew_results_oct16.pdf}
+\caption{\label{fig:slew_results_oct16}The outcome of the October 2016 slew persistence study. This shows the masked pixel fraction and the predicted systematic shear due to unmasked streaks as a function of both the persistence model and the accuracy of pointing information.}
+\end{figure}
+
+We carried out a related study, also using Eq.~(\ref{eq:dg}) and related machinery, to assess how well we need to know the dark current for WFIRST. Dark current measurements without a dark filter are possible, e.g.\ via median algorithms that combine many exposures from a survey, but are subject to: (i) a degeneracy in which the ``true'' sky brightness is unknown and hence the zero level of the dark current cannot be established, and (ii) possible correlated errors from imprinted celestial sources. The requirements, as derived in the appendix to the calibration plan, are:
+\begin{list}{$\bullet$}{}
+\item The error in the dark current + bias determination in a 140 s
+HLS imaging exposure shall be no more than $0.0096f_{\rm corr}^{-1/2}$
+e/p/s (uncorrelated part) or $0.0017 f_{\rm corr}^{-1/2}$ e/p/s
+(imprinted celestial sources).
+\item The error in the dark current + bias determination in a 297 s
+HLS spectroscopy exposure shall be no more than $0.0059 f_{\rm
+corr}^{-1/2}$ e/p/s (uncorrelated part) or $0.00072 f_{\rm
+corr}^{-1/2}$ e/p/s (imprinted celestial sources).
+\end{list}
+Here ``$f_{\rm corr}$'' denotes the factor by which we plan to correct biases induced by errors in the dark current map (we normally choose $f_{\rm corr}=1$ to be conservative). The requirements are traceable to additive shear biases from non-circular imprinted celestial sources; multiplicative shear biases as the noise in the dark current map results in e.g.\ galaxy centroids getting ``pulled'' toward pixels whose measured dark current fluctuates below the true dark current of that pixel; and Eddington-like biases for sources detected in the GRS. While the semi-analytic estimates in the calibration plan based on source counts suggest that the HLS imaging requirement can be met without a dark filter, our SIT and the Calibration Working Group had concerns about possible degeneracies in the self-calibration procedure that can only be addressed by a detailed simulation. Moreover, the approach requires empty space in the images, which we will not have in the case of grism spectroscopy. As the imaging exposures are shorter than the spectroscopy exposures, this would require dedicated long imaging exposures (of HLS spectroscopy exposure length) just for the purpose of self-calibrating the dark. Due to sky Poisson noise, we would need many of these images -- our Feburary 2017 estimate was for $N=73$ exposures, which, if done every week, would consume 4\%\ of the wall clock time. In light of these and other issues, the Calibration Working Group recommended that WFIRST maintain the dark filter.
+
+\subsubsection{Calibration plan}
+
+Our SIT has contributed extensively to the WFIRST WFI Calibration Plan. This includes extensive quantitative analysis of proposed calibration techniques, as detailed in the appendix to the plan. Some highlights follow.
+
+The requirement on knowledge of the dark current and the calibration approaches are fully defined, based on analysis done during the dark filter trade (October 2016 -- February 2017).
+
+Weak lensing was found to place demanding requirements on measurement of the count rate-dependent non-linearity (CRNL). The weak lensing program is sensitive to CRNL because it enhances the bright center of a PSF star relative to its wings, thereby making the star appear slightly smaller, but does not have a similar effect on the faint galaxies used for shape measurement. The PSF second moment is biased by a factor of $1-\alpha$ (where $\alpha$ is the CRNL exponent), and has a top-line systematic error budget of $7.2\times 10^{-4}$. This means that if $\alpha$ is measured to $\pm 3\times 10^{-4}$ (the requirement from the supernova SITs), then CRNL consumes 17\%\ of the PSF size error budget, in an RSS sense. Given that CRNL is a pernicious bias for two of the dark energy probes, we recommended a multi-faceted approach to CRNL calibration, including a lamp-on/lamp-off capability for WFIRST (this was not available on WFC3-IR).
+
+Our team has revisited the wavefront stability requirements for weak lensing, using a set of codes and scripts on the team's GitHub site. This begins with a Fisher matrix analysis of the uncertainties in the shear power spectrum, and our top-line requirement that the systematic errors be equivalent to the statistical errors even if the survey is extended to 10,000 deg$^2$ (i.e.\ in an RSS sense, the systematic errors should be 20\%\ of the statistical errors in the nominal 2,000 deg$^2$ survey). Requirements are assessed using the significance, defined by
+\begin{equation}
+Z = \sqrt{\Delta{\bf C}\cdot{\bf\Sigma}^{-1}\Delta{\bf C}},
+\label{eq:alpha}
+\end{equation}
+which is the number of sigmas at which one could distinguish the correct power spectrum from the power spectrum containing a systematic error. We built sub-allocations for multiplicative (shear calibration) errors, and for additive (spurious shear) errors in each angular bin. An early discovery was that this process depends on the redshift dependence of the shear error: some redshift dependences are ``worse'' than others by the $Z$-metric. The worst possibility is {\em not} for the error to be redshift-independent, but rather for it to change sign, as this can mimic a change in redshift evolution of the growth of structure.
+
+In our current formalism, for each angular template, we introduce a limiting amplitude $A_0^{\rm flat}(\alpha)$, defined to be the RMS spurious shear per component $A_0$ at which we would saturate the requirement on $Z(\alpha)$ for angular bin $\alpha$ in the case of a redshift-independent systematic $w_i=1\,\forall i$ (here $\alpha$ denotes an angular bin and $i$ a redshift bin). That is, if the additive systematics did not depend on redshift, we could tolerate a total additive systematic shear of $A_0^{\rm flat}$ (RMS per component) in band $\alpha$. We also introduce a scaling factor $S[{\bf w},\alpha]$ for a systematic error
+\begin{equation}
+S[{\bf w},\alpha] = \frac{Z(\alpha) \,{\rm for\,this\,}w_i}{Z(\alpha)\,{\rm for\,all\,}w_i=1}
+\end{equation}
+that depends on the redshift dependence $w_i$. An additive systematic error that is independent of redshift will have $S=1$. A systematic that is ``made worse'' by its redshift dependence will have $S>1$, and a systematic that is ``made less serious'' by its redshift dependence will have $S<1$. The requirement that the (linear) sum of $Z$s not exceed $Z(\alpha)$ thus translates into
+\begin{equation}
+\sum_{\rm systematics} [A(\alpha)]^2\times S[{\bf w},\alpha] \le [A_0^{\rm flat}(\alpha)]^2,
+\label{eq:A-S-sum}
+\end{equation}
+where $A(\alpha)$ is the RMS additive shear per component due to that systematic. We take the ``reference'' additive shear to be the additive shear in the most contaminated redshift slice; in this case, $w_i=1$ for that slice, and $|w_i|\le 1$ for the others. Under such
+circumstances, we can determine a {\em worst-case scaling factor} $S_{\rm max,\pm}(\alpha)$, which is the largest value of $S[{\bf
+w},\alpha]$ for any weights satisfying the above inequality. We may also determine a worst-case scaling factor $S_{\rm max,+}(\alpha)$
+conditioned on $0\le w_i\le 1$, i.e.\ for sources of additive shear that have the same sign in all redshift bins. In most cases, however, something is known about the redshift dependence of the systematic error (e.g.\ for PSF errors the error scales with the size of the galaxy, and hence has a redshift dependence tied to the measured redshift evolution of galaxy sizes). In these cases, we use the correct redshift weighting factor $S$. This approach has been critical in order to set stability requirements that are consistent with the Project's integrated modeling results.
+
+We have begun incorporating the HLS observing strategy (\S\ref{sec:operation}) in studies of self-calibration of time-dependent drifts in the response of the system (i.e.\ time dependence of the conversion from $\mu$Jy on the sky to DN/s in the digitized detector system outputs). This model is in a state of flux as we add parameters to it, but here we show a current snapshot allowing for time-dependent drifts of the response of each of the 18 SCAs making up the focal plane, with time dependence parameterized in calibration periods of $\Delta t$ (assessed down to a period of 3 hours) each. Both individual-SCA drifts and common-mode drifts are allowed, with an assumed intrinsic variation (calibration prior) of 1\%\ RMS drift in each $e$-fold of timescales. A network of randomly distributed stars with a density of 500 stars/deg$^2$ and $S/N=50$ was assumed; in self-calibration, the magnitudes of these stars are {\em not} known a priori, but are assumed to be stable across multiple repeated observations of the same field. These are preliminary parameters being used to test our tools and are not currently held as requirements. The stellar density model is very conservative since the Trilegal model predicts star counts of 572, 803, 990, and 1137 stars/deg$^2$ at $H_{\rm AB}=18-19$, $19-20$, $20-21$, and $21-22$ at the SGP, and even an $H_{\rm AB}=22$ star will have $S/N>50$. The temporal stability of the system needs further study and will be varied as an input parameter in future versions of this model. The current model uses the April 19, 2017 update to the HLS observing strategy. The number of calibration parameters varies depending on the filter, since there are no parameters for periods of time when the instrument is not observing in that filter; the current version has 17262 parameters for the H band.
+
+Despite the intrinsic stability assumed, in which each SCA can have its response fluctuate by 1.67\%\ RMS from one time interval to the next, the repeated observations do an excellent job of tracking these changes and reducing the posterior uncertainty. Even for $\Delta t = 0.125\,$days$=3\,$hours, the posterior calibration errors are at the level of 0.14--0.17\%\ RMS (here ``RMS'' is weighted by number of observations), depending on the filter.  An example of the model output (predicted uncertainties in the calibration parameters for each SCA at each epoch) is shown in Figure~\ref{fig:hcalfig}. It must be remembered that this analysis is overly simplistic in some ways -- particularly that we have not yet allowed for shorter-timescale variations (i.e.\ on timescales $<\Delta t$), nor have we allowed for separate gain drifts among the different readout channels. These will have to be included in a future version of the model. On the other hand, the stellar density and $S/N$ assumptions were extremely conservative (e.g.\ the full range of stellar magnitudes 18--22 should have 7 times more stars than were assumed, even at the Galactic pole), so there is margin to absorb these additional degrees of freedom. The next iteration of the model for time-dependent calibration drifts will include additional parameters, as well as updated priors reflecting expected detector system stability rather than the place-holder requirements shown here.
+
+\begin{figure}
+\includegraphics[width=4.5in]{Plots/hcalfig.pdf}
+\caption{\label{fig:hcalfig}An example of the posterior calibration error from an HLS self-calibration calculation. The horizontal scale displays the time intervals (left-to-right in time order), with 18 points per time interval indicating the various SCAs. The vertical axis shows the standard deviation of the calibration solution for that SCA at that time, $\sigma(A_{i\alpha})$, relative to the survey mean. The figure shows the case of H band with $\Delta t = 0.125$ days. This example had 17262 calibration parameters. A few epochs, mostly containing only a few observations, are poorly constrained due to minimal overlap observations. It is subject to refinement and the input parameters of the model will be varied as we work toward requirements on the stability of the detector system.}
+\end{figure}
+
+\subsubsection{Detector characterization}
+
+The WFIRST dark energy analyses will place enormous demands on our understanding of the detectors. Some aspects of this problem can be anticipated in advance -- for example, we know that effects such as inter-pixel capacitance, count-rate-dependent non-linearity, etc.\ will need to be carefully characterized, and we are working as part of the Calibration Working Group to build these measurements into the mission. However, with systematic error budgets at the level of a few$\times 10^{-4}$, it is likely that WFIRST analyses will turn up new effects that were not apparent in past missions. Therefore a key task for our SIT is to analyze the data from development detectors and identify these new effects early enough to inform the calibration plan.
+
+In ground-based weak lensing projects using thick CCDs (e.g.\ DES), one of the key detector issues has been the {\em brighter-fatter effect} (BFE). This is an electrostatic effect in which as a pixel fills up with collected charge, it changes the electric field geometry and new charges generated are more likely to be deflected into neighboring pixels. This has the effect of making bright stars appear larger than faint stars, as the repulsion effect is non-linear and increases with signal level. The field geometry is very different in a NIR detector, but a brighter-fatter effect is still possible.
+
+We have searched for the brighter-fatter effect in the H4RG detector arrays using the flat fields for two devices H4RG-17940 and H4RG-18237, provided to us by the DCL. The BFE imprints a signature in the auto-correlation function of a flat field; using the correlations in multiple non-destructive reads in a flat field, one can separate linear IPC from the BFE. Preliminary brighter-fatter effect results for H4RG-17940 are shown in Figure~\ref{fig:kernel}. The BFE coefficients are $a'_{\Delta i,\Delta j}$, which is the fractional change in effective area of pixel $(i,j)$ when an electron is placed in pixel $(i+\Delta i, j+\Delta j)$; they have units of parts per million per electron (ppm/e). The flat auto-correlations are sensitive to both the brighter-fatter effect and non-linear inter-pixel capacitance (NL-IPC); we are currently working on distinguishing the two effects.
+
+\begin{figure}
+\includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
+\caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta i,\Delta j}$ (left panel) and IPC-corrected coefficients $a'_{\Delta i,\Delta j}$ (right panel), for H4RG-17940. Note that the IPC-corrected coefficents assume that the IPC is linear, i.e.\ the non-overlapping correlations are ascribable entirely to the BFE and not NL-IPC. The $1\sigma$ uncertainty in each pixel is 0.07 ppm/e.}
+\end{figure}
+
+\comment{
 Achieving a uniform photometric calibration of the survey is an essential requirement
 for achieving the scientific goals of WFIRST, since calibration variations on large
 scales can swamp the cosmological signals and make dedicated photo-$z$ calibration
@@ -204,6 +380,7 @@ We will track which such effects can be measured internally to the WFIRST data, 
 when dedicated observing modes might be needed (such as observations of the sky with
 an internal illumination source also on). The latter considerations will feed into
 the observing strategy and hardware requirements.
+}
 
 \subsection{Photometric Redshifts}
 \label{sec:wl_calibration}
