@@ -1,73 +1,76 @@
-\documentclass[11pt]{article}
+%\documentclass[11pt]{article}
+\documentclass[a4paper]{ar-1col_WFIRST-HLS}
+
 %% Font size is adjusted after \begin{document} below
-\usepackage[]{epsfig,graphics,amssymb}
-\usepackage{wrapfig,color}
-\usepackage{boxedminipage}
-\usepackage{fix-cm}
+%\usepackage[]{epsfig,graphics,amssymb}
+%\usepackage{wrapfig,color}
+%\usepackage{boxedminipage}
+%\usepackage{fix-cm}
 \usepackage{pdfpages}
-\usepackage{titlesec}
-\usepackage{blindtext}
-\usepackage{tcolorbox}
+\usepackage{amssymb}
+%\usepackage{titlesec}
+%\usepackage{blindtext}
+%\usepackage{tcolorbox}
 
 %\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt
 %minus 2pt}
 %=== Fix space before subsection
 %=== DO NOT TOUCH
 %\titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
-\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
 %\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 
 %%
-\usepackage[pdftex,
-        colorlinks=true,
-        urlcolor=blue,       % \href{...}{...} external (URL)
-        filecolor=blue,     % \href{...} local file
-%        linkcolor=red,       % \ref{...} and \pageref{...}
-        linkcolor=blue,       % \ref{...} and \pageref{...}
-        citecolor=blue,
-       pdftitle={Papers by AUTHOR},
-        pdfauthor={Your Name},
-        pdfsubject={Just a test},
-        pdfkeywords={test testing testable},
-        pagebackref,
-        pdfpagemode=None,
-         bookmarksopen=true]{hyperref}
+%\usepackage[pdftex,
+%        colorlinks=true,
+%        urlcolor=blue,       % \href{...}{...} external (URL)
+%        filecolor=blue,     % \href{...} local file
+%%        linkcolor=red,       % \ref{...} and \pageref{...}
+%        linkcolor=blue,       % \ref{...} and \pageref{...}
+%        citecolor=blue,
+%       pdftitle={Papers by AUTHOR},
+%        pdfauthor={Your Name},
+%        pdfsubject={Just a test},
+%        pdfkeywords={test testing testable},
+%        pagebackref,
+%        pdfpagemode=None,
+%         bookmarksopen=true]{hyperref}
 %%
 %% === Do not touch this
 %% === Fine tuned to be compliant with the 1-inch on each side NASA
 %% === prop. reqt
-\hoffset = 0. in%-0.35in
-\voffset = 0. in%-0.55in
-\textwidth = 6.5 in%7.3 in
-\textheight = 9. in%9.0 in
-\marginparsep = 0.0 in
-\marginparwidth = 0.0 in
-\oddsidemargin = 0.0 in
-\evensidemargin = 0.0 in
-\topmargin = -0.7 in
-\headheight = 0.3 in%0.0 in
-\headsep = 0.4 in
-\parskip = 0.2in
-\parindent = 0.2in
-\footskip = 0.6in
+%\hoffset = 0. in%-0.35in
+%\voffset = 0. in%-0.55in
+%\textwidth = 6.5 in%7.3 in
+%\textheight = 9. in%9.0 in
+%\marginparsep = 0.0 in
+%\marginparwidth = 0.0 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+%\topmargin = -0.7 in
+%\headheight = 0.3 in%0.0 in
+%\headsep = 0.4 in
+%\parskip = 0.2in
+%\parindent = 0.2in
+%\footskip = 0.6in
 % ===
 % ===
 
-\usepackage{fancyhdr}
-\usepackage{lastpage}
+%\usepackage{fancyhdr}
+%\usepackage{lastpage}
 \usepackage{natbib}
 \usepackage{array}
-\usepackage{colortbl}
-\usepackage{longtable}
+%\usepackage{colortbl}
+%\usepackage{longtable}
 %
-\pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{}
-\fancyhead[L]{Annual Report April 2017}
-\fancyhead[R]{Cosmology with the WFIRST High Latitude Survey}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0.1pt}
-\renewcommand{\footrulewidth}{0.1pt}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyhead[L]{Annual Report April 2017}
+%\fancyhead[R]{Cosmology with the WFIRST High Latitude Survey}
+%\fancyfoot[C]{\thepage}
+%\renewcommand{\headrulewidth}{0.1pt}
+%\renewcommand{\footrulewidth}{0.1pt}
 %
 %ROSES 2010	<PROGRAM NAME>%
 %NRA NNH10ZDA001N	<YOUR PROPOSAL NAME>
@@ -129,47 +132,74 @@
 
 %\newfont{\swell}{cmbx12 scaled 1000}
 
+\setcounter{secnumdepth}{4}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %% ====
 %% ===Adjust fontsize here
-\fontsize{11.}{12.85}\selectfont
+%\fontsize{11.}{12.85}\selectfont
 %% ====
 %% ====
 
 \includepdf{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
 \cleardoublepage
 
-\pagenumbering{roman}
-\input{bib_macros}
+% Page header
+\markboth{Cosmology with the WFIRST HLS Survey Science Investigation Team}{Annual Report 2017}
 
-\makeatletter
-\def\tableofcontents{%
-\newpage
-\centerline{\large\scshape Table of Contents}
-\vspace*{0.2in}
-\@mkboth{CONTENTS}{CONTENTS}
-\setlength{\parskip}{1pt}
-\@starttoc{toc}
-}
-\makeatother
+% Title
+\title{Cosmology with the WFIRST High Latitude Survey: Science Investigation Team Annual Report 2017}
 
-\pagenumbering{roman}
-\tableofcontents
+%\pagenumbering{roman}
+\input{bib_macros} %Define collection of Journal abbreviations.
 
-\newpage
+%\makeatletter
+%\def\tableofcontents{%
+%\newpage
+%\centerline{\large\scshape Table of Contents}
+%\vspace*{0.2in}
+%\@mkboth{CONTENTS}{CONTENTS}
+%\setlength{\parskip}{1pt}
+%\@starttoc{toc}
+%}
+%\makeatother
 
-\setlength{\parskip}{1pt}
-\thispagestyle{empty}
+%\pagenumbering{roman}
+%\tableofcontents
+
+%\newpage
+
+%\setlength{\parskip}{1pt}
+%\thispagestyle{empty}
 
 %\vspace*{-1.75cm}
-\centerline{\Large \emph{Cosmology with the WFIRST High Latitude Survey}}
-\vspace*{1.cm}
+%\centerline{\Large \emph{Cosmology with the WFIRST High Latitude Survey}}
+%\vspace*{1.cm}
+%\title{\Large \emph{Cosmology with the WFIRST High Latitude Survey}}
+%\vspace*{1.cm}
 
 %=======================================
 %\section{Scientific/Technical/Management Section}
 %=======================================
-\pagenumbering{arabic}
+%\pagenumbering{arabic}
+
+
+\begin{abstract}
+Abstract text
+\end{abstract}
+
+%Keywords, etc.
+%\begin{keywords}
+%keywords, separated by comma, no full stop, lowercase
+%\end{keywords}
+
+%\maketitle
+
+%Table of Contents
+\tableofcontents
+
+\newpage
 
 %========================================================
 \section{Executive Summary \Oli{Olivier, 2 pages}}
@@ -235,13 +265,18 @@
 \label{sec:workplan}
 \input{section_workplan.tex}
 
-
 \clearpage
 \newpage
 
 %===============
 %\section{References}
-%===============
+
+%=========================
+\section*{ACKNOWLEDGMENTS}
+%=========================
+\label{sec:acknowledgments}
+%\addcontentsline{toc}{section}{ACKNOWLEDGMENTS}
+\input{section_acknowledgments.tex}
 
 %===============
 \section{List of Acronyms and Abbreviations and References}
@@ -249,6 +284,8 @@
 %\addcontentsline{toc}{section}{References and List of Acronyms and Abbreviations}
 \label{sec:acronyms}
 \input{acronyms.tex}
+
+
 
 \clearpage
 \newpage
