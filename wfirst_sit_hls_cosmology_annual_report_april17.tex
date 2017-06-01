@@ -1,8 +1,7 @@
 %\documentclass[11pt]{article}
-\documentclass[a4paper]{ar-1col_WFIRST-HLS}
+\documentclass[letter]{ar-1col_WFIRST-HLS}
 
 %% Font size is adjusted after \begin{document} below
-%\usepackage[]{epsfig,graphics,amssymb}
 %\usepackage{wrapfig,color}
 %\usepackage{boxedminipage}
 %\usepackage{fix-cm}
@@ -36,44 +35,13 @@
 %        pdfpagemode=None,
 %         bookmarksopen=true]{hyperref}
 %%
-%% === Do not touch this
-%% === Fine tuned to be compliant with the 1-inch on each side NASA
-%% === prop. reqt
-%\hoffset = 0. in%-0.35in
-%\voffset = 0. in%-0.55in
-%\textwidth = 6.5 in%7.3 in
-%\textheight = 9. in%9.0 in
-%\marginparsep = 0.0 in
-%\marginparwidth = 0.0 in
-%\oddsidemargin = 0.0 in
-%\evensidemargin = 0.0 in
-%\topmargin = -0.7 in
-%\headheight = 0.3 in%0.0 in
-%\headsep = 0.4 in
-%\parskip = 0.2in
-%\parindent = 0.2in
-%\footskip = 0.6in
-% ===
-% ===
 
-%\usepackage{fancyhdr}
 %\usepackage{lastpage}
 \usepackage{natbib}
 \usepackage{array}
 %\usepackage{colortbl}
 %\usepackage{longtable}
-%
-%\pagestyle{fancy}
-%\fancyhead{}
-%\fancyfoot{}
-%\fancyhead[L]{Annual Report April 2017}
-%\fancyhead[R]{Cosmology with the WFIRST High Latitude Survey}
-%\fancyfoot[C]{\thepage}
-%\renewcommand{\headrulewidth}{0.1pt}
-%\renewcommand{\footrulewidth}{0.1pt}
-%
-%ROSES 2010	<PROGRAM NAME>%
-%NRA NNH10ZDA001N	<YOUR PROPOSAL NAME>
+
 \newcommand  \beq    {\begin{equation}}
 \newcommand  \cm     {{\rm \,cm}}
 \newcommand  \eeq    {\end{equation}}
@@ -81,9 +49,6 @@
 \newcommand  \ltsim  {\lower.5ex\hbox{$\; \buildrel < \over \sim \;$}}
 \newcommand{\lap}{$\stackrel{<}{_\sim}$}
 \newcommand{\gap}{$\stackrel{>}{_\sim}$}
-
-% Comment
-%\newcommand{\comment}[1]{}
 
 \newcommand{\fnl}{$f_{{\rm NL}}^{} $ }
 \newcommand{\gnl}{$g_{{\rm NL}}^{} $ }
@@ -130,8 +95,6 @@
 \definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
 % Good link for colors http://latexcolor.com
 
-%\newfont{\swell}{cmbx12 scaled 1000}
-
 \setcounter{secnumdepth}{4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,36 +105,22 @@
 %% ====
 %% ====
 
-\includepdf{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
+\vspace*{-2.25cm}
+\hspace*{-0.5cm}
+\includegraphics[width=1.35\textwidth,height=1.225\textheight]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
+
+%\includepdf[pages={-}]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
+\thispagestyle{empty}
 \cleardoublepage
 
 % Page header
 \markboth{Cosmology with the WFIRST HLS Survey Science Investigation Team}{Annual Report 2017}
 
 % Title
-\title{Cosmology with the WFIRST High Latitude Survey: Science Investigation Team Annual Report 2017}
+%\title{Cosmology with the WFIRST High Latitude Survey: Science Investigation Team Annual Report 2017}
 
-%\pagenumbering{roman}
+\pagenumbering{roman}
 \input{bib_macros} %Define collection of Journal abbreviations.
-
-%\makeatletter
-%\def\tableofcontents{%
-%\newpage
-%\centerline{\large\scshape Table of Contents}
-%\vspace*{0.2in}
-%\@mkboth{CONTENTS}{CONTENTS}
-%\setlength{\parskip}{1pt}
-%\@starttoc{toc}
-%}
-%\makeatother
-
-%\pagenumbering{roman}
-%\tableofcontents
-
-%\newpage
-
-%\setlength{\parskip}{1pt}
-%\thispagestyle{empty}
 
 %\vspace*{-1.75cm}
 %\centerline{\Large \emph{Cosmology with the WFIRST High Latitude Survey}}
@@ -179,15 +128,9 @@
 %\title{\Large \emph{Cosmology with the WFIRST High Latitude Survey}}
 %\vspace*{1.cm}
 
-%=======================================
-%\section{Scientific/Technical/Management Section}
-%=======================================
-%\pagenumbering{arabic}
-
-
-\begin{abstract}
-Abstract text
-\end{abstract}
+%\begin{abstract}
+%Abstract text
+%\end{abstract}
 
 %Keywords, etc.
 %\begin{keywords}
@@ -196,10 +139,13 @@ Abstract text
 
 %\maketitle
 
+
 %Table of Contents
 \tableofcontents
+\thispagestyle{empty}
 
 \newpage
+\pagenumbering{arabic}
 
 %========================================================
 \section{Executive Summary \Oli{Olivier, 2 pages}}
@@ -272,10 +218,10 @@ Abstract text
 %\section{References}
 
 %=========================
-\section*{ACKNOWLEDGMENTS}
+\section*{Acknowlegments}
 %=========================
 \label{sec:acknowledgments}
-%\addcontentsline{toc}{section}{ACKNOWLEDGMENTS}
+\addcontentsline{toc}{section}{ACKNOWLEDGMENTS}
 \input{section_acknowledgments.tex}
 
 %===============
