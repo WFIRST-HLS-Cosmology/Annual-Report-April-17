@@ -353,36 +353,97 @@ We have searched for the brighter-fatter effect in the H4RG detector arrays usin
 
 \subsection{Photometric Redshifts}
 \label{sec:wl_calibration}
-%================================================
-\Auth{Peter, Shooby, Dan}
 
-Accurate photo-$z$s are crucial to all WFIRST probes of
-dark energy. We plan to combine calibrations of the color-redshift relation
-\cite{Masters2015} and cross-correlation techniques to achieve the
-required photo-$z$ performance. These will be supplemented by
-consistency checks such as the expected level of WL cross-correlations
-for sources in different photo-$z$ bins.
-Our team is actively developing the color-redshift mapping for WFIRST
-(supported by WFIRST Preparatory Support (WPS); PI Capak),
-with initial tests demonstrating a path
-to meeting the WFIRST requirements on photo-$z$ bias. Our team has worked with NASA HQ
-to allow the NASA Strategic Keck Proposals to obtain the required spectra.
-A key piece of the proposed work will be carrying out these spectroscopic surveys.
-Cross-correlation methods \cite{2008PhRvD..78d3519H, 2008ApJ...684...88N, Menard2013, Newman2015} require
-spectroscopic overlap and rely on assumptions about the bias of galaxies. We
-will determine the applicability of these methods and their implications for
-survey design. We also plan
-to investigate promising new methods of photo-$z$ inference \cite{Bordoloi2010, Jasche2012, Benjamin13}
-as additional consistency checks.
+\begin{figure} 
+\centering
+ \includegraphics[width=0.45\textwidth] {./plots/wfirst_color_dist.eps}
+\caption{A Self Organizing Map (SOM) \citep{Masters2015} of color space generated from $\sim6$ square degrees of data in the VVDS 2h, SXDS/UDS, COSMOS, and EGS survey areas colored by photometric redshift is shown.  Only regions occupied by the CANDELS survey are colored, with the remaining area grey.  CANDELS only covers 42\% of the color space, representing 49\% of the overall galaxy population.  }
+\label{fig:EuclidCandelsRep}
+\end{figure}
 
-Our team will refine the performance estimates and calibration data requirements for each of
-these photo-$z$ methods. This will include studying the impact on WFIRST operations
-(e.g., incorporating observations of spectroscopic calibration fields in the observing plan).
-Co-I Capak will lead the photo-$z$ effort, with support from other team members (Mandelbaum, Hirata,
-Hudson, Jain, Eifler, Krause, Miyatake) who have extensive experience
-using photo-$z$ calibration techniques for WL applications with SDSS
-(e.g., \cite{2012MNRAS.420.3240N,2008MNRAS.386..781M}),
-Canada-France-Hawaii Telescope (CFHT), DES and HSC survey data.
+ In the first year of SIT activity we have focused on developing accurate data-driven simulations of the WFIRST lensing galaxy population and determining potential methods to calibrate this sample.  The closest analogs to WFIRST data are the COSMOS and CANDELS HST surveys, however neither is fully analogous to WFIRST HLS data.  The COSMOS data cover 1.7 square degrees with HST-ACS (F814W) with ground based data analogous to LSST.  However, WFIRST analogous infrared data are not available over the majority of the field and extrapolations to the WFIRST lensing cuts from the F814W data over-estimate the number-density of sources usable for lensing.  In contrast, CANDELS has WFIRST analogous infrared data, but covers only 0.2 square degrees,which means it does not sample the full WFIRST galaxy population, and has very heterogeneous optical coverage.  Specifically, a comparison between the CANDELS and COSMOS data to R,I,Z$<$25 found that only 42\% of COSMOS galaxy colors (representing 49\% of the galaxy population) are present in CANDELS.  Figure \ref{fig:EuclidCandelsRep} shows a Self Organizing Map (SOM) \citep{Masters2015} of the galaxy color space with regions where CANDELS galaxies fall marked.  The empty regions are shown in grey and correspond to cells with low galaxy density in COSMOS.  So these galaxies are simply less likely to be found in the relatively small area of CANDELS. 
+
+
+To overcome these limitations we have taken several approaches.  First, we have collected a homogeneous 0.3-2.5$\mu$m data set over $\sim6$ square degrees in the VVDS 2h, UDS/SXDS, COSMOS, and EGS fields.  These data are not as deep as WFIRST, but are analogous to the LSST and Euclid data and allow us to estimate the cosmic variance in galaxy population and estimate requirements on spectroscopy.  These have been combined with the CANDELS catalogs which probe WFIRST depth but are sample size and variance dominated.  We then adapted the simulations described in \citet{stickley2016} developed for the SPHEREx mission to assign a R$\sim$600 spectra to each object.  The CANDELS data are very heterogeneous (see Table \ref{tbl:filters}), so we converted the various photometric systems to a LSST+WFIRST system.  Figure \ref{fig:filters} shows an example of the LSST+WFIRST system along with the CANDELS filters on GOODS-S as an example.  For the conversion we compared the converted photometry from other bands to actual CFHT-LS $u^*$, $g^*$, $r^*$, $i^*$, $z^*$ and VISTA $Y$, $J$, $H$, $K_s$ photometry in fields where they are available.   We found a simple linear interpolation between filters in flux produced the best agreement.  Using the \citet{stickley2016} or other template fits produced discretized value  in the output fluxes which biased further analysis.  
+
+
+
+
+\begin{figure} 
+\centering
+  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.50\textwidth] {./plots/filters.eps}
+\caption{The 5$\sigma$ limiting AB magnitude of LSST and WFIRST filters plotted as solid color lines and the 5$\sigma$ limiting AB magnitude of CANDELS GOODS-S filters are plotted with dotted black lines (see Table \ref{tbl:filters} for filter names).  Note the significant differences in the filter system which necessitates conversion from one to the other. }
+\label{fig:filters}
+\end{figure}
+
+
+The combination of these catalogs produces a reasonable estimate of the WFIRST galaxy population for the purposes of assessing variance and the effects of cuts.  However for some analysis a fully simulated catalog is required so that the inputs are known perfectly.  To provide this we further adapted the methods described in \citet{stickley2016} to produce simulated WFIRST+LSST photometry.  These three sets of simulated samples are being provided to other WFIRST SIT teams for their analysis. Specifically we have been working with the Foley SNe team to simulate photo-z performance for supernova cosmology. 
+
+\begin{table*}
+\footnotesize
+\centering
+\caption{CANDELS filters in each field used to create the LSST+WFIRST catalog}
+\begin{tabular}{*{15}{c}}
+\hline
+\hline
+\\
+Field&&&&&&& Filters\footnote{\footnotesize Refer to CANDELS catalog papers for detailed description of observations in each filter, GOODs-S: \citealt{Guo2013}; GOODS-N: Barro et al. in prep; EGS: \citealt{Stefanon2017}; UDS:\citealt{Galametz2013}; COSMOS: \citealt{Nayyeri2017}}&&\\
+\\
+\hline
+\\
+GOODS-S& $\rm U_{VIMOS}$& $\rm F435W$& $\rm F606W$&$\rm F775W$ & $\rm F814W$ & $\rm F850lp$ & $\rm F098W$& $\rm F105W$ & $\rm F125W$ &$\rm F160W$&$\rm Ks_{HAWK-I}$\\
+\\
+GOODS-N&$\rm U_{KPNO}$& $\rm F435W$& $\rm F606W$&$\rm F775W$ & $\rm F814W$ & $\rm F850lp$ &$\rm F105W$ & $\rm F125W$ &$\rm F160W$& $\rm Ks_{CFHT}$\\
+\\
+EGS& $\rm U_{CFHT}$& $\rm g_{CFHT}$& $\rm F606W$ &$\rm r_{CFHT}$& $\rm i_{CFHT}$& $\rm F814W$ &$\rm z_{CFHT}$ & $\rm F125W$&$\rm F160W$&$\rm Ks_{CFHT}$\\
+\\
+UDS& $\rm U_{CFHT}$& $\rm B_{subaru}$&$\rm F606W$ &$\rm Rc_{subaru}$& $\rm i_{subaru}$&$\rm F814W$ &$\rm z_{subaru}$ & $\rm Y_{HAWK-I}$&$\rm F125W$&$\rm F160W$&$\rm Ks_{HAWK-I}$\\
+\\
+COSMOS&$\rm U_{CFHT}$& $\rm B_{subaru}$& $\rm F606W$&$\rm r_{subaru}$&$\rm i_{CFHT}$&$\rm F814W$ &$\rm z_{CFHT}$ & $\rm Y_{UVISTA}$&$\rm F125W$&$\rm F160W$& $\rm Ks_{UVISTA}$\\
+\\
+\hline
+\end{tabular}
+\label{tbl:filters}
+\end{table*}
+
+
+\begin{figure} 
+\centering
+\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.95\textwidth] {./plots/histogram_wfirst_notEuclid.png}
+\caption{{\bf Left:} A magnitude histogram of the WFIRST lensing sample split into a C3R2 Euclid like lensing sample (blue, $RIZ<25$) and those only in WFIRST (green).  Roughly 20\% of the WFIRST sample consists of galaxies fainter than what C3R2 is calibrating for Euclid.  Note the Euclid lensing sample is cut at $RIZ<24.5$, shallower than the proposed calibration \citep{Masters2015}.  {\bf Right:} The redshift distribution of the C3R2-Euclid sample (blue) and the WFIRST only sample (green) are shown normalized to an integral of 1. Even though the WFIRST galaxies are fainter than the calibration limit they cover a redshift range similar, just with with more galaxies at high-redshift.   }
+\label{fig:EuclidVsWFIRST}
+\end{figure}
+
+\begin{figure} 
+\centering
+\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.95\textwidth] {./plots/redshift_magnitude.eps}
+\caption{$H$ band magnitude vs redshift is plotted for the WFIRST lensing sample shown in Figure \ref{fig:EuclidVsWFIRST} with shading indicating relative density.  The WFIRST only sample shown as green contours and the histograms from from Figure \ref{fig:EuclidVsWFIRST} are plotted on the axis.   }
+\label{fig:EuclidVsWFIRST2}
+\end{figure}
+
+These simulations have been used for several analyses for the WL SIT.  Figure \ref{fig:EuclidVsWFIRST} shows the relative differences in the magnitude and redshift distribution of the total Euclid and WFIRST faint lensing samples.  WFIRST clearly adds fainter and higher-redshift systems to the weak lensing sample.  However, Figure \ref{fig:WFIRSTSOM} shows a Self-Organizing-Map analysis \citep{Masters2015} of the WFIRST lensing sample compared with the Euclid sample. Even though WFIRST is significantly fainter than Euclid, 96\% of galaxies fainter than the Euclid sample have color analogs at brighter magnitudes.  The implication is that while WFIRST is seeing fainter galaxies than Euclid, these galaxies are very similar to less numerous but brighter systems seen by Euclid.
+
+\begin{figure} 
+\centering
+ \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.98\textwidth] {./plots/SOM_WFIRST_EUCLID.png}
+\caption{A Self Organizing Map (SOM) \citep{Masters2015} of the WFIRST color space based on the CANDELS data cut to the WFIRST lensing sample color coded by their median redshift.  The left panel shows SOM cells that contain galaxies too faint to be in the C3R2 RIZ$<25$ Euclid like sample \citep{Masters2015,Masters2017}.  The right panel shows SOM cells with galaxies that are in the C3R2 sample.  $\sim96\%$ of the WFIRST color space is occupied by galaxies in the C3R2 sample, however $\sim20\%$ of the WFIRST sample is fainter than the C3R2 limit.  This means their calibration would have to be verified to ensure no magnitude dependence on redshift. }
+\label{fig:WFIRSTSOM}
+\end{figure}
+
+To determine how difficult it would be to obtain spectra for these faint systems we conducted an analysis of the R$\sim$600 SEDs fit to the photometry.  Based on the C3R2 survey spectra \citep{Masters2017} we developed a spectral simulator which accurately re-produces ground based spectra for Keck DEIMOS, LRIS, and MOSFIRE.  In addition to these instruments the simulated response of the WFIRST-IFC was simulated.  Example simulated spectra based on the model fits along with actual Keck spectra obtained for those sources are shown in Figure \ref{fig:SpecSim}.  
+
+\begin{figure} 
+\centering
+ \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/realspec.png}\\
+  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/simspec.png}
+
+\caption{ A real (top) and simulated (bottom) spectra of a $I=22.7$ galaxy in the C3R2 sample.}
+\label{fig:SpecSim}
+\end{figure}
+
+We found that indeed most of the faint WFIRST lensing galaxies were analogs of brighter systems. This alleviates the need to obtain spectroscopic redshifts to this population since the color-redshift relation will be known.  However, steps must be taken to validate that the redshift distribution does not change at fainter magnitudes in ways not apparent in the WIFRST+LSST colors. 
+
+The simplest method would be to extend a survey such as C3R2 \citep{Masters2017} to fainter magnitudes. However, these faint galaxies are difficult to obtain high-quality spectra for from the ground.  For the purposes of this analysis we define high quality as an SNR$>$7 on two emission features or an SNR$\sim5$ on an underlying continuum.  Based on this criteria, 20\% of the WFIRST color space requires $>5$h spectra from Keck.  It is important to note this is in terms of color space, and the exact number of spectra required to calibrate this color space will require further analysis.   Of these, 1\% are sources that require long ground exposures due to strong emission lines falling between ground based observing windows and spectra could be obtained with the WFIRST grism.  A further 15\% would have high-quality redshifts with WFIRST-IFC parallel observations based on simulating the spectra and assessing the number of features with SNR$>$7.  However, due to the low-resolution of the WFIRST-IFC further analysis may be merited.   The remaining 4\% of galaxies could not be calibrated by WFIRST or from the ground with 10m telescopes and would require either ELTs or JWST.
 
 
 %{\bfseries C.H.: Need uniform ``primary/secondary/tertiary'' nomenclature. Also discuss photometric calibration requirements.}
