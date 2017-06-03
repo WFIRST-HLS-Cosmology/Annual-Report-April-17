@@ -262,7 +262,7 @@
     \def\@evenfoot{\hbox to\typewidth{\hspace*{-\extramargin}\hbox to \extramargin{\hfill\foliofont\thepage\hfill\hskip2pc}}}%
   }%
 %
-\newcommand\maketitle{\par
+\newcommand\maketitle{\par  % Oli
   \begingroup
     \renewcommand\thefootnote{}%{\@fnsymbol\c@footnote}%
     \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
@@ -275,17 +275,42 @@
      \thispagestyle{plain}\@thanks\clearpage
   \endgroup
   \setcounter{footnote}{0}%
-  \global\let\thanks\relax
+  %\global\let\thanks\relax
   \global\let\maketitle\relax
   \global\let\@maketitle\relax
-  \global\let\@thanks\@empty
-  \global\let\@author\@empty
+  %\global\let\@thanks\@empty
+  %\global\let\@author\@empty
   \global\let\@title\@empty
   \global\let\title\relax
   \global\let\author\relax
   \global\let\date\relax
   \global\let\and\relax
 }
+%
+%\newcommand\maketitle{\par
+%  \begingroup
+%    \renewcommand\thefootnote{}%{\@fnsymbol\c@footnote}%
+%    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
+%    \long\def\@makefntext##1{\sffamily\raggedright\noindent
+%            %\hb@xt@1.8em{\hss\@textsuperscript{\normalfont\@thefnmark}}
+%                   ##1\vskip3\p@}%
+%      \newpage
+%      \global\@topnum\z@   % Prevents figures from going at top of page.
+%      \@maketitle%
+%     \thispagestyle{plain}\@thanks\clearpage
+%  \endgroup
+%  \setcounter{footnote}{0}%
+%  \global\let\thanks\relax
+%  \global\let\maketitle\relax
+%  \global\let\@maketitle\relax
+%  \global\let\@thanks\@empty
+%  \global\let\@author\@empty
+%  \global\let\@title\@empty
+%  \global\let\title\relax
+%  \global\let\author\relax
+%  \global\let\date\relax
+%  \global\let\and\relax
+%}
 %
 \usepackage{color,ifpdf}
 
@@ -339,10 +364,12 @@
 %
 \def\firstpagenote#1{\gdef\@firstpagenote{#1}}\firstpagenote{}%
 \def\journalinfo{{\jinfofont%
-    \@jname\ \@jyear. \@jvol:\@fstpage--\@endpage\endgraf%
+    %\@jname\ \@jyear. \@jvol:\@fstpage--\@endpage\endgraf%
+    %\@jname\ \@jyear. \@jvol:\@fstpage--\@endpage\endgraf% Oli
     %\ifx\@doi\empty\else\vskip6\p@ This article's doi:\break \@doi\endgraf\vskip6\p@\fi%
-    \ifx\@doi\empty\else\vskip6\p@ https://doi.org/\@doi\endgraf\vskip6\p@\fi%
-    Copyright\ \copyright\ \@jyear\ by Annual Reviews.\endgraf All rights reserved\endgraf%
+    %\ifx\@doi\empty\else\vskip6\p@ https://doi.org/\@doi\endgraf\vskip6\p@\fi%
+    https://www.wfirst-hls-cosmology.org/ % Oli
+    %Copyright\ \copyright\ \@jyear\ by Annual Reviews.\endgraf All rights reserved\endgraf%
     \ifx\@firstpagenote\@empty\else\vskip6\p@\@firstpagenote\endgraf\fi%
 }}
 %
