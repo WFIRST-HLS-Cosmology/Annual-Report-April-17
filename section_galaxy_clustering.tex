@@ -52,7 +52,7 @@ Over the last year, our main priority have been to support and guide the develop
 
  \subsubsection{Science Requirements (Level 2a)} In this section we present the current level 2 science requirements as delivered to the Project Office.
 
- \subs{HLSS 1. The area to be surveyed shall be $\sim$1500 deg$^2$ (2000 deg$^2$ goal) after correcting for edge effects.  This area will be contiguous to the extent practical, and at least 90\% of the survey area must also be covered by the high latitude imaging survey.}
+ \paragraph{HLSS 1} The area to be surveyed shall be $\sim$1500 deg$^2$ (2000 deg$^2$ goal) after correcting for edge effects.  This area will be contiguous to the extent practical, and at least 90\% of the survey area must also be covered by the high latitude imaging survey.
 
  The survey area should be contiguous and large enough to reduce edge effects in
  the BAO/RSD measurements.  The $>90\%$ overlap with the HLIS enables joint
@@ -122,7 +122,7 @@ Over the last year, our main priority have been to support and guide the develop
  investigation is ongoing but our preliminary results seem to support the
  conclusion that a contiguous area is preferable for the standard BAO analysis.
 
-\subs{HLSS 2. The comoving density of galaxies with measured redshifts shall satisfy $n > 3\times10^{4}\ (h/\textrm{Mpc})^3$ at z=1.6. }
+\paragraph{HLSS 2} The comoving density of galaxies with measured redshifts shall satisfy $n > 3\times10^{4}\ (h/\textrm{Mpc})^3$ at z=1.6.
 
  This is set by $nP_{0.2} \sim1$ at $z=1.6$, with 20\% margin. Requiring $nP_{0.2}
  \sim1$ implies $n> 3\times10^{-4}\ (h/\mathrm{Mpc})^{-3}$ at $z=1.3$, and $n >
@@ -155,7 +155,7 @@ Over the last year, our main priority have been to support and guide the develop
  Co-I Teplitz is a key member of the WISP team. He is supervising a postdoc, Ivano Baronchelli,
  in deriving more precise LFs for H$\alpha$ and [OIII] ELGs using WISP data.
 
-\subs{HLSS 3. The wavelength range of the HLSS will allow measurement of H$\alpha$ emission line redshifts over the redshift range $1.1 < z < 1.9$.}
+\paragraph{HLSS 3} The wavelength range of the HLSS will allow measurement of H$\alpha$ emission line redshifts over the redshift range $1.1 < z < 1.9$.
 
  The corresponding wavelength range is 1.38 $\mu$m to 1.9 $\mu$m.  This wavelength
  coverage also allows measurements of [OIII] emission line redshifts over the
@@ -196,10 +196,8 @@ Over the last year, our main priority have been to support and guide the develop
  thus there is unique scientific value in WFIRST having a wavelength cutoff
  longer than 1.85 microns.
 
-\subs{HLSS 4. Redshift measurement errors $\sigma_z$ shall satisfy $\sigma_z <
- 0.001(1+z)$, excluding outliers, for galaxies smaller than $0.54''$ in radius. The
- fraction of outliers with $|z_\mathrm{obs}-
- z_\mathrm{true}|/(1+z_\mathrm{true})>0.003$ shall be less than 10\%.}
+\paragraph{HLSS 4} Redshift measurement errors $\sigma_z$ shall satisfy $\sigma_z < 0.001(1+z)$, excluding outliers, for galaxies smaller than $0.54''$ in radius. The fraction of outliers with $|z_\mathrm{obs}-
+ z_\mathrm{true}|/(1+z_\mathrm{true})>0.003$ shall be less than 10\%.
 
  This is a requirement on the rms error of the redshift measurements, and not on
  every redshift measurement.
@@ -236,13 +234,13 @@ continuum size of H$\alpha$ galaxies with H$\alpha$ line flux $>10^{-16}
 \mathrm{erg/s/cm}^2$, $0.55 < z < 1.85$), based on 1773 galaxies from WISP (WISP
 team, private communication).} \end{figure}
 
-\subs{HLSS 5: Relative position measurement uncertainties shall be less than $3.4''$ over the entire survey area.}
+\paragraph{HLSS 5} Relative position measurement uncertainties shall be less than $3.4''$ over the entire survey area.
 
  We need to measure galaxy positions to better than $\sim0.1 \mathrm{Mpc}/h$ (which corresponds to $3.4''$, assuming that 105 $\mathrm{Mpc/h}$ subtends 1 degree), in order to measure galaxy clustering accurately. This should be met easily if HLIS 26 is met, which makes systematic errors in the astrometry negligible. Given the pixel scale of $0.11''$, this requirement is automatically met within each field, and is tied to the precision of astrometry across different fields.
 
-\subs{HLSS 6: The survey completeness shall be 50\% (TBC), and the redshift purity
+\paragraph{HLSS 6} The survey completeness shall be 50\% (TBC), and the redshift purity
  shall be 90\% (i.e., the outlier fraction is less than 10\%). Completeness is
- defined as the fraction of H$\alpha$ ELGs with measured redshifts flagged as reliable, and purity is defined as the fraction of measured redshifts flagged as reliable that are actually within 2$\sigma$ of the true redshifts.}
+ defined as the fraction of H$\alpha$ ELGs with measured redshifts flagged as reliable, and purity is defined as the fraction of measured redshifts flagged as reliable that are actually within 2$\sigma$ of the true redshifts.
 
  A requirement on completeness and purity is needed to translate the H$\alpha$ ELG
  number counts predicted by the H$\alpha$ LF to the galaxy number density that can be used to measure BAO/RSD by WFIRST GRS.  The completeness of 50\% and redshift
@@ -257,8 +255,7 @@ team, private communication).} \end{figure}
 
  \subsubsection{Implementation Requirements (Level 2b)} In this section, we present the implementation requirements as delivered to the Project Office.
 
-\subs{HLSS 7: The observatory shall provide a slitless spectroscopy mode, with a
- spectral dispersion no larger than 10.85 $\AA$/pix.}
+\paragraph{HLSS 7} The observatory shall provide a slitless spectroscopy mode, with a spectral dispersion no larger than 10.85 $\AA$/pix.
 
  Gratings tend to give constant dispersion in linear space, rather than R-space.
  The above dispersion would give point-source spectral resolution
@@ -284,8 +281,8 @@ team, private communication).} \end{figure}
  overlapping of spectra for galaxies. This is a trade study that we will carry out
  as the required grism simulations become available.
 
- \subs{HLSS 8: Spectra shall achieve $S/N \geq 5$ for $r_\mathrm{eff} = 300
- \mathrm{mas}$ for an emission line flux $~ 1.0\times10^{-16}\ \mathrm{erg/cm}^2\mathrm{/s}$, from a source at 1.8 $\mu$m.}
+ \paragraph{HLSS 8} Spectra shall achieve $S/N \geq 5$ for $r_\mathrm{eff} = 300
+ \mathrm{mas}$ for an emission line flux $~ 1.0\times10^{-16}\ \mathrm{erg/cm}^2\mathrm{/s}$, from a source at 1.8 $\mu$m.
 
  This sensitivity is sufficient to meet the comoving space density requirement
  HLSS 2 with some margin given best estimates of the H$\alpha$ luminosity function
@@ -301,50 +298,47 @@ team, private communication).} \end{figure}
  of the WL survey. This depth is a factor of two to three deeper than the Euclid
  GRS. The depth is sufficient to give the required galaxy number density in HLSS 2.
 
-\subs{HLSS 9: The uncertainty of the wavelength measurement $\lambda$ shall satisfy
- $\Delta\lambda/\lambda \leq 0.001$.}
+\paragraph{HLSS 9} The uncertainty of the wavelength measurement $\lambda$ shall satisfy $\Delta\lambda/\lambda \leq 0.001$.
 
  Although this is redundant since it is essentially the same as HLSS 4, it is
  necessary to keep it since it flows HLSS 4 into a dataset requirement.
 
-\subs{HLSS 10: The spectroscopic bandpass shall satify $\lambda_\mathrm{max} \geq 1.9\ \mathrm{\mu m}$, and $\lambda_\mathrm{max}/\lambda_\mathrm{min} < 1.82$.}
+\paragraph{HLSS 10} The spectroscopic bandpass shall satify $\lambda_\mathrm{max} \geq 1.9\ \mathrm{\mu m}$, and $\lambda_\mathrm{max}/\lambda_\mathrm{min} < 1.82$.
 
  We need $\lambda_\mathrm{max} > 1.9\ \mathrm{ \mu m}$ for redshift reach, in order to be complementary to Euclid and ground-based surveys.  Furthermore, we need $\lambda_\mathrm{max}/\lambda_\mathrm{min} < 1.82$ for line identification using multiple lines: to ensure that we cannot have [OII] (373nm) falling off the blue end of our coverage while H$\alpha$ (656.28nm) falls off the red end. We have
  assumed that the actual bandpass extends 1.5\% from either end, since it is
  problematic to use emission lines that fall within 1.5\% of the bandpass edges.
 
-\subs{HLSS 11: 50\% of the energy (excluding diffraction spikes and non-1st order
- light) shall be enclosed in a circle of radius $<0.21^{\prime\prime}$ over 95\% of the field.}
+\paragraph{HLSS 11} 50\% of the energy (excluding diffraction spikes and non-1st order light) shall be enclosed in a circle of radius $<0.21^{\prime\prime}$ over 95\% of the field.
 
  This limit of $0.21^{\prime\prime}$ is required by source separation in the input
  catalog for spectral extraction, and is enabled by the addition of the phase
  mask corrector, and leaves some margin on the wavefront error.
 
-\subs{HLSS 12: The filter used to define the bandpass of the grism shall have cutoff transition widths $\sigma < 1\%$ (0.7\% goal) after including the effects of broadening
+\paragraph{HLSS 12} The filter used to define the bandpass of the grism shall have cutoff transition widths $\sigma < 1\%$ (0.7\% goal) after including the effects of broadening
  by the range of incident ray angles at each position in the FoV, where $\sigma$ is
  defined by $\sigma= (\lambda(T=0.90)- \lambda(T=0.10))/\lambda(T=0.50)$. $T$ is the transmission of the
- grism bandpass.}
+ grism bandpass.
 
  This is based on the grism guiding considerations; the assessment of grism
  guiding (and its positive outcome) assumed $\sigma < 1\%$.
 
  \subsubsection{Implementation (Operations Concept) Requirements} We present here the implementation requirements related to the operation concept. We note that Co-I Hirata is the co-lead for the WFIRST Operations Working Group. We did not update Requirements HLSS 13-15, but include them here for completeness.
 
-\subs{HLSS 13: Exposures of each field shall be obtained at a minimum of 3 dispersion directions, with two being nearly opposed.}
+\paragraph{HLSS 13} Exposures of each field shall be obtained at a minimum of 3 dispersion directions, with two being nearly opposed.
 
-\subs{HLSS 14: The observatory shall be able to place the WFC at a commanded
+\paragraph{HLSS 14} The observatory shall be able to place the WFC at a commanded
  orientation with an accuracy of $0.64^{\prime\prime}$ ($3\sigma$) in pitch and yaw, and $87^{\prime\prime}$ ($3\sigma$) in
  roll (TBR these were arbitrary values that give a net $3\sigma$ position uncertainty
  of 10 pixels. For the HLSS, the primary driver is that the position uncertainty
  is small with respect to chip gaps, which gives larger uncertainties than
  specified above. The smaller values quoted here are consistent with efficient
- target acquisitions, which would flow down from an observing efficiency spec.)}
+ target acquisitions, which would flow down from an observing efficiency spec.)
 
-\subs{HLSS 15: The observatory pointing jitter and drift shall not exceed 100 mas in the spectral direction on the WFC focal plane (goal of 60 mas) and 50 mas in the
- cross- dispersion direction (TBR).}
+\paragraph{HLSS 15} The observatory pointing jitter and drift shall not exceed 100 mas in the spectral direction on the WFC focal plane (goal of 60 mas) and 50 mas in the cross- dispersion direction (TBR).
 
-\subs{HLSS 16: Imaging observations shall be obtained of the fields in the HLSS that reach JAB=24.0, HAB=23.5, and F184AB=23.1 for an $r_\mathrm{eff}=0.3^{\prime\prime}$
- source at 10$\sigma$ to achieve a reference image position, in 3 filters.}
+\paragraph{HLSS 16} Imaging observations shall be obtained of the fields in the HLSS that reach JAB=24.0, HAB=23.5, and F184AB=23.1 for an $r_\mathrm{eff}=0.3^{\prime\prime}$
+ source at 10$\sigma$ to achieve a reference image position, in 3 filters.
 
  Provided the HLSS covers area already observed in the HLIS, this
  requirement will be met automatically.  This requirement applies to any HLSS
@@ -352,7 +346,7 @@ team, private communication).} \end{figure}
  covered by the HLIS.  Imaging in at least three filters is required to build a
  minimal spectral template for grism spectral decontamination.
 
-\subs{HLSS 17: There shall be 40 observations of two deep fields, each 11 deg$^2$ in area, sufficient to characterize the completeness and purity of the overall galaxy redshift sample. The 40 observations repeat the HLSS observing sequence of 4 exposures 10 times, with each deep field observation having the same exposure time as a wide field observation of the HLSS. The dispersion directions of the 40 observations should be roughly evenly distributed between 0 and 360 degrees.}
+\paragraph{HLSS 17} There shall be 40 observations of two deep fields, each 11 deg$^2$ in area, sufficient to characterize the completeness and purity of the overall galaxy redshift sample. The 40 observations repeat the HLSS observing sequence of 4 exposures 10 times, with each deep field observation having the same exposure time as a wide field observation of the HLSS. The dispersion directions of the 40 observations should be roughly evenly distributed between 0 and 360 degrees.
 
 To calibrate the HLS GRS, we need a spectroscopic subsample, with the same selection criteria as that of the HLS GRS, containing more than 160,000 galaxies  that have a redshift purity $>99\%$. We need 160,000 galaxies to know the redshift purity to 1\% (which requires 10,000 objects, assuming noise of $1/\sqrt{2N}$ from Poisson statistics) in at least four categories (low z, high z, faint, luminous).
 
@@ -369,8 +363,7 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  between 0 and 360 degrees, in order to map out possible sources of systematic
  errors due to inhomogeneity.
 
-\subs{HLSS 18: The observing efficiency of the HLSS, defined as the total science
- exposure time divided by the total time allocated to the survey, shall be TBD\%.  }
+\paragraph{HLSS 18} The observing efficiency of the HLSS, defined as the total science exposure time divided by the total time allocated to the survey, shall be TBD\%.
 
  The total time includes slew, settle, target acquisition, and
  calibration observations that are specific to the HLSS, including the
@@ -378,18 +371,14 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  observing efficiency, together with a 0.67 year total allocation of observing
  time, allows science exposures of 1600 deg$^2$ (TBC) with the exposure time
  indicated in the comment to HLSS 8; this provides a 7\% (TBC) margin over the
- 1500 deg$^2$ requirement (HLSS 1) to allow for data that may be unusable because of
- instrumental artifacts, bright sky objects, etc. This is a high level
+ 1500 deg$^2$ requirement (HLSS 1) to allow for data that may be unusable because of instrumental artifacts, bright sky objects, etc. This is a high level
  requirement that will need to be revisited as the mission implementation details
  become more solid; it should be set such that the core science goals for the GRS
  are achieved without putting mission success at risk.
 
-
 \subsubsection{Calibration Requirements} In this section, we present the calibration requirements as delivered to the Project Office.
 
-\subs{HLSS 19: The relative spectrophotometric flux calibration shall be known to 2
- percent relative accuracy (with the goal of 1\%), in order to understand the
- effective sensitivity limit for each redshift bin for each area surveyed.}
+\paragraph{HLSS 19} The relative spectrophotometric flux calibration shall be known to 2 percent relative accuracy (with the goal of 1\%), in order to understand the effective sensitivity limit for each redshift bin for each area surveyed.
 
  The requirement here is only on the {\it relative} spectrophotometry, which impacts the selection function of galaxies. Absolute line flux calibration will only change the overall number of objects and the dN/dz, but will not introduce
  density variations.  Large scale structure measurements require precise
@@ -433,12 +422,11 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  Co-I's Capak, Hirata, and Padmanabhan are members of the WFIRST Calibration Working Group, working on a detailed calibration strategy for WFIRST.
 
 
-\subs{HLSS 20: The uncertainty in the wavelength calibration shall not introduce
- biases in the wavelength measurement by amounts greater than
+\paragraph{HLSS 20} The uncertainty in the wavelength calibration shall not introduce biases in the wavelength measurement by amounts greater than
  $\Delta\lambda/\lambda = 10^{-4}$ on any
  angular scales exceeding 0.064 degrees within a field, and
  $\Delta\lambda/\lambda = 2\times10^{-5}$ from
- field to field.}
+ field to field.
 
  Variations in the wavelength calibration within a field, and from field to field
  on large scales, wash out the clustering signal by de-correlating the projected
@@ -456,30 +444,24 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
 
  \subsubsection{Requirements on Science Data Products:} In this section, we present the GRS requirements on science data products. We are in the process of studying HLSS 21-25. These depend on the structure and responsibilities of the SOCs and the SITs. Co-Is Teplitz and Capak have extensive experience in data processing for space missions, and have provided detailed comments on these requirements to the WFIRST Project Office.
 
-\subs{HLSS 21: The raw data for each grism exposure shall be available through the
+\paragraph{HLSS 21} The raw data for each grism exposure shall be available through the
  archive, with each dataset including identifying information such as time of
  exposure, observatory pointing orientation, a unique dataset identifier, and any
  engineering information needed for subsequent processing. Each detector readout
- for a given exposure shall be included in the dataset.}
+ for a given exposure shall be included in the dataset.
 
-\subs{HLSS 22: Calibrated data for each grism exposure shall be available through the archive. Each detector readout shall be calibrated at the appropriate level, and the individual calibrated readouts will be combined to produce a net spectral
- image. These datasets shall include information on the effective PSF as a
+\paragraph{HLSS 22} Calibrated data for each grism exposure shall be available through the archive. Each detector readout shall be calibrated at the appropriate level, and the individual calibrated readouts will be combined to produce a net spectral image. These datasets shall include information on the effective PSF as a
  function of position and incorporate any World Coordinate System information
  needed for subsequent stages of processing. As sources are not yet identified,
  association of a pixel with a source position and wavelength is not yet
- possible.}
+ possible.
 
-\subs{HLSS 23: Source catalogs of the same field derived from WFC imaging data shall be combined with observatory pointing information for each grism exposure to
- produce a segmentation map that associates each catalog source with a range of
- spectral image pixels. The spectral images of bright stars in each detector
- shall be used to refine the astrometric solution.  These segmentation maps shall
- be used to extract 1D spectra for each source, and to flag pixels that may
- contain flux from multiple sources. The extracted spectra shall include
+\paragraph{HLSS 23} Source catalogs of the same field derived from WFC imaging data shall be combined with observatory pointing information for each grism exposure to produce a segmentation map that associates each catalog source with a range of spectral image pixels. The spectral images of bright stars in each detector shall be used to refine the astrometric solution.  These segmentation maps shall be used to extract 1D spectra for each source, and to flag pixels that may contain flux from multiple sources. The extracted spectra shall include
  information on the effective exposure time for each pixel, effective PSF as a
  function of position, data quality flags, and any other information needed to
- interpret the data.}
+ interpret the data.
 
-\subs{HLSS 24: Extracted spectra of each source from multiple roll angles shall be
+\paragraph{HLSS 24} Extracted spectra of each source from multiple roll angles shall be
  combined to produce a single net spectrum of each source. For sources that are
  spatially resolved, the result shall be provided as a data cube of position and
  wavelength. The spectra obtained at nearly opposing roll angles shall be used to
@@ -490,16 +472,16 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  on the effective exposure time for each pixel, statistical and systematic
  uncertainties in the measured fluxes and wavelengths, effective PSF as a
  function of position, data quality flags, and any other information needed to
- interpret the data.}
+ interpret the data.
 
-\subs{HLSS 25: The data processing system shall have the capability of inserting fake sources into the spectral image data and re-executing the generation of
+\paragraph{HLSS 25} The data processing system shall have the capability of inserting fake sources into the spectral image data and re-executing the generation of
  high-level science products. These tests are essential for verifying the proper
  operation of the tools that generate high level science products and for
  understanding the sensitivity of the survey and systematic effects that may be
- present in the survey sample.}
+ present in the survey sample.
 
-\subs{HLSS 26: The data processing system shall provide sufficient knowledge of the 3D selection function so that the artificial correlations due to inaccuracies in the 3D selection function are less than 10\% of the statistical error bars on
- scales smaller than 2 degrees, and less than 20\% on larger angular scales.}
+\paragraph{HLSS 26} The data processing system shall provide sufficient knowledge of the 3D selection function so that the artificial correlations due to inaccuracies in the 3D selection function are less than 10\% of the statistical error bars on
+ scales smaller than 2 degrees, and less than 20\% on larger angular scales.
 
  This requirement is only meaningful in terms of the contribution to the total
  error budget by the uncertainties in the 3D selection function. The BAO scale is
@@ -670,7 +652,7 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  (or across different methods as in recent BOSS analyses). We can approach the
  calculation of the covariance matrices through multiple avenues. One can
  generate (in principle) a large number of approximate mock surveys using
- relatively fast approximate methods (eg. PTHalos, QPM, FastPM, etc), and apply
+ relatively fast approximate methods (eg., PTHalos, QPM, FastPM, etc), and apply
  the relevant survey properties onto these mock surveys. The small scale modeling
  of the clustering may not be 100\% accurate, but is likely to be adequate for
  the linear RSD modeling and BAO analyses where medium to large scales are most
@@ -682,7 +664,8 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  relatively modest number of realistic mock surveys which are required for (b).
 
 
- \subsection{Simulations}
+\subsection{Simulations (D8 and D9)}
+%-------------------------------------
 
  \begin{summaryii}[SUMMARY POINTS]
  \begin{enumerate}
@@ -694,16 +677,134 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  \end{enumerate}
  \end{summaryii}
 
- The KSU group has produced a suit of few thousand fast ``enhanced log-normal
- simulations'' for the WFIRST GRS expected samples. While these simulations do
- not correctly reproduce the small scale structure and higher order statistics of
- the field, they can be used for studying various large scale effects and
- implement light-cone effects. The simulations have so far been used to study the
- effect of splitting the WFIRST footprint into two non-contiguous areas. We plan
- to use this simulations in the future to study systematic effects in the
- measurements (e.g. window effect correction) and to validate the BAO/RSD
- proto-pipeline. These simulations are very well-suited for such tasks since
- their input two-pint signal is known exactly.
+ In order for WFIRST HLS to reach its  high level science requirements, we have
+ proposed to ({\bf D9})  produce simulated light-cone observations to ({\bf D8})
+ develop both the methods for modeling and interpretation of cosmological
+ measurements from WFIRST.  Most of these data sets will be at the level of
+ galaxy redshift and shape catalogs rather than the pixel-level imaging and
+ spectroscopy simulations described above. They will incorporate varying degrees
+ of complexity regarding galaxy bias, redshift evolution, survey geometry, and
+ observational systematics such as incompleteness, shape measurement errors, and
+ photometric redshift biases. Many of these artificial data sets will be made
+ publicly available, and some will take the form of data challenges, where the
+ underlying parameters are initially known only to the creators of the data set.
+ Here we report on our first year simulation efforts  in a 4 prong approach,
+ ranging from the largest volume to the highest resolution below:
+
+\subsubsection{Lognormal Simulations}
+
+ Samushia and his postdoc have produced a suit of few thousand fast
+ ``enhanced log-normal simulations'' for the WFIRST GRS expected samples. While
+ these simulations do  not correctly reproduce the small scale structure and
+ higher order statistics of the field, they can be used for studying various
+ large scale effects and implement light-cone effects. The simulations have so
+ far been used to study the effect of splitting the WFIRST footprint into two
+ non-contiguous areas. We plan to use these simulations in the future to study
+ systematic effects in the measurements (e.g., window effect correction) and to
+ validate the BAO/RSD proto-pipeline. These simulations are very well-suited for
+ such tasks since their input two-point signal is known exactly.
+
+ \subsubsection{Fast simulations with galaxy positions and shapes}
+ Kiessling, and Huff are working with Postdoc Izard to develop a fast
+ pipeline to provide galaxy mock catalogues with weak lensing. The goal of our
+ initial project is to model effects of various systematics and determine their
+ impact on galaxy clustering and weak lensing observables and their covariance
+ matrices. The starting point for this project is  300 ICE-COLA fast simulations
+ \cite{Tassev:2013,Izard:2015dja} generated by Izard during his PhD that
+ provide the dark matter density field and halo catalogs (both in the light cone
+ geometry). The former is used to compute maps of weak lensing distortions in
+ the Born approximation using a technique developed by Izard (Izard et al, 2017;
+ in prep). Galaxies are attached to halos using a new pipeline developed for
+ this project. This pipeline takes the halo catalogues in the light cone
+ geometry generated by the fast simulations and produces galaxy samples with
+ broad band luminosities and weak lensing properties. The produced catalogs are
+ all sky and span 0 $<$ z $<$ 1.4, with a minimum dark matter halo mass of
+ $10^{12}  M_{sun}/h$.
+
+
+ \subsubsection{Testing the effect of line confusions on BAO using N-body simulations}
+ Ho and Massara concentrates on one particular goal in generating their simulations. Their goal is to investigate the effect of confusion between H$\beta$ and [O III] emitters, in particular in the high level science goal in BAO. In WFIRST,  the primary science targets for the redshift survey will be H$\alpha$ and [O III]. There is a special concern of H$\beta$ vs. [O III] confusion due to their proximity in wavelength (hence the inability of photo-z's to distinguish them reliably). This is particularly true given that an H$\beta$ emitter mis-identified as [O III] will have an inferred radial position different by 8900 km/s (or: 89 $h^{-1} Mpc$ * (1+z)/$\sqrt{\Omega_\Lambda + \Omega_m (1+z)^3}$, which in our range of redshifts is near the BAO scale). We will also get some [O II] emitters -- these might be useful directly for cosmology, or for disentangling other line emitters (see Pullen et al. 2014). Note that at WFIRST resolution 3726 and 2729 are a blend.
+
+ \begin{figure}
+  \includegraphics[width = 0.5\textwidth]{Plots/OIII-Hbeta.pdf}
+ \label{fig:line-ratios}
+  \caption{The line ratios between H$\beta$ and [O III] using the most up to date dataset from SDSS4-eBOSS, which currently has acquired over 10,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. The plot shows $\approx$1000 galaxies from eBOSS sample that has both H$\beta$ and [O III], while each line is detected at least at 7-$\sigma$).}
+ \end{figure}
+
+ A key challenge in the mocks will be making sure the populations of each line and the correlations among the different line strengths and with environment are sufficiently realistic for the tests we are doing. This has historically proven to be very difficult due to the heterogeneous nature of the observational constraints. Therefore, we have investigated the equivalent width ratio between H$\beta$ and [O III] using the most up to date dataset from SDSS4-eBOSS, which currently has acquired over 10,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. This is so far the only statistical sample that can be used to look at the line ratios (see Figure~\ref{fig:line-ratios}). We also look at the conditional luminosity function between the two line luminosity and found them to be consistent with what was observed in DEEP2 (see Figure~\ref{fig:cond-lum}) with higher statistics. We now proceed to use these line ratios to create the emission line galaxy catalog.
+
+ \begin{figure}
+  \includegraphics[width = 0.5\textwidth]{Plots/cond_lum.pdf}
+ \label{fig:cond-lum}
+  \caption{The conditional luminosity function between H$\beta$ and [O III] using the same galaxies as in Figure~\ref{fig:line-ratios}.  The black and red lines are the conditional luminosity function (and 1 sigma) from DEEP2 survey).
+ }
+ \end{figure}
+
+ We start with dark matter simulations generated by Stanford group (led by Risa Wechsler, which is part of WFIRST Simulation WG and belongs to the EXPO SIT) that contain galaxies up to 5-sigma detection limit of grizY = [27.5, 27.0, 26.4, 25.9, 24.0] over 10313 sq. degrees.  Each of the galaxy contain its own spectral energy distribution which are generated to fit most updated luminosity function and color evolution measurement. Galaxy magnitudes and shapes are affected by shear and magnification. We then measured and validated the correlation function and luminosity function of [O III] selected galaxies (with WFIRST detection limits) (see Figure~\ref{fig:corr-func}. Next, we plan to apply the measured line ratios as described in Figure~\ref{fig:line-ratios} to all the galaxies and reapply the WFIRST detection limits to create a realistic WFIRST emission line galaxy catalog (with  [O III] as the main galaxy targets), and assess the effects on BAO peak position due to the possible smearing by mis-identifying the H$\beta$ as [O III]. In addition to the mocks themselves, it will be important for us to identify which aspects of the emission lines we think are close to reality, which are of the right order of magnitude, and which could be qualitatively different from the real Universe. We envision that we would continue improving these up to the point where we have the real WFIRST data.
+
+ \begin{figure}
+ %\includegraphics[width = 3.5in]{corr-func.pdf}
+ \label{fig:corr-func}
+ \caption{The correlation function of [O III] galaxies with WFIRST detection limit within our 10,000 sq.deg simulations.
+ }
+ \end{figure}
+
+\subsubsection{Simulating Realistic emission line galaxies} Wang and Merson have focussed so far on investigating the emission line properties of galaxies as predicted by the open-source semi-analytical galaxy formation model, Galacticus \citep{Benson:2010kx}). The first stage of this work has been to examine the H-alpha number counts predicted by the model and compare the predicted cumulative number density of H-alpha emitters to observations from the WISP survey \citep{Colbert:2013ita,Mehta:2015}. By adjusting the strength of dust attenuation we are able to obtain Galacticus counts that are in agreement with the WISP observations. I have therefore used Galacticus to make predictions for the number density of H-alpha emitters that will be detected for WFIRST.  Assuming a flux limit of $1.0e^{-16} erg/s/cm^2$, Galacticus predicts WFIRST to observe a number density of 26,000-29,000 H-$\alpha$ emitters per square degree over the redshift range 0.5 $\leq$ z $\leq$ 2. I am now finalizing a paper discussing this work. In addition they have also been working on extracting equivalent widths and SEDs for Galacticus galaxies. Code to extract these properties has been included in Galacticus, though these features are still be be tested.
+
+We see that each of the simulation effort complement each other in different ways. With LogNormal and Fast simulations with both positions and shapes, they are useful for pipeline testing and constructing covariance matrices. The more realistic simulations will test various assumption and requirements we make for WFIRST HLS. For example, do we need higher resolution in the grism to disentangle the [O III] and  H$\beta$? Do any of these line ratios or galaxy properties depend on environment?  Would that encode an environment dependent BAO smearing if we do not take these into account?  As we develop more realistic galaxy simulations such as those with Galacticus, we will be able to use the appropriate prescription for galaxy properties we cannot measure from current observations and make our final WFIRST simulation as realistic and physically driven as possible. This will allow us to have the best tool to develop both the methods for modeling and interpretation of cosmological measurements from WFIRST, and release the most realistic WFIRST galaxy catalog to the public before WFIRST launch.
+
+In addition, we have also released a code that calculates the interloper fraction (Wong, Pullen \& Ho): a Python-based program that applies secondary line identification and photometric cuts to mock galaxy surveys, in order to simulate interloper identification. We also have a module specifically designed to do WFIRST and predict interloper rates for WFIRST \citet{Wong:2016eku}.
+
+% Other WFIRST progress that are not yet a deliverable:
+% - We are working on constraining the intrinsic alignment models using filaments constructed from spectroscopic surveys. The idea being that in WFIRST, we can do this for the first time using photometric survey and spectroscopic survey together and mitigating the strongest astrophysical systematic -- intrinsic alignment by modeling it out.  We have measured the intrinsic alignments with LOWZ galaxies and the paper is in prep right now. (Chen, Ho, Mandelbaum, Blazek et al.)
+
+\subsection{Improving our Knowledge of the H$\alpha$ Luminosity Function}
+
+In order to trace the galaxy distribution through z$\sim$2.7, the future WFIRST
+surveys will make use of H$\alpha$- and [OIII]-selected emission line galaxies.
+These two lines will allow WFIRST to cover the redshift range 1$<$z$<$2
+(H$\alpha$) and 2$<$z$<$2.7 ([OIII]) respectively. Therefore, knowing the
+expected number of H$\alpha$ galaxies in the survey volume is required and the
+study of the H$\alpha$ luminosity function (LF) become fundamental in order to
+optimize the planned redshift surveys. However, despite the numerous works on
+this topic, given the high uncertainties associated to the H$\alpha$ LF
+determination, a sufficiently precise measure is still lacking
+(Figure~\ref{fig:img_depths}). % Additionaly, the samples of emission-line
+galaxy are expected to be affected by a complex selection function that depends
+on galaxy luminosity, size, line equivalent width and also on contamination from
+mis-identified single emission-line galaxies at different depths.
+
+A newly available set of HST spectroscopic data, gathered in the context of the
+WFC3 Infrared Spectroscopic Parallel (WISP) survey \citep{2010ApJ...723..104A},
+of which team members Teplitz and Baronchelli are members, has recently become
+publicly available. Currently, this survey covers a total area of more than
+$\simeq$ 2000 square arcminutes, with thousands of emission lines from a total
+of $\sim$500 randomly distributed HST pointings identified between z=0.3 and
+z=1.5. %. Thousands of emission lines from a total of $\sim$500 randomly
+distributed HST pointings have already been identified by the WISP team (of
+which Teplitz and Baronchelli are members), between z=0.3 and z=1.5. The
+spectroscopic capabilities of HST+WFC3 are comparable to those that WFIRST can
+reach over a 2-order of magnitude wider area. This fact makes the WISP survey a
+suitable test bench to optimize the future WFIRST surveys.
+
+
+The accurate constraint of the parameters defining the line LF ($\phi^{*}*, L^{*}, \alpha$) is hindered by their high correlation. Therefore, estimating these parameters requires uniform sampling of both the brigth and faint ends of the luminosity distribution. In the next months, in the context of a collaboration involving both WISP and SIT members, Teplitz, Baronchelli and Wang, are planning to obtain the most accurate estimate, to-date, of the H$\alpha$ and [OIII] LFs in the redshift range 0.7-1.6 and 2-2.2 respectively. This result will be achieved by combining deep and shallow data from various HST-WFC3 slitless spectroscopic surveys: WISP (Atek et al. 2010, PI: Malkan, M.), the SN followup of the CANDELS survey (SN-CANDELS, PI: Riess, A.), 3D-HST (Van Dokkum 2011, Brammer 2012, PI: Van Dokkum) and AGHAST (A Grism H-Alpha SpecTroscopic survey in the GOODS-N, PI: B. Weiner).
+%In the next months, by combining deep and shallow WISP, CANDELS SN and 3D-HST+AGHAST datasets, Harry Teplitz, Ivano Baronchelli and Yun Wang, in a collaboration between the SIT and the WISP teams, are planning to obtain the most acurate estimate, to-date, of the H$\alpha$ and [OIII] LFs in the redshift range 0.7-1.6 and 2-2.2 respectively.
+Since previous studies suggest a substantial brightening of $L^{*}_{H\alpha}$ (Figure~\ref{fig:img_depths}), this study will be performed by dividing the sample in three redshift bins between z=0.7 and z=1.6. Even if splitted, the combined sample is large enough to allow for an uniform coverage of the $H\alpha$ luminosity range, from few \% of $L^{*}_{H\alpha}$ to many times $L^{*}_{H\alpha}$.
+
+Above z=1.6, the H$\alpha$ line is redshifted outside the detectabe wavelength range and since single line emitters are considered H$\alpha$ by default, the ability to confirm the identification of [OIII] lines is limited to bright lines with clear shapes. Greatly extending the small dataset used in Colbert et al (2013), the newly released WISP data will allow us to better constrain the contamination of the H$\alpha$ selected sample, and the loss of completeness of the [OIII] sample. We will use the multi-wavelength dataset on 3D-HST+AGHAST to identify a combination of colors that could possibly mitigate this problem.
+
+The identification of the spectral lines and the measure of their fluxes is fundamental for all the successive part of the LF project here described, but it can not be completely performed by an automatic algorithm. Thanks to the same collaboration involving both the SIT and WISP team members, automatic softwares have already been optimized to i) remove low S/N detections and some of the contaminating false detections and ii) measure the total line fluxes after their identification. However, the human interaction is required to visually identify each detected line (mostly H$\alpha$ and [OIII], but also OII, H$\beta$ and SII), to perform high quality continuum and line fits, and to remove not automatically identified contaminants. In the past weeks, the work has been focused on these tasks. As a result, a large dataset of thousands of objects with measured line fluxes and corresponding redshift is now available.
+% Using the same data, the continuum luminosity, galaxy size and EW distribution functions for line emitters can be constrained.
+
+At the end of the work described in this section, for which more than a semester is still reasonably required, the results will bring to a publication, in one of the major journals, with the co-authorship of Teplitz, Baronchelli and Wang.
+
+\begin{figure}[!ht]
+\includegraphics[width=0.5\textwidth]{Plots/HA_LF.pdf}
+%\includegraphics[width=7.5cm]{WFIRST_WISP_comparison.eps}
+\caption{H$\alpha$ LF as estimated in various surveys. The uncertainties on the different parameters defining the LF are considerable. The aim of this project is to measure the most precise H$\alpha$ and [OIII] luminosity functions to-date, in the redshift range 0.7-1.6 and 2-2.2 respectively.}%{\bf 1B)} Redshift and wavelength coverage for planned WFIRST surveys compared with WISP and Euclid. The shaded regions indicate the full wavelength and redshift ranges of
+\label{fig:img_depths}
+\end{figure}
 
  \subsection{Cosmological Forecasting and Data Analysis Algorithms}
 
