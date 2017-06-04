@@ -23,30 +23,22 @@
 
 % Future Issues
 
-\begin{summary}[SUMMARY POINTS]
+\begin{summary}
+To mature the WFIRST GRS, our work has been organized along four main directions.
 \begin{enumerate}
-\item Each Main section will start with an executive summary in this box.
-\item Summary point 1. These should be full sentences.
-\item Summary point 2. These should be full sentences.
-\item Summary point 3. These should be full sentences.
-\item Summary point 4. These should be full sentences.
+\item We developed, delivered to the project and updated the GRS requirements;
+\item We generated new WFIRST specific light-cone simulations;
+\item Using HST measurement, we started a new data analysis effort to improve our knowledge of the H$\alpha$ luminosity function, a critical element to plan the GRS;
+\item We developed quick and agile analysis tools that will help us develop a pseudo-pipeline in the coming years.
 \end{enumerate}
 \end{summary}
 
 
- \subsection{Requirements (D1)}
+ \subsection{Developing the GRS Requirements (D1)}
 
- \begin{summaryii}[SUMMARY POINTS]
- \begin{enumerate}
- \item Each subsection will start with an executive summary in this box.
- \item Summary point 1. These should be full sentences.
- \item Summary point 2. These should be full sentences.
- \item Summary point 3. These should be full sentences.
- \item Summary point 4. These should be full sentences.
- \end{enumerate}
+ \begin{summaryii}
+   Over the last year, our main priority have been to support and guide the development of the WFIRST HLS spectroscopy and in particular to identify, articulate and validate the scientific requirements of the instrument, the data reduction software, and the survey. Responding to a calendar set by the Project Office, our SIT delivered three major updates to the WFIRST GRS requirements to the Project Office on July 1, 2016, December 1, 2016, and March 2, 2017. Each of these provide progressively sharper definitions of the  GRS requirements. We describe the main requirements and their science drivers below.
  \end{summaryii}
-
-Over the last year, our main priority have been to support and guide the development of the WFIRST HLS spectroscopy and in particular to identify, articulate and validate the scientific requirements of the instrument, the data reduction software, and the survey. Responding to a calendar set by the Project Office, our SIT delivered three major updates to the WFIRST GRS requirements to the Project Office on July 1, 2016, December 1, 2016, and March 2, 2017. Each of these provide progressively sharper definitions of the  GRS requirements. We describe the main requirements and their science drivers below.
 
 %This work was carried out by Wang, Eifler, Hirata, Ho, Kiessling, Krause, Merson, Padmanabhan, Pearson, Samushia, Benson, Capak, Dor\'e, Heitmann, Spergel, Teplitz, and Weinberg.
 
@@ -78,12 +70,11 @@ Over the last year, our main priority have been to support and guide the develop
  twice as wide and shallower and a survey half as wide but correspondingly
  deeper.  The galaxy redshift distributions were computed using the WFIRST
  Exposure Time Calculator ETC v14. The H$\alpha$ forecasts are based on the average
- of the 3 models in Pozzetti et al. (2016), and the [O III] forecasts are based
- on the Mehta et al.  (2015) luminosity function.
+ of the 3 models in \citet{Pozzetti:2016}, and the [O III] forecasts are based
+ on the \citet{Mehta:2015} luminosity function.
 
  %The resulting redshift distributions are shown in Fig. 1.
- We extend the CosmoLike framework (Eifler et  al 2014, Krause \& Eifler 2016) to compute the constraining power of all scenarios
- on cosmic acceleration, closely following Wang et al (2013). We run 500,000 step
+ We extend the \CoLi framework \citep{Eifler:2014,Krause:2016jvl} to compute the constraining power of all scenarios on cosmic acceleration, closely following \citet{Wang2013}. We run 500,000 step
  MCMC simulated likelihood analysis in a 23 dimensional parameter space. We
  simultaneously vary 7 cosmological parameters and 16 ``nuisance'' parameters
  describing uncertainties due to the linear galaxy bias model, the non-linear
@@ -91,7 +82,7 @@ Over the last year, our main priority have been to support and guide the develop
  noise, and redshift errors. We assume priors on cosmological parameters from the
  current state of the art experiments, i.e. the Planck mission, the Baryon
  Oscillation Spectroscopic Survey (BOSS), the Joint Lightcurve Analysis (JLA)
- supernovae, as described in Aubourg et al (2015).
+ supernovae, as described in \citet{Aubourg:2015}.
 
  The information gain is quantified using the standard Dark Energy Task Force FOM
  and an extended cosmology FOM, which measures the enclosed volume in the full
@@ -127,7 +118,7 @@ Over the last year, our main priority have been to support and guide the develop
  This is set by $nP_{0.2} \sim1$ at $z=1.6$, with 20\% margin. Requiring $nP_{0.2}
  \sim1$ implies $n> 3\times10^{-4}\ (h/\mathrm{Mpc})^{-3}$ at $z=1.3$, and $n >
  6.5\times �10^{-4} (h/\mathrm{Mpc})^{-3}$ at $z=1.8$. Given the Hirata
- forecast of H$\alpha$ ELG counts (Model 3 in Pozzetti et al. 2016), $nP_{0.2}\sim0.6$ at $z=1.8$,
+ forecast of H$\alpha$ ELG counts (Model 3 in \citet{Pozzetti:2016}, $nP_{0.2}\sim0.6$ at $z=1.8$,
  and $nP_{0.2}>2$ at $z=1.3$.  We cannot require a higher galaxy number density than
  what nature provides, given fixed observing time and area coverage. Here we have
  chosen a characteristic high redshift, $z=1.6$, at which it is impossible for a
@@ -136,7 +127,7 @@ Over the last year, our main priority have been to support and guide the develop
  uniform data. It is likely that the actual number of H$\alpha$ ELGs is higher than
  assumed here; thus we have additional margins for this requirement. We have
  assumed a bias for H$\alpha$ ELGs of $b(z) = 1+0.5z$. The bias relation has been rescaled
- to agree with Geach et al. (2012) measurement of $b=2.4$ at $z=2.23$ for $f >
+ to agree with \citet{Geach2012} measurement of $b=2.4$ at $z=2.23$ for $f >
  5\times 10^{-17} \, \mathrm{ erg\,s^{-1}cm^{-2}}$.
 
  This is significantly deeper than the Euclid GRS survey, which ensures that the
@@ -285,7 +276,7 @@ team, private communication).} \end{figure}
 
  This sensitivity is sufficient to meet the comoving space density requirement
  HLSS 2 with some margin given best estimates of the H$\alpha$ luminosity function
- (Pozzetti et al. 2016) at these redshifts. The use of a $\mathrm{S/N} \geq 5$ threshold for an arbitrary spectrum pre-spectral-decontamination gives margin for detection of sources whose spectra overlap others, or for loss of some exposures to cosmic ray hits or other artifacts, as $\mathrm{S/N} \geq 5$ post-decontamination is expected to be
+ \citep{Pozzetti:2016} at these redshifts. The use of a $\mathrm{S/N} \geq 5$ threshold for an arbitrary spectrum pre-spectral-decontamination gives margin for detection of sources whose spectra overlap others, or for loss of some exposures to cosmic ray hits or other artifacts, as $\mathrm{S/N} \geq 5$ post-decontamination is expected to be
  sufficient for meeting the redshift accuracy requirement HLSS 4, and the
  post-decontamination S/N should be significantly higher than the
  pre-decontamination S/N for a given spectrum. Current calculations of
@@ -403,10 +394,7 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  to $\sim0.5$ degrees to 6 degrees at a redshift of 1.5.
 
  We convert the above requirement to a requirement on the spectrophotometric
- calibration accuracy, assuming the Model I luminosity function of Pozetti et al.
- At the flux limit of WFIRST, this yields a requirement of 1\% relative
- spectrophotometric calibration, averaged over angular scales of 0.5 degrees to 6
- degrees.
+ calibration accuracy, assuming the Model I luminosity function of \citet{Pozzetti:2016}. At the flux limit of WFIRST, this yields a requirement of 1\% relative spectrophotometric calibration, averaged over angular scales of 0.5 degrees to 6 degrees.
 
  This is a very stringent requirement. We have relaxed this requirement from 1\%
  to 2\% to add margin for mission success, assuming that we will achieve 1\%
@@ -629,14 +617,13 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  of simulations that have relatively realistic modeling of the tracer properties
  at the relevant redshift.  For WFIRST, we can take the current number density of
  emission line galaxies (for H$\alpha$ galaxies only) from our baseline
- calculation and used the Tinker et al. 2008 halo mass function, along with the
- Giocoli et al. (2008) subhalo mass functions to compute the total number of
+ calculation and used the \citet{Tinker2008} halo mass function, along with the
+ \citet{Giocoli2008} subhalo mass functions to compute the total number of
  halos and subhalos above some mass threshold and then match that to the baseline
- GRS number densities. This maps back to approximately 1012 solar masses from z=1
- to z=2. Assuming that we need to have at least 100 particles to resolve halos at
+ GRS number densities. This maps back to approximately 10$^12$ solar masses from z=1 to z=2. Assuming that we need to have at least 100 particles to resolve halos at
  1012 solar masses, and another factor of 10 particles to resolve properties of
  the halo progenitors, we will need dark matter particle mass resolution of
- approximately 109 solar masses. The extra factor of 10 is due to the galaxy
+ approximately 10$^9$ solar masses. The extra factor of 10 is due to the galaxy
  formation model that depends on the properties of the progenitors which is an
  approximation that may change as we understand the galaxy properties better and
  as more observations of the tracers arrive. We expect to require of order 100
@@ -659,20 +646,19 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  O(10,000) depending on the number of parameters we will be estimating using
  these covariance matrices, but the time requirement of these approximate mocks
  is relatively modest. One can also envision using more theoretical approaches
- (such as O'Connell et al. 2015, Padmanabhan et al. 2015), which only require a
- relatively modest number of realistic mock surveys which are required for (b).
+ (such as \citet{OConnell:2015src,Padmanabhan2016,Friedrich:2015nga}, which only require a relatively modest number of realistic mock surveys which are required for (b).
 
 
-\subsection{Simulations (D8 and D9)}
-%-------------------------------------
+\subsection{GRS Light-cone Simulations (D8 and D9)}
+%--------------------------------------------------
 
- \begin{summaryii}[SUMMARY POINTS]
- \begin{enumerate}
- \item Each subsection will start with an executive summary in this box.
- \item Summary point 1. These should be full sentences.
- \item Summary point 2. These should be full sentences.
- \item Summary point 3. These should be full sentences.
- \item Summary point 4. These should be full sentences.
+ \begin{summaryii}
+Light-cone cosmological simulations are a critical tool to design the GRS survey design, to develop and to validate analysis tools and theoretical predictions. We developed four complementary simulation approaches to tackle multiple questions relevant to the GRS:
+\begin{enumerate}
+  \item A lognormal simulation to generate quickly large cosmological volumes;
+  \item A fast approach using simple galaxy-halo prescriptions to generate joint GRS and WL simulations;
+  \item A realistic emission line galaxies modeling to study the confusion between H$\beta$ and [O III] emitters;
+  \item A realistic semi-analytic galaxy evolution model to make robust H$\alpha$ mock catalogs.
  \end{enumerate}
  \end{summaryii}
 
@@ -704,6 +690,7 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  such tasks since their input two-point signal is known exactly.
 
  \subsubsection{Fast simulations with galaxy positions and shapes}
+
  Kiessling, and Huff are working with Postdoc Izard to develop a fast
  pipeline to provide galaxy mock catalogues with weak lensing. The goal of our
  initial project is to model effects of various systematics and determine their
@@ -719,7 +706,6 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  broad band luminosities and weak lensing properties. The produced catalogs are
  all sky and span 0 $<$ z $<$ 1.4, with a minimum dark matter halo mass of
  $10^{12}  M_{sun}/h$.
-
 
  \subsubsection{Testing the effect of line confusions on BAO using N-body simulations}
 
@@ -742,6 +728,8 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
 
  We start with dark matter simulations generated by Stanford group (led by Risa Wechsler, which is part of WFIRST Simulation WG and belongs to the EXPO SIT) that contain galaxies up to 5-sigma detection limit of grizY = [27.5, 27.0, 26.4, 25.9, 24.0] over 10313 sq. degrees.  Each of the galaxy contain its own spectral energy distribution which are generated to fit most updated luminosity function and color evolution measurement. Galaxy magnitudes and shapes are affected by shear and magnification. We then measured and validated the correlation function and luminosity function of [O III] selected galaxies (with WFIRST detection limits) (see Figure~\ref{fig:corr-func}. Next, we plan to apply the measured line ratios as described in Figure~\ref{fig:line-ratios} to all the galaxies and reapply the WFIRST detection limits to create a realistic WFIRST emission line galaxy catalog (with  [O III] as the main galaxy targets), and assess the effects on BAO peak position due to the possible smearing by mis-identifying the H$\beta$ as [O III]. In addition to the mocks themselves, it will be important for us to identify which aspects of the emission lines we think are close to reality, which are of the right order of magnitude, and which could be qualitatively different from the real Universe. We envision that we would continue improving these up to the point where we have the real WFIRST data.
 
+ In addition, we have also released a code that calculates the interloper fraction (Wong, Pullen \& Ho): a Python-based program that applies secondary line identification and photometric cuts to mock galaxy surveys, in order to simulate interloper identification. We also have a module specifically designed to do WFIRST and predict interloper rates for WFIRST \citep{Wong:2016eku}.
+
  \begin{figure}
  %\includegraphics[width = 3.5in]{corr-func.pdf}
  \label{fig:corr-func}
@@ -749,16 +737,20 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  }
  \end{figure}
 
-\subsubsection{Simulating Realistic emission line galaxies} Wang and Merson have focussed so far on investigating the emission line properties of galaxies as predicted by the open-source semi-analytical galaxy formation model, Galacticus \citep{Benson:2010kx}). The first stage of this work has been to examine the H-alpha number counts predicted by the model and compare the predicted cumulative number density of H-alpha emitters to observations from the WISP survey \citep{Colbert:2013ita,Mehta:2015}. By adjusting the strength of dust attenuation we are able to obtain Galacticus counts that are in agreement with the WISP observations. I have therefore used Galacticus to make predictions for the number density of H-alpha emitters that will be detected for WFIRST.  Assuming a flux limit of $10^{-16}$ erg/s/cm$^2$, Galacticus predicts WFIRST to observe a number density of 26,000-29,000 H$\alpha$ emitters per square degree over the redshift range 0.5 $\leq$ z $\leq$ 2. I am now finalizing a paper discussing this work. In addition they have also been working on extracting equivalent widths and SEDs for Galacticus galaxies. Code to extract these properties has been included in Galacticus, though these features are still be be tested.
+\subsubsection{Simulating Realistic Emission Line Galaxies}
+
+Wang and Merson have focussed so far on investigating the emission line properties of galaxies as predicted by the open-source semi-analytical galaxy formation model, Galacticus \citep{Benson:2010kx}). The first stage of this work has been to examine the H$\alpha$ number counts predicted by the model and compare the predicted cumulative number density of H$\alpha$ emitters to observations from the WISP survey \citep{Colbert:2013ita,Mehta:2015}. By adjusting the strength of dust attenuation we are able to obtain Galacticus counts that are in agreement with the WISP observations. I have therefore used Galacticus to make predictions for the number density of H$\alpha$ emitters that will be detected for WFIRST.  Assuming a flux limit of $10^{-16}$ erg/s/cm$^2$, Galacticus predicts WFIRST to observe a number density of 26,000-29,000 H$\alpha$ emitters per square degree over the redshift range 0.5 $\leq$ z $\leq$ 2. I am now finalizing a paper discussing this work. In addition they have also been working on extracting equivalent widths and SEDs for Galacticus galaxies. Code to extract these properties has been included in Galacticus, though these features are still be be tested.
 
 We see that each of the simulation effort complement each other in different ways. With LogNormal and Fast simulations with both positions and shapes, they are useful for pipeline testing and constructing covariance matrices. The more realistic simulations will test various assumption and requirements we make for WFIRST HLS. For example, do we need higher resolution in the grism to disentangle the [O III] and  H$\beta$? Do any of these line ratios or galaxy properties depend on environment?  Would that encode an environment dependent BAO smearing if we do not take these into account?  As we develop more realistic galaxy simulations such as those with Galacticus, we will be able to use the appropriate prescription for galaxy properties we cannot measure from current observations and make our final WFIRST simulation as realistic and physically driven as possible. This will allow us to have the best tool to develop both the methods for modeling and interpretation of cosmological measurements from WFIRST, and release the most realistic WFIRST galaxy catalog to the public before WFIRST launch.
-
-In addition, we have also released a code that calculates the interloper fraction (Wong, Pullen \& Ho): a Python-based program that applies secondary line identification and photometric cuts to mock galaxy surveys, in order to simulate interloper identification. We also have a module specifically designed to do WFIRST and predict interloper rates for WFIRST \citep{Wong:2016eku}.
 
 % Other WFIRST progress that are not yet a deliverable:
 % - We are working on constraining the intrinsic alignment models using filaments constructed from spectroscopic surveys. The idea being that in WFIRST, we can do this for the first time using photometric survey and spectroscopic survey together and mitigating the strongest astrophysical systematic -- intrinsic alignment by modeling it out.  We have measured the intrinsic alignments with LOWZ galaxies and the paper is in prep right now. (Chen, Ho, Mandelbaum, Blazek et al.)
 
 \subsection{Improving our Knowledge of the H$\alpha$ Luminosity Function}
+
+\begin{summaryii}
+Knowing the H$\alpha$ and [OIII] luminosity functions is critical in order to optimize the WFIRST GRS. We are addressing current limitations in our knowledge using a newly available set of HST spectroscopic data within the WISP collaboration.
+\end{summaryii}
 
 In order to trace the galaxy distribution through z$\sim$2.7, the future WFIRST
 surveys will make use of H$\alpha$ and [OIII] selected emission line galaxies.
@@ -775,7 +767,7 @@ on galaxy luminosity, size, line equivalent width and also on contamination from
 mis-identified single emission-line galaxies at different depths.
 
 A newly available set of HST spectroscopic data, gathered in the context of the
-WFC3 Infrared Spectroscopic Parallel (WISP) survey \citep{Atek2010},
+WFC3 Infrared Spectroscopic Parallel (WISP) survey \citep{Atek:2010},
 of which team members Teplitz and Baronchelli are members, has recently become
 publicly available. Currently, this survey covers a total area of more than
 $\simeq$ 2000 sq. arcmin., with thousands of emission lines from a total
@@ -783,7 +775,7 @@ of $\sim$500 randomly distributed HST pointings identified between z=0.3 and
 z=1.5. Thousands of emission lines from a total of $\sim$500 randomly
 distributed HST pointings have already been identified by the WISP team, between z=0.3 and z=1.5. The spectroscopic capabilities of HST+WFC3 are comparable to those that WFIRST can reach over a 2-order of magnitude wider area. This fact makes the WISP survey a particularly suitable test bench to optimize the future WFIRST surveys.
 
-The accurate constraint of the parameters defining the line LF ($\phi^{*}*, L^{*}, \alpha$) is hindered by their high correlation. Therefore, estimating these parameters requires uniform sampling of both the bright and faint ends of the luminosity distribution. In the next months, in the context of a collaboration involving both WISP and SIT members, Teplitz, Baronchelli and Wang, are planning to obtain the most accurate estimate, to-date, of the H$\alpha$ and [OIII] LFs in the redshift range 0.7-1.6 and 2-2.2 respectively. This result will be achieved by combining deep and shallow data from various HST-WFC3 slitless spectroscopic surveys: WISP (\citet{Atek2010}, PI: Malkan, M.), the SN followup of the CANDELS survey (SN-CANDELS, PI: Riess, A.), 3D-HST (\citet{VanDokkum2011,Brammer2012}, PI: Van Dokkum) and AGHAST (A Grism H-Alpha SpecTroscopic survey in the GOODS-N, PI: B. Weiner).
+The accurate constraint of the parameters defining the line LF ($\phi^{*}*, L^{*}, \alpha$) is hindered by their high correlation. Therefore, estimating these parameters requires uniform sampling of both the bright and faint ends of the luminosity distribution. In the next months, in the context of a collaboration involving both WISP and SIT members, Teplitz, Baronchelli and Wang, are planning to obtain the most accurate estimate, to-date, of the H$\alpha$ and [OIII] LFs in the redshift range 0.7-1.6 and 2-2.2 respectively. This result will be achieved by combining deep and shallow data from various HST-WFC3 slitless spectroscopic surveys: WISP (\citet{Atek:2010}, PI: Malkan, M.), the SN followup of the CANDELS survey (SN-CANDELS, PI: Riess, A.), 3D-HST (\citet{VanDokkum:2011,Brammer:2012}, PI: Van Dokkum) and AGHAST (A Grism H-Alpha SpecTroscopic survey in the GOODS-N, PI: B. Weiner).
 %In the next months, by combining deep and shallow WISP, CANDELS SN and 3D-HST+AGHAST datasets, Harry Teplitz, Ivano Baronchelli and Yun Wang, in a collaboration between the SIT and the WISP teams, are planning to obtain the most acurate estimate, to-date, of the H$\alpha$ and [OIII] LFs in the redshift range 0.7-1.6 and 2-2.2 respectively.
 Since previous studies suggest a substantial brightening of $L^{*}_{H\alpha}$ (Figure~\ref{fig:img_depths}), this study will be performed by dividing the sample in three redshift bins between z=0.7 and z=1.6. Even if split, the combined sample is large enough to allow for an uniform coverage of the $H\alpha$ luminosity range, from few \% of $L^{*}_{H\alpha}$ to many times $L^{*}_{H\alpha}$.
 
@@ -823,15 +815,9 @@ At the end of the work described in this section, for which more than a semester
 
  \subsection{Cosmological Forecasting and Data Analysis Algorithms}
 
- \begin{summaryii}[SUMMARY POINTS]
- \begin{enumerate}
- \item Each subsection will start with an executive summary in this box.
- \item Summary point 1. These should be full sentences.
- \item Summary point 2. These should be full sentences.
- \item Summary point 3. These should be full sentences.
- \item Summary point 4. These should be full sentences.
- \end{enumerate}
- \end{summaryii}
+ \begin{summaryii}
+  We have developed software package to make quick forecasts on basic dark energy parameters from higher order statistics, incluging power spectrum and bispectrum multipoles. This light and agile software package will be the backbone of our GRS proto-pipeline effort.
+  \end{summaryii}
 
  The key dark energy constraints from the WFIRST GRS will result from the BAO and
  RSD measurements from the two-point statistics of the observed galaxy field.
@@ -841,7 +827,7 @@ At the end of the work described in this section, for which more than a semester
  provide very dense galaxy samples they may significantly enhance the yield from
  the standard two-point BAO/RSD analysis. We also expect the methods of analyzing
  higher order statistics to become more robust and standardized by the time of
- WFIRST launch. Because of this considerations it would be helpful to have a
+ WFIRST launch. Because of these considerations it would be helpful to have a
  higher order statistics forecasting tool. We have developed software package to
  make forecasts on basic dark energy parameters from higher order statistics.
  The main assumptions are similar to the ones made in the standard
@@ -861,3 +847,13 @@ At the end of the work described in this section, for which more than a semester
  The toolset will eventually be linked to the redshift catalogue and visibility
  cube producing software. This software will provide the backbone of our BAO/RSD
  proto-pipeline and will be validated with high fidelity WFIRST simulations.
+
+ \begin{summary}[Future Work on Galaxy Redshift Survey]
+ \begin{enumerate}
+ \item We will keep refining and solidifying the scientific requirements;
+ \item We will pursue our light-cone simulations and release mock catalogs to the community when publishing our results;
+ \item We will pursue our effort with image simulation, relying on the light-cone simulation to incorporate realistic galaxy distributions and properties;
+ \item We will continue our pseudo-pipeline effort;
+ \item \Oli{TO BE CONTINUED}.
+ \end{enumerate}
+ \end{summary}
