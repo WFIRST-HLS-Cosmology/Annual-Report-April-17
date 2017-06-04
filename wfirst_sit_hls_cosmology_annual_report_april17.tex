@@ -1,4 +1,3 @@
-%\documentclass[11pt]{article}
 \documentclass[letter]{ar-1col_WFIRST-HLS}
 
 % New Package
@@ -8,24 +7,34 @@
 \usepackage{array}
 %\usepackage{colortbl}
 %\usepackage{longtable}
+\usepackage{pdfpages}
 
+\definecolor{pink_loc}{cmyk}{0, 0.7808, 0.4429, 0.1412}
+\definecolor{coralpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{carminepink}{rgb}{0.92, 0.3, 0.26}
+\definecolor{burntsienna}{rgb}{0.91, 0.45, 0.32}
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+%\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{alizarin}{cmyk}{0,1.0,1.0,0.30}
 
-%%
-%\usepackage[pdftex,
-%        colorlinks=true,
-%        urlcolor=blue,       % \href{...}{...} external (URL)
+% Good link for colors http://latexcolor.com
+
+\usepackage[colorlinks=true,
+        urlcolor=alizarin,
+        citecolor=alizarin,
+        linkcolor=alizarin,
+        linkcolor=alizarin,
+        filecolor=alizarin,
+        setpagesize=false]{hyperref}     % \ref{...} and \pageref{...}
+        %pdftitle={Papers by AUTHOR},%
+        %pdfauthor={Your Name},
+        %pdfsubject={Just a test},
+        %pdfkeywords={test testing testable},
+        %pagebackref,
+        %pdfpagemode=None,
+        %bookmarksopen=true]{hyperref}       % \ref{...} and \pageref{...}
+% \href{...}{...} external (URL)
 %        filecolor=blue,     % \href{...} local file
-%%        linkcolor=red,       % \ref{...} and \pageref{...}
-%        linkcolor=blue,       % \ref{...} and \pageref{...}
-%        citecolor=blue,
-%       pdftitle={Papers by AUTHOR},
-%        pdfauthor={Your Name},
-%        pdfsubject={Just a test},
-%        pdfkeywords={test testing testable},
-%        pagebackref,
-%        pdfpagemode=None,
-%         bookmarksopen=true]{hyperref}
-%%
 
 % New Commands
 \newcommand  \beq    {\begin{equation}}
@@ -73,13 +82,6 @@
 \newcommand{\ue}[1]{\underline{\emph{#1}}}
 \newcommand{\Auth}[1]{\textcolor{red}{[{\bf Authors}: #1]}}
 
-\definecolor{pink_loc}{cmyk}{0, 0.7808, 0.4429, 0.1412}
-\definecolor{coralpink}{rgb}{0.97, 0.51, 0.47}
-\definecolor{carminepink}{rgb}{0.92, 0.3, 0.26}
-\definecolor{burntsienna}{rgb}{0.91, 0.45, 0.32}
-\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
-% Good link for colors http://latexcolor.com
-
 \setcounter{secnumdepth}{4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,13 +92,19 @@
 %% ====
 %% ====
 
-\vspace*{-2.25cm}
-\hspace*{-0.5cm}
 \thispagestyle{empty}
-\includegraphics[width=1.35\textwidth,height=1.225\textheight]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
-%\includepdf[pages={-}]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
+%\vspace*{-2.6cm} % This is without hyperref
+%\hspace*{-0.55cm}
+%\includegraphics[width=1.35\textwidth,height=1.24\textheight]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
+% == With hyperref
+%\vspace*{-2.cm}
+%\hspace*{-1.cm}
+%\includegraphics[width=1.35\textwidth,height=1.15\textheight]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
+%\thispagestyle{empty}
+\includepdf[offset = 70 -80,height=11.3in]{Plots/WFIRSTProposalCover_AnnualReport2017.jpg}
 
 \cleardoublepage
+
 
 % Page header
 \markboth{Cosmology with the WFIRST HLS Survey Science Investigation Team}{Annual Report 2017}

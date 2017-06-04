@@ -2,14 +2,14 @@
 
 
 \begin{summary}[SUMMARY POINTS]
-Our SIT engaged in multiple other activities supporting the WFIRST mission and the Project Office not discussed above. We summarize them here.
+Our SIT engaged in multiple activities supporting the WFIRST mission and the Project Office not discussed above. We summarize them here.
 \begin{enumerate}
 \item Our SIT actively participated to two workshops dedicated to the WFI;
 \item Our SIT contributed to evaluate the Supernova Program;
 \item Our SIT partially supported 15 post-doctoral researchers and one graduate student;
 \item Our SIT published 10 scientific papers supporting our studies or extending the scientific case of WFIRST;
 \item SIT team members are leading the Tri-agency Cosmological Simulation Task Force (TACS);
-\item Our team delivered to the community several high-value products and softwares.
+\item Our team delivered to the community multiple high-value products and softwares.
 %--------------------------------------------------------------------------
 \end{enumerate}
 \end{summary}
@@ -82,8 +82,6 @@ In addition to our work supporting the Project Office, we published our results 
 \item \citet{Chisari:2016xki}, "Multitracing Anisotropic Non-Gaussianity with Galaxy Shapes";
 \end{enumerate}
 
-In addition, Arun Kannawadi, a graduate student at CMU supervised by Rachel Mandelbaum has been working on image simulation and shape measurement analysis. He is partially supported by our SIT.
-
 \subsection{Participation to the Tri-agency  Cosmological Simulation Task Force (TACS)}
 %--------------------------------------------------------------------------
 
@@ -96,10 +94,30 @@ Team members Kiessling and Heitmann have been asked to co-chair a Tri-Agency Cos
 \subsection{Community Deliverables}
 %----------------------------------
 
-In addition to our work supporting the Project Office, we published our results in scientific journals and made them available on the arXiv. The following 10 scientific papers were published by our team members and motivated by our studies:
+Throughout our studies, our SIT aims at releasing codes, products and artificial data sets, with the goals of building awareness of and broad support for the WFIRST dark energy program and inspiring the community to develop methods and carry out investigations that will maximize the cosmological return from WFIRST. This year, we released the following products available mostly from our SIT team webpage \href{http://www.wfirst-hls-cosmology.org/products/}{[Link]}.
 
-\begin{enumerate}
-\item \CoLi chains
-\item CANDEL Catalogs
-\item Simulations from Shirley et al.  - We have released a code that calculates the interloper fraction (Wong, Pullen \& Ho) : a Python-based program that applies secondary line identification and photometric cuts to mock galaxy surveys, in order to simulate interloper identification.  We also have a module specifically designed to do WFIRST and predict interloper rates for WFIRST. \citet{Wong:2016eku}
-\end{enumerate}
+\subsubsection{\CoLi\ Monte-Carlo Markov Chains}
+
+Cosmological parameters MCMC chains corresponding to forecast for the current survey of the WFIRST High Latitude Survey, combining weak-gravitational lensing (WL), cluster count (CC) and redshift space distortions (GRS). These chains were computed using the CosmoLike software \citep{Krause:2016jvl}.
+
+\paragraph{Multi-probe cosmology forecasts (including SN from both SIT SN teams) with realistic systematics budget} The tightest constraints on cosmological models including cosmic acceleration, modified laws of gravity, neutrino physics will come from a joint analysis of multiple cosmological probes. We forecasted constraints of “traditional” single probe analyses for clusters, BAO+RSD, and weak lensing and a multi-probe analysis that utilizes these and several other observables that can be extracted from the data: galaxy-galaxy lensing, photometric galaxy, cluster weak lensing, clustering, SN from WFIRST (forecasts from David Rubin and Dan Scolnic from the two SIT SNe teams), SN from the existing Joint Lightcurve Analysis, existing Baryon Acoustic Oscillation information from BOSS, and CMB information from Planck. These contours show statistical errors only (shape/shot-noise and cosmic variance). Since multi-probe analyses are highly constraining they impose tight requirements on systematics control. These systematics include uncertainties in the estimation of galaxy shapes and redshifts (photo-$z$, spec-$z$), cluster mass calibration, galaxy bias, and intrinsic alignment. Uncertainties due to baryonic effects (SN and AGN feedback, cooling) are not included. It is critical over the coming years to study these uncertainties and to develop the capability to control these systematics at the level of WFIRST multi-probe analyses.
+
+\paragraph{WFIRST modified gravity studies} While cosmic acceleration models have a relatively established parameterization, this is not true for modified gravity theories. We released and showed our first forecasts of modified gravity scenarios, where deviations from Einstein’s GR are parameterized through $\mu$ and $\Sigma$ (please see \citet{Joyce:2016vqv} for a quick introduction). Constraints on these modified gravity parameters for a Weak Lensing+Galaxy-galaxy Lensing+galaxy Clustering (photometric) analysis for the nominal WFIRST survey (2,200 deg.$^2$) and for 2 extended survey scenarios (5,000 deg.$^2$ and 10,000 deg.$^2$, respectively) were obtained. We also studied the difference of this multi-probe case to a Weak Lensing only analysis.
+
+\subsubsection{A WFIRST module has been added to the GalSim package}
+
+GalSim is an open-source software for simulating images of astronomical objects (stars, galaxies) in a variety of ways. The bulk of the calculations are carried out in C++, and the user interface is in python. In addition, the code can operate directly on "config" files, for those users who prefer not to work in python. The impetus for the software package was a weak lensing community data challenge, called \href{http://great3challenge.info/}{[GREAT3]}.
+
+However, the code has numerous additional capabilities beyond those needed for the challenge, and has been useful for a number of projects that needed to simulate high-fidelity galaxy images with accurate sizes and shears. At the end of this file, there is a list of the code capabilities and plans for future development. For details of algorithms and code validation, please see \citet{Rowe2015}.
+
+We have now added a specific module to simulate accurately WFIRST images. The GalSim software package including the WFIRST module is available \href{http://galsim-developers.github.io/GalSim/index.html}{[here]}.
+
+\subsubsection{CANDEL Catalogs}
+
+In order to simulate accurately WFIRST photometric redshift critical for the WL investigation, we tranformed the CANDELS Catalog to the LSST and WFIRST color system with LSST cut applied (Peter Capak, Shoubaneh Hemmati). The catalog includes photometry estimates in LSST (u,g,r,i,z), WFIRST(Y,J,H,F184W) and k band (AB magnitudes) as well as photometric redshifts, FWHM of F160W (pixel, 1 pixel = 0.06 arcsec), and F160W AB magnitude from the CANDELS catalogs. All five CANDELS fields (GOODS-S, GOODS-N, EGS, UDS and COSMOS) are used here which cover $\sim$ 0.2 deg-sq. CANDELS photometric catalogs are published in GOODS-S, COSMOS, UDS and EGS and will be published in GOODS-N (therefore not available to the public yet). In cases where the photometry in a WFIRST or LSST filter could not be measured using the neighboring filters in the CANDELS due to non detections, magnitude is set to 99.0 and limiting magnitude in the closest band is recorded as the error.
+
+This catalog has been released internally to our SIT for testing and validation. It has also been shared also with other SITs and should be publicly released on our SIT website in the coming weeks.
+
+\subsubsection{Interloper Fraction Calculator}
+
+ We have also released a code that calculates the interloper fraction (Wong, Pullen \& Ho): a Python-based program that applies secondary line identification and photometric cuts to mock galaxy surveys, in order to simulate interloper identification.  We also have a module specifically designed to do WFIRST and predict interloper rates for WFIRST available  \href{https://github.com/kazewong/Intercut}{here} on GitHub \citep{Wong:2016eku}.

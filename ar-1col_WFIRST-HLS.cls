@@ -1012,7 +1012,7 @@
 %%
 \@ifpackageloaded{hyperref}{%
   %\def\@linkcolor{green}%
-  \def\@linkcolor{blue}% <<== Oli
+  \def\@linkcolo{alizarin}% <<== Oli
   \def\termkey#1{\hyperlink{key#1}{#1}}%
   \def\marginnoteentry#1#2{\par\addvspace{4\p@}\noindent{\fignum@color{\sffamily\bfseries#1:\hypertarget{key#1}{}}}\ #2\par}%
 }{%
