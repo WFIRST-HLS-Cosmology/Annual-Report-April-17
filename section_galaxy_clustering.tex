@@ -998,7 +998,7 @@ with particle mass of $\sim 10^8 M_\odot$.
 The Outer Rim simulation was used to create the simulated ELG
 catalog for DESI.
 We will combine the halo populations from these simulations with the
-Galacticus SAM code \cite{Benson2010} to create clustered ELG catalogs,
+Galacticus SAM code \cite{Benson2010,Benson2012} to create clustered ELG catalogs,
 some in fixed-redshift cubes for methodology tests and some in light cones
 with realistic survey geometry and redshift evolution.
 Our most ambitious simulation efforts, later in the investigation
@@ -1015,6 +1015,173 @@ requirements beyond FY20 and techniques to reduce them. We will also make our
 simulations publicly available so that others can develop and
 test their own methods, with some of them released in the form of blind
 data challenges.
+
+\subs{H{$\rm \alpha$} emitter number density forecasts.} In work led
+by Merson, Wang, Benson, Kiessling and Rhodes the open source
+semi-analytical galaxy formation model, \textsc{Galacticus}
+\cite{Benson2010,Benson2012}, was used to predict the H${\rm \alpha}$-emitter number counts and redshift distributions for the
+WFIRST GRS.
+
+A four square degree lightcone catalogue was constructed by processing
+the dark matter merger trees of the Millennium Simulation
+\cite{Springel05} with the \textsc{Galacticus} model. Emission lines
+are modelled in \textsc{Galacticus} by interpolating over a library of
+emission line luminosities obtained from the \textsc{Cloudy}
+\cite{Ferland13} code and stored as a function of hydrogen (HI),
+helium (HeI) and and oxygen (OII) ionising luminosities, as well as
+the hydrogen gas density and metallicity of the interstellar medium
+(ISM). The emission line luminosities are then processed to
+incorporate attenuation due to interstellar dust, which can be
+modelled using several different methods. Merson and collaborators
+consider three dust methods from Ferrara \textit{et al.} (1999)
+\cite{Ferrara99}, Charlot \& Fall (2000) \cite{Charlot00} and Calzetti
+\textit{et al.} (2000) \cite{Calzetti00}. However, it is worth noting that any
+user-specified dust method can be used in conjunction with
+\textsc{Galacticus}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{Plots/merson17LightconeHalphaCumulativeCounts.pdf}
+  \caption{Predictions for the cumulative H${\rm \alpha}$ flux counts
+    for the redshift range $0.7<z<1.5$ from a \textsc{Galacticus}
+    lightcone mock catalogue. The various lines show the predictions
+    for the pure H${\rm \alpha}$ fluxes and the H${\rm \alpha}$ fluxes
+    when blended with NII (H${\rm \alpha}+{\rm NII}$), assuming either
+    no dust attenuation or attenuation using one of three methods:
+    Ferrara \textit{et al.} (1999) \protect\cite{Ferrara99}, Charlot
+    \& Fall (2000) \protect\cite{Charlot00} or Calzetti \textit{et al.} (2000) \protect\cite{Calzetti00}. To be consistent with
+    the observed counts from WISP \protect\cite{Colbert13,Mehta2015},
+    which are shown by the data points, contamination from NII is
+    assumed to contribute 29 per cent to the galaxy luminosity. For
+    the Calzetti \textit{et al.} \protect\cite{Calzetti00} method we
+    adopt $\tau_{\rm V}\simeq0.83$. For the Charlot \& Fall
+    \protect\cite{Charlot00} method we adopt $\hat{\tau}^{\rm ISM}_{\rm V}=0.05$ and $\hat{\tau}^{\rm MC}_{\rm V}=0.04$. When
+    applying attenuation due to molecular clouds (MCs) to the Ferrara
+    \textit{et al.}  \protect\cite{Ferrara99} method we also assume
+    $\hat{\tau}^{\rm MC}_{\rm V}=0.04$.}
+  \label{fig:halpha_flux_counts}
+\end{figure}
+
+
+First, the \textsc{Galacticus} predictions for the cumulative counts
+of H${\rm \alpha}$-emitting galaxies over the redshift range
+$0.7\leqslant z\leqslant 1.5$ obtained with each dust method are
+compared with the latest WISP counts from Mehta \textit{et al.} (2015)
+\cite{Mehta2015}. The H${\rm \alpha}$ luminosities from
+\textsc{Galacticus} are corrected to introduce contamination due to
+NII by assuming that NII contributes 29 per cent to the observed
+emission line luminosity. A fixed NII contamination was chosen to be
+consistent with the WISP analyses of Colbert \textit{et al.} (2013)
+\cite{Colbert13} and Mehta \textit{et al.} \cite{Mehta2015}. By
+adjusting the parameters used by two of these dust models, the Charlot
+\& Fall \cite{Charlot00} method and the Calzetti \textit{et al.}
+\cite{Calzetti00} dust law, the authors are able to obtain predicted
+cumulative H${\rm \alpha}$ flux counts from \textsc{Galacticus} that
+are consistent with the observed counts of Mehta \textit{et al.}
+\cite{Mehta2015} down to a flux limit of $1\times 10^{-16}{\rm erg}\,{\rm s}^{-1}{\rm cm}^{-2}$ (see
+Figure~\ref{fig:halpha_flux_counts}). Adopting the Ferrara \textit{et al.} \cite{Ferrara99} dust method yields counts that agree with the
+observations for flux limits fainter than approximately $5\times 10^{-16}{\rm erg}\,{\rm s}^{-1}{\rm cm}^{-2}$, but yield an excess in
+the number counts for the brightest fluxes. Overall the authors find
+that down the expected flux limits of the WFIRST mission, the
+\textsc{Galacticus} model is able to predict number densities that are
+consistent with existing observations from the WISP survey. Although
+the lightcone used in this analysis has a small area on the sky, it is
+expected that cosmic variance has little effect on the predicted
+number counts. Since the lightcone analysis is time-consuming and
+expensive in computing resources, the lightcone used in this study was
+limited in size to 4 sq deg, in order to provide timely input to
+WFIRST. However, the authors plan to build significantly larger
+lightcones in future work.
+
+After setting the strength of the dust attenuation for each method the
+authors then examine whether these chosen attenuation strengths yield
+reasonable matches to the observational estimates for the distribution
+of optical depth (at the observer-frame H${\rm \alpha}$ wavelength)
+and the H${\rm \alpha}$ line luminosity function. For each of the dust
+models, \textsc{Galacticus} predicts optical depths that are
+consistent within error with the optical depth estimates from WISP
+\cite{Dominguez13}, though the \textsc{Galacticus} optical depths do
+not show any increase with observed H${\rm \alpha}$ luminosity, as has
+been suggested in the literature. The predicted luminosity function
+from \textsc{Galacticus} is consistent with the H${\rm \alpha}$
+luminosity function from WISP as measured by Colbert \textit{et al.}
+\cite{Colbert13} over the redshift range $0.9\leqslant z \leqslant 1.5$. Comparison with the luminosity functions from HiZELS
+\cite{Sobral13} at $z\simeq 0.84$, $z\simeq 1.47$ and $z\simeq 2.23$
+shows that with these chosen dust attenuations \textsc{Galacticus} is
+able to reproduce the $z\simeq 0.84$ luminosity function, but becomes
+progressively a worse fit towards higher redshift, especially at
+$z>2$. This suggests that the dust methods may be lacking some
+redshift evolution or dependence on other galaxy properties, or that
+the \textsc{Galacticus} emission line luminosities are the
+incorrect\ strength. Investigating these possibilities requires
+rigorous calibration of the \textsc{Galacticus} model, which will be
+carried out in future work.
+
+\begin{table*}
+\centering
+\caption{Predicted cumulative number of H${\rm \alpha}$-emitting
+  galaxies per square degree for the WFIRST GRS, assuming a redshift
+  range of $0.5\leqslant z\leqslant 2$. The upper half of the table
+  shows the counts for NII contaminated fluxes, whilst the lower half
+  of the table shows the counts when NII contamination is
+  removed. Predicted counts are reported for three dust methods:
+  Calzetti \textit{et al.} (2000) \protect\cite{Calzetti00}, Charlot
+  \& Fall (2000) \protect\cite{Charlot00} and Ferrara \textit{et al.}
+  (1999) \protect\cite{Ferrara99}. For the Ferrara \textit{et al.}
+  method we include attenuation due to molecular clouds (MCs). The
+  strength of the attenuation for the various methods are the same as
+  in Fig~\ref{fig:halpha_flux_counts}. Note that the flux limits
+  assume contamination by NII, which is set at 29 per cent of the
+  total flux, as adopted by Colbert \textit{et al.} (2013)
+  \protect\cite{Colbert13}. The efficiency of each survey is
+  instrumentation dependent, and has not been included.}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Flux limit&\multicolumn{3}{|c|}{Dust method used with \textsc{Galacticus}}\\
+${\rm erg}\,{\rm s}^{-1}{\rm cm}^{-2}$&Calzetti \textit{et al.} (2000)&Charlot \& Fall (2000)&Ferrara \textit{et al.} (1999, inc. MCs)\\
+\hline\hline
+\multicolumn{4}{|c|}{\textsc{Cumulative counts including NII contamination}}\\
+$1\times 10^{-16}$&26344&28958&26730\\
+$2\times 10^{-16}$&9169&10439&10571\\
+$3\times 10^{-16}$&4675&5378&6013\\
+\hline
+\multicolumn{4}{|c|}{\textsc{Cumulative counts with NII removed}}\\
+$1\times 10^{-16}$&15833&17660&16938\\
+$2\times 10^{-16}$&5202&5971&6557\\
+$3\times 10^{-16}$&2628&2978&3751\\
+\hline
+\end{tabular}
+\label{tab:cumulativeFluxCounts}
+\end{table*}
+
+Finally, the \textsc{Galacticus} lightcone is used to present
+predictions for the redshift distribution and the differential and
+cumulative H${\rm \alpha}$ flux counts for the WFIRST GRS, as well as
+two surveys mimicking a Euclid-like selection. These predicted
+cumulative flux counts to are compared to forecasts from Mehta
+\textit{et al.} \cite{Mehta2015} and empirical models originally
+presented by Pozzetti \textit{et al.} (2016) \cite{Pozzetti15}. The
+\textsc{Galacticus} forecasts have counts that are consistent with
+those of Pozzetti \textit{et al.} \cite{Pozzetti15} and about 30 per
+cent lower than those of Mehta \textit{et al.} \cite{Mehta2015}. The
+deficit compared to the Mehta \textit{et al.} forecasts could be due
+to Mehta \textit{et al.} using the OIII line to extrapolate the number of
+H${\rm \alpha}$ emitters for $z\gtrsim1.6$. For a WFIRST GRS with redshift range $0.5\leqslant z\leqslant 2$ and
+flux limit of $1\times 10^{-16}{\rm erg}\,{\rm s}^{-1}{\rm cm}^{-2}$
+\textsc{Galacticus} predicts a number density between 26,300 and
+29,000 galaxies per square degree, prior to removal of NII
+contamination, and 29 per cent lower with NII removed. Note that all
+the H${\rm \alpha}$-emitter counts discussed in this paper are
+expected number counts of target galaxies for spectroscopy, and
+\emph{not} the counts of galaxies with redshift measurements. The
+latter will depend on the redshift purity and completeness for each
+survey, which in turn depends on instrumentation and noise parameters.
+
+Future work in this area will involve exploiting the
+\textsc{Galacticus} model to examine a variety of other properties of
+emission line galaxies, including the distribution of OIII
+luminosities fluxes and the contamination from NII.
+
 
 \subsection{Systematics Testing and Mitigation (D8)}
 %================================================
