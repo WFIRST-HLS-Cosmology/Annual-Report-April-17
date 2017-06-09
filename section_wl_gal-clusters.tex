@@ -170,6 +170,263 @@ requirements are captured in the flow-down.
 %with Project so that proto-types we develop can be ingested and that
 %we take advantage of work being done by the project.
 
+\Oli{Started here}
+
+\begin{summary}
+\Oli{Need update}
+To mature the WFIRST GRS, our work has been organized along four main directions.
+\begin{enumerate}
+\item We developed, delivered to the project and updated the GRS requirements;
+\item We generated new WFIRST specific light-cone simulations;
+\item Using HST measurement, we started a new data analysis effort to improve our knowledge of the H$\alpha$ luminosity function, a critical element to plan the GRS;
+\item We developed quick and agile analysis tools that will help us develop a pseudo-pipeline in the coming years.
+\end{enumerate}
+\end{summary}
+
+
+ \subsection{Developing the HLIS Requirements (D1)}
+
+ \begin{summaryii}
+   Over the last year, our main priority have been to support and guide the
+   development of the WFIRST HLS imaging and in particular to identify,
+   articulate and validate the scientific requirements of the instrument, the
+   data reduction software, and the survey. Responding to a calendar set by the
+   Project Office, our SIT delivered three major updates to the WFIRST HLSIS
+   requirements to the Project Office on July 1, 2016, December 1, 2016, and
+   March 2, 2017. Each of these provide progressively sharper definitions of the
+   HLS requirements. We describe the main requirements and their science drivers
+   below.
+ \end{summaryii}
+
+\subsubsection{Science Requirements}
+
+\paragraph{HLIS 1} WFIRST shall be capable of providing HLIS science data
+records over an area of at least 1600 sq. deg. (2000 sq. deg. goal) after correcting for
+edge effects. [Note: losses due to bright stars or image defects at scales $<$ 1
+arcmin are counted as loss of galaxy number density (see HLIS2) rather than
+survey area.]
+
+\paragraph{HLIS 2} WFIRST shall implement a High Latitude Imaging Survey to
+measure galaxy shapes with a total effective z $<$ 3 galaxy density of at least
+$n_{eff}$ = 27 per arcmin$^2$ in at least two bands, and three bands for at least half
+of these galaxies, and photometry sufficient to provide photometric redshifts.
+
+\paragraph{HLIS 3} WFIRST shall provide HLIS science data records with additive shear
+errors A limited in RMS per component over the range of angular multipoles 1.5 $<
+\log_{10}\ell <$ 3.5 as specified below:
+
+\bea
+\sqrt{\sum A^2S} = 7.5 \times 10^{-5} & \rm{for} & 1.5 < \log_{10}\ell < 2.0 \\
+\sqrt{\sum A^2S} = 9.9 \times 10^{-5} & \rm{for} & 2.0 < \log_{10}\ell < 2.5 \\
+\sqrt{\sum A^2S} = 1.4 \times 10^{-4} & \rm{for} & 2.5 < \log_{10}\ell < 3.0 \\
+\sqrt{\sum A^2S} = 1.9 \times 10^{-4} & \rm{for} & 3.0 < \log_{10}\ell < 3.5
+\eea
+where the sum is over independent terms in the additive systematic budget. The
+total additive systematic budget, obtained via RSS of the scale bins, is
+2.7$\times$ 10$^{-4}$. This requirement includes sources of additive shear with both hardware
+(detector, optics) and software (biases due to data reduction pipeline) origin,
+after all post-processing.
+
+\paragraph{HLIS 4} WFIRST shall provide HLIS science data records with multiplicative shear
+errors $M$ shall be known to
+\bea
+\sqrt{\sum M^2S} = 3.2 \times 10^{-4}
+\eea
+where the sum is over independent terms in the multiplicative systematic budget.
+This requirement includes sources of additive shear with both hardware
+(detector, optics) and software (biases due to data reduction pipeline) origin,
+after all post-processing.
+
+\paragraph{HLIS 5a} WFIRST shall provide photometric redshift codes that provide a
+redshift probability distribution for an arbitrary sample of objects that
+reflects a true N(z) with an error on that estimate.
+
+\paragraph{HLIS 5b} WFIRST shall provide HLIS science data records with the
+averaged redshift probability distributions $p(z)$ for objects in each tomographic
+bin per the table below on the fraction of probability within
+$|z_{phot}-z_{spec}|/(1+z)$ of the true redshift. .
+
+\begin{table}[h]
+\tabcolsep7.5pt
+%\caption{Table caption}
+%\label{tab1}
+\begin{center}
+\begin{tabular}{@{}|l|l|l|@{}}
+\hline
+Fraction of Sample & 68\% of probability within & 90\% of the probability within\\
+\hline
+$\sim$ 75\% (TBD) & 0.04 & 0.12\\
+$\sim$ 15\% (TBD) & 0.08 & 0.24\\
+$\sim$ 10\% (TBD) & 0.15 & 0.45\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+This way of phrasing the requirement takes an arbitrary $p(z)$ into account and
+is more closely related to the ultimate $N(z)$ requirement than the typically used
+$\sigma(z)$ and outlier fraction measurement.  It also reflects the fact that the galaxy
+population is diverse, and so different populations will have different photo-$z$
+properties given the photometry.
+
+\paragraph{HLIS 6} WFIRST shall provide HLIS science data records with the $N(z)$ of each
+tomographic bin of $\Delta z_{phot}=0.05$ measurable to $\Delta z/(1+z)<$0.002
+(TBC).
+
+[The 0.002 is based on the requirement that the photo-$z$ errors degrade the
+aggregate precision by a factor of 1.2$^{1/2}$ (i.e., 20\% in RSS) for the Reference
+survey, and assuming that the errors in the photo-z calibration are correlated
+over a range of $\Delta z$ =0.2 in redshift.]
+
+\paragraph{HLIS 8} WFIRST shall be capable of providing HLIS science data record
+with S/N $\geq$ 18 (matched filter detection significance) per shape/color filter for
+a galaxy with an exponential disk profile and $r_{eff}$ = 180 mas and mag AB =
+24.4/24.3/23.7 (J/H/F184).
+
+\paragraph{HLIS 9} WFIRST shall provide HLIS science data records with the PSF
+ellipticity, defined by the moment ratios $e_1=(I_{xx}-I_{yy})/(I_{xx}+I_{yy})$ and
+$e_2=2I_{xy}/(I_{xx}+I_{yy})$, determined to an error of $\leq$5.7$\times 10^{−4}$ RMS per component on
+angular multipole scales 32 $< \ell <$ 3200.
+
+The top-level requirement is dependent on the angular distribution (as per
+HLIS3). The angular distribution from HLIS3 corresponds to placing 1.7$\times
+10^{−4}$ of the shear systematic at 32 $< \ell <$ 100; 2.3$\times 10^{−4}$ at
+100 $< \ell <$ 320; 3.1$\times 10^{−4}$ at 320 $< \ell <$ 1000; and 3.8$\times 10^{−4}$
+at 1000 $< \ell <$ 3200. If these budgets are exceeded in one bin, the top-level
+systematic error budget will have to be re-allocated.
+
+\paragraph{HLIS 10} WFIRST shall provide HLIS science data records with the PSF
+size, defined by the second moment $I_{xx}+I_{yy}$, determined to a relative
+error of $\leq 7.2 \times 10^{−4}$ RMS on angular multipole scales $\ell <$
+3200.
+
+The “PSF” as defined in HLIS 9 and HLIS 10 includes the pixel response as well
+as the optical PSF and image motion.
+
+\paragraph{HLIS 14a} WFIRST shall provide a sample of spectroscopic redshifts
+over the entire HLIS footprint, covering 0 $< z \leq 2.5$ and with a known selection
+function.  [Note on low z: The approved 4MOST survey will do this in the
+Southern Hemisphere and DESI will in the North. It might also be possible
+internally to WFIRST data using rest-frame NIR lines.]
+
+In addition to data products themselves, certain tools should be provided to
+understand underlying systematic effects in the data. These include:
+
+\paragraph{HLIS 31} The data processing system shall provide simulation packages that can
+“observe” simulated fields (e.g., from a catalog of galaxies, with an $x-y-\lambda$ data
+cube of each) and feed the results into the data reduction pipeline, all the way
+through to simulated catalogs.
+
+\paragraph{HLIS 32} The data processing system shall provide a simulation package that can
+inject simulated galaxies (e.g., from $x-y-\lambda$ data cubes) or stars into the real
+images and re-run (portions of) the data processing. This is needed to assess
+completeness/selection effects, the impact of blending on objects of known
+properties, and the impact of nearby stars on the measurement of galaxy
+photometric properties. In principle, much of this could be done from observing
+simulated skies, but these hybrid simulations are useful because they have the
+correct instrument noise properties and level of crowding by construction.
+
+\subsubsection{HLSI Calibrated Data Record Requirements}
+
+\paragraph{HLIS 28} WFIRST shall archive HLIS calibrated images with the PSF for each
+exposure specified as a function of position on the focal plane and incorporate
+any World Coordinate System information needed for subsequent stages of SOC
+processing.
+
+\paragraph{HLIS 25} WFIRST shall provide HLIS calibrated images with the relative
+photometric calibration in each HLIS filter on angular scales $\ell < 3200$ better than
+10 (TBR) millimag RMS.
+
+This requirement flows from the photo-$z$ requirement: variations in the
+photometric calibration lead to systematic variations of the $P(z_{phot}|z_{spec})$
+function across the survey, which both distorts the lensing and galaxy
+clustering power spectra, and may make the photo-z calibration fields not
+representative.
+
+\paragraph{HLIS 26a} WFIRST shall provide HLIS calibrated images with the astrometric
+solution in the WFI images having a relative error (offset between two images of
+the same galaxy or star, possibly taken at different times during the survey) of $<$
+1.3mas (TBR).
+
+\paragraph{HLIS 26b} WFIRST shall provide HLIS calibrated images with the astrometric
+solution in the WFI images having an absolute error, relative to the astrometric
+frame defined by the ICRF of:
+
+\begin{eqnarray}
+<26  & \rm{mas\ RMS\ per\ component\ for} & \log_{10}\ell = 1.5 - 2.0\\
+<11  & \rm{mas\ RMS\ per\ component\ for} & \log_{10}\ell = 2.0 - 2.5\\
+<5.1 & \rm{mas\ RMS\ per\ component\ for} & \log_{10}\ell = 2.5 - 3.0\\
+<2.2 & \rm{mas\ RMS\ per\ component\ for} & \log_{10}\ell = 3.0 - 3.5
+\end{eqnarray}
+
+\paragraph{HLIS 33} WFIRST shall provide HLIS calibrated images with the
+variation of the total system response known as a function of position such that
+the total flux of a source with a known Spectral Energy Distribution (SED) can
+be corrected to a common filter system at the $\sim$ 0.5\% (TBC) level.
+
+\subsubsection{HLSI Calibrated Raw Data Record Requirements}
+
+\paragraph{HLIS 27} WFIRST shall provide HLIS raw images in the archive for each
+detector exposure with each raw data record including a unique dataset
+identifier for each exposure, the exposure time, the time of exposure, all
+individual downlinked detector readouts used to make the exposure, the
+observatory pointing orientation and any additional engineering data the Science
+Center uses for subsequent processing.
+
+\paragraph{HLIS 7} WFIRST shall have the capability of providing HLIS raw images with
+photometry, position, and shape measurements of galaxies in 3 filters (J, H, and
+F184), and photometry and position measurements in one additional color filter
+(Y).
+
+\paragraph{HLIS 11} WFIRST shall provide HLIS raw images with a system PSF EE50
+radius $\leq$ 0.12 (Y band), 0.12 (J), 0.14 (H), or 0.14 (F184) arcsec, excluding
+diffraction spikes and non-first order light and including the effects of
+pointing jitter, for at least 95\% of the exposures (TBR) and over 95\% (TBR) of
+the FOV.
+
+\paragraph{HLIS 12} WFIRST shall provide HLIS raw images dithered so that
+Nyquist sampling of the PSF is provided over $>$90\% (TBC) of the survey area in
+the shape measurement bands.
+
+\paragraph{HLIS 14b} WFIRST shall be capable of observing a deep field of at least 6 $deg^2$
+within the HLIS with a S/N of $>$25 per filter (TBC) for the faintest galaxies in
+the lensing sample. This field should be situated to overlap with other deep
+multi-wavelength data.
+
+\paragraph{HLIS 14c} WFIRST shall acquire at least 15,000 (TBC) spectroscopic redshifts in
+the HLIS deep field (see HLIS 14b), representing the full extent of color space
+for detected galaxies. (Spectra could be from WFIRST observations or from
+ground-based observatories).
+
+\paragraph{HLIS 19} WFIRST shall periodically acquire HLIS deep field imaging observations.
+These observations will enable testing the effects of noise on the shape
+measurement and photo-$z$ algorithms. The deep fields are also needed to measure
+empirical noise properties in the photometric sample to ensure selection and
+photo-$z$ bias can be properly characterized.
+
+\paragraph{HLIS 20 (HLIS 15)} WFIRST shall downlink at least 3 ground-configurable linear
+combinations of samples per HLIS exposure, with a goal of 6 samples. This
+requirement assumes on-board subtraction of the reference frame (first read).
+
+One means of obtaining the photometric redshift training and calibration dataset
+is with an on-board spectrograph similar to that used for supernova
+spectroscopy, but with a somewhat larger field of view and coarser spatial
+resolution. (slitless spectroscopy may be sufficient but has not yet been
+studied) Requirements for this spectrograph are as follows:
+
+\paragraph{HLIS 15} WFIRST shall be capable of providing HLIS raw spectroscopic data with spectral
+resolution $\lambda /\Delta \lambda \geq$ 100(TBR) per 2-pixel resolution element at all wavelengths.
+
+\paragraph{HLIS 16} WFIRST shall be capable of providing HLIS raw spectral images with a
+bandpass spanning at least 0.45-2.0 $\mu$m.
+
+\paragraph{HLIS 17} WFIRST shall be capable of providing HLIS raw spectral
+images with a spatial resolution of 0.3 arcsecond (TBR), with 2 or more pixels
+per spatial resolution element.
+
+\paragraph{HLIS 18} WFIRST shall be capable of providing HLIS raw spectral
+images with a field of view of at least 6" $\times$ 6".
+
+
 \textbf{Below is some new text from Rachel M.  It needs to be put in the right place.  If more
 information or detail is needed, please let me know.}
 
