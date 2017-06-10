@@ -184,21 +184,123 @@ To mature the WFIRST GRS, our work has been organized along four main directions
 \end{summary}
 
 
- \subsection{Developing the HLIS Requirements (D1)}
+ \subsection{Developing the High Latitude Imaging Survey Requirements (D1)}
 
  \begin{summaryii}
    Over the last year, our main priority have been to support and guide the
    development of the WFIRST HLS imaging and in particular to identify,
    articulate and validate the scientific requirements of the instrument, the
-   data reduction software, and the survey. Responding to a calendar set by the
+   data reduction software, the survey and outline their flow. Responding to a calendar set by the
    Project Office, our SIT delivered three major updates to the WFIRST HLSIS
    requirements to the Project Office on July 1, 2016, December 1, 2016, and
    March 2, 2017. Each of these provide progressively sharper definitions of the
    HLS requirements. We describe the main requirements and their science drivers
-   below.
+   below as they are included in the current Science Requirement Document.
  \end{summaryii}
 
-\subsubsection{Science Requirements}
+\subsubsection{Reference Survey and Figures of Merit}
+
+The HLIS described in the SDT15 report covers 2200 deg2  to an imaging depth of
+approximately 26.6 in Y, J, H, and 25.8 in F184 (5$\sigma$ point source, AB
+magnitudes).  The predicted effective source densities are $N_{eff} \sim$ 33, 35, and 19
+arcmin$^{-2}$ in J, H, F184, respectively, and $N_{eff} \sim 45$ arcmin$^{-2}$ galaxies measured
+in at least one of the filters.
+
+For the reference survey used to define baseline requirements, we back off
+slightly in area to 2000 deg2 and in effective source density to $N_{eff} = 30$
+arcmin$^{-2}$ to allow margin for observing inefficiencies and the possibility that
+some fraction of sources cannot be used because of unreliable shape measurements
+or photo-$z$ estimates.  We define the reference figure of merit in terms of the
+aggregate fractional uncertainty on the amplitude of clustering $\sigma_m(z)$ for a
+fixed distance-redshift relation.  Specifically, we define $FWL$ to be a constant
+factor that multiplies $\sigma_m(z)$ at all redshifts, relative to the predictions of
+our fiducial ΛCDM cosmological model.  The reference figure of merit is
+$FoM_{WL,ref} = [\sigma(FWL)]^{-2}$ where $\sigma(FWL)$ is the forecast rms error in this quantity for the reference
+survey.  With this inverse-variance definition, the FoM scales linearly with
+survey area in the absence of systematic errors.  For this forecast we include
+statistical errors and marginalization over a description of baryonic effects,
+but we do not incorporate other systematics.  Our forecasting tools yield an
+uncertainty of 0.125\% in FWL for the reference survey, or $FoM_{WL,ref} = 6400$.
+
+In practice there is substantial degeneracy between the expansion history and
+structure growth constraints from WL.  However, for characterizing the
+statistical power of the survey and the impact of systematics, it is simplest,
+and sufficient, to focus on a single-parameter constraint with other quantities
+held fixed.  The degeneracy between growth and expansion history will be broken
+largely by combining the WL measurements with SN and BAO constraints, which
+depend only on expansion history.
+
+\subsubsection{Baseline  Dark Energy Science Requirements for the HLIS}
+
+The baseline HLIS requirements are to have sufficient observing time and
+Observatory performance so that the WL constraints from the completed HLIS will
+be sufficient to yield
+\bea
+FoM_{WL} \geq {FoM_{WL,ref}\over 2}
+\eea
+including statistical and systematic errors, with $FoM_{WL}$ and $FoM_{WL,ref}$ computed as described above.
+
+While $FoM_{WL,ref}$/2 is computed based on cosmic shear alone, the $FoM_{WL}$
+for the HLIS will include the constraints from galaxy-galaxy lensing and
+cluster-galaxy lensing, which provide margin from additional statistical power
+and their leverage for constraining systematics.  Additional margin comes from
+the use of three shape measurement bands, which provides greater statistical
+power than the $N_{eff}= 30$ arcmin$^{-2}$ reference case, as well as providing a method
+to diagnose and mitigate systematic effects through the comparison of auto- and
+cross-correlations.
+
+Since the reference $FoM_{WL}$ is computed without contributions from shape
+measurement, photo-$z$, or intrinsic alignment systematics, meeting this Level 1
+requirement implies keeping the contribution of these systematics sub-dominant
+relative to the statistical errors of the reference survey.
+
+\subsubsection{Threshold Dark Energy Science Requirements for the HLIS}
+
+The threshold HLIS requirements are to have sufficient observing time and
+Observatory performance so that the WL constraints from the completed HLIS will
+be sufficient to yield
+\begin{eqnarray}
+FoM_{WL}\geq {FoM_{WL,ref}\over 4}
+\end{eqnarray}
+including statistical and systematic errors, with $FoM_{WL}$ and $FoM_{WL,ref}$ computed as described above.
+
+A factor of 4 degradation in the FoM would correspond to a factor of two
+degradation in the errors on $\sigma_m(z)$.  This would still represent a factor
+of $\simeq$ 20 improvement on current knowledge.
+
+\subsubsection{Overview of Requirements Flowdown}
+
+We define baseline Level 2 requirements for the HLIS such that, if these
+requirements are satisfied, we expect the baseline requirement, $FoM_{WL}\geq
+0.5 FoM_{WL,ref}$, to be satisfied. We allocate the margin relative to the
+reference survey in broad categories as follows:
+\begin{enumerate}
+\item	A factor 0.8 in survey area (1600 deg$^2$ vs. 2000 deg$^2$)
+\item	A factor 0.9 in effective source density (27 arcmin$^{-2}$ vs. 30 arcmin$^{-2}$)
+\item	A factor 0.95 in shape measurement systematics
+\item	A factor 0.77 in photo-$z$ systematics
+\item	A factor 0.95 in intrinsic alignment systematics
+\item (0.8 × 0.9 × 0.95 × 0.77 × 0.95 = 0.50).
+\end{enumerate}
+
+The margin in survey area allows for observational inefficiencies (e.g., slew
+and settle times) and for time devoted to calibration observations specific to
+the HLIS. In general, there is room to trade margin among these categories while
+satisfying the baseline requirement.  For example, if the effective source
+density exceeds 30 arcmin$^{-2}$, then there is room to accommodate larger photo-$z$
+systematics or a smaller survey area.  If four filters are not required over the
+full survey area to control systematics, then the number of shape measurements
+can be increased (considerably) by observing a larger area in one or two bands.
+Other requirements are those needed to allow the construction of galaxy catalogs
+with the information needed to enable accurate WL and galaxy clustering
+measurements, including accurate maps of survey depth. We do not define
+individual thresholds (as opposed to baselines) for the Level 2 requirements.
+The HLIS threshold is a factor of 4 lower in $FoM_{WL}$, and the best way of meeting
+this threshold would likely depend on which of the baseline requirements cannot
+be met.
+
+The science requirements for the High Latitude Imaging Survey discussed above
+may be summarized as:
 
 \paragraph{HLIS 1} WFIRST shall be capable of providing HLIS science data
 records over an area of at least 1600 sq. deg. (2000 sq. deg. goal) after correcting for
@@ -210,6 +312,52 @@ survey area.]
 measure galaxy shapes with a total effective z $<$ 3 galaxy density of at least
 $n_{eff}$ = 27 per arcmin$^2$ in at least two bands, and three bands for at least half
 of these galaxies, and photometry sufficient to provide photometric redshifts.
+
+\subsubsection{High-Latitude Imaging Survey – Science Data Records}
+
+High-level science products needed for weak lending analysis include catalogs of
+each source, which contains positions, classifications, photometry (aperture
+photometry, adaptive moment photometry), photometric redshifts, shape
+measurements for each object, links to ground-based photometric data at visible
+wavelengths, etc. These catalogs should also provide error estimates for each
+quantity, including covariance of output parameters. (One approach, under
+investigation by LSST, is to provide posteriors on galaxy ellipticities,
+effective radii, Sersic indices, etc, from an MCMC run on each object.)
+
+\paragraph{HLIS 29a} WFIRST shall produce a mosaic image of the HLIS field using data in
+each filter, and using coordinates tied to the astrometric frame defined by the
+ICRF.
+
+\paragraph{HLIS 29b} The WFIRST HLIS mosaics shall include information on the effective
+exposure time for each pixel, effective PSF as a function of position, effective
+depth as a function of position, data quality flags, and additional data
+generated in producing the mosaics that characterize or support the mosaic
+generation process.
+
+\paragraph{HLIS 30a} WFIRST shall produce a catalog of each source in the HLIS field
+containing positions, fluxes, image moments, in each filter at each epoch,
+object classification information, and object-appropriate derived data. Examples
+of object-appropriate derived data include photometric redshifts and
+morphological parameters for galaxies, parallaxes and proper motions for stars,
+limited time domain information for variable sources.
+
+\paragraph{HLIS 30b} The WFIRST HLIS catalog shall include statistical and systematic
+uncertainties for each quantity in the catalog as well as data quality flags
+where numeric uncertainties are not applicable.
+
+\paragraph{HLIS 34} WFIRST shall provide HLIS science data records that characterize the
+non-Gaussian tails of the error distribution of sources, including both random
+and systematic errors, to $\simeq 0.1$\% (TBD) as a function of time, location on the
+sky, magnitude, and object shape.
+
+In addition to object catalogs, the following information should be provided:
+angular masks, including maps of ancillary quantities that may correlate with
+the detection efficiency of galaxies and/or their photometric properties (e.g.:
+effective noise per square arcsec in each filter; the effective central
+wavelength of stacked images, which varies due to filter bandpass effects).
+
+\paragraph{HLIS 35} WFIRST shall provide HLIS science data products with the angular mask
+and noise map of the lensing sample.
 
 \paragraph{HLIS 3} WFIRST shall provide HLIS science data records with additive shear
 errors A limited in RMS per component over the range of angular multipoles 1.5 $<
@@ -427,86 +575,77 @@ per spatial resolution element.
 images with a field of view of at least 6" $\times$ 6".
 
 
-\textbf{Below is some new text from Rachel M.  It needs to be put in the right place.  If more
-information or detail is needed, please let me know.}
-
-\subsubsection{Polarization effects}
-During early 2017, work was carried out to assess the approximate level of an effect that could
-cause weak lensing systematics, but that had never been previously considered by the weak lensing
-community.  This effect is polarization-dependent quantum efficiency (due to e.g.\ different
-reflectivity of various coatings for different polarizations of light).  Since the light from
-edge-on disk galaxies typically has some low level polarization perpendicular to the disk, any
-polarization-dependence of the QE could result in a preferential selection of such galaxies based on
-their orientation in the focal plane.  This would violate the baseline assumption in a weak lensing
-analysis, which is that all coherent galaxy alignments are due to gravitational lensing.
-
-A student at CMU, Brent Tan, worked with Rachel Mandelbaum and Chris Hirata on a simple toy model
-for this effect.  The toy model had two parameters: the fraction of the disk galaxy light that is
-polarized, and the relative attenuation of that perpendicular polarization component (both numbers
-in the range $[0,1]$).  For each point in that parameter space, the coherent shear due to selection
-bias was calculated; see results in Figure~\ref{fig:polarization}.  Finally, the results were
-modified to account for the fact that not all disk galaxies are viewed edge-on and that not all
-galaxies are disks, giving a net coherent shear due to this selection bias of $\sim 3\times
-10^{-4}$.  The results are still quite uncertain because our fiducial values for the disk
-polarization fraction were based on observations of nearby galaxies, not $z\sim 1$ disks.  However,
-this is large enough to be relevant for WFIRST, so this systematic needs to be evaluated more
-carefully and requirements placed in future.  A publication on this topic will be prepared during
-summer 2017.
-\begin{figure}
-%\begin{center}
-\includegraphics[width=5in]{Plots/polarization-selection.pdf}
-%\end{center}
-\caption{\label{fig:polarization}
-The average shear due to weak lensing selection biases due to polarization-dependent quantum
-efficiency, as a function of the fraction of polarized light from edge-on disks (horizontal axis)
-and the fractional attenuation of the perpendicular polarization (vertical axis).  The dot at
-$(0.05,0.9)$ is our fiducial point in parameter space, and has $\langle e\rangle \approx 0.001$.
-}
-\end{figure}
-
-Another possible polarization-related systematic is a polarization-dependent PSF.  That will be the
-subject of future work.
-
-\subsubsection{Interpixel capacitance requirements}
-
-The WFIRST detectors will suffer from electrical crosstalk between the pixels, unlike the optical
- detectors that are based on CCDs. This effect, known as the \emph{interpixel capacitance} (IPC),
- appears as a systematic effect in the weak lensing shear measurements and causes a
- bias in the measurements if not properly taken into account. The effect of IPC on the point-spread
- function (PSF) was already studied by members of our SIT in \cite{Kannawadi2016}, and requirements were placed
- on the level of uncertainty in the IPC based on how that uncertainty affects the PSF.
-
-More recently, in late 2016, members of our SIT (Mandelbaum and student Kannawadi) carried out and
-analyzed simulations to determine whether additional requirements on IPC are needed to ensure that
-weak lensing shear estimation is not biased beyond our tolerances.  To calibrate the shear
-multiplicative bias to an accuracy of $2\times 10^{-3}$, we find that the requirements on the IPC
-placed by the PSF requirements are sufficient, so no new requirement is needed.  A paper on this
-result is in preparation.
-
-
-\subsection{Photometric Calibration}
+\subsection{Defining the Photometric Calibration Plan}
 \label{sec:wl_calibration}
 %================================================
-\Auth{Nikhil, Chris}
 
-Our SIT has been instrumental in the Calibration Working Group, since precision cosmology measurements depend sensitively on calibration; subtle effects that might not be noticeable in other areas of astrophysics can become important when trying to measure galaxy shapes to $<0.1$\%. Activities over the past year have included:
-\begin{list}{$\bullet$}{}
-\item
-{\em Dark filter:} Co-I's Wang, Capak, and Hirata participated extensively in the analyses and discussions that led the FSWG to recommend a dark position in the element wheel on WFIRST.
-\item
-{\em Calibration plan}: Our SIT has contributed extensively to the WFIRST WFI Calibration Plan, including detailed quantitative assessments of calibration approaches and their ability to meet requirements. In some areas, such as dark current and the point spread function, our contributions to the calibration plan are now traceable all the way from science measurements (WL shear) down to the specific calibration approaches and the hardware stability requirements needed for them to work. A major area of work leading up to SRR/MDR is to complete this flow-down for the other areas of calibration.
-\item
-{\em Detector characterization}: We have made use of the H4RG data provided by the Detector Characterization Laboratory to measure some of the non-linear effects relevant to weak lensing in real H4RG detectors. This is an important practice step toward building calibration pipelines that will support WL science.
-\end{list}
-In what follows, we provide some highlights from our calibration activities. The list is not exhaustive.
+\begin{summaryii}
+  In addition to to articulating the science requirements, our SIT has been
+  instrumental in the Calibration Working Group effort. Since precision
+  cosmology measurements depend sensitively on calibration; subtle effects that
+  might not be noticeable in other areas of astrophysics can become important
+  when trying to measure galaxy shapes to $<0.1$\%. Activities over the past
+  year have included:
+  \begin{enumerate}
+  \item {\em Dark filter:} Co-I's Wang, Capak, and Hirata participated
+  extensively in the analyses and discussions that led the FSWG to recommend a
+  dark position in the element wheel on WFIRST.
+ \item {\em Calibration plan}: Our SIT has contributed extensively to the WFIRST WFI
+Calibration Plan, including detailed quantitative assessments of calibration
+approaches and their ability to meet requirements. In some areas, such as dark
+current and the point spread function, our contributions to the calibration plan
+are now traceable all the way from science measurements (WL shear) down to the
+specific calibration approaches and the hardware stability requirements needed
+for them to work. A major area of work leading up to SRR/MDR is to complete this
+flow-down for the other areas of calibration.
+\item {\em Detector characterization}: We have made use of the H4RG data provided by the Detector
+Characterization Laboratory to measure some of the non-linear effects relevant
+to weak lensing in real H4RG detectors. This is an important practice step
+toward building calibration pipelines that will support WL science.
+\end{enumerate}
+In what follows, we provide some highlights from our calibration activities. The
+list is not exhaustive.
+\end{summaryii}
 
 \subsubsection{Dark filter}
 
-In the summer and fall of 2016, the FSWG was tasked with determining whether a dark filter was needed for WFIRST calibration. This required the FSWG to enumerate the list of calibration tests that might use the dark filter, and establish whether alternative options were possible. We led the effort to assemble this list of tests based on input from the SITs (both ours and others), the SOC, and  Project personnel. The list\footnote{\tt DarkAlternativesMatrix\_161030.docx} included 14 items: (i) the dark current (including internal instrument backgrounds); (ii) unstable pixels; (iii) post-reset transients; (iv) read noise correlations; (v) inter-pixel capacitance; (vi) gain measurement; (vii) the high spatial frequency flat; (viii) the low spatial frequency flat; (ix) persistence from previous observations; (x) persistence from slews; (xi) classical linearity; (xii) count rate dependent non-linearity; (xiii) the brighter-fatter effect; and (xiv) persistence re-activation.
+In the summer and fall of 2016, the FSWG was tasked with determining whether a
+dark filter was needed for WFIRST calibration. This required the FSWG to
+enumerate the list of calibration tests that might use the dark filter, and
+establish whether alternative options were possible. We led the effort to
+assemble this list of tests based on input from the SITs (both ours and others),
+the SOC, and  Project personnel. The list\footnote{\tt
+DarkAlternativesMatrix\_161030.docx} included 14 items: (i) the dark current
+(including internal instrument backgrounds); (ii) unstable pixels; (iii)
+post-reset transients; (iv) read noise correlations; (v) inter-pixel
+capacitance; (vi) gain measurement; (vii) the high spatial frequency flat;
+(viii) the low spatial frequency flat; (ix) persistence from previous
+observations; (x) persistence from slews; (xi) classical linearity; (xii) count
+rate dependent non-linearity; (xiii) the brighter-fatter effect; and (xiv)
+persistence re-activation.
 
-The problem of persistence from slews (i.e.\ streaks across the detector following a slew from one observation to another) is of particular importance to weak lensing, because it leads to a coherent, highly directional pattern on the detector that has the correct symmetry to induce a coherent systematic error in the galaxy ellipticities. This is a concern without a dark capability, or even with a dark capability if it is not (or cannot be) used during every slew. Our group identified two budgets in WL that flow down into slew persistence requirements. First is the total systematic shear error budget of $2.7\times 10^{-4}$. Second is the masked pixel budget.
+The problem of persistence from slews (i.e.\ streaks across the detector
+following a slew from one observation to another) is of particular importance to
+weak lensing, because it leads to a coherent, highly directional pattern on the
+detector that has the correct symmetry to induce a coherent systematic error in
+the galaxy ellipticities. This is a concern without a dark capability, or even
+with a dark capability if it is not (or cannot be) used during every slew. Our
+group identified two budgets in WL that flow down into slew persistence
+requirements. First is the total systematic shear error budget of $2.7\times
+10^{-4}$. Second is the masked pixel budget.
 
-The details of the slew persistence study are provided in the Calibration Plan. It consisted of several stages: first, assessing the magnitude distribution of the stars that would be encountered in the High Latitude Survey; then assessing the probability of stimulus levels in a slew, given the distribution of slews from our operations model (\S\ref{sec:operation}); and then folding this through a persistence model (based on DCL data for the development H4RG detectors) to predict the probability distribution of persistent pixels in the HLS imaging survey. The stimulus distribution ($x$ in e: the well depth to which a pixel is filled during a slew) from the Calibration Plan is shown in Figure~\ref{fig:slewcompare}, and the persistence signal distribution ($y$ in e: the persistence signal in a pixel over the course of an exposure) is shown in Figure~\ref{fig:sp_cdf}.
+The details of the slew persistence study are provided in the Calibration Plan.
+It consisted of several stages: first, assessing the magnitude distribution of
+the stars that would be encountered in the High Latitude Survey; then assessing
+the probability of stimulus levels in a slew, given the distribution of slews
+from our operations model (\S\ref{sec:operation}); and then folding this through
+a persistence model (based on DCL data for the development H4RG detectors) to
+predict the probability distribution of persistent pixels in the HLS imaging
+survey. The stimulus distribution ($x$ in e: the well depth to which a pixel is
+filled during a slew) from the Calibration Plan is shown in
+Figure~\ref{fig:slewcompare}, and the persistence signal distribution ($y$ in e:
+the persistence signal in a pixel over the course of an exposure) is shown in
+Figure~\ref{fig:sp_cdf}.
 
 \begin{figure}
 \includegraphics[width=5in]{Plots/slew_compare.pdf}
@@ -595,21 +734,140 @@ Despite the intrinsic stability assumed, in which each SCA can have its response
 \caption{\label{fig:hcalfig}An example of the posterior calibration error from an HLS self-calibration calculation. The horizontal scale displays the time intervals (left-to-right in time order), with 18 points per time interval indicating the various SCAs. The vertical axis shows the standard deviation of the calibration solution for that SCA at that time, $\sigma(A_{i\alpha})$, relative to the survey mean. The figure shows the case of H band with $\Delta t = 0.125$ days. This example had 17262 calibration parameters. A few epochs, mostly containing only a few observations, are poorly constrained due to minimal overlap observations. It is subject to refinement and the input parameters of the model will be varied as we work toward requirements on the stability of the detector system.}
 \end{figure}
 
-\subsubsection{Detector characterization}
 
-The WFIRST dark energy analyses will place enormous demands on our understanding of the detectors. Some aspects of this problem can be anticipated in advance -- for example, we know that effects such as inter-pixel capacitance, count-rate-dependent non-linearity, etc.\ will need to be carefully characterized, and we are working as part of the Calibration Working Group to build these measurements into the mission. However, with systematic error budgets at the level of a few$\times 10^{-4}$, it is likely that WFIRST analyses will turn up new effects that were not apparent in past missions. Therefore a key task for our SIT is to analyze the data from development detectors and identify these new effects early enough to inform the calibration plan.
+\subsection{Identifying and Studying the Effect of Detector Imperfection}
+\label{sec:wl_detectors}
+%================================================
+\begin{summaryii}
+  Since precision cosmology measurements depend sensitively on exquisite photometry; subtle effects that
+  might not be noticeable in other areas of astrophysics can become important
+  when trying to measure galaxy shapes to $<0.1$\%. Over the past year, we have
+  studied novel possible systematic effects, implemented in an image
+  simulation pipeline new and known effects and released it to the community. Our goal is to derive requirements for all these effects. Highlights include
+  \begin{enumerate}
+  \item The study of the effect of polarization-dependent quantum efficiency;
+  \item The requirements on the interpixel capacitance;
+  \item Detector characterization;
+  \item Image simulation including detector imperfection and WFIRST scanning strategy to study their effect on shape measurement.
+\end{enumerate}
+In what follows, we provide some highlights from our detector characterization and simulation activities.
+\end{summaryii}
 
-In ground-based weak lensing projects using thick CCDs (e.g.\ DES), one of the key detector issues has been the {\em brighter-fatter effect} (BFE). This is an electrostatic effect in which as a pixel fills up with collected charge, it changes the electric field geometry and new charges generated are more likely to be deflected into neighboring pixels. This has the effect of making bright stars appear larger than faint stars, as the repulsion effect is non-linear and increases with signal level. The field geometry is very different in a NIR detector, but a brighter-fatter effect is still possible.
 
-We have searched for the brighter-fatter effect in the H4RG detector arrays using the flat fields for two devices H4RG-17940 and H4RG-18237, provided to us by the DCL. The BFE imprints a signature in the auto-correlation function of a flat field; using the correlations in multiple non-destructive reads in a flat field, one can separate linear IPC from the BFE. Preliminary brighter-fatter effect results for H4RG-17940 are shown in Figure~\ref{fig:kernel}. The BFE coefficients are $a'_{\Delta i,\Delta j}$, which is the fractional change in effective area of pixel $(i,j)$ when an electron is placed in pixel $(i+\Delta i, j+\Delta j)$; they have units of parts per million per electron (ppm/e). The flat auto-correlations are sensitive to both the brighter-fatter effect and non-linear inter-pixel capacitance (NL-IPC); we are currently working on distinguishing the two effects.
+\subsubsection{Polarization Effects}
+During early 2017, work was carried out to assess the approximate level of an effect that could
+cause weak lensing systematics, but that had never been previously considered by the weak lensing
+community.  This effect is polarization-dependent quantum efficiency (due to e.g.\ different
+reflectivity of various coatings for different polarizations of light).  Since the light from
+edge-on disk galaxies typically has some low level polarization perpendicular to the disk, any
+polarization-dependence of the QE could result in a preferential selection of such galaxies based on
+their orientation in the focal plane.  This would violate the baseline assumption in a weak lensing
+analysis, which is that all coherent galaxy alignments are due to gravitational lensing.
 
-\begin{figure}
-\includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
-\caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta i,\Delta j}$ (left panel) and IPC-corrected coefficients $a'_{\Delta i,\Delta j}$ (right panel), for H4RG-17940. Note that the IPC-corrected coefficents assume that the IPC is linear, i.e.\ the non-overlapping correlations are ascribable entirely to the BFE and not NL-IPC. The $1\sigma$ uncertainty in each pixel is 0.07 ppm/e.}
+A student at CMU, Brent Tan, worked with Rachel Mandelbaum and Chris Hirata on a simple toy model
+for this effect.  The toy model had two parameters: the fraction of the disk galaxy light that is
+polarized, and the relative attenuation of that perpendicular polarization component (both numbers
+in the range $[0,1]$).  For each point in that parameter space, the coherent shear due to selection
+bias was calculated; see results in Figure~\ref{fig:polarization}.  Finally, the results were
+modified to account for the fact that not all disk galaxies are viewed edge-on and that not all
+galaxies are disks, giving a net coherent shear due to this selection bias of $\sim 3\times
+10^{-4}$.  The results are still quite uncertain because our fiducial values for the disk
+polarization fraction were based on observations of nearby galaxies, not $z\sim 1$ disks.  However,
+this is large enough to be relevant for WFIRST, so this systematic needs to be evaluated more
+carefully and requirements placed in future.  A publication on this topic will be prepared during
+summer 2017.
+\begin{figure}[t]
+%\begin{center}
+\includegraphics[width=0.66\textwidth]{Plots/polarization-selection.pdf}
+%\end{center}
+\caption{\label{fig:polarization}
+The average shear due to weak lensing selection biases due to polarization-dependent quantum
+efficiency, as a function of the fraction of polarized light from edge-on disks (horizontal axis)
+and the fractional attenuation of the perpendicular polarization (vertical axis).  The dot at
+$(0.05,0.9)$ is our fiducial point in parameter space, and has $\langle e\rangle \approx 0.001$.
+}
 \end{figure}
+
+Another possible polarization-related systematic is a polarization-dependent PSF.  That will be the
+subject of future work.
+
+\subsubsection{Interpixel Capacitance Requirements}
+
+The WFIRST detectors will suffer from electrical crosstalk between the pixels, unlike the optical
+ detectors that are based on CCDs. This effect, known as the \emph{interpixel capacitance} (IPC),
+ appears as a systematic effect in the weak lensing shear measurements and causes a
+ bias in the measurements if not properly taken into account. The effect of IPC on the point-spread
+ function (PSF) was already studied by members of our SIT in \cite{Kannawadi2016}, and requirements were placed
+ on the level of uncertainty in the IPC based on how that uncertainty affects the PSF.
+
+More recently, in late 2016, members of our SIT (Mandelbaum and student Kannawadi) carried out and
+analyzed simulations to determine whether additional requirements on IPC are needed to ensure that
+weak lensing shear estimation is not biased beyond our tolerances.  To calibrate the shear
+multiplicative bias to an accuracy of $2\times 10^{-3}$, we find that the requirements on the IPC
+placed by the PSF requirements are sufficient, so no new requirement is needed.  A paper on this
+result is in preparation.
+
+
+\subsubsection{Detector Characterization}
+
+The WFIRST dark energy analyses will place enormous demands on our understanding
+of the detectors. Some aspects of this problem can be anticipated in advance --
+for example, we know that effects such as inter-pixel capacitance,
+count-rate-dependent non-linearity, etc.\ will need to be carefully
+characterized, and we are working as part of the Calibration Working Group to
+build these measurements into the mission. However, with systematic error
+budgets at the level of a few$\times 10^{-4}$, it is likely that WFIRST analyses
+will turn up new effects that were not apparent in past missions. Therefore a
+key task for our SIT is to analyze the data from development detectors and
+identify these new effects early enough to inform the calibration plan.
+
+In ground-based weak lensing projects using thick CCDs (e.g.\ DES), one of the
+key detector issues has been the {\em brighter-fatter effect} (BFE). This is an
+electrostatic effect in which as a pixel fills up with collected charge, it
+changes the electric field geometry and new charges generated are more likely to
+be deflected into neighboring pixels. This has the effect of making bright stars
+appear larger than faint stars, as the repulsion effect is non-linear and
+increases with signal level. The field geometry is very different in a NIR
+detector, but a brighter-fatter effect is still possible.
+
+We have searched for the brighter-fatter effect in the H4RG detector arrays
+using the flat fields for two devices H4RG-17940 and H4RG-18237, provided to us
+by the DCL. The BFE imprints a signature in the auto-correlation function of a
+flat field; using the correlations in multiple non-destructive reads in a flat
+field, one can separate linear IPC from the BFE. Preliminary brighter-fatter
+effect results for H4RG-17940 are shown in Figure~\ref{fig:kernel}. The BFE
+coefficients are $a'_{\Delta i,\Delta j}$, which is the fractional change in
+effective area of pixel $(i,j)$ when an electron is placed in pixel $(i+\Delta
+i, j+\Delta j)$; they have units of parts per million per electron (ppm/e). The
+flat auto-correlations are sensitive to both the brighter-fatter effect and
+non-linear inter-pixel capacitance (NL-IPC); we are currently working on
+distinguishing the two effects.
+
+\begin{figure}[!t]
+  \includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
+\caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta
+i,\Delta j}$ (left panel) and IPC-corrected coefficients $a'_{\Delta i,\Delta
+j}$ (right panel), for H4RG-17940. Note that the IPC-corrected coefficents
+assume that the IPC is linear, i.e.\ the non-overlapping correlations are
+ascribable entirely to the BFE and not NL-IPC. The $1\sigma$ uncertainty in each
+pixel is 0.07 ppm/e.}
+\end{figure}
+
+\subsubsection{Simulating Detector Imperfection and Their Effect on WFIRST Shape Measurements}
+
+\Oli{Amy and Troxel to write something here}
 
 \subsection{Photometric Redshifts}
 \label{sec:wl_photoz}
+
+\begin{summaryii}
+Accurate photo-$z$s are crucial to all WFIRST probes of dark energy. In the
+first year of SIT activity we have focused on developing accurate data-driven
+simulations of the WFIRST lensing galaxy population and determining the
+requirement on the spectroscopic samples needed to calibrate these photometric
+redshifts. We proposed a plan to calibrate this sample and study the importance of the IFC. In the process, we generate new
+data products that we released to other SITs and to the community.
+\end{summaryii}
 
 \begin{figure}
 %\centering
@@ -618,26 +876,78 @@ We have searched for the brighter-fatter effect in the H4RG detector arrays usin
 \label{fig:EuclidCandelsRep}
 \end{figure}
 
- In the first year of SIT activity we have focused on developing accurate data-driven simulations of the WFIRST lensing galaxy population and determining potential methods to calibrate this sample.  The closest analogs to WFIRST data are the COSMOS and CANDELS HST surveys, however neither is fully analogous to WFIRST HLS data.  The COSMOS data cover 1.7 square degrees with HST-ACS (F814W) with ground based data analogous to LSST.  However, WFIRST analogous infrared data are not available over the majority of the field and extrapolations to the WFIRST lensing cuts from the F814W data over-estimate the number-density of sources usable for lensing.  In contrast, CANDELS has WFIRST analogous infrared data, but covers only 0.2 square degrees,which means it does not sample the full WFIRST galaxy population, and has very heterogeneous optical coverage.  Specifically, a comparison between the CANDELS and COSMOS data to R,I,Z$<$25 found that only 42\% of COSMOS galaxy colors (representing 49\% of the galaxy population) are present in CANDELS.  Figure \ref{fig:EuclidCandelsRep} shows a Self Organizing Map (SOM) \citep{Masters2015} of the galaxy color space with regions where CANDELS galaxies fall marked.  The empty regions are shown in grey and correspond to cells with low galaxy density in COSMOS.  So these galaxies are simply less likely to be found in the relatively small area of CANDELS.
+\subsubsection{Generating Data-driven Simulations of WFIRST Galaxy Population}
 
+The closest analogs to WFIRST data are the COSMOS and CANDELS HST surveys, however neither is fully analogous to
+ WFIRST HLS data.  The COSMOS data cover 1.7 square degrees with HST-ACS (F814W)
+ with ground based data analogous to LSST.  However, WFIRST analogous infrared
+ data are not available over the majority of the field and extrapolations to the
+ WFIRST lensing cuts from the F814W data over-estimate the number-density of
+ sources usable for lensing.  In contrast, CANDELS has WFIRST analogous infrared
+ data, but covers only 0.2 square degrees,which means it does not sample the
+ full WFIRST galaxy population, and has very heterogeneous optical coverage.
+ Specifically, a comparison between the CANDELS and COSMOS data to R,I,Z$<$25
+ found that only 42\% of COSMOS galaxy colors (representing 49\% of the galaxy
+ population) are present in CANDELS.  Figure~\ref{fig:EuclidCandelsRep} shows a
+ Self Organizing Map (SOM) \citep{Masters2015} of the galaxy color space with
+ regions where CANDELS galaxies fall marked.  The empty regions are shown in
+ grey and correspond to cells with low galaxy density in COSMOS.  So these
+ galaxies are simply less likely to be found in the relatively small area of
+ CANDELS.
 
-To overcome these limitations we have taken several approaches.  First, we have collected a homogeneous 0.3-2.5$\mu$m data set over $\sim6$ square degrees in the VVDS 2h, UDS/SXDS, COSMOS, and EGS fields.  These data are not as deep as WFIRST, but are analogous to the LSST and Euclid data and allow us to estimate the cosmic variance in galaxy population and estimate requirements on spectroscopy.  These have been combined with the CANDELS catalogs which probe WFIRST depth but are sample size and variance dominated.  We then adapted the simulations described in \citet{stickley2016} developed for the SPHEREx mission to assign a R$\sim$600 spectra to each object.  The CANDELS data are very heterogeneous (see Table \ref{tbl:filters}), so we converted the various photometric systems to a LSST+WFIRST system.  Figure \ref{fig:filters} shows an example of the LSST+WFIRST system along with the CANDELS filters on GOODS-S as an example.  For the conversion we compared the converted photometry from other bands to actual CFHT-LS $u^*$, $g^*$, $r^*$, $i^*$, $z^*$ and VISTA $Y$, $J$, $H$, $K_s$ photometry in fields where they are available.   We found a simple linear interpolation between filters in flux produced the best agreement.  Using the \citet{stickley2016} or other template fits produced discretized value  in the output fluxes which biased further analysis.
+To overcome these limitations we have taken several approaches.  First, we have
+collected a homogeneous 0.3-2.5$\mu$m data set over $\sim6$ square degrees in
+the VVDS 2h, UDS/SXDS, COSMOS, and EGS fields.  These data are not as deep as
+WFIRST, but are analogous to the LSST and Euclid data and allow us to estimate
+the cosmic variance in galaxy population and estimate requirements on
+spectroscopy.  These have been combined with the CANDELS catalogs which probe
+WFIRST depth but are sample size and variance dominated.  We then adapted the
+simulations described in \citet{stickley2016} developed for the SPHEREx mission
+to assign a R$\sim$600 spectra to each object.  The CANDELS data are very
+heterogeneous (see Table \ref{tbl:filters}), so we converted the various
+photometric systems to a LSST+WFIRST system.  Figure~\ref{fig:filters} shows an
+example of the LSST+WFIRST system along with the CANDELS filters on GOODS-S as
+an example.  For the conversion we compared the converted photometry from other
+bands to actual CFHT-LS $u^*$, $g^*$, $r^*$, $i^*$, $z^*$ and VISTA $Y$, $J$,
+$H$, $K_s$ photometry in fields where they are available.   We found a simple
+linear interpolation between filters in flux produced the best agreement.  Using
+the \citet{stickley2016} or other template fits produced discretized value  in
+the output fluxes which biased further analysis.
 
 \begin{figure}
 \centering
   \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.50\textwidth] {./plots/filters.eps}
-\caption{The 5$\sigma$ limiting AB magnitude of LSST and WFIRST filters plotted as solid color lines and the 5$\sigma$ limiting AB magnitude of CANDELS GOODS-S filters are plotted with dotted black lines (see Table \ref{tbl:filters} for filter names).  Note the significant differences in the filter system which necessitates conversion from one to the other. }
+\caption{The 5$\sigma$ limiting AB magnitude of LSST and WFIRST filters plotted
+as solid color lines and the 5$\sigma$ limiting AB magnitude of CANDELS GOODS-S
+filters are plotted with dotted black lines (see Table \ref{tbl:filters} for
+filter names).  Note the significant differences in the filter system which
+necessitates conversion from one to the other.}
 \label{fig:filters}
 \end{figure}
 
+The combination of these catalogs produces a reasonable estimate of the WFIRST
+galaxy population for the purposes of assessing variance and the effects of
+cuts.  However for some analysis a fully simulated catalog is required so that
+the inputs are known perfectly.  To provide this we further adapted the methods
+described in \citet{stickley2016} to produce simulated WFIRST+LSST photometry.
+These three sets of simulated samples are being provided to other WFIRST SIT
+teams for their analysis. Specifically we have been working with the Foley SNe focused SIT
+team to simulate photo-$z$ performance for supernova cosmology.
 
-The combination of these catalogs produces a reasonable estimate of the WFIRST galaxy population for the purposes of assessing variance and the effects of cuts.  However for some analysis a fully simulated catalog is required so that the inputs are known perfectly.  To provide this we further adapted the methods described in \citet{stickley2016} to produce simulated WFIRST+LSST photometry.  These three sets of simulated samples are being provided to other WFIRST SIT teams for their analysis. Specifically we have been working with the Foley SNe team to simulate photo-z performance for supernova cosmology.
+%\begin{table}[h]
+%\tabcolsep7.5pt
+%\caption{Table caption}
+%\label{tab1}
+%\begin{center}
+%\begin{tabular}{@{}l|c|c|c|c@{}}
+%\hline
 
-\begin{table*}
-\footnotesize
-\centering
+\begin{table}
+\tabcolsep7.5pt
+\tiny
 \caption{CANDELS filters in each field used to create the LSST+WFIRST catalog}
-\begin{tabular}{*{15}{c}}
+\begin{center}
+\begin{tabular}{@{}*{15}{c}@{}}
 \hline
 \hline
 \\
@@ -657,56 +967,169 @@ COSMOS&$\rm U_{CFHT}$& $\rm B_{subaru}$& $\rm F606W$&$\rm r_{subaru}$&$\rm i_{CF
 \\
 \hline
 \end{tabular}
+\end{center}
 \label{tbl:filters}
-\end{table*}
-
+\end{table}
 
 \begin{figure}
 \centering
 \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.95\textwidth] {./plots/histogram_wfirst_notEuclid.png}
-\caption{{\bf Left:} A magnitude histogram of the WFIRST lensing sample split into a C3R2 Euclid like lensing sample (blue, $RIZ<25$) and those only in WFIRST (green).  Roughly 20\% of the WFIRST sample consists of galaxies fainter than what C3R2 is calibrating for Euclid.  Note the Euclid lensing sample is cut at $RIZ<24.5$, shallower than the proposed calibration \citep{Masters2015}.  {\bf Right:} The redshift distribution of the C3R2-Euclid sample (blue) and the WFIRST only sample (green) are shown normalized to an integral of 1. Even though the WFIRST galaxies are fainter than the calibration limit they cover a redshift range similar, just with with more galaxies at high-redshift.   }
+\caption{{\bf Left:} A magnitude histogram of the WFIRST lensing sample split
+into a C3R2 Euclid like lensing sample (blue, $RIZ<25$) and those only in WFIRST
+(green).  Roughly 20\% of the WFIRST sample consists of galaxies fainter than
+what C3R2 is calibrating for Euclid.  Note the Euclid lensing sample is cut at
+$RIZ<24.5$, shallower than the proposed calibration \citep{Masters2015}.  {\bf
+Right:} The redshift distribution of the C3R2-Euclid sample (blue) and the
+WFIRST only sample (green) are shown normalized to an integral of 1. Even though
+the WFIRST galaxies are fainter than the calibration limit they cover a redshift
+range similar, just with with more galaxies at high-redshift.   }
 \label{fig:EuclidVsWFIRST}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.95\textwidth] {./plots/redshift_magnitude.eps}
-\caption{$H$ band magnitude vs redshift is plotted for the WFIRST lensing sample shown in Figure \ref{fig:EuclidVsWFIRST} with shading indicating relative density.  The WFIRST only sample shown as green contours and the histograms from from Figure \ref{fig:EuclidVsWFIRST} are plotted on the axis.   }
+\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.75\textwidth] {./plots/redshift_magnitude.eps}
+\caption{$H$ band magnitude vs redshift is plotted for the WFIRST lensing sample
+shown in Figure \ref{fig:EuclidVsWFIRST} with shading indicating relative
+density.  The WFIRST only sample shown as green contours and the histograms from
+from Figure \ref{fig:EuclidVsWFIRST} are plotted on the axis.   }
 \label{fig:EuclidVsWFIRST2}
 \end{figure}
 
-These simulations have been used for several analyses for the WL SIT.  Figure \ref{fig:EuclidVsWFIRST} shows the relative differences in the magnitude and redshift distribution of the total Euclid and WFIRST faint lensing samples.  WFIRST clearly adds fainter and higher-redshift systems to the weak lensing sample.  However, Figure \ref{fig:WFIRSTSOM} shows a Self-Organizing-Map analysis \citep{Masters2015} of the WFIRST lensing sample compared with the Euclid sample. Even though WFIRST is significantly fainter than Euclid, 96\% of galaxies fainter than the Euclid sample have color analogs at brighter magnitudes.  The implication is that while WFIRST is seeing fainter galaxies than Euclid, these galaxies are very similar to less numerous but brighter systems seen by Euclid.
+\subsubsection{Calibrating the Photometric Redshifts of WFIRST Weak Lensing Galaxy Population}
+
+These simulations have been used for several analyses within our SIT.  Figure~\ref{fig:EuclidVsWFIRST} shows the relative differences in the magnitude and
+redshift distribution of the total Euclid and WFIRST faint lensing samples.
+WFIRST clearly adds fainter and higher-redshift systems to the weak lensing
+sample.  However, Figure \ref{fig:WFIRSTSOM} shows a Self-Organizing-Map
+analysis \citep{Masters2015} of the WFIRST lensing sample compared with the
+Euclid sample. Even though WFIRST is significantly fainter than Euclid, 96\% of
+galaxies fainter than the Euclid sample have color analogs at brighter
+magnitudes.  The implication is that while WFIRST is seeing fainter galaxies
+than Euclid, these galaxies are very similar to less numerous but brighter
+systems seen by Euclid.
 
 \begin{figure}
 \centering
  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.98\textwidth] {./plots/SOM_WFIRST_EUCLID.png}
-\caption{A Self Organizing Map (SOM) \citep{Masters2015} of the WFIRST color space based on the CANDELS data cut to the WFIRST lensing sample color coded by their median redshift.  The left panel shows SOM cells that contain galaxies too faint to be in the C3R2 RIZ$<25$ Euclid like sample \citep{Masters2015,Masters2017}.  The right panel shows SOM cells with galaxies that are in the C3R2 sample.  $\sim96\%$ of the WFIRST color space is occupied by galaxies in the C3R2 sample, however $\sim20\%$ of the WFIRST sample is fainter than the C3R2 limit.  This means their calibration would have to be verified to ensure no magnitude dependence on redshift. }
+\caption{A Self Organizing Map (SOM) \citep{Masters2015} of the WFIRST color
+space based on the CANDELS data cut to the WFIRST lensing sample color coded by
+their median redshift.  The left panel shows SOM cells that contain galaxies too
+faint to be in the C3R2 RIZ$<25$ Euclid like sample
+\citep{Masters2015,Masters2017}.  The right panel shows SOM cells with galaxies
+that are in the C3R2 sample.  $\sim96\%$ of the WFIRST color space is occupied
+by galaxies in the C3R2 sample, however $\sim20\%$ of the WFIRST sample is
+fainter than the C3R2 limit.  This means their calibration would have to be
+verified to ensure no magnitude dependence on redshift. }
 \label{fig:WFIRSTSOM}
 \end{figure}
 
-To determine how difficult it would be to obtain spectra for these faint systems we conducted an analysis of the R$\sim$600 SEDs fit to the photometry.  Based on the C3R2 survey spectra \citep{Masters2017} we developed a spectral simulator which accurately re-produces ground based spectra for Keck DEIMOS, LRIS, and MOSFIRE.  In addition to these instruments the simulated response of the WFIRST-IFC was simulated.  Example simulated spectra based on the model fits along with actual Keck spectra obtained for those sources are shown in Figure \ref{fig:SpecSim}.
+To determine how difficult it would be to obtain spectra for these faint systems
+we conducted an analysis of the R$\sim$600 SEDs fit to the photometry.  Based on
+the C3R2 survey spectra \citep{Masters2017} we developed a spectral simulator
+which accurately re-produces ground based spectra for Keck DEIMOS, LRIS, and
+MOSFIRE.  In addition to these instruments the simulated response of the
+WFIRST-IFC was simulated.  Example simulated spectra based on the model fits
+along with actual Keck spectra obtained for those sources are shown in Figure
+\ref{fig:SpecSim}.
 
 \begin{figure}
 \centering
  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/realspec.png}\\
-  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/simspec.png}
+   \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/simspec.png}
 
 \caption{ A real (top) and simulated (bottom) spectra of a $I=22.7$ galaxy in the C3R2 sample.}
 \label{fig:SpecSim}
 \end{figure}
 
-We found that indeed most of the faint WFIRST lensing galaxies were analogs of brighter systems. This alleviates the need to obtain spectroscopic redshifts to this population since the color-redshift relation will be known.  However, steps must be taken to validate that the redshift distribution does not change at fainter magnitudes in ways not apparent in the WIFRST+LSST colors.
+We found that indeed most of the faint WFIRST lensing galaxies were analogs of
+brighter systems. This alleviates the need to obtain spectroscopic redshifts to
+this population since the color-redshift relation will be known.  However, steps
+must be taken to validate that the redshift distribution does not change at
+fainter magnitudes in ways not apparent in the WIFRST+LSST colors.
 
-The simplest method would be to extend a survey such as C3R2 \citep{Masters2017} to fainter magnitudes. However, these faint galaxies are difficult to obtain high-quality spectra for from the ground.  For the purposes of this analysis we define high quality as an SNR$>$7 on two emission features or an SNR$\sim5$ on an underlying continuum.  Based on this criteria, 20\% of the WFIRST color space requires $>5$h spectra from Keck.  It is important to note this is in terms of color space, and the exact number of spectra required to calibrate this color space will require further analysis.   Of these, 1\% are sources that require long ground exposures due to strong emission lines falling between ground based observing windows and spectra could be obtained with the WFIRST grism.  A further 15\% would have high-quality redshifts with WFIRST-IFC parallel observations based on simulating the spectra and assessing the number of features with SNR$>$7.  However, due to the low-resolution of the WFIRST-IFC further analysis may be merited.   The remaining 4\% of galaxies could not be calibrated by WFIRST or from the ground with 10m telescopes and would require either ELTs or JWST.
+The simplest method would be to extend a survey such as C3R2 \citep{Masters2017}
+to fainter magnitudes. However, these faint galaxies are difficult to obtain
+high-quality spectra for from the ground.  For the purposes of this analysis we
+define high quality as an SNR$>$7 on two emission features or an SNR$\sim5$ on
+an underlying continuum.  Based on this criteria, 20\% of the WFIRST color space
+requires $>5$h spectra from Keck.  It is important to note this is in terms of
+color space, and the exact number of spectra required to calibrate this color
+space will require further analysis.   Of these, 1\% are sources that require
+long ground exposures due to strong emission lines falling between ground based
+observing windows and spectra could be obtained with the WFIRST grism.  A
+further 15\% would have high-quality redshifts with WFIRST-IFC parallel
+observations based on simulating the spectra and assessing the number of
+features with SNR$>$7.  However, due to the low-resolution of the WFIRST-IFC
+further analysis may be merited.   The remaining 4\% of galaxies could not be
+calibrated by WFIRST or from the ground with 10m telescopes and would require
+either ELTs or JWST.
 
+\subsection{Cluster Cosmology with the WFIRST HLIS}
 
-%{\bfseries C.H.: Need uniform ``primary/secondary/tertiary'' nomenclature. Also discuss photometric calibration requirements.}
+\begin{summaryii}
+Our work during the past year has focused on building machinery
+for comprehensive cosmological forecasts for the WFIRST cluster
+program that will include representations of the most significant
+anticipated systematic effects.
+\end{summaryii}
+
+ As described in our proposal, we are treating the WFIRST cluster cosmology
+ program as essentially a subset of weak lensing.  Clusters can be identified
+ using galaxy counts in WFIRST and external data, or from X-ray or
+ Sunyaev-Zeldovich surveys.  WFIRST yields high-precision measurements of
+ cluster weak lensing shear profiles, which can be combined with cluster
+ abundances and cluster-galaxy cross-correlations to derive cosmological
+ parameter constraints, most notably on the amplitude of matter clustering.
+
+We have verified our ability to reproduce previous forecasts quantitatively with
+new and independent code -- a non-trivial exercise that required resolving
+ambiguities about halo mass definitions, source redshift distributions, and so
+forth. We have extended the new code so that it can simultaneously model weak
+lensing signals from small scales (the ``one-halo'' regime) out to large scales
+described by linear theory. To achieve accurate results in the transition
+between these regimes, we have developed a numerically calibrated prescription
+for mass profiles in the ``splashback'' zone beyond the cluster virial radius.
+These numerical calibrations are based on a suite of cosmological N-body
+simulations that we are using to create full numerical ``emulators'' for
+cluster-mass and cluster-galaxy cross-correlation functions, using parameterized
+halo occupation distributions to relate galaxy populations to the underlying
+dark halo population. We are exploring the degree to which cluster-galaxy
+cross-correlations can sharpen cosmological constraints when combined with
+cluster weak lensing; we anticipate including these cross-correlations in our
+cosmological forecasts at a later time.
+
+Our current focus is on incorporating a realistic description of photometric
+redshift distributions and nuisance parameters that describe systematic
+uncertainties in those distributions. Our hope is that the combination of cosmic
+shear and cluster weak lensing measurements will prove much more robust to
+photometric redshift uncertainties than either technique individually, because
+the two methods have somewhat different dependence on source redshifts, and
+because the redshifts of the clusters themselves are accurately known. We will
+then turn to nuisance parameters that describe uncertainties in the clusters
+themselves, e.g., contamination, incompleteness, mis-centering, and projection
+biases in cluster selection.
+
+Collaborator Anja von der Linden presented a technical overview of the WFIRST
+cluster program at the January 2017 WFIRST Science meeting at the Center for
+Computational Astrophysics, with an emphasis on the opportunities and
+requirements for joint analyses with LSST and Sunyaev-Zeldovich surveys.
+Collaborator Eduardo Rozo, together with Eli Rykoff, has been leading efforts in
+cluster identification in the Dark Energy Survey (DES), building on their
+earlier work with the Sloan Digital Sky Survey.  Rozo is also leading the
+cluster cosmology analyses in the DES, with Year 1 DES results expected in a few
+months. WFIRST cluster identification and analysis methods will build on the DES
+techniques, and the lessons from applying these techniques to state-of-the-art
+wide-field survey data will be invaluable for WFIRST planning.
+
 
 %\subsection{Cosmological Forecasting, Methodology Development, and Cosmological Simulations}
 \subsection{Cosmological Forecasting, Simulations, and Methodology Development (D2, D8, D9)}
 \label{sec:wl_methodology}
 %=========================================================================
 %\Auth{David W, Tim, Elisabeth, Rachel B, Alina, Bhuvnesh}
+
+\Oli{This section will be gone and merged with the dedicated forecast section}
 
 
 \subs{Forecasting.}
