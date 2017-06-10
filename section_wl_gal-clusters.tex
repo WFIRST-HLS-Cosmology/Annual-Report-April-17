@@ -2,8 +2,7 @@
 % *** SECTION 5 ***
 %
 
-As discussed in \S 2.2.3 of SDT15 (written by members of our team), the
-HLS Imaging survey will (in its current design) measure the shapes of
+The HLS Imaging survey will (in its current design) measure the shapes of
 nearly 400 million galaxies in 3 near-infrared (NIR) bands, plus fluxes in a 4th band
 to improve photometric redshifts (photo-$z$).  With a data set two orders-of-magnitude
 larger than the current state of the art \cite{2012MNRAS.427..146H,Becker2015},
@@ -19,109 +18,106 @@ identified in either the HLS or external data sets and characterized with
 the help of WFIRST WL.  The \CoLi\ forecasting tool can predict the constraints
 from these methods individually and in combination with complementary
 probes such as BAO, RSD, supernovae, and the CMB.
-While all aspects of our investigation are interconnected, we
-separate the discussion into more tightly connected loops: requirements,
-image simulations, and algorithm development at level of pixels and shape measurement;
-issues related to photometric calibration and photometric redshifts;
-development of methods for cosmological analysis of WFIRST
-data and testing them on simulated data; and finally methods for
-systematic error testing and mitigation.
 
-\subsection{Requirements (D1, D3, D4, D5)}
-\label{sec:wl_requirements}
+%While all aspects of our investigation are interconnected, we
+%separate the discussion into more tightly connected loops: requirements,
+%image simulations, and algorithm development at level of pixels and shape measurement;
+%issues related to photometric calibration and photometric redshifts;
+%development of methods for cosmological analysis of WFIRST
+%data and testing them on simulated data; and finally methods for
+%systematic error testing and mitigation.
+
+%\subsection{Requirements (D1, D3, D4, D5)}
+%\label{sec:wl_requirements}
 %================================================
-\Auth{Chris, Rachel M, Mike}
+%\Auth{Chris, Rachel M, Mike}
 
-The definition of WFIRST requirements will
-%proceed through a phased approach with several
-%stages of increasing detail and maturity,
-start in pre-Phase A and continue through
-CDR. In the early stages, we will focus on identifying the driving requirements for the
-mission (e.g., those related to total throughput, wavefront error and wavefront stability,
-and any calibration requirements that would require dedicated hardware or special operational modes).
-Simple simulation tools will be used for this stage, where fast turnaround times and
-conservative assumptions will be prioritized over the true end-to-end simulations that
-will be required for the analysis. As the project matures, we will consider the more
-complete list of requirements (e.g., specifications on data products)
-and work with the WFIRST Science Centers (WSC) to build the fully
-realistic simulations needed to test reduction and analysis pipelines.
+%The definition of WFIRST requirements will
+%start in pre-Phase A and continue through
+%CDR. In the early stages, we will focus on identifying the driving requirements for the
+%mission (e.g., those related to total throughput, wavefront error and wavefront stability,
+%and any calibration requirements that would require dedicated hardware or special operational modes).
+%Simple simulation tools will be used for this stage, where fast turnaround times and
+%conservative assumptions will be prioritized over the true end-to-end simulations that
+%will be required for the analysis. As the project matures, we will consider the more
+%complete list of requirements (e.g., specifications on data products)
+%and work with the WFIRST Science Centers (WSC) to build the fully
+%realistic simulations needed to test reduction and analysis pipelines.
 
-Our existing tools (the ETC, operations simulations, and \CoLi)
-allow us to forecast the statistical power of the WL survey for a specified
-observing strategy and time allocation and to evaluate the impact of
-hardware or strategy changes on cosmological constraints (see \S 6.2).
-The challenge for the SIT is to define requirements that ensure control
-of systematic uncertainties at the level of these statistical errors.
-WL systematics fall into two broad categories, instrumental/algorithmic
-effects tied directly to the measurements and astrophysical effects
-tied to the cosmological interpretation of the measurements.  The former
-affect engineering requirements, while the latter must be predicted
-theoretically or constrained through observations.
+%Our existing tools (the ETC, operations simulations, and \CoLi)
+%allow us to forecast the statistical power of the WL survey for a specified
+%observing strategy and time allocation and to evaluate the impact of
+%hardware or strategy changes on cosmological constraints (see \S 6.2).
+%The challenge for the SIT is to define requirements that ensure control
+%of systematic uncertainties at the level of these statistical errors.
+%WL systematics fall into two broad categories, instrumental/algorithmic
+%effects tied directly to the measurements and astrophysical effects
+%tied to the cosmological interpretation of the measurements.  The former
+%affect engineering requirements, while the latter must be predicted
+%theoretically or constrained through observations.
 
-Our basic strategy for defining instrumental/algorithmic requirements
-is to create simulated HLS images with varying levels of realism, analyze
-them with proto-type data reduction and WL pipelines, and compare the
-resulting measurements to the simulation inputs. We will determine
-the sensitivity of WL shear measurements to each effect,
-and then flow down requirements from nuisance parameters in
-\CoLi\ (e.g., spurious shear) to hardware requirements that can be compared to integrated
-modeling results (e.g., wavefront stability).
-Our simulation
-framework will build on the public code {\tt GalSim} \cite{2015A&C....10..121R}, which already
-includes a WFIRST-AFTA module and
-to which Co-Is Jarvis and Mandelbaum are lead contributors.  Our proto-type pipelines will
-build on codes for image analysis and shear measurements developed
-over many years by Co-Is Hirata, Jarvis, Lupton, and Mandelbaum
-and their collaborators for analysis of SDSS, DES, HSC, and LSST imaging
-\cite{Lupton2001, 2003MNRAS.343..459H, 2005MNRAS.361.1287M,
-2012MNRAS.420.1518M, 2011arXiv1111.6958H, Jarvis2015}.
-WL algorithms are an active area of research,
-and we will integrate promising new approaches as our investigation
-progresses.  Our overall framework is analogous to, but more %tightly
-focused than, the GREAT3 challenge led by Mandelbaum \cite{2014ApJS..212....5M},
-including the use of different simulation branches where effects are turned on and off
-(separately or together) to probe the %origins of any
-biases %or unexpected behaviors
-resulting from individual or combined effects.
-%we will draw on lessons learned from this effort and its predecessors.
+%Our basic strategy for defining instrumental/algorithmic requirements
+%is to create simulated HLS images with varying levels of realism, analyze
+%them with proto-type data reduction and WL pipelines, and compare the
+%resulting measurements to the simulation inputs. We will determine
+%the sensitivity of WL shear measurements to each effect,
+%and then flow down requirements from nuisance parameters in
+%\CoLi\ (e.g., spurious shear) to hardware requirements that can be compared to integrated
+%modeling results (e.g., wavefront stability).
+%Our simulation
+%framework will build on the public code {\tt GalSim} \cite{2015A&C....10..121R}, which already
+%includes a WFIRST-AFTA module and
+%to which Co-Is Jarvis and Mandelbaum are lead contributors.  Our proto-type pipelines will
+%build on codes for image analysis and shear measurements developed
+%over many years by Co-Is Hirata, Jarvis, Lupton, and Mandelbaum
+%and their collaborators for analysis of SDSS, DES, HSC, and LSST imaging
+%\cite{Lupton2001, 2003MNRAS.343..459H, 2005MNRAS.361.1287M,
+%2012MNRAS.420.1518M, 2011arXiv1111.6958H, Jarvis2015}.
+%WL algorithms are an active area of research,
+%and we will integrate promising new approaches as our investigation
+%progresses.  Our overall framework is analogous to, but more %tightly
+%focused than, the GREAT3 challenge led by Mandelbaum \cite{2014ApJS..212....5M},
+%including the use of different simulation branches where effects are turned on and off
+%(separately or together) to probe the %origins of any
+%biases resulting from individual or combined effects.
 
-In the domain of instrument- and pipeline-related systematic errors,
-each error must be evaluated according to the following criteria:
-(i) What is the raw magnitude of the systematic error compared to statistical errors?
-(ii) What is the approach to modeling and removing that systematic error? What cross-checks will be necessary to
-validate that this has been done correctly? (iii) Are there
-implications to the optimal observing strategy (e.g., dithering, repeat observations, dedicated calibration
-observations)? (iv) Are there implications for the hardware requirements (e.g.,
-stability, pre-flight characterization, or dedicated flight calibration hardware)?
+%In the domain of instrument- and pipeline-related systematic errors,
+%each error must be evaluated according to the following criteria:
+%(i) What is the raw magnitude of the systematic error compared to statistical errors?
+%(ii) What is the approach to modeling and removing that systematic error? What cross-checks will be necessary to
+%validate that this has been done correctly? (iii) Are there
+%implications to the optimal observing strategy (e.g., dithering, repeat observations, dedicated calibration
+%observations)? (iv) Are there implications for the hardware requirements (e.g.,
+%stability, pre-flight characterization, or dedicated flight calibration hardware)?
 
-As an example: optical aberrations induce PSF ellipticity that is 2 orders of magnitude
-greater than WFIRST weak lensing requirements if uncorrected. It is not practical to
-eliminate the effect in hardware by requiring the wavefront to be perfect at the few nm
-level in a wide-field instrument, so a model of the PSF will have to be built.
-Some contributions to the PSF (e.g., jitter and guiding errors) will need to be measured separately for each
-exposure. Others vary on longer time scales (e.g., due to thermal changes in the optics)
-and imply a trade-off between stability requirements
-and the noise on a measurement of the relevant parameter from a set of $N$ exposures.
-We will use these considerations to turn high-level requirements on knowledge of the PSF into
-lower-level requirements on thermal stability and on the operations plan.
+%As an example: optical aberrations induce PSF ellipticity that is 2 orders of magnitude
+%greater than WFIRST weak lensing requirements if uncorrected. It is not practical to
+%eliminate the effect in hardware by requiring the wavefront to be perfect at the few nm
+%level in a wide-field instrument, so a model of the PSF will have to be built.
+%Some contributions to the PSF (e.g., jitter and guiding errors) will need to be measured separately for each
+%exposure. Others vary on longer time scales (e.g., due to thermal changes in the optics)
+%and imply a trade-off between stability requirements
+%and the noise on a measurement of the relevant parameter from a set of $N$ exposures.
+%We will use these considerations to turn high-level requirements on knowledge of the PSF into
+%lower-level requirements on thermal stability and on the operations plan.
 
-Detector systematics are special because their absolute amplitudes may be difficult for the vendor to control or even test.
-We thus anticipate absolute
-requirements only on the largest systematic effects such as inter-pixel capacitance (IPC) and persistence, which are
-being addressed as part of the technology development program. There will be many subtler
-effects arising in the detectors
-(examples might include NIR-detector analogues of the brighter-fatter effect,
-color-dependent charge diffusion, etc.); we will set requirements on the knowledge of these.
-We will pay special attention to methods of measuring these effects on-orbit using a combination of
-ground characterization, dedicated calibration modes, and the survey data itself,
-and the interaction with survey operations and stability requirements (on e.g., focal plane temperature).
-We will coordinate the best approach to these effects with the Project
-and with collaborators Seiffert and Shapiro.  Shapiro leads the
-Precision Projector Laboratory (PPL), a JPL facility designed to
-emulate WFIRST weak lensing data using scenes focused onto WFIRST
-NIR-detectors.  Systematics identified thusly will be studied and
-mitigated in collaboration with the SIT.  Co-I Hirata advises the PPL on
-image analysis software and interpretation of results \cite{Rowe:2011wj, Seshadri:2013xla}.
+%Detector systematics are special because their absolute amplitudes may be difficult for the vendor to control or even test.
+%We thus anticipate absolute
+%requirements only on the largest systematic effects such as inter-pixel capacitance (IPC) and persistence, which are
+%being addressed as part of the technology development program. There will be many subtler
+%effects arising in the detectors
+%(examples might include NIR-detector analogues of the brighter-fatter effect,
+%color-dependent charge diffusion, etc.); we will set requirements on the knowledge of these.
+%We will pay special attention to methods of measuring these effects on-orbit using a combination of
+%ground characterization, dedicated calibration modes, and the survey data itself,
+%and the interaction with survey operations and stability requirements (on e.g., focal plane temperature).
+%We will coordinate the best approach to these effects with the Project
+%and with collaborators Seiffert and Shapiro.  Shapiro leads the
+%Precision Projector Laboratory (PPL), a JPL facility designed to
+%emulate WFIRST weak lensing data using scenes focused onto WFIRST
+%NIR-detectors.  Systematics identified thusly will be studied and
+%mitigated in collaboration with the SIT.  Co-I Hirata advises the PPL on
+%image analysis software and interpretation of results \cite{Rowe:2011wj, Seshadri:2013xla}.
 
 %We will treat astrophysical systematic errors differently because one cannot write
 %a requirement on e.g., the behavior of a galaxy, so the requirements are instead on the
@@ -139,14 +135,6 @@ image analysis software and interpretation of results \cite{Rowe:2011wj, Seshadr
 %As we cannot place a requirement on baryonic physics, this can result in
 %more stringent requirements for the effects we can control, such as photometric redshifts.
 
-Cluster cosmology is generally considered to be less demanding in terms of hardware requirements than
-cosmic shear, since the large galaxy over-densities and shear signals are not as easily masked by
-subtle optical aberrations or detector behaviors. Nevertheless, it may place new requirements
-on survey footprint/operations (to ensure overlap with other data sets); pipeline behavior in
-crowded fields (e.g., \cite{2015MNRAS.449.1259S}); and ancillary data products and simulations to describe, e.g., changes in selection
-effects and source redshift distributions in the presence of blending and magnification.
-WL requirements lead Hirata will work closely with cluster lead Weinberg to ensure that these
-requirements are captured in the flow-down.
 
 % -- notes from DHW --
 %
@@ -170,16 +158,21 @@ requirements are captured in the flow-down.
 %with Project so that proto-types we develop can be ingested and that
 %we take advantage of work being done by the project.
 
-\Oli{Started here}
-
 \begin{summary}
-\Oli{Need update}
-To mature the WFIRST GRS, our work has been organized along four main directions.
+To mature the WFIRST WL investigation, our work has been organized along four main
+directions.
 \begin{enumerate}
-\item We developed, delivered to the project and updated the GRS requirements;
-\item We generated new WFIRST specific light-cone simulations;
-\item Using HST measurement, we started a new data analysis effort to improve our knowledge of the H$\alpha$ luminosity function, a critical element to plan the GRS;
-\item We developed quick and agile analysis tools that will help us develop a pseudo-pipeline in the coming years.
+  \item We developed, delivered to the project and
+updated the HLSI requirements;
+\item We provided key contributions to the
+photometric calibration plan;
+\item We studied new potential detector imperfections,
+developed requirements on known ones and implemented them in an accurate
+WFIRST image simulation pipeline to study their effect on shape measurements;
+\item We developed accurate data-driven simulations of the WFIRST lensing galaxy population and determined the
+requirement on the spectroscopic samples needed to calibrate these photometric redshifts;
+\item We built machinery for comprehensive cosmological forecasts for the WFIRST cluster program that
+will include representations of the most significant anticipated systematic effects.
 \end{enumerate}
 \end{summary}
 
@@ -943,8 +936,8 @@ team to simulate photo-$z$ performance for supernova cosmology.
 %\hline
 
 \begin{table}
-\tabcolsep7.5pt
-\tiny
+\tabcolsep 2.8pt
+\footnotesize
 \caption{CANDELS filters in each field used to create the LSST+WFIRST catalog}
 \begin{center}
 \begin{tabular}{@{}*{15}{c}@{}}
@@ -1074,8 +1067,17 @@ program that will include representations of the most significant
 anticipated systematic effects.
 \end{summaryii}
 
- As described in our proposal, we are treating the WFIRST cluster cosmology
- program as essentially a subset of weak lensing.  Clusters can be identified
+Cluster cosmology is generally considered to be less demanding in terms of
+hardware requirements than cosmic shear, since the large galaxy over-densities
+and shear signals are not as easily masked by subtle optical aberrations or
+detector behaviors. Nevertheless, it may place new requirements on survey
+footprint/operations (to ensure overlap with other data sets); pipeline behavior
+in crowded fields (e.g., \cite{2015MNRAS.449.1259S}); and ancillary data
+products and simulations to describe, e.g., changes in selection effects and
+source redshift distributions in the presence of blending and magnification.
+
+% As described in our proposal, we are treating the WFIRST cluster cosmology program as essentially a subset of weak lensing.
+ Clusters can be identified
  using galaxy counts in WFIRST and external data, or from X-ray or
  Sunyaev-Zeldovich surveys.  WFIRST yields high-precision measurements of
  cluster weak lensing shear profiles, which can be combined with cluster
