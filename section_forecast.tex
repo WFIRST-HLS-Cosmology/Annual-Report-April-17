@@ -60,21 +60,18 @@ Compared to our baseline scenarios we find a decreased DE-FOM of 32\% and a decr
 \begin{figure*}
   \includegraphics[width=8.0cm]{Plots/forecasts/forecast_1}
   \includegraphics[width=8.0cm]{Plots/forecasts/forecast_2}
-   \caption{\textit{left:}Redshift distribution of galaxies of the baseline, the shallow/large area and the deep/small area survey. \textit{right:} Redshift distribution of galaxies of the baseline and extended wavelength survey. 
+   \caption{\textit{Left:}Redshift distribution of galaxies of the baseline, the shallow/large area and the deep/small area survey. \textit{Right:} Redshift distribution of galaxies of the baseline and extended wavelength survey. 
 }
   \label{fi:forecast1}
 \end{figure*}
 
-HLSS 3: The redshift range of galaxies surveyed shall encompass 1. ? z ? 2.7 (3 desired, max z TBC depending on telescope temperature trade)
+HLSS 3: The redshift range of galaxies surveyed shall encompass 1. < z < 2.7 (3 desired, max z TBC depending on telescope temperature trade)
 
 
 In addition to the trade studies in HLSS 1 we examine the impact of an extended wavelength range on the DE-FOM and the Cosmo-FOM. We follow the same procedure as detailed in the HLSS 1 paragraph extending the wavelength range from 1.05-1.85 microns for the baseline model to 1.00-1.89 for the extended model. The corresponding redshift distributions of the galaxy samples computed from the ETC v1.14 are depicted in Fig. 2. We find a decreased DE-FOM of 2\% and a decreased Cosmo-FOM of 11\% for the extended wavelength survey with respect to our baseline scenario. We iterate that these findings are model and prior dependent and recommend further studies varying these input parameters.
 
 \subsection{HLIS Forecasts}
 \label{sec:HLISforecasts}
-
-
-
 \begin{figure*}
 \includegraphics[width=17cm]{Plots/forecasts/WFIRST_no_sys.eps}
 \caption{WFIRST forecasts statistical errors only. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission 2200 $\mr{deg^2}$ in black}
@@ -111,8 +108,6 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
          \label{fi:lsst1}
 \end{figure*}
 
-
-
 \begin{figure*}
 \includegraphics[width=17cm]{Plots/forecasts/WFIRST_bary_impact.eps}
 \caption{LSST IA marg}
@@ -125,10 +120,10 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
          \label{fi:lsst1}
 \end{figure*}
 
+We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause16}. That is we model 
 
 \subsection{Expanding the Science Case - Multi-Probe Forecasts}
 \label{sec:multi-probe}
-
 \begin{figure*}
 \includegraphics[width=8cm]{Plots/forecasts/WFIRST_2SNteams_zoom.pdf}
 \includegraphics[width=8cm]{Plots/forecasts/WFIRST_extended_MG.pdf}
@@ -141,5 +136,12 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
 \end{figure*}
 
 Developing a multi-probe cosmology analysis framework is challenging given that the analysis pipeline for individual probes are each under continuous development in order to meet the requirements of improving data quality. These efforts have historically been largely independent from each other; as a consequence, individual probe analyses utilize information from other probes to offset/calibrate systematics. 
-For example, one of the most important astrophysical uncertainties for galaxy clustering is the relation of dark matter halos and luminous galaxies. The joint analysis of clustering and galaxy-galaxy lensing measurements removes uncertainties in this halo-galaxy connection when constraining cosmology. However, cosmic shear analyses use the same galaxy-galaxy lensing measurements to offset other systematic uncertainties (e.g., intrinsic galaxy alignment). This is only one example of many systematics mitigation conflicts that can occur when considering probes in isolation.
-A multi-probe analysis framework must account for these correlated systematic effects consistently across all probes; it cannot simply combine the optimal versions of individual analyses and it must include a global, well-designed systematics modeling and mitigation concept.
+For example, one of the most important astrophysical uncertainties for galaxy clustering is the relation of dark matter halos and luminous galaxies. The joint analysis of clustering and galaxy-galaxy lensing measurements removes uncertainties in this halo-galaxy connection when constraining cosmology. However, cosmic shear analyses use the same galaxy-galaxy lensing measurements to offset other systematic uncertainties (e.g., intrinsic galaxy alignment). This is only one example of many systematics mitigation conflicts that can occur when considering probes in isolation. A multi-probe analysis framework must account for these correlated systematic effects consistently across all probes; it cannot simply combine the optimal versions of individual analyses and it must include a global, well-designed systematics modeling and mitigation concept.
+
+In this section we present a variety of multi-probe forecasts 
+
+
+
+
+
+
