@@ -73,54 +73,113 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
 \subsection{HLIS Forecasts}
 \label{sec:HLISforecasts}
 \begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_no_sys.eps}
-\caption{WFIRST forecasts statistical errors only. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission 2200 $\mr{deg^2}$ in black}
-         \label{fi:lsst1}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_no_sys.eps}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_obs_sys.eps}
+\caption{\textit{Top:} WFIRST forecasts statistical errors only. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission 2200 $\mr{deg^2}$ in black. \textit{Bottom:} Broadening of WFIRST error bars accounting for shear calibration and photo-z errors.}
+         \label{fi:extended}
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_shear.eps}
-\caption{WFIRST forecasts statistical errors (solid) compared to errors when including uncertainties from multiplicative shear calibration errors (dashed). Shear calibration uncertainties are modeled as a Gaussian with $\sigma=0.005$. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission $2200 \mr{deg^2}$ in black}
-         \label{fi:lsst1}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_shear.eps}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_photo.eps}
+\caption{\textit{Top:} WFIRST forecasts statistical errors (solid) compared to errors when including uncertainties from multiplicative shear calibration errors (dashed). Shear calibration uncertainties are modeled as a Gaussian with $\sigma=0.005$. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission $2200 \mr{deg^2}$ in black
+\textit{Bottom:} WFIRST contours when accounting for photo-z uncertainties. We model these as Gaussian photo-z errors with a bias around mean zero and $\sigma=0.05$. These 2 parameters (bias and $sigma$) again have Gaussian priors, i.e. $\Delta \mr{bias}=0.005$ and $\Delta \sigma=0.006$.}
+         \label{fi:sys_shear}
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_photo.eps}
-\caption{WFIRST contours when accounting for photo-z uncertainties. We model these as Gaussian photo-z errors with a bias around mean zero and $\sigma=0.05$. These 2 parameters (bias and $sigma$) again have Gaussian priors, i.e. $\Delta \mr{bias}=0.005$ and $\Delta \sigma=0.006$.}
-         \label{fi:lsst1}
-\end{figure*}
-
-\begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_obs_sys.eps}
-\caption{Broadening of WFIRST error bars accounting for shear calibration and photo-z errors}
-         \label{fi:lsst1}
-\end{figure*}
-
-\begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_baryons.eps}
-\caption{Broadening of WFIRST error bars when accounting for baryons.}
-         \label{fi:lsst1}
-\end{figure*}
-
-\begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_ia.eps}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_ia.eps}
 \caption{Broadening of WFIRST error bars when accounting for intrinsic alignment.}
          \label{fi:lsst1}
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_bary_impact.eps}
-\caption{LSST IA marg}
-         \label{fi:lsst1}
-\end{figure*}
-
-\begin{figure*}
-\includegraphics[width=17cm]{Plots/forecasts/WFIRST_bary_miti.eps}
-\caption{LSST IA marg}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_impact.eps}
+\includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_miti.eps}
+\caption{sysbary}
          \label{fi:lsst1}
 \end{figure*}
 
 We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause16}. That is we model 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modelling Weak lensing observables and covariances}
+\label{sec:lensingbasics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+All simulated likelihood analyses in this paper are computed using the weak lensing modules of \textsc{CosmoLike} \citep[see][for an early version; official release paper is Krause et al. 2014 in prep]{eks14}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Shear tomography power spectra}
+\label{sec:powerbasics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We compute the linear power spectrum using the \cite{eh99} transfer function and model the non-linear evolution of the density field as described in \cite{tsn12}.
+Time-dependent dark energy models ($w=w_0+(1-a)\,w_a$) are incorporated following the recipe of {\sc icosmo} \citep{rak11}, which in the non-linear regime interpolates Halofit between flat and open cosmological models \citep[also see][for more details]{shj10}.
+
+Having obtained the density power spectra we calculate the shear power spectra as
+\begin{equation}
+\label{eq:pdeltatopkappa}
+C ^{ij} (l) = \frac{9H_0^4 \om^2}{4c^4} \int_0^{\chi_\mr h} 
+\mr d \chi \, \frac{g^{i}(\chi) g^{j}(\chi)}{a^2(\chi)} \pd \left(\frac{l}{f_K(\chi)},\chi \right) \,,
+\end{equation}
+with $l$ being the 2D wave vector perpendicular to the line of sight, $\chi$ denoting the comoving coordinate, $\chi_\mr h$ is the comoving coordinate of the horizon, $a(\chi)$ is the scale factor, and $f_K(\chi)$ the comoving angular diameter distance (throughout set to $\chi$ since we assume a flat Universe). The lens efficiency $g^{i}$ is defined as an integral over the redshift distribution of source galaxies $n(\chi(z))$ (see Sect. \ref{sec:surveys} fro details) in the $i^\mr{th}$ tomographic interval
+\begin{equation}
+\label{eq:redshift_distri}
+g^{i}(\chi) = \int_\chi^{\chi_{\mr h}} \mr d \chi' n^{i} (\chi') \frac{f_K (\chi'-\chi)}{f_K (\chi')} \,.
+\end{equation}
+Since we chose five tomographic bins, the resulting data vector which enters the likelihood analysis consists of 15 tomographic shear power spectra, each with 12 logarithmically spaced bins ($l \in [100;5000]$), hence 180 data points overall. The limits of the tomographic $z$-bins are chosen such that each bin contains a similar number of galaxies.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Shear covariances}
+\label{sec:covbasics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Under the assumption that the 4pt-function of the shear field can be expressed in terms of 2pt-functions (so-called Gaussian shear field) the covariance of projected shear power spectra can be calculated as in \citep{huj04} 
+\be
+\label{eq:covhujain}
+\mr{Cov_G} \left( C^{ij} (l_1) C^{kl} (l_2) \right) = \langle \Delta C^{ij} (l_1) \, \Delta C^{kl} (l_2) \rangle  =  \frac{\delta_{l_1 l_2}}{ 2 f_\mr{sky} l_1 \Delta l_1}  \left[\bar C^{ik}(l_1) \bar C^{jl}(l_1) + \bar C^{il}(l_1) \bar C^{jk} (l_1) \right]\,,
+\ee
+
+with
+\be
+\label{details}
+\bar C^{ij}(l_1)= C^{ij}(l_1)+ \delta_{ij} \frac{\sigma_\eps^2}{n^{i}} \,,
+\ee
+where the superscripts indicate the redshift bin; $n^{i}$ is the density of source galaxies in the $i$-th redshift bin; and $\sigma_\eps$ is the RMS of the shape noise.
+
+Since non-linear structure growth at late time induces significant non-Gaussianities in the shear field, using the covariance of Eq.~(\ref{eq:covhujain}) in a likelihood analysis results in underestimates of the errors on cosmological parameters. Therefore, the covariance must be amended by an additional term, i.e. $\mr{Cov}=\mr{Cov_G}+\mr{Cov_{NG}}$.  The non-Gaussian covariance is calculated from the convergence trispectrum $T_{\kappa}$ \citep{CH01,taj09}, and we include a sample variance term $T_{\kappa,\rm{HSV}}$ that describes scatter in power spectrum measurements due to large scale density modes \citep{tb07, sht09},
+\be
+ \mr{Cov_{NG}}(C^{ij}(l_1),C^{kl}(l_2)) =  \int_{|\mathbf l|\in l_1}\frac{d^2\mathbf l}{A(l_1)}\int_{|\mathbf l'|\in l_2}\frac{d^2\mathbf l'}{A(l_2)} \left[\frac{1}{\Omega_{\mr s}}T_{\kappa,0}^{ijkl}(\mathbf l,-\mathbf l,\mathbf l',-\mathbf l') + T_{\kappa,\rm{HSV}}^{ijkl}(\mathbf l,-\mathbf l,\mathbf l',-\mathbf l') \right] \,,
+\ee
+with $A(l_i) = \int_{|\mathbf l|\in l_i}d^2\mathbf l \approx 2 \pi l_i\Delta l_i$ the integration area associated with a power spectrum bin centered at $l_i$ and width $\Delta l_i$.
+
+The convergence trispectrum $T_{\kappa,0}^{ijkl}$ is, in the absence of finite volume effects, defined as  
+\be
+\label{eq:tri2}
+T_{\kappa,0}^{ijkl} (\mathbf l_1,\mathbf l_2,\mathbf l_3,\mathbf l_4) = \left( \frac{3}{2} \frac{H_0^2}{c^2} \om \right)^{4} \int_0^{\chi_h} \d \chi \, \left( \frac{\chi}{a(\chi)}\right)^4  g^i g^j g^k g^l \times \chi^{-6} \, T_{\delta,0}  \left( \frac{\mathbf l_1}{\chi}, \frac{\mathbf l_2}{\chi}, \frac{\mathbf l_3}{\chi}, \frac{\mathbf l_4}{\chi}, z(\chi) \right) \,,
+\ee
+with $T_{\delta,0}$ the matter trispectrum (again, not including finite volume effects), and where we abbreviated $g^i=g^i(\chi)$.
+
+We model the matter trispectrum using the halo model \citep{Seljak00, CS02}, which assumes that all matter is bound in virialized structures that are modeled as biased tracers of the density field. Within this model the statistics of the density field can be described by the dark matter distribution within halos on small scales, and is dominated by the clustering properties of halos and their abundance on large scales. In this model, the trispectrum splits into five terms describing the 4-point correlation within one halo (the \emph{one-halo} term $T^{\mr{1h}}$), between 2 to 4 halos (\emph{two-, three-, four-halo} term), and a so-called halo sample variance term $T_{\mr{HSV}}$, caused by fluctuations in the number of massive halos within the survey area,
+\be
+\label{eq:t}
+T = T_0 + T_{\mr{HSV}} = \left[T_{\mr{1h}}+T_{\mr{2h}}+T_{\mr{3h}}+T_{\mr{4h}}\right]+T_{\mr{HSV}}\;.
+\ee
+The \emph{two-halo} term is split into two parts, representing correlations between two or three points in the first halo and two or one point in the second halo. As halos are the building blocks of the density field in the halo approach, we need to choose models for their internal structure, abundance and clustering in order to build a model for the trispectrum. 
+
+
+Our implementation of the one-, two- and four-halo term contributions to the matter trispectrum follows \citet{CH01}, and we neglect the three-halo term as it is subdominant compared to the other terms at the scales of interest for this analysis. Specifically, we assume NFW halo profiles \citep{NFW} with the \citet{Bhattacharya11} fitting formula for the halo mass--concentration relation $c(M,z)$, and the \citet{Tinker10} fit functions for the halo mass function $\frac{ dn}{dM}$ and linear halo bias $b(M)$ (all evaluated at $\Delta = 200$), neglecting terms involving higher order halo biasing.
+
+
+Within the halo model framework, the halo sample variance term is described by the change of the number of massive halos within the survey area due to survey-scale density modes; following \citet{sht09} it is calculated as
+
+\begin{eqnarray}
+T_{\kappa,\rm{HSV}}^{ijkl}(\mathbf l_1,-\mathbf l_1,\mathbf l_2,-\mathbf l_2)= \left(\frac{3}{2}\frac{H_0^2}{c^2}\Omega_{\mr m}\right)^4 &\times&  \int_0^{\chi_\mr h}d\chi \left(\frac{d^2 V}{d\chi d\Omega}\right)^2 \left(\frac{\chi}{a(\chi)}\right)^4 g^i g^j g^k g^l \nn \\
+&\times&  \int d M \frac{d n}{d M} b(M)\left(\frac{M}{\bar{\rho}}\right)^2 |\tilde{u}(l_1/\chi, c(M,z(\chi))|^2 \nn \\
+ &\times& \int d M' \frac{d n}{d M'} b(M')\left(\frac{M'}{\bar{\rho}}\right)^2 |\tilde{u}(l_2/\chi, c(M',z(\chi))|^2 \nn \\
+ &\times&  \int_0^\infty \frac{k dk}{2\pi}P_\delta^{\mr{lin}}(k,z(\chi))|\tilde W(k\chi \Theta_{\mr s})|^2 \,.
+\end{eqnarray}
+
 
 \subsection{Expanding the Science Case - Multi-Probe Forecasts}
 \label{sec:multi-probe}
