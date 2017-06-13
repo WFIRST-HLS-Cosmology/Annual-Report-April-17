@@ -23,6 +23,20 @@
 
 \renewcommand{\d}{{\rm d}}
 
+\newcommand{\like}{L}
+\newcommand{\prob}{P}
+\newcommand{\probr}{P_r}
+\newcommand{\p}{\mathbf p}
+\newcommand{\pco}{\mathbf p_\mr{c}}
+\newcommand{\pnu}{\mathbf p_\mr{n}}
+\newcommand{\plf}{\mathbf p_\mr{LF}}
+\newcommand{\D}{\mathbf D}
+\newcommand{\Del}{\mathbf \Delta}
+\newcommand{\M}{\mathbf M}
+\newcommand{\N}{\mathbf N}
+\newcommand{\U}{\mathbf U}
+
+
 In this section we detail the results of a variety of simulated likelihood analyses that forecast science return and systematics studies of different choices in the WFIRST HLS survey. We first introduce the CosmoLike software framework that was used to generate the forecasts, followed by sections that are dedicated to forecasting the HLSS and HLIS specific observables. We conclude with a summary of the ongoing research to explore WFIRST multi-probe analysis strategies, i.e. to combine all WFIRST observables and their correlated systematics consistently in simulated likelihood analyses. This section also contains an outlook of our ongoing synergy studies to assess synergies of WFIRST and other contemporary surveys, e.g. the ground-based, optical Large Synoptic Survey Telescope (LSST) and future missions studying the Cosmic Microwave Background, e.g. the CMB-Stage4 (CMB-S4) experiment.
 
 \subsection{CosmoLike Introduction}
@@ -100,17 +114,12 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
          \label{fi:lsst1}
 \end{figure*}
 
-We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause16}. That is we model 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Modelling Weak lensing observables and covariances}
-\label{sec:lensingbasics}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-All simulated likelihood analyses in this paper are computed using the weak lensing modules of \textsc{CosmoLike} \citep[see][for an early version; official release paper is Krause et al. 2014 in prep]{eks14}. 
+We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause16}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Shear tomography power spectra}
-\label{sec:powerbasics}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelling Weak lensing observables and covariances}
+\label{sec:lensingbasics}
+
+\paragraph*{Shear tomography power spectra}
 
 We compute the linear power spectrum using the \cite{eh99} transfer function and model the non-linear evolution of the density field as described in \cite{tsn12}.
 Time-dependent dark energy models ($w=w_0+(1-a)\,w_a$) are incorporated following the recipe of {\sc icosmo} \citep{rak11}, which in the non-linear regime interpolates Halofit between flat and open cosmological models \citep[also see][for more details]{shj10}.
@@ -129,10 +138,7 @@ g^{i}(\chi) = \int_\chi^{\chi_{\mr h}} \mr d \chi' n^{i} (\chi') \frac{f_K (\chi
 Since we chose five tomographic bins, the resulting data vector which enters the likelihood analysis consists of 15 tomographic shear power spectra, each with 12 logarithmically spaced bins ($l \in [100;5000]$), hence 180 data points overall. The limits of the tomographic $z$-bins are chosen such that each bin contains a similar number of galaxies.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Shear covariances}
-\label{sec:covbasics}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph*{Shear covariances}
 
 Under the assumption that the 4pt-function of the shear field can be expressed in terms of 2pt-functions (so-called Gaussian shear field) the covariance of projected shear power spectra can be calculated as in \citep{huj04} 
 \be
@@ -179,6 +185,32 @@ T_{\kappa,\rm{HSV}}^{ijkl}(\mathbf l_1,-\mathbf l_1,\mathbf l_2,-\mathbf l_2)= \
  &\times& \int d M' \frac{d n}{d M'} b(M')\left(\frac{M'}{\bar{\rho}}\right)^2 |\tilde{u}(l_2/\chi, c(M',z(\chi))|^2 \nn \\
  &\times&  \int_0^\infty \frac{k dk}{2\pi}P_\delta^{\mr{lin}}(k,z(\chi))|\tilde W(k\chi \Theta_{\mr s})|^2 \,.
 \end{eqnarray}
+
+
+\paragraph* {Parameter studies}
+Given our capability to model shear power spectra and non-Gaussian covariances we can embark on forecasting several survey scenarios and study the impact of systematics. For all forecasts we sample the joint parameter space of cosmological $\pco$ and nuisance parameters $\pnu$ and parameterize the joint likelihood as a multivariate Gaussian 
+\be
+\label{eq:like}
+\like (\D| \pco, \pnu) = N \, \times \, \exp \biggl( -\frac{1}{2} \underbrace{\left[ (\D -\M)^t \, \matC^{-1} \, (\D-\M) \right]}_{\chi^2(\pco, \pnu)}  \biggr) \,.
+\ee
+The model vector $\M$ is a function of cosmology and nuisance parameters, i.e. $\M=\M(\pco, \pnu)$ and the normalization constant $N=(2 \pi)^{-\frac{n}{2}} |C|^{-\frac{1}{2}}$ can be ignored under the assumption that the covariance is constant in parameter space. The assumption of a constant, known covariance matrix $\matC$ is an approximation to the correct approach of a cosmology dependent or estimated covariance \citep[see][for further details]{esh09, seh15}.     
+Given the likelihood function we can compute the posterior probability in parameter space from Bayes' theorem
+\be
+\label{eq:bayes}
+\prob(\pco, \pnu|\D) \propto \probr (\pco, \pnu) \,\like (\D| \pco, \pnu),
+\ee
+where $\probr (\pco, \pnu)$ denotes the prior probability (non-informative priors for the case of this paper).
+
+
+In particular, we consider the following scenarios:
+\begin{itemize}
+\item Study the science gain when extending the survey to 10,000 deg$^2$, instead if 2,200 deg$^2$
+\item Study the impact of uncertainties in shape measurements and photo-z measurements in combination
+\item Study the impact of uncertainties in shape measurements only
+\item Study the impact of uncertainties in photo-z estimation only
+\item Study the impact of uncertainties in baryonic physics modeling 
+\item Study the impact of uncertainties in intrinsic alignment modeling 
+\end{itemize}
 
 
 \subsection{Expanding the Science Case - Multi-Probe Forecasts}
