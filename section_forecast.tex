@@ -97,20 +97,20 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_photo.eps}
 \caption{\textit{Top:} WFIRST forecasts statistical errors (solid) compared to errors when including uncertainties from multiplicative shear calibration errors (dashed). Shear calibration uncertainties are modeled as a Gaussian with $\sigma=0.005$. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission $2200 \mr{deg^2}$ in black
 \textit{Bottom:} WFIRST contours when accounting for photo-z uncertainties. We model these as Gaussian photo-z errors with a bias around mean zero and $\sigma=0.05$. These 2 parameters (bias and $sigma$) again have Gaussian priors, i.e. $\Delta \mr{bias}=0.005$ and $\Delta \sigma=0.006$.}
-         \label{fi:sys_shear}
+         \label{fi:sys_obs}
 \end{figure*}
 
 \begin{figure*}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_ia.eps}
 \caption{Broadening of WFIRST error bars when accounting for intrinsic alignment.}
-         \label{fi:lsst1}
+         \label{fi:IA}
 \end{figure*}
 
 \begin{figure*}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_impact.eps}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_miti.eps}
 \caption{sysbary}
-         \label{fi:lsst1}
+         \label{fi:bary}
 \end{figure*}
 
 We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause16}. 
@@ -198,31 +198,29 @@ Given the likelihood function we can compute the posterior probability in parame
 \label{eq:bayes}
 \prob(\pco, \pnu|\D) \propto \probr (\pco, \pnu) \,\like (\D| \pco, \pnu),
 \ee
-where $\probr (\pco, \pnu)$ denotes the prior probability (non-informative priors for the case of this paper).
+where $\probr (\pco, \pnu)$ denotes the prior probability.
 
 
 In particular, we consider the following scenarios:
 \begin{itemize}
-\item Study the science gain when extending the survey to 10,000 deg$^2$, instead if 2,200 deg$^2$
-\item Study the impact of uncertainties in shape measurements and photo-z measurements in combination
-\item Study the impact of uncertainties in shape measurements only
-\item Study the impact of uncertainties in photo-z estimation only
-\item Study the impact of uncertainties in baryonic physics modeling 
-\item Study the impact of uncertainties in intrinsic alignment modeling 
+\item Study the science gain when extending the survey to 10,000 deg$^2$, instead if 2,200 deg$^2$ (see Fig \ref{fi:extended} top)
+\item Study the impact of uncertainties in shape measurements and photo-z measurements in combination (see Fig \ref{fi:extended} bottom)
+\item Study the impact of uncertainties in shape measurements only (see Fig \ref{fi:sys_obs} top)
+\item Study the impact of uncertainties in photo-z estimation only (see Fig \ref{fi:sys_obs} bottom)
+\item Study the impact of uncertainties in baryonic physics modeling (see Fig \ref{fi:bary} bottom)
+\item Study the impact of uncertainties in intrinsic alignment modeling (see Fig \ref{fi:IA} bottom) 
 \end{itemize}
 
 
+
+
 \subsection{Expanding the Science Case - Multi-Probe Forecasts}
+
 \label{sec:multi-probe}
 \begin{figure*}
-\includegraphics[width=8cm]{Plots/forecasts/WFIRST_2SNteams_zoom.pdf}
-\includegraphics[width=8cm]{Plots/forecasts/WFIRST_extended_MG.pdf}
-\includegraphics[width=8cm]{Plots/forecasts/WFIRST_extended.pdf}
-\includegraphics[width=8cm]{Plots/forecasts/WFIRST_ini_vs_multi.pdf}
-\includegraphics[width=8cm]{Plots/forecasts/WFIRST_multi_probe.pdf}
-\includegraphics[width=8cm]{Plots/forecasts/WFIRST_shear_vs_MP.pdf}
-\caption{LSST IA marg}
-         \label{fi:lsst1}
+\includegraphics[width=15cm]{Plots/forecasts/multi}
+\caption{WFIRST multi-probe studies}
+         \label{fi:multi}
 \end{figure*}
 
 Developing a multi-probe cosmology analysis framework is challenging given that the analysis pipeline for individual probes are each under continuous development in order to meet the requirements of improving data quality. These efforts have historically been largely independent from each other; as a consequence, individual probe analyses utilize information from other probes to offset/calibrate systematics. 
