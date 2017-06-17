@@ -57,9 +57,8 @@ The software relies on the massively parallelized computation of fine-tuned look
 \item Given a survey specific redshift distribution CosmoLike computes projected (tomographic) 2D power spectra for WL, galaxy-galaxy lensing, and galaxy clustering.
 \item  For the latter two probes the connection between dark and luminous matter is modeled through either a linear bias model or a sophisticated (but computationally slower) HOD implementation (Krause et al. 2013).
 \item The covariance is computed analytically using perturbation theory to include the higher-order moments of the density field, including the Halo Sample Variance contribution that dominates the statistical error budget. This covariance takes all cross-correlations between the different probes into account. 
-%\item CosmoLike has various systematics modeling capabilities, in particular it can account for baryonic effects, intrinsic alignment, shear calibration and photo-z uncertainties \citep{Eifler2015, Krause2016, Krause2017}. 
+\item CosmoLike has various systematics modeling capabilities, in particular it can account for baryonic effects, intrinsic alignment, shear calibration and photo-z uncertainties \citep{Eifler2015, Krause2016, Krause2017}. 
 \item If one chooses to use two-point correlation functions instead of power spectra CosmoLike offers an extremely fast Fourier transformation using a Hankel transform. As a default the code is connected to a parallel MCMC sampling technique \citep{Goodman2010}, implemented through the emcee python package \citep{Foreman-Mackey2013}.
-
 \end{enumerate}
 
    
@@ -67,7 +66,7 @@ The software relies on the massively parallelized computation of fine-tuned look
 We have carried out a trade study of area versus depth for the HLSS only, starting from a baseline survey of 2227 deg2 and a wavelength range of 1.05-1.85 microns. We consider two alternative scenarios, i.e. a survey twice as wide and shallower and a survey half as wide but correspondingly deeper.  
 
 The galaxy redshift distributions were computed using the WFIRST Exposure Time Calculator ETC v14. The H-alpha forecasts are based on the average of the 3 models in Pozzetti et al. (2016), and the [O III] forecasts are based on the Mehta et al. (2015) luminosity function. The resulting redshift distributions are visualized in Fig. 1.
-We extend the CosmoLike framework (Eifler et al 2014, Krause\&Eifler 2017) to compute the constraining power of all scenarios on cosmic acceleration, closely following Wang et al (2013). We run 500,000 step MCMC simulated likelihood analysis in a 23 dimensional parameter space. We simultaneously vary 7 cosmological parameters and 16 ?nuisance? parameters describing uncertainties due to the linear galaxy bias model, the non-linear smearing of the BAO feature, peculiar velocity dispersion, power spectrum shot noise, and redshift errors. We assume priors on cosmological parameters from the current state of the art experiments, i.e. the Planck mission, the Baryon Oscillation Spectroscopic Survey, the Joint Lightcurve Analysis, as described in Aubourg et al (2015). 
+We extend the CosmoLike framework (Eifler et al 2014, Krause\&Eifler 2017) to compute the constraining power of all scenarios on cosmic acceleration, closely following Wang et al (2013). We run 500,000 step MCMC simulated likelihood analysis in a 23 dimensional parameter space. We simultaneously vary 7 cosmological parameters and 16 nuisance parameters describing uncertainties due to the linear galaxy bias model, the non-linear smearing of the BAO feature, peculiar velocity dispersion, power spectrum shot noise, and redshift errors. We assume priors on cosmological parameters from the current state of the art experiments, i.e. the Planck mission, the Baryon Oscillation Spectroscopic Survey, the Joint Lightcurve Analysis, as described in Aubourg et al (2015). 
 
 The information gain is quantified using the standard Dark Energy Task Force FOM and an extended cosmology FOM, which measures the enclosed volume in the full 7-dimensional cosmological parameter space, not just in the 2 dark energy parameters. We will refer to these FOMs as DE-FOM and Cosmo-FOM. 
 Compared to our baseline scenarios we find a decreased DE-FOM of 32\% and a decreased Cosmo-FOM of 45\% for the shallow/large area survey. For the deep/small area survey we find an increased DE-FOM of 5\% and an increased Cosmo-FOM of 2\%. We note that these findings are model and prior dependent and recommend further studies varying these input parameters. We also note that the [O III] numbers are pending a future update in part due to the reduction in the baseline telescope temperature to 260 K.
@@ -78,13 +77,15 @@ Compared to our baseline scenarios we find a decreased DE-FOM of 32\% and a decr
   \label{fi:forecast1}
 \end{figure*}
 
-HLSS 3: The redshift range of galaxies surveyed shall encompass 1. < z < 2.7 (3 desired, max z TBC depending on telescope temperature trade)
+HLSS 3: The redshift range of galaxies surveyed shall encompass 1. $\leq$ z $\leq$ 2.7 
 
 
 In addition to the trade studies in HLSS 1 we examine the impact of an extended wavelength range on the DE-FOM and the Cosmo-FOM. We follow the same procedure as detailed in the HLSS 1 paragraph extending the wavelength range from 1.05-1.85 microns for the baseline model to 1.00-1.89 for the extended model. The corresponding redshift distributions of the galaxy samples computed from the ETC v1.14 are depicted in Fig. 2. We find a decreased DE-FOM of 2\% and a decreased Cosmo-FOM of 11\% for the extended wavelength survey with respect to our baseline scenario. We iterate that these findings are model and prior dependent and recommend further studies varying these input parameters.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{HLIS Forecasts}
 \label{sec:HLISforecasts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_no_sys.eps}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_obs_sys.eps}
@@ -102,26 +103,24 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
 
 \begin{figure*}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_ia.eps}
-\caption{Broadening of WFIRST error bars when accounting for intrinsic alignment.}
+\caption{Increase of WFIRST (nominal and extended mission) error bars when marginalizing over intrinsic alignment nuisance parameters \citep[see][for comparison]{keb16}.}
          \label{fi:IA}
 \end{figure*}
 
 \begin{figure*}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_impact.eps}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_miti.eps}
-\caption{sysbary}
+\caption{Increase of WFIRST (nominal and extended mission) error bars when marginalizing over nuisance parameters modeling baryonic physics \citep[see][for details of the method]{ekd15}.}
          \label{fi:bary}
 \end{figure*}
 
-We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause16}. 
+We begin the WFIRST HLIS section by forecasting the weak lensing science component only. We closely follow the weak lensing part of the forecasting machinery described in \cite{Krause17}. 
 
 \subsection{Modelling Weak lensing observables and covariances}
 \label{sec:lensingbasics}
 
 \paragraph*{Shear tomography power spectra}
-
-We compute the linear power spectrum using the \cite{eh99} transfer function and model the non-linear evolution of the density field as described in \cite{tsn12}.
-Time-dependent dark energy models ($w=w_0+(1-a)\,w_a$) are incorporated following the recipe of {\sc icosmo} \citep{rak11}, which in the non-linear regime interpolates Halofit between flat and open cosmological models \citep[also see][for more details]{shj10}.
+\textsc{CosmoLike} obtains matter power spectra through calls to the Boltzmann code \textsc{CLASS} code \citep{CLASS}and it uses the \citet{tsn12} calibration of the \textsc{halofit} fitting function for the non-linear matter power spectrum \citep{smp03}, Time-dependent dark energy models ($w=w_0+(1-a)\,w_a$) are incorporated following the recipe of {\sc icosmo} \citep{rak11}, which in the non-linear regime interpolates Halofit between flat and open cosmological models \citep[also see][for more details]{shj10}.
 
 Having obtained the density power spectra we calculate the shear power spectra as
 \begin{equation}
@@ -200,15 +199,14 @@ Given the likelihood function we can compute the posterior probability in parame
 \ee
 where $\probr (\pco, \pnu)$ denotes the prior probability.
 
-
-In particular, we consider the following scenarios:
+Equation \ref{eq:bayes} and above allow us to simulate realistic likelihood analyses for various WFIRST survey aspects, in particular we consider the following scenarios:
 \begin{itemize}
-\item Study the science gain when extending the survey to 10,000 deg$^2$, instead if 2,200 deg$^2$ (see Fig \ref{fi:extended} top)
-\item Study the impact of uncertainties in shape measurements and photo-z measurements in combination (see Fig \ref{fi:extended} bottom)
-\item Study the impact of uncertainties in shape measurements only (see Fig \ref{fi:sys_obs} top)
-\item Study the impact of uncertainties in photo-z estimation only (see Fig \ref{fi:sys_obs} bottom)
-\item Study the impact of uncertainties in baryonic physics modeling (see Fig \ref{fi:bary} bottom)
-\item Study the impact of uncertainties in intrinsic alignment modeling (see Fig \ref{fi:IA} bottom) 
+\item Science gain when extending the survey to 10,000 deg$^2$, instead if 2,200 deg$^2$ (see Fig \ref{fi:extended} top)
+\item Impact of uncertainties in shape measurements and photo-z measurements in combination (see Fig \ref{fi:extended} bottom)
+\item Impact of uncertainties in shape measurements only (see Fig \ref{fi:sys_obs} top)
+\item Impact of uncertainties in photo-z estimation only (see Fig \ref{fi:sys_obs} bottom)
+\item Impact of uncertainties in baryonic physics modeling (see Fig \ref{fi:bary} bottom)
+\item Impact of uncertainties in intrinsic alignment modeling (see Fig \ref{fi:IA} bottom) 
 \end{itemize}
 
 
@@ -219,14 +217,14 @@ In particular, we consider the following scenarios:
 \label{sec:multi-probe}
 \begin{figure*}
 \includegraphics[width=15cm]{Plots/forecasts/multi}
-\caption{WFIRST multi-probe studies}
+\caption{WFIRST multi-probe studies, see text for details.}
          \label{fi:multi}
 \end{figure*}
 
 Developing a multi-probe cosmology analysis framework is challenging given that the analysis pipeline for individual probes are each under continuous development in order to meet the requirements of improving data quality. These efforts have historically been largely independent from each other; as a consequence, individual probe analyses utilize information from other probes to offset/calibrate systematics. 
 For example, one of the most important astrophysical uncertainties for galaxy clustering is the relation of dark matter halos and luminous galaxies. The joint analysis of clustering and galaxy-galaxy lensing measurements removes uncertainties in this halo-galaxy connection when constraining cosmology. However, cosmic shear analyses use the same galaxy-galaxy lensing measurements to offset other systematic uncertainties (e.g., intrinsic galaxy alignment). This is only one example of many systematics mitigation conflicts that can occur when considering probes in isolation. A multi-probe analysis framework must account for these correlated systematic effects consistently across all probes; it cannot simply combine the optimal versions of individual analyses and it must include a global, well-designed systematics modeling and mitigation concept.
 
-In this section we present a variety of multi-probe forecasts 
+In this section we present a variety of simulated multi-probe WFIRST analyses; our results are summarized in Fig. \ref{fi:multi}. The upper left panel shows the constraining power of the individual survey elements (galaxy-redshift survey, weak lensing, galaxy clusters) in comparison to their combined constraining power plus galaxy-galaxy lensing, photometric galaxy clustering, and prior information from Planck, SN1a, BOSS. the likelihood analysis was carried out in a 7-dimensional cosmological parameter space, excluding any systematics. The right panel compares the aforementioned joint analysis (blue) with the current state of the art (red) and we show how the contours increase when including a realistic set of systematics in the analysis. These systematics include uncertainties arising from shear and photo-z calibration, cluster mass-observable relation, galaxy intrinsic alignment, and galaxy bias. Modeling and marginalizing over these systematics requires us to run a likelihood analysis in 54 dimensional parameter space; the details of our analysis are very similar to the LSST forecasts in \cite{Krause17}, but for WFIRST survey parameters (survey area, number density, and redshift distribution). 
 
 
 
