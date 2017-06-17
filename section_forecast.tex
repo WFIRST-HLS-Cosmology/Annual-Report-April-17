@@ -96,8 +96,8 @@ In addition to the trade studies in HLSS 1 we examine the impact of an extended 
 \begin{figure*}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_shear.eps}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_photo.eps}
-\caption{\textit{Top:} WFIRST forecasts statistical errors (solid) compared to errors when including uncertainties from multiplicative shear calibration errors (dashed). Shear calibration uncertainties are modeled as a Gaussian with $\sigma=0.005$. Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission $2200 \mr{deg^2}$ in black
-\textit{Bottom:} WFIRST contours when accounting for photo-z uncertainties. We model these as Gaussian photo-z errors with a bias around mean zero and $\sigma=0.05$. These 2 parameters (bias and $sigma$) again have Gaussian priors, i.e. $\Delta \mr{bias}=0.005$ and $\Delta \sigma=0.006$.}
+\caption{\textit{Top:} WFIRST forecasts statistical errors (solid) compared to errors when including uncertainties from multiplicative shear calibration errors (dashed).  Extended Mission 10,000 $\mr{deg^2}$ in blue, regular mission $2200 \mr{deg^2}$ in black
+\textit{Bottom:} WFIRST contours when accounting for photo-z uncertainties; see text for details.}
          \label{fi:sys_obs}
 \end{figure*}
 
@@ -209,7 +209,11 @@ Equation \ref{eq:bayes} and above allow us to simulate realistic likelihood anal
 \item Impact of uncertainties in intrinsic alignment modeling (see Fig \ref{fi:IA} bottom) 
 \end{itemize}
 
+Shear calibration uncertainties are modeled as a Gaussian with $\sigma=0.005$ in each of the 10 tomographic bins, which altogether accumulates to 11 nuisance parameters. Redshift errors are modeled as Gaussian errors with a bias around mean zero and $\sigma=0.05$. In each tomographic bin these parameters (bias and $sigma$) again have Gaussian priors, i.e. $\Delta \mr{bias}=0.005$ and $\Delta \sigma=0.006$. 
 
+For intrinsic alignment we assume the non-linear alignment model, closely following the parameterization and implementation of \cite{Krause16}, i.e. we marginalize over 11 nuisance parameters for amplitude, redshift dependence, luminosity function uncertainties.
+
+For the baryon study we follow the work of \cite{Eifler15}, where the authors examined the impact of different baryonic scenarios and quantify the bias in cosmological constraints for LSST and DES when not accounting for baryons in the analysis. We repeat this analysis for WFRIST (Fig. \ref{bary}, upper) and also account for the uncertainties due to baryonic scenarios in a subsequent analysis (Fig. \ref{bary}, lower). There, we project out modes that are sensitive to baryonic physics in our analysis, which comes at the cost of constraining power, in particular the spectral index $n_s$. We note however that $n_s$ is strongly constrained by CMB measurements and that a corresponding prior will recover the lost information.
 
 
 \subsection{Expanding the Science Case - Multi-Probe Forecasts}
@@ -226,7 +230,13 @@ For example, one of the most important astrophysical uncertainties for galaxy cl
 
 In this section we present a variety of simulated multi-probe WFIRST analyses; our results are summarized in Fig. \ref{fi:multi}. The upper left panel shows the constraining power of the individual survey elements (galaxy-redshift survey, weak lensing, galaxy clusters) in comparison to their combined constraining power plus galaxy-galaxy lensing, photometric galaxy clustering, and prior information from Planck, SN1a, BOSS. the likelihood analysis was carried out in a 7-dimensional cosmological parameter space, excluding any systematics. The right panel compares the aforementioned joint analysis (blue) with the current state of the art (red) and we show how the contours increase when including a realistic set of systematics in the analysis. These systematics include uncertainties arising from shear and photo-z calibration, cluster mass-observable relation, galaxy intrinsic alignment, and galaxy bias. Modeling and marginalizing over these systematics requires us to run a likelihood analysis in 54 dimensional parameter space; the details of our analysis are very similar to the LSST forecasts in \cite{Krause17}, but for WFIRST survey parameters (survey area, number density, and redshift distribution). 
 
+The second row, left panel shows results from a simulated multi-probe analysis that can be extracted from the imaging survey only. The so-called 3x2pt analysis consists of second-order statistics from weak lensing, photometric galaxy clustering, and galaxy-galaxy lensing. We show the scaling of the error bars (statistics only, no systematics) when going from the nominal survey area to a 5000 and 10000 deg$^2$ survey.
 
+The second row, right panel shows again our full multi-probe analysis including galaxy clusters and the spectroscopic survey component, i.e. BAO and RSD measurements, and we also include information from the 2 WFIRST supernovae teams. These team independently forecasted the WFIRST SN1a constraining power and are in excellent agreement. 
+
+The lower row, left panel shows the constraining power of WFIRST weak lensing and 3x2pt for the nominal survey area on modified gravity parameters $\mu and \Sigma$ \citep[see e.g.,][for details]{jjk15, baa15}. The right panel shows the constraining power when increasing the survey area again to 5000 and 10000 deg$^2$. 
+
+We emphasize that multi-probe studies are an area of active research and that the likelihood analyses presented here are the start of our intensive study to optimally combine WFIRST internal observables and also to study synergies of WFIRST and other, external data sets, in particular LSST. 
 
 
 
