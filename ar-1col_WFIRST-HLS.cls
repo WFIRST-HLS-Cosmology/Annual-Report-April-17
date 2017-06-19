@@ -31,7 +31,7 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{ar}[2013/03/07 v1.1 Standard LaTeX document class]
+\ProvidesClass{ar-1col_WFIRST-HLS}[2013/03/07 v1.1 Standard LaTeX document class]
 %
 \newif\if@restonecol
 \newif\if@DotinEqNum
