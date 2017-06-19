@@ -713,12 +713,12 @@ Light-cone cosmological simulations are a critical tool to design the GRS survey
   \begin{figure}
    \includegraphics[width = 0.4\textwidth]{Plots/OIII-Hbeta.pdf}
   \label{fig:line-ratios}
-   \caption{The line ratios between H$\beta$ and [O III] using the most up to date dataset from SDSS4-eBOSS, which currently has acquired over 10,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. The plot shows $\approx$1000 galaxies from eBOSS sample that has both H$\beta$ and [O III], while each line is detected at least at 7-$\sigma$).}
+   \caption{The line ratios between H$\beta$ and [O III] using the  dataset from DEEP2 survey, which has acquired over 50,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. The plot shows $\approx$1,000 galaxies from DEEP2 sample that has both H$\beta$ and [O III], while each line is detected at least at 7-$\sigma$.}
   \end{figure}
 
  Ho and Massara concentrates on one particular goal in generating their simulations. Their goal is to investigate the effect of confusion between H$\beta$ and [O III] emitters, in particular in the high level science goal in BAO. In WFIRST,  the primary science targets for the redshift survey will be H$\alpha$ and [O III]. There is a special concern of H$\beta$ vs. [O III] confusion due to their proximity in wavelength (hence the inability of photo-z's to distinguish them reliably). This is particularly true given that an H$\beta$ emitter mis-identified as [O III] will have an inferred radial position different by 8900 km/s (or: 89 $h^{-1} Mpc$ * (1+z)/$\sqrt{\Omega_\Lambda + \Omega_m (1+z)^3}$, which in our range of redshifts is near the BAO scale). We will also get some [O II] emitters -- these might be useful directly for cosmology, or for disentangling other line emitters (see Pullen et al. 2014). Note that at WFIRST resolution 3726 and 2729 are a blend.
 
- A key challenge in the mocks will be making sure the populations of each line and the correlations among the different line strengths and with environment are sufficiently realistic for the tests we are doing. This has historically proven to be very difficult due to the heterogeneous nature of the observational constraints. Therefore, we have investigated the equivalent width ratio between H$\beta$ and [O III] using the most up to date dataset from SDSS4-eBOSS, which currently has acquired over 10,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. This is so far the only statistical sample that can be used to look at the line ratios (see Figure~\ref{fig:line-ratios}). We also look at the conditional luminosity function between the two line luminosity and found them to be consistent with what was observed in DEEP2 (see Figure~\ref{fig:cond-lum}) with higher statistics. We now proceed to use these line ratios to create the emission line galaxy catalog.
+ A key challenge in the mocks will be making sure the populations of each line and the correlations among the different line strengths and with environment are sufficiently realistic for the tests we are doing. This has historically proven to be very difficult due to the heterogeneous nature of the observational constraints. Therefore, we have investigated the equivalent width ratio between H$\beta$ and [O III] using the dataset from DEEP2, which has acquired over 50,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. This is so far one of the few statistical samples that can be used to look at the line ratios (see Figure~\ref{fig:line-ratios}). We also look at the conditional luminosity function between the two line luminosity observed in DEEP2 (see Figure~\ref{fig:cond-lum}). We now proceed to use these line ratios to create the emission line galaxy catalog. 
 
  \begin{figure}
   \includegraphics[width = 0.5\textwidth]{Plots/cond_lum.pdf}
@@ -735,7 +735,7 @@ spectral energy distribution which are generated to fit most updated luminosity
 function and color evolution measurement. Galaxy magnitudes and shapes are
 affected by shear and magnification. We then measured and validated the
 correlation function and luminosity function of [O III] selected galaxies (with
-WFIRST detection limits) (see Figure~\ref{fig:corr-func}. Next, we plan to apply
+WFIRST detection limits). Next, we plan to apply
 the measured line ratios as described in Figure~\ref{fig:line-ratios} to all the
 galaxies and reapply the WFIRST detection limits to create a realistic WFIRST
 emission line galaxy catalog (with  [O III] as the main galaxy targets), and
