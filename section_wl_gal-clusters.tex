@@ -847,7 +847,7 @@ pixel is 0.07 ppm/e.}
 \end{figure}
 
 \subsubsection{Simulating Detector Imperfection and Their Effect on WFIRST Shape Measurements}
-
+\label{sec:hlis_image_sim}
 Building on the existing GalSim framework and WFIRST module, Michael Troxel and Ami Choi (in collaboration with Hirata, Jarvis, Mandelbaum) are developing an image
 simulation pipeline to assess the impact of various physical effects on the fidelity of the measured galaxy shapes.  The end product will provide realistic simulations containing all pertinent effects and conditions from the observational process specific to the WFIRST mission that may affect the quality of the lensing shear extracted
 from the real WFIRST images.  These simulations will provide a foundation to characterize the relative impact of undesired effects and to validate the shear measurements themselves.  As the distribution and density of galaxies are realistically incorporated, the resulting multi-epoch images can also be used to test different dither strategies.  An intermediate level goal is to update the module with the most recent hardware and survey parameters describing the mission, to do some GalSim development to make the pipeline more efficient, and to estimate the relative impacts from detector effects such as the IPC described in earlier sections.
@@ -1178,7 +1178,7 @@ simulations, perturbation theory, and empirical measurements, to
  address issues such as baryonic effects on matter clustering
 \citep{Zentner2013,VanDaalen2014}; the
 validity of the Born approximation \citep{Schafer2012}; and galaxy intrinsic
-alignments \citep{Hirata2004,Laszlo2011,Krause2015}.
+alignments \citep{Hirata2004,Laszlo2011,Krause2016}.
 We will develop analysis strategies that take advantage of
 our methodological improvements and marginalize over remaining uncertainties.
 The computational requirements for cosmological simulations will increase
@@ -1268,7 +1268,7 @@ In the middle panel, red contours show the effect of an uncorrected shear calibr
 of magnitude 0.004, while blue contours show the result with the same calibration error
 after marginalizing over five shear calibration nuisance parameters with Gaussian priors of
 width 0.002. The right panel shows a similar example for an astrophysical systematic,
-the presence of galaxy intrinsic alignments (see \cite{Krause2015} for details). In both cases, marginalization removes the systematic error without significantly increasing the statistical uncertainty.
+the presence of galaxy intrinsic alignments (see \cite{Krause2016} for details). In both cases, marginalization removes the systematic error without significantly increasing the statistical uncertainty.
 }
 %\begin{center}
 %\end{boxedminipage}
@@ -1377,7 +1377,7 @@ experience with analytic and numerical modeling of IAs
 \cite{Hirata2004,Mandelbaum2006,Hirata2007,Mandelbaum2011,Heymans13,Kiessling2015,
 Kirk2015,Singh2015,Tenneti2015}
 and on the work of Eifler and Krause in incorporating baryonic and
-IA effects into cosmological WL analysis \cite{Laszlo2011,Kirk2011,Eifler2014,Krause2015}.
+IA effects into cosmological WL analysis \cite{Laszlo2011,Kirk2011,Eifler2014,Krause2016}.
 This will include the principal components approach, which allows one to
 marginalize out the directions in observable space that are most sensitive
 to the choice of prescriptions for baryonic physics in simulations
