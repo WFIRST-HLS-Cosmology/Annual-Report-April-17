@@ -51,7 +51,7 @@ In this section we will detail the results of a variety of simulated likelihood 
   \CoLi is unique in its integrated ansatz of jointly modeling LSS probes and their correlated systematics. It is the only code that computes multi-probe covariances, including the (dominant) higher-order terms of the matter density field.
 \end{summaryii}
 
-\CoLi has been used in several science efforts, e.g. the combined probes forecasts presented in \citep{eks14}, the analysis of SDSS shear data \citep{Huff2014}, and in efforts to develop new mitigation strategies for baryonic physics \citep{Eifler2015} and galaxy intrinsic alignment \citep{Krause2016}. It is one of two cosmology analysis pipelines within for the ongoing Dark Energy Survey's Year 1 analysis and it has previously been used in the DES science verification data analysis \citep{DES2015}. Beyond DES,
+\CoLi has been used in several science efforts, e.g. the combined probes forecasts presented in \citep{Eifler:2014}, the analysis of SDSS shear data \citep{Huff2014}, and in efforts to develop new mitigation strategies for baryonic physics \citep{Eifler2015} and galaxy intrinsic alignment \citep{Krause2016}. It is one of two cosmology analysis pipelines within for the ongoing Dark Energy Survey's Year 1 analysis and it has previously been used in the DES science verification data analysis \citep{DES2015}. Beyond DES,
 %===
 \begin{figure}
   \includegraphics[width=16.0cm]{Plots/forecasts/cosmolike_codestruct}
@@ -66,7 +66,7 @@ illustrates the \CoLi combined probes module we plan to use for the proposed ana
 \begin{enumerate}
 \item In the first step \CoLi computes the 3D-density power spectra using one of 3 different methods. The density power spectrum can be modeled using the latest suites of numerical simulations, i.e. the Coyote Universe emulator \citep{Heitmann2014}, or the latest implementation of Halofit \citep{tsn12}, or using a state-of-the-art analytic halo model code \citep{Krause2013}.
 \item Given a survey specific redshift distribution \CoLi computes projected (tomographic) 2D power spectra for WL, galaxy-galaxy lensing, and galaxy clustering.
-\item  For the latter two probes the connection between dark and luminous matter is modeled through either a linear bias model or a sophisticated (but computationally slower) HOD implementation \citep{khm13}.
+\item  For the latter two probes the connection between dark and luminous matter is modeled through either a linear bias model or a sophisticated (but computationally slower) HOD implementation \citep{Krause2013}.
 \item The covariance is computed analytically using perturbation theory to include the higher-order moments of the density field, including the Halo Sample Variance contribution that dominates the statistical error budget. This covariance takes all cross-correlations between the different probes into account.
 \item \CoLi has various systematics modeling capabilities, in particular it can account for baryonic effects, intrinsic alignment, shear calibration and photo-z uncertainties \citep{Eifler2015, Krause2016, Krause2017}.
 \item If one chooses to use two-point correlation functions instead of power spectra CosmoLike offers an extremely fast Fourier transformation using a Hankel transform. As a default the code is connected to a parallel MCMC sampling technique \citep{Goodman2010}, implemented through the emcee python package \citep{Foreman-Mackey2013}.
@@ -87,7 +87,7 @@ illustrates the \CoLi combined probes module we plan to use for the proposed ana
 \texttt{Time Calculator ETC v14}. The H$\alpha$ forecasts are based on the
 average of the 3 models in \citet{Pozzetti:2016}, and the [O III] forecasts are
 based on the \citet{Mehta:2015} luminosity function. The resulting redshift
-distributions are visualized in Figure~\ref{fi:forecast1} (left panel). We extend the \CoLi framework \citep{eks14,Krause2017} to compute the constraining power of all
+distributions are visualized in Figure~\ref{fi:forecast1} (left panel). We extend the \CoLi framework \citep{Eifler:2014,Krause2017} to compute the constraining power of all
 scenarios on cosmic acceleration, closely following \citet{Wang2013}. We run
 500,000 step MCMC simulated likelihood analysis in a 23 dimensional parameter
 space. We simultaneously vary 7 cosmological parameters and 16 nuisance
@@ -144,14 +144,13 @@ We extended the \CoLi package to accurately forecast the HLIS weak gravitational
 
 \begin{figure}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_ia.eps}
-\caption{Increase of WFIRST (nominal and extended mission) error bars when marginalizing over intrinsic alignment nuisance parameters \citep[see][for comparison]{keb16}.}
-         \label{fi:IA}
+\caption{Increase of WFIRST (nominal and extended mission) error bars when marginalizing over intrinsic alignment nuisance parameters \citep[see][for comparison]{Krause2016}.} \label{fi:IA}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_impact.eps}
 \includegraphics[width=14cm]{Plots/forecasts/WFIRST_bary_miti.eps}
-\caption{Increase of WFIRST (nominal and extended mission) error bars when marginalizing over nuisance parameters modeling baryonic physics \citep[see][for details of the method]{ekd15}.}
+\caption{Increase of WFIRST (nominal and extended mission) error bars when marginalizing over nuisance parameters modeling baryonic physics \citep[see][for details of the method]{Eifler2015}.}
          \label{fi:bary}
 \end{figure}
 
@@ -250,7 +249,7 @@ Shear calibration uncertainties are modeled as a Gaussian with $\sigma=0.005$ in
 
 For intrinsic alignment we assume the non-linear alignment model, closely following the parameterization and implementation of \cite{Krause2016}, i.e. we marginalize over 11 nuisance parameters for amplitude, redshift dependence, luminosity function uncertainties.
 
-For the baryon study we follow the work of \cite{Eifler15}, where the authors
+For the baryon study we follow the work of \cite{Eifler2015}, where the authors
 examined the impact of different baryonic scenarios and quantify the bias in
 cosmological constraints for LSST and DES when not accounting for baryons in the
 analysis. We repeat this analysis for WFIRST (Figure~\ref{fi:bary}, upper) and

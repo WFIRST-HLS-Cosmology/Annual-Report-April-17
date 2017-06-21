@@ -101,7 +101,7 @@ To mature the WFIRST GRS, our work has been organized along four main directions
  on the \citet{Mehta:2015} luminosity function.
 
  %The resulting redshift distributions are shown in Fig. 1.
- We extend the \CoLi framework \citep{Eifler2014b,Krause2016} to compute the constraining power of all scenarios on cosmic acceleration, closely following \citet{Wang2013}. We run 500,000 step
+ We extend the \CoLi framework \citep{Eifler:2014,Krause2016} to compute the constraining power of all scenarios on cosmic acceleration, closely following \citet{Wang2013}. We run 500,000 step
  MCMC simulated likelihood analysis in a 23 dimensional parameter space. We
  simultaneously vary 7 cosmological parameters and 16 ``nuisance'' parameters
  describing uncertainties due to the linear galaxy bias model, the non-linear
@@ -531,8 +531,8 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  need to be  able to resolve the BAO peak. In principle, our requirements on the
  knowledge of the 3D selection function are driven by the main requirement that
  the spurious correlations should be no more than TBD per cent of statistical
- errors between the scales of 10 and 150 h-­?1Mpc in clustering signals (either
- in correlation function multipoles or power-­?spectrum). For the galaxy sample
+ errors between the scales of 10 and 150 h$^{-1}$Mpc in clustering signals (either
+ in correlation function multipoles or power-­spectrum). For the galaxy sample
  expected from WFIRST, this corresponds to TBD per cent uncertainty in the
  knowledge of the radial distribution and the angular mask.
 
@@ -745,7 +745,7 @@ Light-cone cosmological simulations are a critical tool to design the GRS survey
 
  Ho and Massara concentrates on one particular goal in generating their simulations. Their goal is to investigate the effect of confusion between H$\beta$ and [O III] emitters, in particular in the high level science goal in BAO. In WFIRST,  the primary science targets for the redshift survey will be H$\alpha$ and [O III]. There is a special concern of H$\beta$ vs. [O III] confusion due to their proximity in wavelength (hence the inability of photo-z's to distinguish them reliably). This is particularly true given that an H$\beta$ emitter mis-identified as [O III] will have an inferred radial position different by 8900 km/s (or: 89 $h^{-1} Mpc$ * (1+z)/$\sqrt{\Omega_\Lambda + \Omega_m (1+z)^3}$, which in our range of redshifts is near the BAO scale). We will also get some [O II] emitters -- these might be useful directly for cosmology, or for disentangling other line emitters (see Pullen et al. 2014). Note that at WFIRST resolution 3726 and 2729 are a blend.
 
- A key challenge in the mocks will be making sure the populations of each line and the correlations among the different line strengths and with environment are sufficiently realistic for the tests we are doing. This has historically proven to be very difficult due to the heterogeneous nature of the observational constraints. Therefore, we have investigated the equivalent width ratio between H$\beta$ and [O III] using the dataset from DEEP2, which has acquired over 50,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. This is so far one of the few statistical samples that can be used to look at the line ratios (see Figure~\ref{fig:line-ratios}). We also look at the conditional luminosity function between the two line luminosity observed in DEEP2 (see Figure~\ref{fig:cond-lum}). We now proceed to use these line ratios to create the emission line galaxy catalog. 
+ A key challenge in the mocks will be making sure the populations of each line and the correlations among the different line strengths and with environment are sufficiently realistic for the tests we are doing. This has historically proven to be very difficult due to the heterogeneous nature of the observational constraints. Therefore, we have investigated the equivalent width ratio between H$\beta$ and [O III] using the dataset from DEEP2, which has acquired over 50,000 emission line galaxies, but a significant fraction of them have H$\beta$ and/or [O III]. This is so far one of the few statistical samples that can be used to look at the line ratios (see Figure~\ref{fig:line-ratios}). We also look at the conditional luminosity function between the two line luminosity observed in DEEP2 (see Figure~\ref{fig:cond-lum}). We now proceed to use these line ratios to create the emission line galaxy catalog.
 
  \begin{figure}
   \includegraphics[width = 0.5\textwidth]{Plots/cond_lum.pdf}
@@ -837,7 +837,7 @@ consider three dust methods from \citet{Ferrara99}, \citet{Charlot00} and \citet
     no dust attenuation or attenuation using one of three methods:
     Ferrara \textit{et al.} (1999) \protect\cite{Ferrara99}, Charlot
     \& Fall (2000) \protect\cite{Charlot00} or Calzetti \textit{et al.} (2000) \protect\cite{Calzetti00}. To be consistent with
-    the observed counts from WISP \protect\cite{Colbert13,Mehta2015},
+    the observed counts from WISP \protect\cite{Colbert13,Mehta:2015},
     which are shown by the data points, contamination from NII is
     assumed to contribute 29 per cent to the galaxy luminosity. For
     the Calzetti \textit{et al.} \protect\cite{Calzetti00} method we
@@ -852,14 +852,14 @@ consider three dust methods from \citet{Ferrara99}, \citet{Charlot00} and \citet
 First, the \textsc{Galacticus} predictions for the cumulative counts of H${\rm
 \alpha}$-emitting galaxies over the redshift range $0.7\leqslant z\leqslant 1.5$
 obtained with each dust method are compared with the latest WISP counts from
-\citet{Mehta2015}. The H${\rm \alpha}$ luminosities from \textsc{Galacticus} are
+\citet{Mehta:2015}. The H${\rm \alpha}$ luminosities from \textsc{Galacticus} are
 corrected to introduce contamination due to NII by assuming that NII contributes
 29 per cent to the observed emission line luminosity. A fixed NII contamination
 was chosen to be consistent with the WISP analyses of \citet{Colbert13} and
-\citet{Mehta2015}. By adjusting the parameters used by two of these dust models,
+\citet{Mehta:2015}. By adjusting the parameters used by two of these dust models,
 the \citet{Charlot00} method and the \citet{Calzetti00} dust law, the authors
 are able to obtain predicted cumulative H${\rm \alpha}$ flux counts from
-\textsc{Galacticus} that are consistent with the observed counts of \citet{Mehta2015} down to a flux limit of $1\times 10^{-16}{\rm
+\textsc{Galacticus} that are consistent with the observed counts of \citet{Mehta:2015} down to a flux limit of $1\times 10^{-16}{\rm
 erg}\,{\rm s}^{-1}{\rm cm}^{-2}$ (see Figure~\ref{fig:halpha_flux_counts}).
 Adopting the Ferrara \textit{et al.} \citet{Ferrara99} dust method yields counts
 that agree with the observations for flux limits fainter than approximately
@@ -933,10 +933,10 @@ Finally, the \textsc{Galacticus} lightcone is used to present predictions for
 the redshift distribution and the differential and cumulative H${\rm \alpha}$
 flux counts for the WFIRST GRS, as well as two surveys mimicking a Euclid-like
 selection. These predicted cumulative flux counts to are compared to forecasts
-from \citet{Mehta2015} and empirical models originally presented by
-\citet{Pozzetti15}. The \textsc{Galacticus} forecasts have counts that are
-consistent with those of \citet{Pozzetti15} and about 30 per cent lower than
-those of \citet{Mehta2015}. The deficit compared to the Mehta \textit{et al.}
+from \citet{Mehta:2015} and empirical models originally presented by
+\citet{Pozzetti:2016}. The \textsc{Galacticus} forecasts have counts that are
+consistent with those of \citet{Pozzetti:2016} and about 30 per cent lower than
+those of \citet{Mehta:2015}. The deficit compared to the Mehta \textit{et al.}
 forecasts could be due to Mehta \textit{et al.} using the OIII line to
 extrapolate the number of H${\rm \alpha}$ emitters for $z\gtrsim1.6$. For a
 WFIRST GRS with redshift range $0.5\leqslant z\leqslant 2$ and flux limit of
