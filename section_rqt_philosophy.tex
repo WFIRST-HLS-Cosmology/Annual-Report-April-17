@@ -2,65 +2,82 @@
 % ** SECTION 4 **
 %
 
-The WFIRST science requirements process must 
-%tie the cosmological constraints to statistical and systematic error budgets 
-connect 
-HLS hardware and software requirements to statistical and systematic error budgets and in turn to  cosmological constraints. While nominally a ``flow-down",  in practice this will be a iterative process as we optimize the science return within engineering  constraints. We will use different tools for each part of this process. 
+\begin{summary}
+The WFIRST science requirements process connect HLS
+hardware and software requirements to statistical and systematic error budgets
+and in turn to  cosmological constraints. While nominally a ``flow-down",  in
+practice it is an iterative process as we optimize the science return within
+engineering  constraints. We use different tools for each part of this process.
+\end{summary}
 
-At the highest level, we will use the \CoLi\ forecasting package (written 
-by Co-I Eifler and collaborator Krause) % - mentioned in Exec  summary
-to relate cosmological constraints to data set parameters (sky coverage, galaxy density) and parameterized descriptions of the systematic error budget. 
-\CoLi\ is a multi-probe analysis and forecasting pipeline that is unique in its integrated ansatz of jointly modeling LSS probes and their correlated statistical 
-%(including the dominant non-Gaussian terms) 
-and systematic errors. Our team members have  applied it to SDSS WL data
-\cite{Huff2014}, LSST forecasts \cite{Krause2015}, and DES data
-\cite{Becker2015, DES2015}. \CoLi\ incorporates a full exploration of parameter space in place of the Fisher formalism, and it incorporates
-a range of astrophysical (e.g., intrinsic alignments, nonlinear galaxy bias, 
-baryonic effects)
-and observational (e.g., shear calibration, photo-$z$ uncertainties) 
-systematics. 
-Eifler and Krause will actively maintain and
-update \CoLi\ as part of our support of the FSWG.  Planned work includes adding new science extensions (spatial 
-curvature and neutrino masses), WFIRST-specific systematic uncertainties, and the addition of higher order statistics to exploit the potential science return from the high number density of galaxies
-in the imaging and spectroscopic surveys.
+At the highest level, we  use the \CoLi\ forecasting package to relate cosmological
+constraints to data set parameters (sky coverage, galaxy density) and
+parameterized descriptions of the systematic error budget. \CoLi\ is a
+multi-probe analysis and forecasting pipeline that is unique in its integrated
+ansatz of jointly modeling LSS probes and their correlated statistical and
+systematic errors. \CoLi\ incorporates a full exploration of parameter space in
+place of the Fisher formalism, and it incorporates a range of astrophysical
+(e.g., intrinsic alignments, nonlinear galaxy bias, baryonic effects) and
+observational (e.g., shear calibration, photo-$z$ uncertainties) systematics. It
+is actively maintained and updated as part of our support of the FSWG.
+
+%Planned work includes adding new science extensions (spatial
+%curvature and neutrino masses), WFIRST-specific systematic uncertainties, and the addition of higher order statistics to exploit the potential science return from the high number density of galaxies
+
+% Our team members have  applied it to SDSS WL data \cite{Huff2014},
+%LSST forecasts \cite{Krause2015}, and DES data
+%\cite{Becker2015, DES2015}. \CoLi\ incorporates a full exploration of
+%parameter space in place of the Fisher formalism, and it incorporates a range
+%of astrophysical (e.g., intrinsic alignments, nonlinear galaxy bias, baryonic
+%effects) and observational (e.g., shear calibration, photo-$z$ uncertainties)
+%systematics.
+%Eifler and Krause will actively maintain and
+%update \CoLi\ as part of our support of the FSWG.  Planned work includes adding new science extensions (spatial
+%curvature and neutrino masses), WFIRST-specific systematic uncertainties, and the addition of higher order statistics to exploit the potential science return from the high number density of galaxies
+%in the imaging and spectroscopic surveys.
 
 %CosmoLike represents a major leap beyond the previous generation of forecasting tools (e.g. those written for the SDT by Co-I Hirata), which will be used only as secondary checks.
 
-WFIRST hardware capabilities (e.g., throughput, slew times) and observing strategy/time allocation determine the HLS's statistical power, whereas the ability to robustly constrain 
-the instrument response model and astrophysical nuisance parameters determine the systematic errors. Statistical errors 
-generally vary continuously as hardware parameters are changed, so the hardware requirements will reflect a joint assessment of science performance and engineering capabilities 
-(including cost and risk). For the science assessment, we will build on our previous work on the Exposure Time Calculator (ETC) and 
+WFIRST hardware capabilities (e.g., throughput, slew times) and observing
+strategy/time allocation determine the HLS's statistical power, whereas the
+ability to robustly constrain the instrument response model and astrophysical
+nuisance parameters determine the systematic errors. Statistical errors
+generally vary continuously as hardware parameters are changed, so the hardware
+requirements will reflect a joint assessment of science performance and
+engineering capabilities (including cost and risk). For the science assessment,
+we built on our previous work on the Exposure Time Calculator (ETC) and
 operations simulations codes (both written by Co-I Hirata).  Both sets of tools
-are fully automated and can treat the WL and GRS 
-surveys with a common set of scripts. 
-We will build an automated interface from these tools to 
-\CoLi\ so that we can evaluate the science impacts of changes in WFIRST requirements (e.g., the static wavefront error budget). 
-Our team will 
-work in close coordination with project engineers to carry out a cost/benefit analysis of each such trade; Co-I Hirata has played this role extensively on the WFIRST SDTs 
-and will be the lead for this task.
+are fully automated and can treat the WL and GRS surveys with a common set of
+scripts. We built an interface from these tools to \CoLi\ so that
+we can evaluate the science impacts of changes in WFIRST requirements (e.g., the
+static wavefront error budget). Our team  work in close coordination with
+project engineers to carry out a cost/benefit analysis of each such trade.
+
+% Co-I Hirata has played this role extensively on the WFIRST SDTs and will be the lead
+%for this task.
 
 %
 % Not sure that this paragraph is essential
 %
 % C.H. -- I think we need to discuss our approach to systematics here, as they are an important part of the error budget. I've tried to compress this as much as I can.
 %
-%Where practical, we will set the systematic error budget by requiring that their combination be smaller than the expected statistical errors. Two approaches are possible: 
-%(i) to require the systematic in the observable (e.g. shear power spectrum) to be smaller than the statistical errors; and (ii) to require errors on e.g. $w$ to be 
-%increased relative to statistical-only errors by some factor. Our preference is for (i) as it leads to simple and robust error budgeting: independent systematics can be 
-%quadrature-summed, the requirement does not change if new cosmological parameters are added (e.g. neutrinos) or if external data sets are added, and no internal 
-%consistency tests in the data are lost. In cases where such a tight systematic error budget becomes a cost or risk driver, we may in consultation with the Project 
-%formulate a requirement using criterion (ii). Due to the potential for complex interactions among different systematics, all such instances will be explicitly tracked in 
+%Where practical, we will set the systematic error budget by requiring that their combination be smaller than the expected statistical errors. Two approaches are possible:
+%(i) to require the systematic in the observable (e.g. shear power spectrum) to be smaller than the statistical errors; and (ii) to require errors on e.g. $w$ to be
+%increased relative to statistical-only errors by some factor. Our preference is for (i) as it leads to simple and robust error budgeting: independent systematics can be
+%quadrature-summed, the requirement does not change if new cosmological parameters are added (e.g. neutrinos) or if external data sets are added, and no internal
+%consistency tests in the data are lost. In cases where such a tight systematic error budget becomes a cost or risk driver, we may in consultation with the Project
+%formulate a requirement using criterion (ii). Due to the potential for complex interactions among different systematics, all such instances will be explicitly tracked in
 %the forecasting machinery.
 %
-%Where practical, we will set the systematic error budget by requiring that their combination be smaller than the expected statistical errors. Our preferred approach is to 
-%set systematics requirements in the observable space (e.g., shear power spectrum) rather than in terms of marginalized errors on $w$, since this leads to robust 
-%error budgeting: independent systematics can be quadrature-summed, the requirement does not change if new cosmological parameters or external 
-%data sets are added, and no internal consistency tests are lost. We will back away from this approach only if such a tight systematics budget becomes a 
-%cost/risk driver. We will flow the systematics requirements down to the hardware (e.g., stability) and operations (e.g., survey 
-%cross-linkage) using quantitative forecasting tools, for example predicting the covariance matrix of the flat field uncertainties. Co-I Hirata will be the lead 
+%Where practical, we will set the systematic error budget by requiring that their combination be smaller than the expected statistical errors. Our preferred approach is to
+%set systematics requirements in the observable space (e.g., shear power spectrum) rather than in terms of marginalized errors on $w$, since this leads to robust
+%error budgeting: independent systematics can be quadrature-summed, the requirement does not change if new cosmological parameters or external
+%data sets are added, and no internal consistency tests are lost. We will back away from this approach only if such a tight systematics budget becomes a
+%cost/risk driver. We will flow the systematics requirements down to the hardware (e.g., stability) and operations (e.g., survey
+%cross-linkage) using quantitative forecasting tools, for example predicting the covariance matrix of the flat field uncertainties. Co-I Hirata will be the lead
 %liaison with the Project team for these studies.
 %
 %Finally, we will develop the error budget validation methodology.  We will develop a list of systematic error control tests on the WL and GRS data and derive the requirements on the observing program.
 %
-%%and may require us to accept statistical power below the maximum theoretically achievable. We 
+%%and may require us to accept statistical power below the maximum theoretically achievable. We
 %%%will quantitatively assess the constraining power of the validation tests as we optimize the survey design and hardware requirements.

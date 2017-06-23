@@ -568,7 +568,7 @@ per spatial resolution element.
 images with a field of view of at least 6" $\times$ 6".
 
 
-\subsection{Defining the Photometric Calibration Plan}
+\subsection{Defining the Photometric Calibration Plan (D5)}
 \label{sec:wl_calibration}
 %================================================
 
@@ -689,8 +689,8 @@ corr}^{-1/2}$ e/p/s (imprinted celestial sources).
 \end{list}
 Here ``$f_{\rm corr}$'' denotes the factor by which we plan to correct biases induced by errors in the dark current map (we normally choose $f_{\rm corr}=1$ to be conservative). The requirements are traceable to additive shear biases from non-circular imprinted celestial sources; multiplicative shear biases as the noise in the dark current map results in e.g.\ galaxy centroids getting ``pulled'' toward pixels whose measured dark current fluctuates below the true dark current of that pixel; and Eddington-like biases for sources detected in the GRS. While the semi-analytic estimates in the calibration plan based on source counts suggest that the HLS imaging requirement can be met without a dark filter, our SIT and the Calibration Working Group had concerns about possible degeneracies in the self-calibration procedure that can only be addressed by a detailed simulation. Moreover, the approach requires empty space in the images, which we will not have in the case of grism spectroscopy. As the imaging exposures are shorter than the spectroscopy exposures, this would require dedicated long imaging exposures (of HLS spectroscopy exposure length) just for the purpose of self-calibrating the dark. Due to sky Poisson noise, we would need many of these images -- our Feburary 2017 estimate was for $N=73$ exposures, which, if done every week, would consume 4\%\ of the wall clock time. In light of these and other issues, the Calibration Working Group recommended that WFIRST maintain the dark filter.
 
-\subsubsection{Calibration plan}
-
+\subsubsection{Calibration Plan}
+\label{sec:calibration_plan}
 Our SIT has contributed extensively to the WFIRST WFI Calibration Plan. This includes extensive quantitative analysis of proposed calibration techniques, as detailed in the appendix to the plan. Some highlights follow.
 
 The requirement on knowledge of the dark current and the calibration approaches are fully defined, based on analysis done during the dark filter trade (October 2016 -- February 2017).
@@ -728,7 +728,7 @@ Despite the intrinsic stability assumed, in which each SCA can have its response
 \end{figure}
 
 
-\subsection{Identifying and Studying the Effect of Detector Imperfection}
+\subsection{Identifying and Studying the Effect of Detector Imperfection (D3, D7)}
 \label{sec:wl_detectors}
 %================================================
 \begin{summaryii}
@@ -859,7 +859,7 @@ The pipeline is currently capable of simulating galaxies on individual postage s
 \caption{\label{fig:wl_imsim} An example of a simulated bright, elliptical galaxy produced by the image simulation pipeline.  The top row of subpanels begins with the original simulated bright elliptical galaxy (far left).  Each subpanel to the right of the original galaxy is a ``difference'' image that has the original galaxy subtracted off after the given effect (top label) has been applied.  These effects are: sky background, noise, reciprocity, dark current, nonlinearity, inter-pixel capacitance, respectively.  The bottom row of subpanels corresponds to the individual, isolated effects (top label).  The sub panels have been normalized by the maximum flux value of the original galaxy image. The top, far right subpanel shows the final galaxy image after all effects have been applied.}
 \end{figure*}
 
-\subsection{Photometric Redshifts}
+\subsection{Enabling Photometric Redshifts with WFIRST (D6, D11)}
 \label{sec:wl_photoz}
 
 \begin{summaryii}
@@ -879,6 +879,7 @@ data products that we released to other SITs and to the community.
 \end{figure}
 
 \subsubsection{Generating Data-driven Simulations of WFIRST Galaxy Population}
+\label{sec:candels}
 
 The closest analogs to WFIRST data are the COSMOS and CANDELS HST surveys, however neither is fully analogous to
  WFIRST HLS data.  The COSMOS data cover 1.7 square degrees with HST-ACS (F814W)
@@ -1067,7 +1068,7 @@ further analysis may be merited.   The remaining 4\% of galaxies could not be
 calibrated by WFIRST or from the ground with 10m telescopes and would require
 either ELTs or JWST.
 
-\subsection{Cluster Cosmology with the WFIRST HLIS}
+\subsection{Cluster Cosmology with WFIRST}
 
 \begin{summaryii}
 Our work during the past year has focused on building machinery
