@@ -1,53 +1,75 @@
-%
-% ** SECTION 3 **
-%
+%In \S\S \ref{sec:reqt_philosophy},\ref{sec:wl_gal-clusters},\ref{sec:gc}, we
+%describe our work plan and explain how we will iteratively flow down science objectives to the
+%measurements to be conducted, develop observational strategies,
+%simulate synthetic astronomical `truth' data and the observational
+%data output (including calibration), develop a methodology for
+%validating dark energy constraints, and define scientific performance
+%requirements and a complete plan for the science investigation.
+%Our work plan maps the six SIT tasks into the deliverables below. For each deliverable, we identify in parentheses the required tasks (numbered \textit{T 1-6} as in \S 3.1 of the WFIRST SIT call). We will also associate explicitly the sections of our proposal to the deliverables.
 
-\Oli{In this section, we summarize the deliverables we promissed and
-what we actually accomplished}
+\begin{summary}
+In our proposal, we structured our planning around a series of deliverables
+numbered D1-12. We will use throughout this report the same nomenclature and
+report on our progress on each of these deliverables when compared to the
+proposed calendar visible in Figure~\ref{tab:milestones_mgt}. We will
+illustrate that we compare favorably on all deliverables. We give in this section a quick summary but will give more details in the relevant sections. We will also
+explicitly reference  the deliverables (D1-12) in the relevant section titles of our report.
+\end{summary}
 
-In \S\S \ref{sec:reqt_philosophy},\ref{sec:wl_gal-clusters},\ref{sec:gc}, we
-describe our work plan and explain how we will iteratively flow down science objectives to the
-measurements to be conducted, develop observational strategies,
-simulate synthetic astronomical `truth' data and the observational
-data output (including calibration), develop a methodology for
-validating dark energy constraints, and define scientific performance
-requirements and a complete plan for the science investigation. 
-%Our work plan maps the six SIT tasks into the deliverables below. For each deliverable, we identify in parentheses the required tasks (numbered \textit{T 1-6} as in \S 3.1 of the WFIRST SIT call). We will also associate explicitly the sections of our proposal to the deliverables. 
-Our work plan maps the six SIT tasks,  identified in parentheses  (numbered \textit{T 1-6} as in \S 3.1 of the WFIRST SIT call), to the deliverables below. 
-%For each deliverable, we identify in parentheses the required tasks. 
-We also explicitly reference  the deliverables (D1-12) in the section titles of our proposal. 
+% We will present in this detailed report our progress on these deliverables and
+% illustrate that we either reached or exceeded our proposed expected milestones.
+
+%Our work plan maps the six SIT tasks,  identified in parentheses  (numbered \textit{T 1-6} as in \S 3.1 of the WFIRST SIT call), to the deliverables below.
+%For each deliverable, we identify in parentheses the required tasks.
 
 %a given deliverable it encompasses.
 %  For each
-% deliverable, 
+% deliverable,
 
 %  In
 % order to map our work plan into the six SIT tasks and our list of
 % deliverables, we explicitly associate the subsequent sections with
-% these deliverables. 
+% these deliverables.
 
-\subs{$\bullet$ (D1) Full requirements flow-down} from the high-level science goals of the
-HLS galaxy clustering and weak lensing survey to detailed performance
-of the telescope, wide field instrument, software, operations, and
-data transfer.  We will evaluate the mission design, as prepared for
-the Critical Design Review (CDR), against these requirements (\textit{T1, T3, T4}). 
 
-\subs{$\bullet$ (D2) Forecasts of the cosmological performance of the HLS Imaging and
-Spectroscopy data sets}, including expected constraints on dark energy,
-modified gravity, neutrino masses, and inflation, from analyses that
-include the measurement of the location of the Baryon Acoustic
-Oscillations (BAO), Redshift-Space Distortions (RSD), galaxy power
-spectrum and higher order statistics, cosmic shear, galaxy-galaxy
-lensing, and cluster demographics. These forecasts will incorporate realistic assessments of observational
-systematics and theoretical modeling systematics, and they will examine the expected constraints from different probes individually,
-in concert with each other, and in concert with expected constraints
-from the WFIRST supernova program, CMB experiments, and other cosmological
-surveys such as DESI, LSST, and Euclid.  
-We will use our forecasting tools to investigate trades,
-e.g., the impact of survey or instrument design choices (area, depth,
-pixel size, spectral resolution, etc.) on cosmological performance. (\textit{T1, T2})
+%\subs{Program Milestones.} In Fig.~\ref{tab:milestones_mgt} we outline milestones for
+%our effort in conjunction with the project timeline.\setlength\intextsep{-2pt}
+\begin{figure}
+\includegraphics[width=0.99\textwidth]{Plots/wfirst_milestones_v2.pdf}
+\caption{Our proposed deliverable schedule in concordance with the WFIRST
+project timeline as displayed in the WFIRST SIT call \S 3.2. Deliverables that
+are made in multiple stages are labeled (a, b and c) and appear in multiple
+years. This figure is taken from our original proposal and the schedule has in
+fact shifted since our investigation started on January 2016, thus well into
+FY16.} \label{tab:milestones_mgt}
+\end{figure}
 
-\subs{$\bullet$ (D3) Simulated imaging and spectroscopic data sets} for testing pipeline
+\paragraph*{(D1) Full requirements flow-down} from the high-level science goals
+of the HLS galaxy clustering and weak lensing survey to detailed performance of
+the telescope, wide field instrument, software, operations, and data transfer.
+\emph{Throughout the year, we delivered three versions of the level 2 science
+requirements for both the HLSS (\S \ref{sec:gc}) and the HLIS (\S
+\ref{sec:wl_gal-clusters})}.
+
+\paragraph*{(D2) Forecasts of the cosmological performance of the HLS Imaging
+and Spectroscopy data sets}, including expected constraints on dark energy,
+modified gravity, neutrino masses, and inflation, from analyses that include the
+measurement of the location of the Baryon Acoustic Oscillations (BAO),
+Redshift-Space Distortions (RSD), galaxy power spectrum and higher order
+statistics, cosmic shear, galaxy-galaxy lensing, and cluster demographics. These
+forecasts incorporate realistic assessments of observational systematics and
+theoretical modeling systematics, and they examine the expected constraints from
+different probes individually, in concert with each other, and in concert with
+expected constraints from the WFIRST supernova program, CMB experiments, and
+other cosmological surveys such as DESI, LSST, and Euclid. We use our
+forecasting tools to investigate trades, e.g., the impact of survey or
+instrument design choices (area, depth, pixel size, spectral resolution, etc.)
+on cosmological performance. \emph{We developed a unique software package (\CoLi) that
+enables us to jointly forecast all the WFIRST cosmological probes, including
+their covariance (\S \ref{sec:forecast}). We used this framework to conduct trade studies \ref{sec:forecast}. We released to the community the
+associated WFIRST chains (\S \ref{sec:other_contributions})}.
+
+\paragraph{(D3) Simulated imaging and spectroscopic data sets} for testing pipeline
 performance and evaluating systematic biases --- e.g., from confusion,
 noise, and incompleteness in images and spectra, or errors in Point
 Spread Function (PSF) determination or shape measurement.
@@ -59,7 +81,7 @@ and some will take the form of data challenges, where the underlying
 parameters are initially known only to the creators of the data set,
 in the spirit of the Shear Testing Program (STEP) and Gravitational
 Lensing Accuracy Test (GREAT) weak lensing data
-challenges \cite{Heymans2006, Massey2007, Bridle2010, Kitching2012, Mandelbaum2015}. 
+challenges \cite{Heymans2006, Massey2007, Bridle2010, Kitching2012, Mandelbaum2015}.
  (\textit{T3, T5})
 
 \subs{$\bullet$ (D4) Proto-type imaging and spectroscopic pipelines}, including weak lensing
@@ -84,25 +106,25 @@ on statistical and systematic errors in weak lensing and clustering analyses.
 Definition of requirements for WFIRST photometric redshifts informed
 by this strategy and evaluation. \textit{(T4)}
 
-\subs{$\bullet$ (D7) A detailed operations concept for the HLS Imaging and Spectroscopy 
+\subs{$\bullet$ (D7) A detailed operations concept for the HLS Imaging and Spectroscopy
 program,} extending the work presented in SDT13 and SDT15. \textit{(T2, T6)}
 
 \subs{$\bullet$ (D8) Development of methods for modeling and interpreting the cosmological
-measurements anticipated from WFIRST}. 
-%These methods will require discussing 
+measurements anticipated from WFIRST}.
+%These methods will require discussing
 Determination of the effects of non-linear gravitational clustering, realistically complex relations between the
 galaxy and dark matter distributions, and the influence of the baryon
-component on matter clustering. 
+component on matter clustering.
 %We will also study techniques to
 The study of techniques to
 remove systematic biases, e.g., by marginalization over nuisance
-parameters. 
-%Methods investigated will include 
+parameters.
+%Methods investigated will include
 Utilization of cosmic shear,
 galaxy-galaxy lensing, cluster mass functions and cluster weak lensing, BAO, RSD, the galaxy
 power spectrum, and higher order statistics for galaxy clustering, weak
 lensing, and various combinations.
-%We will identify 
+%We will identify
 Identification of areas where
 further improvements of theoretical modeling would significantly
 enhance the cosmological return from WFIRST. \textit{(T3)}
@@ -119,24 +141,34 @@ will be made publicly available, and some will take the form of data
 challenges, where the underlying parameters are initially known only
 to the creators of the data set. \textit{(T3, T5)}
 
-\subs{$\bullet$ (D10) 
-%A proposed set of pilot surveys 
-Pilot survey proposals with associated figures of merits,} to be executed during the first
-months of WFIRST operations. These would become part of the final
-dark energy data set but also pin down remaining astrophysical or
-instrument performance uncertainties at the level needed to optimize 
-the HLS. We will develop the figures of merit required to quickly
-assess the data-quality and make operational decisions regarding the
-cosmological surveys. \textit{(T2, T6)}
+\paragraph*{(D10) Pilot survey proposals with associated figures of merits,} to
+be executed during the first months of WFIRST operations. These would become
+part of the final dark energy data set but also pin down remaining astrophysical
+or instrument performance uncertainties at the level needed to optimize the HLS.
+We will develop the figures of merit required to quickly assess the data-quality
+and make operational decisions regarding the cosmological surveys. \emph{This
+activity has not started yet beyond discussion of the deep fields, in
+conjunctions with the other SITs and other major observational efforts during
+our community workshop (\S \ref{section_community_engagement.tex})}.
 
-\subs{$\bullet$ (D11) A prioritized program of observations from other facilities,}
-ground and space-based, needed to calibrate or finalize 
-strategy decisions on the WFIRST dark energy program. \textit{(T6)}
+\paragraph*{(D11) A prioritized program of observations from other facilities,}
+ground and space-based, needed to calibrate or finalize strategy decisions on
+the WFIRST dark energy program. \emph{Members of our SIT are leading an
+ambitious spectroscopic observations campaign aiming at calibrating photometric redshifts
+for WFIRST and other surveys. Members of our team are leading a major
+observational program on SPITZER to prepare for WFIRST and others. We expect
+this type of activity to be the focus of our second community workshop (\S
+\ref{sec:engagement}).}
 
-\subs{$\bullet$ (D12) Broad engagement with the cosmological community}, through workshops,
-talks, publications, and public release of codes and artificial data sets, with the
-goals of (a) building awareness of and broad support for the WFIRST
-dark energy program and (b) inspiring the community to develop methods
-and carry out investigations that will maximize the cosmological
-return from WFIRST. \textit{(T6)}
-
+\paragraph*{(D12) Broad engagement with the cosmological community}, through
+workshops, talks, publications, and public release of codes and artificial data
+sets, with the goals of (a) building awareness of and broad support for the
+WFIRST dark energy program and (b) inspiring the community to develop methods
+and carry out investigations that will maximize the cosmological return from
+WFIRST. \emph{We organized in September 2016 a first community workshop in
+Pasadena dedicated to enabling the scientific synergies between WFIRST HLS and
+LSST DESC (\S \ref{sec:engagement}). Our second community workshop dedicated to
+synergies between WFIRST HLS and other surveys is scheduled for fall 2017. We
+released new software packages, enhanced data products and forecasts (\S
+\ref{sec:other_contributions}). We published 11 papers inspired by WFIRST (\S
+\ref{sec:other_contributions}).
