@@ -1,3 +1,4 @@
+% !TEX root = ./wfirst_sit_hls_cosmology_annual_report_april17.tex
 %
 % *** SECTION 5 ***
 %
@@ -836,6 +837,13 @@ flat auto-correlations are sensitive to both the brighter-fatter effect and
 non-linear inter-pixel capacitance (NL-IPC); we are currently working on
 distinguishing the two effects.
 
+We are also using data from studies of more mature H2RG detectors to inform our calibration plan.  Although these will have important differences from the WFI flight detectors, we expect that problematic effects discovered in H2RGs will need to be characterized in H4RGs at some level.  For instance, collaborators Shapiro and Huff (via the Precision Projector Laboratory at JPL) have investigated a high-frequency pattern (dubbed the ``crosshatch'') apparent in flat-field calibrations and believed to be related to the crystal structure of HgCdTe (see Figure~\ref{fig:crosshatch}).  Using an engineering grade H2RG provided by the Euclid mission, tests have shown that the crosshatch pattern affects photometry even after flat-field calibrations are applied, implying that it has sub-pixel structure that can bias PSF measurements.  Data was shared with this SIT to investigate the dependence of the pattern on polarization and angle of incidence.  The same H2RG detector is also being used to conduct a PSF-based test of BFE to compare with our flat-field analysis.
+
+\begin{figure}[!t]
+  \includegraphics[width=0.55\textwidth]{Plots/Euclid_flat_crosshatch.png}
+\caption{\label{fig:crosshatch}2048 x 2048 flat-field calibration image taken with a Euclid engineering grade H2RG detector (2.4 $\mu$m cutoff) under 1 $\mu$m illumination (scaled to enhance contrast).  Flight detectors resemble the upper right region (mean QE $\sim$ 1) but still contain traces of the ``crosshatch'' pattern visible in the lower left (mean QE $\sim$ 0.8).  Scanning a grid of undersampled point sources (f/11 aperture setting) in sub-pixel increments generated 1\% RMS photometric variations in the lower left region which were not removed by the flat-field calibration.  This result provides evidence that the pattern has intra-pixel structure that potentially biases the PSF if left uncalibrated.}
+\end{figure}
+
 \begin{figure}[!t]
   \includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
 \caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta
@@ -852,12 +860,28 @@ Building on the existing GalSim framework and WFIRST module, Michael Troxel and 
 simulation pipeline to assess the impact of various physical effects on the fidelity of the measured galaxy shapes.  The end product will provide realistic simulations containing all pertinent effects and conditions from the observational process specific to the WFIRST mission that may affect the quality of the lensing shear extracted
 from the real WFIRST images.  These simulations will provide a foundation to characterize the relative impact of undesired effects and to validate the shear measurements themselves.  As the distribution and density of galaxies are realistically incorporated, the resulting multi-epoch images can also be used to test different dither strategies.  An intermediate level goal is to update the module with the most recent hardware and survey parameters describing the mission, to do some GalSim development to make the pipeline more efficient, and to estimate the relative impacts from detector effects such as the IPC described in earlier sections.
 
-The pipeline is currently capable of simulating galaxies on individual postage stamps with a size and flux distribution drawn from the CANDELS catalog from Capak and Hemmati, a dither pattern from Hirata, realistic noise, correct layout of SCAs, and options to dial a range of detector-level effects such as IPC, non-linearity, and reciprocity, among others.  The output simulated galaxies and truth tables are saved in Multi Epoch Data Structures (MEDS), which is a format commonly used in DES.  A publicly available shape measurement software, ngmix (\href{https://github.com/esheldon/ngmix/}), has been interfaced to measure shapes of the simulated galaxies.  Figure~\ref{fig:wl_imsim} illustrates a few of the effects in the context of a simulated bright, elliptical galaxy on a 32x32 pixel postage stamp.  The software is maintained in a repository available at \href{https://github.com/matroxel/wfirst_imsim} on GitHub.
+The pipeline is currently capable of simulating galaxies on individual postage stamps with a size and flux distribution drawn from the CANDELS catalog from Capak and Hemmati, a dither pattern from Hirata, realistic noise (see below), correct layout of SCAs, and options to dial a range of detector-level effects such as IPC, non-linearity, and reciprocity, among others.  The output simulated galaxies and truth tables are saved in Multi Epoch Data Structures (MEDS), which is a format commonly used in DES.  A publicly available shape measurement software, ngmix (\href{https://github.com/esheldon/ngmix/}), has been interfaced to measure shapes of the simulated galaxies.  Figure~\ref{fig:wl_imsim} illustrates a few of the effects in the context of a simulated bright, elliptical galaxy on a 32x32 pixel postage stamp.  The software is maintained in a repository available at \href{https://github.com/matroxel/wfirst_imsim} on GitHub.
+
+The H4RG read noise model developed by \cite{Rauscher2015} can be straightforwardly incorporated into the simulations in order to study the effects of correlated noise on shape measurement.  Hirata has used simulations and a semi-analytic formalism to show that anisotropic noise induces additive ellipticity measurement errors, with the most damaging contributions coming from noise power at spatial wavelengths $\sim\pi R$ where $R$ is the observed scale radius of the galaxy or star.  With these tools, we will be able to derive requirements on detector noise and calibrate shape measurement pipelines to correct for remaining correlated noise.
 
 \begin{figure*}[!t]
   \includegraphics[width=0.9\textwidth]{Plots/wfirst_wl_imsim_example.pdf}
 \caption{\label{fig:wl_imsim} An example of a simulated bright, elliptical galaxy produced by the image simulation pipeline.  The top row of subpanels begins with the original simulated bright elliptical galaxy (far left).  Each subpanel to the right of the original galaxy is a ``difference'' image that has the original galaxy subtracted off after the given effect (top label) has been applied.  These effects are: sky background, noise, reciprocity, dark current, nonlinearity, inter-pixel capacitance, respectively.  The bottom row of subpanels corresponds to the individual, isolated effects (top label).  The top, far right subpanel shows the final galaxy image after all effects have been applied.  The sub panels have been normalized by the maximum flux value of the original galaxy image, and the colors have been mapped to $\log_{10}$ values with a small range right around zero mapped to linear values as shown on a single colorbar corresponding to all of the subpanels.}
 \end{figure*}
+
+\begin{figure}
+\centering
+\begin{minipage}{.4\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{Plots/correlated_noise_sim.png}
+\end{minipage}%
+\begin{minipage}{.4\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Plots/correlated_noise_weight.png}
+\end{minipage}
+\caption{LEFT: Simulated noise in an H4RG subregion using the model of \cite{Rauscher2015}.  This image demonstrates the spatial effect of 1/f noise (horizonal bands) and alternating column noise (high frequency vertical striping).  RIGHT: Weight function showing the relative contribution of noise with spatial wavenumber $k$ to the ellipticity bias of a source with scale radius $R$.  For a given signal to noise level, the read noise shown would bias $e_1$ by different amounts for an undersampled PSF versus a larger galaxy.  This weight function assumes an adaptive moments shape measurement algorithm.}
+\label{fig:correlated_noise}
+\end{figure}
 
 \subsection{Enabling Photometric Redshifts with WFIRST (D6, D11)}
 \label{sec:wl_photoz}
