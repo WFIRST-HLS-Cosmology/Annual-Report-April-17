@@ -30,17 +30,17 @@ history via BAO and structure growth via RSD. Acoustic oscillations in the
 pre-recombination universe imprint a characteristic scale on matter clustering,
 which can be measured in the transverse and line-of-sight directions to
 determine the angular-diameter distance $D_A(z)$ and Hubble parameter $H(z)$,
-respectively \cite{Blake03,Seo03,CW12}.  Anisotropy of clustering caused by
+respectively \citep{Blake03,Seo03,CW12}.  Anisotropy of clustering caused by
 galaxy peculiar velocities constrains (in linear perturbation theory) the
 combination $\sigma_m(z) f_g(z)$, where $\sigma_m$ describes the rms amplitude
 of matter fluctuations and $f_g(z) \equiv d\ln\sigma_m(z)/d\ln a$ is the
 fluctuation growth rate. Thus the GRS on its own can address the key questions
 identified by NWNH\@: whether cosmic acceleration is caused by modified gravity
 or by dark energy, and whether (in the latter case) the dark energy density
-evolves in time \cite{Guzzo08,Wang08}.  These tests become more powerful in
+evolves in time \citep{Guzzo08,Wang08}.  These tests become more powerful in
 combination with weak lensing and cluster measurements from HLS Imaging and
 high-precision relative distance measurements from the Supernova Survey
-\cite{dePutter:2013xda,dePutter:2013nha}. The broadband shape of the galaxy
+\citep{dePutter:2013xda,dePutter:2013nha}. The broadband shape of the galaxy
 power spectrum and higher order measures of galaxy clustering provide additional
 diagnostics of dark energy, neutrino masses, and inflation, and insights on the
 physics of galaxy formation. There are two largely distinct sources of
@@ -126,7 +126,7 @@ To mature the WFIRST GRS, our work has been organized along four main directions
 
  %LS edited this paragraph. Added more detail.
  We also investigated whether the survey area needs to be contiguous. We
- constructed two identical sets of Gaussian simulations one set covering
+ constructed two identical sets of Gaussian simulations, one set covering
  contiguous 2000 deg$^2$ and a second set consisting of two $1000$ deg$^2$
  disjoint fields. The BAO signal was then measured in the 2D power spectrum using the
  most recent techniques applied to the BOSS DR12 data. The BAO positions measured
@@ -222,8 +222,8 @@ H$\alpha$ emission line redshifts over the redshift range 1.1$<$z$<$1.9.
 
  We justify the requirement on the knowledge of the outlier fraction as follows.
  If you add a contaminant to the galaxy power spectrum with contamination
- fraction $\alpha$, then you leak in an amount of power from the "wrong" line
- with amplitude $\alpha^2$, but you dilute the power spectrum of the "real"
+ fraction $\alpha$, then you leak in an amount of power from the ``wrong'' line
+ with amplitude $\alpha^2$, but you dilute the power spectrum of the ``real''
  signal by a factor of $(1-\alpha)^2$. For BAO the dilution is a minor issue (it
  reduces S/N), but for RSD it is a problem because it reduces the galaxy bias by
  $(1-\alpha)$ without changing the linear redshift-space distortion parameter
@@ -292,7 +292,7 @@ team, private communication).} \end{figure}
  assumed, we have removed the requirement on resolving H$\alpha$ and NII for all
  galaxies of radius $0.3''$, and 90\% of galaxies of radius $0.54''$, which would drive
  the grism resolution higher. The blending of H$\alpha$ (6563$\AA$) and NII (6584$\AA$) leads to
- a metallicity-dependent shift in line centroid for larger sources
+ a metallicity-dependent shift in line centroid for larger sources;
  this would lead to a systematic bias in the measured redshifts, which can
  propagate into the BAO/RSD measurements. Having a higher grism resolution would
  alleviate this problem, at the cost of a reduction in survey depth, and more
@@ -321,9 +321,9 @@ team, private communication).} \end{figure}
  Although this is redundant since it is essentially the same as HLSS 4, it is
  necessary to keep it since it flows HLSS 4 into a dataset requirement.
 
-\paragraph{HLSS 10} The spectroscopic bandpass shall satify $\lambda_\mathrm{max} \geq 1.9\ \mathrm{\mu m}$, and $\lambda_\mathrm{max}/\lambda_\mathrm{min} < 1.82$.
+\paragraph{HLSS 10} The spectroscopic bandpass shall satify $\lambda_\mathrm{max} \geq 1.9\ \mathrm{\mu m}$, and $\lambda_\mathrm{max}/\lambda_\mathrm{min} > 1.82$.
 
- We need $\lambda_\mathrm{max} > 1.9\ \mathrm{ \mu m}$ for redshift reach, in order to be complementary to Euclid and ground-based surveys.  Furthermore, we need $\lambda_\mathrm{max}/\lambda_\mathrm{min} < 1.82$ for line identification using multiple lines: to ensure that we cannot have [OII] (373nm) falling off the blue end of our coverage while H$\alpha$ (656.28nm) falls off the red end. We have
+ We need $\lambda_\mathrm{max} > 1.9\ \mathrm{ \mu m}$ for redshift reach, in order to be complementary to Euclid and ground-based surveys.  Furthermore, we need $\lambda_\mathrm{max}/\lambda_\mathrm{min} > 1.82$ for line identification using multiple lines: to ensure that we cannot have [OII] (373nm) falling off the blue end of our coverage while H$\alpha$ (656.28nm) falls off the red end. We have
  assumed that the actual bandpass extends 1.5\% from either end, since it is
  problematic to use emission lines that fall within 1.5\% of the bandpass edges.
 
@@ -429,10 +429,10 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  relative spectrophotometric flux calibration in post-processing by projecting
  out problematic modes in the analysis.
 
- We plan to make this requirement more precise, in the form of "The relative
+ We plan to make this requirement more precise, in the form of ``The relative
  spectrophotometric flux shall be known to 2\% relative accuracy in TBD (probably
  the spectral resolution) wavelength bins with a goal of 1\% on scales larger
- than TBD (per pointing, 0.3 deg) and TBD\% on scales smaller than 0.3 deg.
+ than TBD (per pointing, 0.3 deg) and TBD\% on scales smaller than 0.3 deg.''
  We are working on deriving and justifying these numbers.
  Co-I's Capak, Hirata, and Padmanabhan are members of the WFIRST Calibration Working Group, working on a detailed calibration strategy for WFIRST.
 
@@ -455,7 +455,8 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
  \mathrm{Mpc}/h$. At $z=3$, this subtends 0.064 degrees for a flat universe with
  $\Omega_\mathrm{m}=0.3$ and a cosmological constant.
 
- For field to field, the acceptable level of wavelength error is $2\times10^{-5}$, which comes from comparing two adjacent fields.  Since we expect $\sim 104$ galaxies per deg$^2$, we have $\sim 2810$ galaxies per FOV of 0.281 deg$^2$.  If the galaxies have a redshift error of $10^{-3}$ each, then one can measure systematic offsets between fields (statistically) at the $10^{-3}/\sqrt{2810}$ level, which is $1.9\times10^{-5}$. At that level the power from the systematics is sub-dominant to the power from the redshift error.
+ For field to field, the acceptable level of wavelength error is $2\times10^{-5}$, which comes from comparing two adjacent fields.
+Since we expect $\sim 10^4$ galaxies per deg$^2$, we have $\sim 2810$ galaxies per FOV of 0.281 deg$^2$.  If the galaxies have a redshift error of $10^{-3}$ each, then one can measure systematic offsets between fields (statistically) at the $10^{-3}/\sqrt{2810}$ level, which is $1.9\times10^{-5}$. At that level the power from the systematics is sub-dominant to the power from the redshift error.
 
  \subsubsection{Requirements on Science Data Products:} In this section, we present the GRS requirements on science data products. We are in the process of studying HLSS 21-25. These depend on the structure and responsibilities of the SOCs and the SITs. Co-Is Teplitz and Capak have extensive experience in data processing for space missions, and have provided detailed comments on these requirements to the WFIRST Project Office.
 
@@ -504,7 +505,7 @@ Based on the estimated galaxy number density of $>7273$ per deg$^2$ at the flux 
 
  To convert the positions of observed galaxies in the large-scale structure
  into clustering measurements (correlation function, power spectrum, higher order
- statistics) we need to know how the "average" number density of objects (in the
+ statistics) we need to know how the ``average'' number density of objects (in the
  absence of clustering) changes in the observed volume. The mean number density
  will vary significantly both in redshift and with angular position due to
  effects of target selection, data reduction and observing conditions. Previous
@@ -725,7 +726,7 @@ Light-cone cosmological simulations are a critical tool to design the GRS survey
  initial project is to model effects of various systematics and determine their
  impact on galaxy clustering and weak lensing observables and their covariance
  matrices. The starting point for this project is  300 ICE-COLA fast simulations
- \cite{Tassev:2013pn,Izard:2015dja} generated by Izard during his PhD that
+ \citep{Tassev:2013pn,Izard:2015dja} generated by Izard during his PhD that
  provide the dark matter density field and halo catalogs (both in the light cone
  geometry). The former is used to compute maps of weak lensing distortions in
  the Born approximation using a technique developed by Izard (Izard et al, 2017;
@@ -816,10 +817,10 @@ WFIRST GRS. This work is published in \citet{Merson2017}.
 
 A four square degree lightcone catalogue was constructed by processing
 the dark matter merger trees of the Millennium Simulation
-\cite{Springel05} with the \textsc{Galacticus} model. Emission lines
+\citep{Springel05} with the \textsc{Galacticus} model. Emission lines
 are modelled in \textsc{Galacticus} by interpolating over a library of
 emission line luminosities obtained from the \textsc{Cloudy}
-\cite{Ferland13} code and stored as a function of hydrogen (HI),
+\citep{Ferland13} code and stored as a function of hydrogen (HI),
 helium (HeI) and and oxygen (OII) ionising luminosities, as well as
 the hydrogen gas density and metallicity of the interstellar medium
 (ISM). The emission line luminosities are then processed to
@@ -858,14 +859,14 @@ corrected to introduce contamination due to NII by assuming that NII contributes
 29 per cent to the observed emission line luminosity. A fixed NII contamination
 was chosen to be consistent with the WISP analyses of \citet{Colbert13} and
 \citet{Mehta:2015}. By adjusting the parameters used by two of these dust models,
-the \citet{Charlot00} method and the \citet{Calzetti00} dust law, the authors
+the \citet{Charlot00} method and the \citet{Calzetti00} dust law, Merson et al.
 are able to obtain predicted cumulative H${\rm \alpha}$ flux counts from
 \textsc{Galacticus} that are consistent with the observed counts of \citet{Mehta:2015} down to a flux limit of $1\times 10^{-16}{\rm
 erg}\,{\rm s}^{-1}{\rm cm}^{-2}$ (see Figure~\ref{fig:halpha_flux_counts}).
 Adopting the Ferrara \textit{et al.} \citet{Ferrara99} dust method yields counts
 that agree with the observations for flux limits fainter than approximately
 $5\times 10^{-16}{\rm erg}\,{\rm s}^{-1}{\rm cm}^{-2}$, but yield an excess in
-the number counts for the brightest fluxes. Overall the authors find that down
+the number counts for the brightest fluxes. Overall Merson et al. find that down
 the expected flux limits of the WFIRST mission, the \textsc{Galacticus} model is
 able to predict number densities that are consistent with existing observations
 from the WISP survey. Although the lightcone used in this analysis has a small
@@ -873,10 +874,10 @@ area on the sky, it is expected that cosmic variance has little effect on the
 predicted number counts. Since the lightcone analysis is time-consuming and
 expensive in computing resources, the lightcone used in this study was limited
 in size to 4 sq deg, in order to provide timely input to WFIRST. However, the
-authors plan to build significantly larger lightcones in future work.
+Merson et al. plan to build significantly larger lightcones in future work.
 
-After setting the strength of the dust attenuation for each method the
-authors then examine whether these chosen attenuation strengths yield
+After setting the strength of the dust attenuation for each method,
+Merson et al. then examine whether these chosen attenuation strengths yield
 reasonable matches to the observational estimates for the distribution
 of optical depth (at the observer-frame H${\rm \alpha}$ wavelength)
 and the H${\rm \alpha}$ line luminosity function. For each of the dust
@@ -1029,7 +1030,9 @@ focused on these tasks. As a result, a large dataset of thousands of objects
 with measured line fluxes and corresponding redshift is now available.
 % Using the same data, the continuum luminosity, galaxy size and EW distribution functions for line emitters can be constrained.
 
-At the end of the work described in this section, for which more than a semester is still reasonably required, the results will bring to a publication, in one of the major journals, with the co-authorship of Teplitz, Baronchelli and Wang.
+At the end of the work described in this section, for which more than a semester
+is still reasonably required, the results will lead to a publication in one of the
+major journals, with the co-authorship of Teplitz, Baronchelli and Wang.
 
 
  \subsection{Cosmological Forecasting and Data Analysis Algorithms (D4)}
@@ -1069,12 +1072,12 @@ At the end of the work described in this section, for which more than a semester
  proto-pipeline and will be validated with high fidelity WFIRST simulations.
 
 
- \begin{summary}[Future Work on Galaxy Redshift Survey]
+ \begin{summary}[]
  \begin{enumerate}
  \item We will keep refining and solidifying the scientific requirements;
  \item We will pursue our light-cone simulations and release mock catalogs to the community when publishing our results;
  \item We will pursue our effort with image simulation, relying on the light-cone simulation to incorporate realistic galaxy distributions and properties;
  \item We will continue our pseudo-pipeline effort;
- \item \Oli{TO BE CONTINUED}.
+ %\item \Oli{TO BE CONTINUED}.
  \end{enumerate}
  \end{summary}
