@@ -802,18 +802,33 @@ placed by the PSF requirements are sufficient, so no new requirement is needed. 
 result is in preparation.
 
 
-\subsubsection{Detector Characterization}
+\begin{figure}[!t]
+  \includegraphics[width=0.55\textwidth]{Plots/Euclid_flat_crosshatch.png}
+\caption{\label{fig:crosshatch}2048 x 2048 flat-field calibration image taken with a Euclid engineering grade H2RG detector (2.4 $\mu$m cutoff) under 1 $\mu$m illumination (scaled to enhance contrast).  Flight detectors resemble the upper right region (mean QE $\sim$ 1) but still contain traces of the ``crosshatch'' pattern visible in the lower left (mean QE $\sim$ 0.8).  Scanning a grid of undersampled point sources (f/11 aperture setting) in sub-pixel increments generated 1\% RMS photometric variations in the lower left region which were not removed by the flat-field calibration.  This result provides evidence that the pattern has intra-pixel structure that potentially biases the PSF if left uncalibrated.}
+\end{figure}
+
+\subsubsection{Laboratory Detector Characterization}
 
 The WFIRST dark energy analyses will place enormous demands on our understanding
 of the detectors. Some aspects of this problem can be anticipated in advance --
 for example, we know that effects such as inter-pixel capacitance,
-count-rate-dependent non-linearity, etc.\ will need to be carefully
+count-rate-dependent non-linearity  will need to be carefully
 characterized, and we are working as part of the Calibration Working Group to
 build these measurements into the mission. However, with systematic error
 budgets at the level of a few$\times 10^{-4}$, it is likely that WFIRST analyses
 will turn up new effects that were not apparent in past missions. Therefore a
 key task for our SIT is to analyze the data from development detectors and
 identify these new effects early enough to inform the calibration plan.
+
+\begin{figure}[!t]
+  \includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
+\caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta
+i,\Delta j}$ (left panel) and IPC-corrected coefficients $a'_{\Delta i,\Delta
+j}$ (right panel), for H4RG-17940. Note that the IPC-corrected coefficents
+assume that the IPC is linear, i.e.\ the non-overlapping correlations are
+ascribable entirely to the BFE and not NL-IPC. The $1\sigma$ uncertainty in each
+pixel is 0.07 ppm/e.}
+\end{figure}
 
 In ground-based weak lensing projects using thick CCDs (e.g.\ DES), one of the
 key detector issues has been the {\em brighter-fatter effect} (BFE). This is an
@@ -837,22 +852,21 @@ flat auto-correlations are sensitive to both the brighter-fatter effect and
 non-linear inter-pixel capacitance (NL-IPC); we are currently working on
 distinguishing the two effects.
 
-We are also using data from studies of more mature H2RG detectors to inform our calibration plan.  Although these will have important differences from the WFI flight detectors, we expect that problematic effects discovered in H2RGs will need to be characterized in H4RGs at some level.  For instance, collaborators Shapiro and Huff (via the Precision Projector Laboratory at JPL) have investigated a high-frequency pattern (dubbed the ``crosshatch'') apparent in flat-field calibrations and believed to be related to the crystal structure of HgCdTe (see Figure~\ref{fig:crosshatch}).  Using an engineering grade H2RG provided by the Euclid mission, tests have shown that the crosshatch pattern affects photometry even after flat-field calibrations are applied, implying that it has sub-pixel structure that can bias PSF measurements.  Data was shared with this SIT to investigate the dependence of the pattern on polarization and angle of incidence.  The same H2RG detector is also being used to conduct a PSF-based test of BFE to compare with our flat-field analysis.
+We are also using data from studies of more mature H2RG detectors to inform our
+calibration plan.  Although these will have important differences from the WFI
+flight detectors, we expect that problematic effects discovered in H2RGs will
+need to be characterized in H4RGs at some level.  For instance, collaborators
+Shapiro and Huff (via the Precision Projector Laboratory at JPL) have
+investigated a high-frequency pattern (dubbed the ``crosshatch'') apparent in
+flat-field calibrations and believed to be related to the crystal structure of
+HgCdTe (see Figure~\ref{fig:crosshatch}).  Using an engineering grade H2RG
+provided by the Euclid mission, tests have shown that the crosshatch pattern
+affects photometry even after flat-field calibrations are applied, implying that
+it has sub-pixel structure that can bias PSF measurements.  Data was shared with
+this SIT to investigate the dependence of the pattern on polarization and angle
+of incidence.  The same H2RG detector is also being used to conduct a PSF-based
+test of BFE to compare with our flat-field analysis.
 
-\begin{figure}[!t]
-  \includegraphics[width=0.55\textwidth]{Plots/Euclid_flat_crosshatch.png}
-\caption{\label{fig:crosshatch}2048 x 2048 flat-field calibration image taken with a Euclid engineering grade H2RG detector (2.4 $\mu$m cutoff) under 1 $\mu$m illumination (scaled to enhance contrast).  Flight detectors resemble the upper right region (mean QE $\sim$ 1) but still contain traces of the ``crosshatch'' pattern visible in the lower left (mean QE $\sim$ 0.8).  Scanning a grid of undersampled point sources (f/11 aperture setting) in sub-pixel increments generated 1\% RMS photometric variations in the lower left region which were not removed by the flat-field calibration.  This result provides evidence that the pattern has intra-pixel structure that potentially biases the PSF if left uncalibrated.}
-\end{figure}
-
-\begin{figure}[!t]
-  \includegraphics[width=6.2in]{Plots/kernel-17940B.pdf}
-\caption{\label{fig:kernel}The BFE + NL-IPC coefficients $[K^2a'+KK']_{\Delta
-i,\Delta j}$ (left panel) and IPC-corrected coefficients $a'_{\Delta i,\Delta
-j}$ (right panel), for H4RG-17940. Note that the IPC-corrected coefficents
-assume that the IPC is linear, i.e.\ the non-overlapping correlations are
-ascribable entirely to the BFE and not NL-IPC. The $1\sigma$ uncertainty in each
-pixel is 0.07 ppm/e.}
-\end{figure}
 
 \subsubsection{Simulating Detector Imperfection and Their Effect on WFIRST Shape Measurements}
 \label{sec:hlis_image_sim}
