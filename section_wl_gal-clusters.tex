@@ -164,7 +164,7 @@ To mature the WFIRST WL investigation, our work has been organized along four ma
 directions.
 \begin{enumerate}
   \item We developed, delivered to the project and
-updated the HLSI requirements;
+updated the HLII requirements;
 \item We provided key contributions to the
 photometric calibration plan;
 \item We studied new potential detector imperfections,
@@ -185,7 +185,7 @@ will include representations of the most significant anticipated systematic effe
    development of the WFIRST HLS imaging and in particular to identify,
    articulate and validate the scientific requirements of the instrument, the
    data reduction software, the survey and outline their flow. Responding to a calendar set by the
-   Project Office, our SIT delivered three major updates to the WFIRST HLSIS
+   Project Office, our SIT delivered three major updates to the WFIRST HLIS
    requirements to the Project Office on July 1, 2016, December 1, 2016, and
    March 2, 2017. Each of these provide progressively sharper definitions of the
    HLS requirements. We describe the main requirements and their science drivers
@@ -309,7 +309,7 @@ of these galaxies, and photometry sufficient to provide photometric redshifts.
 
 \subsubsection{High-Latitude Imaging Survey – Science Data Records}
 
-High-level science products needed for weak lending analysis include catalogs of
+High-level science products needed for weak lensing analysis include catalogs of
 each source, which contains positions, classifications, photometry (aperture
 photometry, adaptive moment photometry), photometric redshifts, shape
 measurements for each object, links to ground-based photometric data at visible
@@ -467,7 +467,7 @@ photometric properties. In principle, much of this could be done from observing
 simulated skies, but these hybrid simulations are useful because they have the
 correct instrument noise properties and level of crowding by construction.
 
-\subsubsection{HLSI Calibrated Data Record Requirements}
+\subsubsection{HLIS Calibrated Data Record Requirements}
 
 \paragraph{HLIS 28} WFIRST shall archive HLIS calibrated images with the PSF for each
 exposure specified as a function of position on the focal plane and incorporate
@@ -505,7 +505,7 @@ variation of the total system response known as a function of position such that
 the total flux of a source with a known Spectral Energy Distribution (SED) can
 be corrected to a common filter system at the $\sim$ 0.5\% (TBC) level.
 
-\subsubsection{HLSI Calibrated Raw Data Record Requirements}
+\subsubsection{HLIS Calibrated Raw Data Record Requirements}
 
 \paragraph{HLIS 27} WFIRST shall provide HLIS raw images in the archive for each
 detector exposure with each raw data record including a unique dataset
@@ -592,8 +592,9 @@ are now traceable all the way from science measurements (WL shear) down to the
 specific calibration approaches and the hardware stability requirements needed
 for them to work. A major area of work leading up to SRR/MDR is to complete this
 flow-down for the other areas of calibration.
-\item {\em Detector characterization}: We have made use of the H4RG data provided by the Detector Characterization Laboratory to measure some of the non-linear effects relevant
-to weak lensing in real H4RG detectors in the JPL Projector Laboratory. We built toy models to study other effects.
+\item {\em Detector characterization}: We have made use of the H4RG data provided by the Detector Characterization Laboratory and 
+H2RG data from the JPL Projector Laboratory to measure some of the detector-induced systematic effects relevant to weak lensing with 
+NIR detectors. We built toy models to study other effects.
 \item {\em Simulating detector imperfections}: We started to simulated known detector imperfection in a publicly available image simulation pipeline in order to assess their effect on measured galaxy shapes. This is an important practice step
 toward building calibration pipelines that will support WL science.
 \end{enumerate}
@@ -870,7 +871,7 @@ test of BFE to compare with our flat-field analysis.
 
 \subsubsection{Simulating Detector Imperfection and Their Effect on WFIRST Shape Measurements}
 \label{sec:hlis_image_sim}
-Building on the existing GalSim framework and WFIRST module, Michael Troxel and Ami Choi (in collaboration with Hirata, Jarvis, Mandelbaum) are developing an image
+Building on the existing GalSim framework and WFIRST module, Michael Troxel and Ami Choi (in collaboration with Hirata, Jarvis, and Mandelbaum) are developing an image
 simulation pipeline to assess the impact of various physical effects on the fidelity of the measured galaxy shapes.  The end product will provide realistic simulations containing all pertinent effects and conditions from the observational process specific to the WFIRST mission that may affect the quality of the lensing shear extracted
 from the real WFIRST images.  These simulations will provide a foundation to characterize the relative impact of undesired effects and to validate the shear measurements themselves.  As the distribution and density of galaxies are realistically incorporated, the resulting multi-epoch images can also be used to test different dither strategies.  An intermediate level goal is to update the module with the most recent hardware and survey parameters describing the mission, to do some GalSim development to make the pipeline more efficient, and to estimate the relative impacts from detector effects such as the IPC described in earlier sections.
 
