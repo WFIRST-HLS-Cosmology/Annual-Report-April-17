@@ -120,7 +120,12 @@ GalSim is an open-source software for simulating images of astronomical objects 
 
 However, the code has numerous additional capabilities beyond those needed for the challenge, and has been useful for a number of projects that needed to simulate high-fidelity galaxy images with accurate sizes and shears. For details of the GalSim algorithms and code validation, please see \citet{Rowe:2015}.
 
-We have now added a specific module to accurately simulate WFIRST images. The GalSim software package including the WFIRST module is available \href{https://github.com/GalSim-developers/GalSim}{[here]}.The development of this WFIRST module is included in version 1.4 and precedes our SIT. It will be periodically updated by SIT members as the WFIRST hardware and survey parameters are adjusted, with the next update planned for July 2017.
+We have now added a specific module to accurately simulate WFIRST images. The GalSim software package including the WFIRST module is available \href{https://github.com/GalSim-developers/GalSim}{[here]}.The development of this WFIRST module is included in version 1.4 and precedes our SIT. It already include inter-pixel capacitance, persistence, reciprocity and spider pattern. It will be periodically updated by SIT members as the WFIRST hardware and survey parameters are adjusted. We expect the next update including the latest layout of the FPA to be released as part of GalSim v1.5 before the end of August 2017.
+
+If you mean the new changes that Rachel is making to match up with the Cycle 6 definitions, then this isn't quite done.  There is still a bit of confusion about exactly what the FPA layout is.  I think Chris is trying to nail down a couple of ambiguities from the project people.  But I think we expect this to be done and released as part of GalSim v1.5 within the next month at the latest.
+
+If you mean the principle WFirst functionality including IPC, persistence, reciprocity, spider pattern, etc. that are in the GalSim WFirst module, these were part of v1.3, which was released on July 30, 2015.
+
 
 \subsubsection{CANDELS Based Mock WFIRST and LSST Catalogs}
 
