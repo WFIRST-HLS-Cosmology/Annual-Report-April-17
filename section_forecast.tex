@@ -83,7 +83,7 @@ illustrates the \CoLi combined probes module we plan to use for the proposed ana
 \end{enumerate}
 \end{summaryii}
 
-\paragraph{Varying the HLSS Area} The galaxy redshift distributions were computed using the WFIRST \texttt{Exposure Time Calculator ETC v14}. The H$\alpha$ forecasts are based on the
+\subsubsection{Varying the HLSS Area} The galaxy redshift distributions were computed using the WFIRST \texttt{Exposure Time Calculator ETC v14}. The H$\alpha$ forecasts are based on the
 average of the 3 models in \citet{Pozzetti:2016}, and the [O III] forecasts are
 based on the \citet{Mehta:2015} luminosity function. The resulting redshift
 distributions are displayed in Figure~\ref{fi:forecast1} (left panel). We extended the \CoLi framework \citep{Eifler:2014,Krause2017} to compute the constraining power of all cosmic acceleration scenarios, closely following \citet{Wang2013}. We ran a
@@ -106,7 +106,7 @@ The information gain is quantified using the standard Dark Energy Task Force FOM
 
 %HLSS 3: The redshift range of galaxies surveyed shall encompass 1. $\leq$ z $\leq$ 2.7
 
-\paragraph{Varying the HLSS Redshift Coverage} In addition to the trade studies in HLSS 1 we examined the impact of an extended wavelength range on the DE-FOM and the Cosmo-FOM. We follow the same procedure as detailed in the HLSS 1 paragraph extending the wavelength range from 1.05-1.85 microns for the baseline model to 1.00-1.89 for the extended model. The corresponding redshift distributions of the galaxy samples computed from the ETC v1.14 are depicted in  Figure~\ref{fi:forecast1} (right panel). We find a decreased DE-FOM of 2\% and a decreased Cosmo-FOM of 11\% for the extended wavelength survey with respect to our baseline scenario. We iterate that these findings are model and prior dependent and recommend further studies varying the input parameters.
+\subsubsection{Varying the HLSS Redshift Coverage} In addition to the trade studies in HLSS 1 we examined the impact of an extended wavelength range on the DE-FOM and the Cosmo-FOM. We follow the same procedure as detailed in the HLSS 1 paragraph extending the wavelength range from 1.05-1.85 microns for the baseline model to 1.00-1.89 for the extended model. The corresponding redshift distributions of the galaxy samples computed from the ETC v1.14 are depicted in  Figure~\ref{fi:forecast1} (right panel). We find a decreased DE-FOM of 2\% and a decreased Cosmo-FOM of 11\% for the extended wavelength survey with respect to our baseline scenario. We iterate that these findings are model and prior dependent and recommend further studies varying the input parameters.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{HLS Imaging Survey Forecasts}
@@ -259,20 +259,20 @@ will recover the lost information.
 
 
 \subsection{Expanding the Science Case - Multi-Probe Forecasts}
+\label{sec:multi-probe}
 
 \begin{summaryii}
 Using our updates to the \CoLi package described in the previous sections, we have now implemented a full multi-probe analysis, an extremely promising area of active research. We are able to combine \emph{all} cosmological probes enabled by WFIRST HLS. This is one of the major goal of our unified HLS SIT. The likelihood analyses presented here are the start of a demanding study to optimally combine WFIRST internal observables and also to study synergies between WFIRST and other, external data sets, in particular LSST\@. Our tools will enable us to do so in the coming years. We also study new cosmological signals these multi-probe analysis will allow us to measure, such as the effect of primordial non-Gaussianity on galaxy shapes and synergies with CMB lensing.
 \end{summaryii}
 
 
-\label{sec:multi-probe}
 \begin{figure}
 \includegraphics[width=15cm]{Plots/forecasts/multi}
 \caption{WFIRST multi-probe studies, see text for details.}
 \label{fi:multi}
 \end{figure}
 
-\paragraph{\CoLi Multi-probe Analysis} Developing a multi-probe cosmology analysis framework is challenging given that the analysis pipeline for individual probes are each under continuous
+\subsubsection{\CoLi Multi-probe Analysis} Developing a multi-probe cosmology analysis framework is challenging given that the analysis pipeline for individual probes are each under continuous
 development in order to meet the requirements of improving data quality. These
 efforts have historically been largely independent from each other; as a
 consequence, individual probe analyses utilize information from other probes to
@@ -328,7 +328,7 @@ deg$^2$.
 We emphasize that multi-probe studies are an area of active research and that
 the likelihood analyses presented here represents a first step towards our goal of optimally combining WFIRST internal observables and to study synergies between WFIRST and other, external data sets, in particular LSST\@.
 
-\paragraph{Other Signals in Multi-Probe Analysis} Spergel and his group have been exploring  the use of galaxy shapes to constrain primordial non-Gaussianity \citep{Chisari:2016xki}. Working with former Princeton student, Elisa Chisari, and former Princeton postdocs Cora Dvorkin and Fabian Schmidt, they showed that
+\subsubsection{Other Signals in Multi-Probe Analysis} Spergel and his group have been exploring  the use of galaxy shapes to constrain primordial non-Gaussianity \citep{Chisari:2016xki}. Working with former Princeton student, Elisa Chisari, and former Princeton postdocs Cora Dvorkin and Fabian Schmidt, they showed that
 multi-tracer weak lensing observations could create anisotropic non-Gaussianity. WFIRST
 will be a powerful instrument for this approach.  Correlations between intrinsic
 galaxy shapes on large-scales arise due to the effect of the tidal field of
@@ -357,7 +357,7 @@ resulting joint likelihood with Monte Carlo Markov Chains. We constrain shear
 calibration biases while simultaneously varying cosmological parameters, galaxy
 biases and photometric redshift uncertainties. We find that CMB lensing from CMB
 S4 enables the calibration of the shear biases down 0.6-3.2\% in 10 bins for
-WFIRST. For a given lensing survey, the method works best at high redshift where
+WFIRST (see Fig. \ref{fi:CMB}). For a given lensing survey, the method works best at high redshift where
 shear calibration is otherwise most challenging. This self-calibration is robust
 to Gaussian photometric redshift uncertainties and to a reasonable level of
 intrinsic alignment. It is also robust to changes in the beam and the
@@ -365,6 +365,12 @@ effectiveness of the component separation of the CMB experiment, and slowly
 dependent on its depth, making it possible with third generation CMB experiments
 such as AdvACT and SPT-3G, as well as the Simons Observatory.
 
+
+\begin{figure}
+\includegraphics[width=15cm]{Plots/forecasts/CMB-S4-WFIRST}
+\caption{Summary of the forecast for WFIRST and CMB S4 lensing. The top left panel summarizes our assumptions forthe WFIRST survey. The top right panel displays the photo-z bins assumed for the lens and source samples. The bottom leftpanel summarizes the signal to noise ratios for the various probes and combinations. The bottom right panel shows the levelof shear calibration in WFIRST's ten source bins via CMB-S4 lensing. The calibration of the shear biases down 0.6-3.2\% in particular at high redshift bins, constitutes a promising alternative and an important cross-check to traditional simulation based approaches.}
+\label{fi:CMB}
+\end{figure}
 
 \begin{summary}
 Relying on our updates to the \CoLi package, we revised the cosmological
