@@ -217,7 +217,7 @@ covering 1.25-1.85 microns. The blue grism (0.92-1.3 microns) will likely be use
 
 
 \paragraph{HLSS 4} Redshift measurement errors $\sigma_z$ shall satisfy $\sigma_z < 0.001(1+z)$, excluding outliers, for galaxies smaller than $0.54''$ in radius. The fraction of outliers with $|z_\mathrm{obs}-
- z_\mathrm{true}|/(1+z_\mathrm{true})>0.003$ shall be less than 10\%.
+ z_\mathrm{true}|/(1+z_\mathrm{true})>0.003$ shall be less than 10\%. The incidence of outliers shall be known to a fraction of $2\times 10^{-3}$ of the full sample at each redshift.
 
  This is a requirement on the rms error of the redshift measurements, and not on
  every redshift measurement.
@@ -811,7 +811,7 @@ data.
 
 % Other WFIRST progress that are not yet a deliverable:
 % - We are working on constraining the intrinsic alignment models using filaments constructed from spectroscopic surveys. The idea being that in WFIRST, we can do this for the first time using photometric survey and spectroscopic survey together and mitigating the strongest astrophysical systematic -- intrinsic alignment by modeling it out.  We have measured the intrinsic alignments with LOWZ galaxies and the paper is in prep right now. (Chen, Ho, Mandelbaum, Blazek et al.)
- 
+
 
 In work led by Merson, Wang, Benson, Masters, Kiessling and Rhodes
 the open source semi-analytical galaxy formation
@@ -872,7 +872,7 @@ corrected according to the median ${\rm N\left [II\right ]}/{\rm
 H\alpha}$ ratio from these neighbors. Further modelling of the ${\rm
 N\left [II\right ]}/{\rm H\alpha}$ ratio as a function of redshift and
 stellar mass is presented by \citet{Faisst2018}.
-          
+
 The blended ${\rm N\left [II\right ]}+{\rm H\alpha}$ luminosites are
 then attenuated using each of the three dust methods in turn. A
 chi-squiared minization technique is used to identify the optimum dust
@@ -892,7 +892,7 @@ on the predicted number counts. Since the lightcone analysis is
 time-consuming and expensive in computing resources, the lightcone
 used in this study was limited in size to 4 sq deg, in order to
 provide timely input to WFIRST. However, Merson, Wang and Benson plan to build
-significantly larger lightcones in future work. 
+significantly larger lightcones in future work.
 
 After setting the strength of the dust attenuation for each method,
 \cite{Merson2018} then examine whether the optimized attenuation strengths
@@ -917,7 +917,7 @@ dust methods may be lacking some redshift evolution or dependence on
 other galaxy properties, or that the \textsc{Galacticus} emission line
 luminosities are the incorrect\ strength. Investigating these
 possibilities requires rigorous calibration of the \textsc{Galacticus}
-model, which will be carried out in future work. 
+model, which will be carried out in future work.
 
 
 \begin{table*}
@@ -964,8 +964,7 @@ results from the chi-squared minimization into a dust parameter
 likelihood. For each dust method the flux counts are estimated 1000
 times by Monte-Carlo sampling from these
 likelihoods. \cite{Merson2018} find that for a WFIRST GRS with
-redshift range $1\leqslant z\leqslant 2$ and blended flux limit of^M
-$1\times 10^{-16}{\rm erg}\,{\rm s}^{-1}{\rm
+redshift range $1\leqslant z\leqslant 2$ and blended flux limit of  $1\times 10^{-16}{\rm erg}\,{\rm s}^{-1}{\rm
 cm}^{-2}$, \textsc{Galacticus} predicts a number density between
 10,000 and 15,000 galaxies per square degree. Number counts for the
 three dust methods are shown in
