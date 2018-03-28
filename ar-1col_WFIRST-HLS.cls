@@ -368,7 +368,8 @@
     %\@jname\ \@jyear. \@jvol:\@fstpage--\@endpage\endgraf% Oli
     %\ifx\@doi\empty\else\vskip6\p@ This article's doi:\break \@doi\endgraf\vskip6\p@\fi%
     %\ifx\@doi\empty\else\vskip6\p@ https://doi.org/\@doi\endgraf\vskip6\p@\fi%
-    https://www.wfirst-hls-cosmology.org/ % Oli
+    https://www.wfirst-hls-cosmology.org/ \hskip6pt Copyright 2018. All rights reserved.
+% Oli
     %Copyright\ \copyright\ \@jyear\ by Annual Reviews.\endgraf All rights reserved\endgraf%
     \ifx\@firstpagenote\@empty\else\vskip6\p@\@firstpagenote\endgraf\fi%
 }}
