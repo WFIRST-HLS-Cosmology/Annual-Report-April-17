@@ -6,7 +6,7 @@
 The HLS Imaging survey will (in its current design) measure the shapes of
 nearly 400 million galaxies in 3 near-infrared (NIR) bands, plus fluxes in a 4th band
 to improve photometric redshifts (photo-$z$).  With a data set two orders-of-magnitude
-larger than the current state of the art \cite{2012MNRAS.427..146H,Becker2015},
+larger than the current state of the art \cite{Heymans2012,Becker2015},
 the WFIRST weak lensing program will
 measure the cosmic expansion history and the growth of structure with
 exquisite statistical precision, demanding corresponding advances in the
@@ -804,7 +804,7 @@ result is in preparation.
 
 
 \begin{figure}[!t]
-  \includegraphics[width=0.55\textwidth]{Plots/Euclid_flat_crosshatch.png}
+  \includegraphics[width=0.55\textwidth]{Plots/Euclid_flat_crosshatch.jpg}
 \caption{\label{fig:crosshatch}2048 x 2048 flat-field calibration image taken with a Euclid engineering grade H2RG detector (2.4 $\mu$m cutoff) under 1 $\mu$m illumination (scaled to enhance contrast).  Flight detectors resemble the upper right region (mean QE $\sim$ 1) but still contain traces of the ``crosshatch'' pattern visible in the lower left (mean QE $\sim$ 0.8).  Scanning a grid of undersampled point sources (f/11 aperture setting) in sub-pixel increments generated 1\% RMS photometric variations in the lower left region which were not removed by the flat-field calibration.  This result provides evidence that the pattern has intra-pixel structure that potentially biases the PSF if left uncalibrated.}
 \end{figure}
 
@@ -913,7 +913,7 @@ data products that we released to other SITs and to the community.
 
 \begin{figure}
 %\centering
- \includegraphics[width=0.45\textwidth] {./plots/wfirst_color_dist.eps}
+ \includegraphics[width=0.45\textwidth] {Plots/wfirst_color_dist.pdf}
 \caption{A Self Organizing Map (SOM) \citep{Masters2015} of color space generated from $\sim6$ square degrees of data in the VVDS 2h, SXDS/UDS, COSMOS, and EGS survey areas colored by photometric redshift is shown.  Only regions occupied by the CANDELS survey are colored, with the remaining area grey.  CANDELS only covers 42\% of the color space, representing 49\% of the overall galaxy population.}
 \label{fig:EuclidCandelsRep}
 \end{figure}
@@ -959,7 +959,7 @@ the output fluxes which biased further analysis.
 
 \begin{figure}
 \centering
-  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.50\textwidth] {./plots/filters.eps}
+  \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.50\textwidth] {Plots/filters.pdf}
 \caption{The 5$\sigma$ limiting AB magnitude of LSST and WFIRST filters plotted
 as solid color lines and the 5$\sigma$ limiting AB magnitude of CANDELS GOODS-S
 filters are plotted with dotted black lines (see Table \ref{tbl:filters} for
@@ -1016,7 +1016,7 @@ COSMOS&$\rm U_{CFHT}$& $\rm B_{subaru}$& $\rm F606W$&$\rm r_{subaru}$&$\rm i_{CF
 
 \begin{figure}
 \centering
-\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.95\textwidth] {./plots/histogram_wfirst_notEuclid.png}
+\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.95\textwidth] {Plots/histogram_wfirst_notEuclid.png}
 \caption{{\bf Left:} A magnitude histogram of the WFIRST lensing sample split
 into a C3R2 Euclid like lensing sample (blue, $RIZ<25$) and those only in WFIRST
 (green).  Roughly 20\% of the WFIRST sample consists of galaxies fainter than
@@ -1031,7 +1031,7 @@ range similar, just with with more galaxies at high-redshift.   }
 
 \begin{figure}
 \centering
-\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.75\textwidth] {./plots/redshift_magnitude.eps}
+\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.75\textwidth] {Plots/redshift_magnitude.png}
 \caption{$H$ band magnitude vs redshift is plotted for the WFIRST lensing sample
 shown in Figure \ref{fig:EuclidVsWFIRST} with shading indicating relative
 density.  The WFIRST only sample shown as green contours and the histograms from
@@ -1054,7 +1054,7 @@ systems seen by Euclid.
 
 \begin{figure}
 \centering
- \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.98\textwidth] {./plots/SOM_WFIRST_EUCLID.png}
+ \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.98\textwidth] {Plots/SOM_WFIRST_EUCLID.png}
 \caption{A Self Organizing Map (SOM) \citep{Masters2015} of the WFIRST color
 space based on the CANDELS data cut to the WFIRST lensing sample color coded by
 their median redshift.  The left panel shows SOM cells that contain galaxies too
@@ -1078,8 +1078,8 @@ along with actual Keck spectra obtained for those sources are shown in Figure
 
 \begin{figure}
 \centering
- \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/realspec.png}\\
-   \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {./plots/simspec.png}
+ \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {Plots/realspec.png}\\
+   \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.45\textwidth] {Plots/simspec.png}
 
 \caption{ A real (top) and simulated (bottom) spectra of a $I=22.7$ galaxy in the C3R2 sample.}
 \label{fig:SpecSim}
